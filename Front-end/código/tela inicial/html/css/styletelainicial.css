@@ -37,5 +37,11 @@ article {
     flex-wrap: nowrap;
     gap: 30px;
     align-items: center;
-    background-color: yellowgreen;
+    padding-left: 340px;
+    gap: 40px;
 }
+article > div {
+    height: 91px;
+    margin: 20px;
+}
+
