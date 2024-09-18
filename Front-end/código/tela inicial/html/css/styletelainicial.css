@@ -14,22 +14,98 @@ footer {
     margin-top: 40px; 
     height: 27px; 
 }
+.roboto-regular {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+:root {
+    font-family: Inter, sans-serif;
+    font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+  }
+  @supports (font-variation-settings: normal) {
+    :root { font-family: InterVariable, sans-serif; }
+  }
+  @font-face{
+    font-family: Inter;
+    src: local(Inter), url(fonts/Inter.ttc)
+  }
+  @font-face {
+    font-family: Roboto;
+    src:local(roboto-regular) url(fonts/Roboto);
+  }
 .textoprojeto {
+    color: rgb(53, 53, 53);
+    font-family: Roboto;
     display: flex;
     text-align: center;
     padding-left: 450px;
     padding-right: 450px;
     padding-top: 50px;
+    font-size: 25px;
 }
 .bemvindo {
+    font-family: Inter;
+    color: #25345f;
+    font-size: 45px;
     padding: 40px;
     text-align: center;
+    height: 50px;
+}
+.uppercase{
+    text-transform: uppercase;
+}
+.fundo-cor{
+    display: flex;
+    background-color: rgb(135, 240, 242, 28%);
+    border-radius: 25px;
+    text-align: center;
+    padding: 4px 32px;
+    box-sizing: border-box;
+    box-shadow: 4px 4px rgba(169, 169, 169, 0.466);
+    align-items: center;
+}
+
+button {
+    display: flex;
+    text-align: center;
+    border: none;
+    font-size: 25px;
+    padding: 4px 32px;
+    text-decoration: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    border-radius: 25px;
+    font-family: Roboto;
+    color: rgb(255, 255, 255);
+    background-color: rgb(76, 88, 125, 1);
+    box-shadow: 4px 4px rgba(169, 169, 169, 0.532);
+    justify-content: center;
+    align-items: center;
+    height: 50px;
 
 }
-.botao {
+button:hover{
+    font-family: Roboto;
+    color: rgb(169, 169, 169);
+    font-size: 25px;
+    background-color: rgb(49, 57, 81);
     text-align: center;
-    padding-top: 35px;
-    
+    border: darkgray;
+    padding: 4px 32px;
+    transform: scale(1.2);
+    text-decoration: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    outline: auto;
+}
+.center{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    border: 3px;
 }
 
 article {
