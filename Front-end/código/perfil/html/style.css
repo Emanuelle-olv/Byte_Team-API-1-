@@ -1,0 +1,263 @@
+/* Estilo geral para o corpo da página */
+body {
+    font-family: 'Roboto', sans-serif; /* Define a fonte usada no texto da página */
+    margin: 0; /* Remove a margem padrão do navegador */
+    padding: 0; /* Remove o preenchimento padrão do navegador */
+    background-color: #f5f5f5; /* Define a cor de fundo da página */
+    overflow-x: hidden; /* Impede que o conteúdo transborde horizontalmente */ 
+}
+
+/* Estilo do cabeçalho (header) */
+header {
+    display: flex; /* Define o layout como flexbox, para alinhar itens em linha ou coluna */
+    justify-content: space-between; /* Espaça os itens do header uniformemente */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    background-color: white; /* Define o fundo branco do cabeçalho */
+    padding: 15px 30px; /* Define espaçamento interno (padding) de 15px nas bordas superior e inferior, e 30px nas laterais */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave abaixo do cabeçalho */
+}
+
+header .logo img {
+    width: 100px; /* Define a largura da imagem do logo */
+}
+
+header nav a {
+    text-decoration: none; /* Remove a sublinha padrão dos links */
+    color: #25345F; /* Define a cor do texto dos links como cinza */
+    font-weight: 500; /* Define a espessura do texto (negrito leve) */
+    margin-left: 20px; /* Adiciona um espaçamento à esquerda de cada link */
+    font-size: 24px; /* Aumenta o tamanho da fonte para 18px */
+    line-height: 35px; /* Define o espaçamento entre linhas */
+    height: 35px; /* Altura do elemento*/
+    width: 59px; /* Largura do elemento*/
+    font-family: 'Roboto', sans-serif; /* Fonte*/ 
+}
+
+header nav a:hover {
+    color: #2d98da; /* Muda a cor dos links quando o mouse passa por cima (hover) */
+}
+
+/* Container principal */
+.container {
+    display: flex; /* Define um layout flexível para organizar os itens em linha */
+    justify-content: center; /* Centraliza o conteúdo dentro do container */
+    margin: 20px auto; /* Centraliza o container horizontalmente e adiciona uma margem vertical */
+    max-width: 95%; /* Limita a largura do container a 95% da tela, deixando espaço nas laterais */
+    padding: 0 15px; /* Adiciona padding nas laterais para evitar que o conteúdo toque nas bordas */
+    box-sizing: border-box; /* Inclui o padding e a borda no cálculo da largura total */
+    gap: 30px; /* Define o espaço entre os itens do container */
+    
+}
+
+/* Estilo da seção esquerda, que contém o card do vereador */
+.left-section {
+    width: 25%; /* Define a largura da seção esquerda como 25% do container */
+    margin-left: auto; /* Adiciona margem automática à esquerda para centralizar */
+    
+}
+
+/* Estilo da seção direita, onde ficam as informações detalhadas */
+.right-section {
+    width: 70%; /* Define a largura da seção direita como 65% do container */
+    margin-right: auto; /* Adiciona margem automática à direita para centralizar */
+}
+
+/* Estilo do card que exibe as informações do vereador */
+.card {
+    background-color: #D9D9D9; /* Define a cor de fundo do card como branca */
+    padding: 20px; /* Define espaçamento interno (padding) de 20px */
+    border-radius: 10px; /* Arredonda os cantos do card */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave ao redor do card */
+    text-align: center; /* Centraliza o conteúdo do card */
+}
+
+.card img {
+    max-width: 100%; /* Garante que a imagem não exceda a largura do card */
+    height: auto;
+    width: 80%; /* Define a largura da imagem dentro do card como 80% da largura do card */
+    border-radius: 10px; /* Arredonda os cantos da imagem */
+    object-fit: cover; /* Garante que a imagem ocupe o espaço inteiro sem distorção */
+}
+
+.card h1 {
+    font-size: 22px; /* Define o tamanho da fonte do título */
+    margin: 15px 0 5px; /* Define margens ao redor do título (15px em cima, 0px à direita/esquerda, 5px embaixo) */
+    color: #25345F; /* Define a cor do título como azul mais suave */
+}
+
+.card h2 {
+    font-size: 20px; /* Define o tamanho da fonte para o subtítulo */
+    color: #25345F; /* Define a cor do subtítulo como cinza */
+}
+
+/* Estilo dos parágrafos dentro do card */
+.card p {
+    font-size: 16px; /* Define o tamanho da fonte dos parágrafos */
+    color: #25345F; /* Define a cor do texto como cinza escuro */
+    margin: 5px 0; /* Define margens ao redor do parágrafo */
+    line-height: 2; /* Define o espaçamento entre as linhas de texto. Um valor de 1.6 significa que a altura da linha será 2 vezes o tamanho da fonte. */
+    font-weight: 800; /* Define o peso da fonte de 100 a 900 (menos espesso a mais espesso) */
+}
+
+/* Evitar que o email ultrapasse a borda do card */
+.card p.email {
+    word-break: break-all; /* Quebra o texto se necessário (por exemplo, para emails longos) */
+}
+
+/* Estilo do botão de comentário */
+.comment-btn {
+    display: block; /* Exibe o botão como um bloco */
+    background-color:#76C7CC;
+    ; /* Define a cor de fundo do botão como azul suave */
+    color: white; /* Define a cor do texto como branca */
+    border: none; /* Remove qualquer borda do botão */
+    border-radius: 20px; /* Arredonda os cantos do botão */
+    padding: 10px; /* Define o espaçamento interno do botão */
+    font-size: 16px; /* Define o tamanho da fonte do botão */
+    width: 100%; /* Define a largura do botão como 100% do card */
+    margin-top: 20px; /* Adiciona uma margem superior de 20px */
+    cursor: pointer; /* Mostra o cursor de mão quando o botão é clicável */
+}
+
+.comment-btn:hover {
+    background-color: #74b3f0; /* Muda a cor do fundo do botão quando o mouse passa por cima */
+}
+
+/* Estilo da seção direita, onde ficam as informações detalhadas */
+.right-section {
+    width: 65%; /* Define a largura da seção como 65% da tela */
+}
+
+/* Estilo do campo de busca e botão de filtro */
+#filtro {
+    display: flex; /* Define o layout como flexbox */
+    justify-content: space-between; /* Espaça o campo de busca e o botão de filtro */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    margin-bottom: 20px; /* Adiciona uma margem inferior de 20px */
+    background-color: #76C7CC;
+    ; /* Define a cor de fundo da barra de filtro */
+    border-radius: 20px; /* Arredonda os cantos da barra de filtro */
+    padding: 10px; /* Adiciona espaçamento interno de 10px */
+}
+
+#btnBusca {
+    width: 85%; /* Define a largura do campo de busca */
+    padding: 10px; /* Adiciona espaçamento interno */
+    border-radius: 20px; /* Arredonda os cantos do campo de busca */
+    border: none; /* Remove a borda padrão */
+    font-size: 16px; /* Define o tamanho da fonte */
+    color: white; /* Define a cor do texto como branca */
+    background-color: #76C7CC; /* Define a cor de fundo do campo de busca */
+    outline: none; /* Remove a borda ao focar no campo */
+}
+
+/* Botão de filtro */
+#btnFiltro {
+    width: 35px; /* Define a largura do botão de filtro */
+    cursor: pointer; /* Altera o cursor para mão ao passar por cima */
+    background-color: #76C7CC; /* Define a cor de fundo do botão */
+    border-radius: 50%; /* Arredonda totalmente o botão, tornando-o circular */
+    padding: 5px; /* Adiciona espaçamento interno */
+}
+
+/* Estilo das caixas de informações (Dados Biográficos e Histórico Político) */
+.info-box {
+    background-color: #d9d9d95e; /* Define a cor de fundo das caixas como branca */
+    padding: 20px; /* Adiciona espaçamento interno */
+    margin-bottom: 20px; /* Adiciona uma margem inferior */
+    border-radius: 10px; /* Arredonda os cantos das caixas */
+}
+
+.info-box h2 {
+    font-size: 18px; /* Define o tamanho da fonte dos títulos */
+    color: #333; /* Define a cor do título como cinza escuro */
+    margin-bottom: 10px; /* Adiciona uma margem inferior ao título */
+}
+
+.info-box p {
+    font-size: 14px; /* Define o tamanho da fonte do parágrafo */
+    color: #555; /* Define a cor do texto */
+    line-height: 1.8; /* Define o espaçamento entre as linhas do texto */
+}
+
+/* Estilo do rodapé */
+footer {
+    background-color: #76C7CC; /* Define a cor de fundo do rodapé como azul suave */
+    color: white; /* Define a cor do texto como branca */
+    text-align: center; /* Centraliza o texto */
+    padding: 10px; /* Adiciona espaçamento interno */
+    position: relative; /* Define a posição relativa ao rodapé */
+    width: 100%; /* Define a largura do rodapé como 100% da tela */
+    bottom: 0; /* Mantém o rodapé no final da página */
+    left: 0; /* Alinha o rodapé à esquerda */
+    right: 0; /* Garante que o rodapé se estenda até o final à direita */
+    font-size: 14px; /* Define o tamanho da fonte do rodapé */
+    }
+
+/* Responsividade */
+
+/* Estilos para telas menores, como tablets */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        width: 100%; /* Ajusta para que as seções ocupem toda a largura em telas menores */
+        margin: 0 auto; /* Centraliza o container */
+    }
+
+    .left-section, 
+    .right-section {
+        width: 100%; /* Define a largura das seções como 100% para ocupar a tela inteira */
+        
+    }
+
+    header .logo img {
+        width: 80px; /* Reduz o tamanho do logo em telas menores */
+    }
+
+    #btnBusca {
+        width: 75%; /* Reduz a largura do campo de busca */
+    }
+
+    .comment-btn {
+        font-size: 14px; /* Reduz o tamanho da fonte do botão */
+    }
+}
+
+/* Estilos para telas bem pequenas, como celulares */
+@media (max-width: 480px) {
+    header {
+        flex-direction: column; /* Empilha os itens do header em coluna */
+        padding: 10px; /* Reduz o espaçamento interno */
+    }
+
+    header .logo img {
+        width: 60px; /* Reduz o tamanho do logo ainda mais */
+    }
+
+    header nav a {
+        font-size: 14px; /* Reduz o tamanho da fonte dos links */
+        margin-left: 10px; /* Reduz o espaçamento entre os links */
+        font-size: 16px; /* Ajuste menor para telas pequenas, caso necessário */
+    }
+
+    .card h1 {
+        font-size: 18px; /* Reduz o tamanho da fonte do título no card */
+    }
+
+    .card h2 {
+        font-size: 16px; /* Reduz o tamanho da fonte do subtítulo */
+    }
+
+    #btnBusca {
+        width: 70%; /* Reduz a largura do campo de busca */
+        font-size: 14px; /* Reduz o tamanho da fonte do campo de busca */
+    }
+
+    .info-box h2 {
+        font-size: 16px; /* Reduz o tamanho da fonte dos títulos nas caixas de informação */
+    }
+
+    .info-box p {
+        font-size: 12px; /* Reduz o tamanho da fonte dos parágrafos */
+    }
+}
