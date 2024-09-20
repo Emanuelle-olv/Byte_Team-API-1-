@@ -1,49 +1,59 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Estatísticas</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <header>
     <img src="./imagensestatisticas/logo.svg" alt="logo da byte">
     <nav>
-        <a href="">Menu</a>
-        <a href="">Proposições</a>
-        <a href="">Estatísticas</a>
+      <a href="">Menu</a>
+      <a href="">Proposições</a>
+      <a href="">Estatísticas</a>
     </nav>
-</header>
+  </header>
 
-<div id="filtro">
-  <input type="text" id="btnBusca" placeholder="FILTRAR"/>
-  <img src="./imagensestatisticas/Filter.svg" id="btnFiltro" alt="Filtrar"/>
-</div>
+  <div class="container_filtros">
+    <div class="filtro">
+      <input type="text" class="filtros filtro1" placeholder="FILTRAR" />
+      <!-- <img src="./imagensestatisticas/Filter.svg" id="btnFiltro" alt="Filtrar" /> -->
+    </div>
 
-<div id="data1">
-  de:
-  <input type="date" id="btnData1" placeholder="Data1"/>
-  <img src="./imagensestatisticas/calendario.svg" id="btnData1" alt="Data1"/>
-</div>
+    <div class="data">
+      DE:
+      <input type="date" class="filtros" placeholder="Data1" />
+      <!-- <img src="./imagensestatisticas/calendario.svg" id="btnData1" alt="Data1" /> -->
+    </div>
 
-<div id="data2">
-  a:
-  <input type="date" id="btnData2" placeholder="Data2"/>
-  <img src="./imagensestatisticas/calendario.svg" id="btnData2" alt="Data2"/>
-</div>
+    <div class="data">
+      A:
+      <input type="date" class="filtros" placeholder="Data2" />
+      <!-- <img src="./imagensestatisticas/calendario.svg" id="btnData2" alt="Data2" /> -->
+    </div>
 
-<div id="grafico1">
-  NÚMERO DE FALTAS 
-  <img src="imagensestatisticas/grafico.svg" alt="grafico1">
-</div>
+  </div>
 
-<div id="grafico2">
-  NÚMERO DE FALTAS 
-  <img src="imagensestatisticas/grafico.svg" alt="grafico2">
-</div>
+  <div class="imagens">
+    <div id="grafico1">
+      <!-- NÚMERO DE FALTAS -->
+      <img src="imagensestatisticas/grafico.svg" alt="grafico1">
+    </div>
 
-<footer>
-  developed by byte
-</footer>
+    <div id="grafico2">
+      <!-- NÚMERO DE FALTAS -->
+      <img src="imagensestatisticas/grafico.svg" alt="grafico2">
+    </div>
+  </div>
+
+  <footer>
+    developed by byte
+  </footer>
 </body>
+
 </html>
