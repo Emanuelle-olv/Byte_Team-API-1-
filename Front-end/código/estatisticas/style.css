@@ -35,7 +35,7 @@ header nav a {
 }
 
 header nav a:hover {
-    color: #2d98da; /* Muda a cor dos links quando o mouse passa por cima (hover) */
+    color: #2d98da; /* Muda a cor dos links quando o mouse passa por cima(hover) */
 }
 
 .container_filtros{
