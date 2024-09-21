@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.header-sobrenos {
+  background-color: rgb(37, 52, 95);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+
+.header-sobrenos .logo {
+  margin-left: 20px;
+  height: 100%;
+  display: flex;
+}
+.header-sobrenos .logo:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3)
+}
+
+.header-sobrenos > nav > a {
+  font-size: 24px;
+  color: #fff;
+  margin: 10px;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+.meetourteam {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: Inter;
+  color: #25345f;
+  font-size: 40px;
+  padding: 40px;
+  height: 50px;
+}
+
+.perfil-sobrenos {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  height: 100%;
+}
+
+.perfil-sobrenos .btnleft {
+  background-color: #25345f;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+
+.perfil-sobrenos > div {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 280px;
+  height: 400px;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: #fff;
+  background-color: rgb(37, 52, 95);
+  cursor: grab;
+}
+
+.perfil-sobrenos > div:hover {
+  background-color: #4057e3;
+}
+.perfil-sobrenos > div > img {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  border-radius: 10%;
+}
+.perfil-sobrenos > div > p {
+  font-size: 18px;
+  color: #fff;
+}
+.perfil-sobrenos > div > p > strong {
+  font-size: 24px;
+  color: #fff;
+}
+.footer-sobrenos {
+  background-color: rgb(37, 52, 95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px; 
+  height: 27px;
+}
+.footer-sobrenos > p {
+  font-size: 14px;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
