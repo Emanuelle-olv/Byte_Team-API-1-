@@ -42,19 +42,23 @@
 
 .perfil-sobrenos {
   display: flex;
-  flex-direction: row;
+  flex-wrap: row wrap;
   align-items: center;
   justify-content: center;
-  width: 80%;
+  width: 100%;
   height: 100%;
+  padding: 0 auto;
 }
 
 .perfil-sobrenos .btnleft {
-  background-color: #25345f;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  font-size: 18px;
+  display: flex;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+
+.perfil-sobrenos .btnright {
+  display: flex;
   cursor: pointer;
   border-radius: 5px;
   margin: 0 auto;
@@ -63,11 +67,10 @@
 .perfil-sobrenos > div {
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 10px;
-  width: 280px;
+  width: 200px;
   height: 400px;
   justify-content: center;
   align-items: center;
@@ -75,10 +78,13 @@
   color: #fff;
   background-color: rgb(37, 52, 95);
   cursor: grab;
+  object-fit: cover;
+  transition: all ease-in-out 0.5s;
 }
 
 .perfil-sobrenos > div:hover {
   background-color: #4057e3;
+  width: 25%;
 }
 .perfil-sobrenos > div > img {
   width: 100px;
@@ -106,7 +112,6 @@
   font-size: 14px;
   color: #fff;
   font-family: 'Roboto', sans-serif;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  justify-content: center;
+  align-items: center;
 }
