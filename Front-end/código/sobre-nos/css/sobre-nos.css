@@ -16,8 +16,9 @@
   height: 100%;
   display: flex;
 }
+
 .header-sobrenos .logo:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3)
+  box-shadow: 0 0 20px rgba(125, 185, 215, 0.2);
 }
 
 .header-sobrenos > nav > a {
@@ -28,6 +29,11 @@
   font-family: 'Roboto', sans-serif;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .meetourteam {
   display: flex;
@@ -67,21 +73,22 @@
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 10px;
-  width: 200px;
+  width: calc(25% - 2em);
   height: 400px;
   justify-content: center;
   align-items: center;
   font-weight: bold;
   color: #fff;
   background-color: rgb(37, 52, 95);
-  cursor: grab;
-  object-fit: cover;
-  transition: all ease-in-out 0.5s;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
 }
 
 .perfil-sobrenos > div:hover {
-  background-color: #4057e3;
-  width: 30%;
+  transform: scale(1.10);
+  box-shadow: 0 0 20px rgba(108, 187, 227, 0.2);
 }
 .perfil-sobrenos > div > img {
   width: 100px;
@@ -142,7 +149,7 @@
     font-size: 32px;
   }
   .perfil-sobrenos > div {
-    width: 90%;
+    width: 80%;
     height: auto;
   }
 }
