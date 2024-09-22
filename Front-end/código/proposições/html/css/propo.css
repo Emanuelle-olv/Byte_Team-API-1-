@@ -14,6 +14,7 @@ header{
     align-items: center;
     justify-content: space-between;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
 }
 
 header .logobyte {
@@ -21,56 +22,127 @@ header .logobyte {
     max-width: 100px;
 }
 
-header .barranav ul {
-    position: relative;
+.barranav{
+    flex-grow: 1;
     display: flex;
+    margin-left: 850px;
 }
+
+header .barranav ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
 
 header .barranav li a{
     color:#25345f;
-    display:inline-block;
     text-decoration: none;
-    font-weight: 200;
     font-size: 18px;
-    margin-left: 80px;
+    
+}
+
+header .barranav li a:hover{
+    text-decoration: underline;
 }
 
 body{
     background-color: #f5f5f5;
+    background-position: center;
 }
 
 .campopesquisa {
     text-align: center;
-    display: inline-block;
+    display: flex;
     text-decoration: none;
     font-size: 16px;
-    margin-left: 120px;
+    margin-top: 140px;
+   
 }
 
 .campopesquisa .filtros{
-    text-align: justify;
-    padding-top: 130px;
-    margin: 120px;
-    width: 60px;
-    height: 15px;
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+    margin-left: 115px; 
+    width: 560px;
+    height: 14px;
     background-color: #00dadc;
-    border-radius: 8px;
+    border-radius: 30px;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.campopesquisa input[type="text"]{
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: #fff;
+    font-size: 18px;
+    font-style: italic;
+}
+
+.datetitle{
+    margin-right: 10px;
+    margin-left: 80px;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+ .campopesquisa .data {
+    display: inline-block;
+    padding: 10px;
+    width: 140px;
+    height: 14px;
+    background-color: #00dadc;
+    border-radius: 30px;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    
 }
 
 
+.campopesquisa input[type="date"]{
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: #fff;
+    font-size: 16px;
+}
 
-.container{
+.propotitulo {
     text-align: center;
-    padding: 20px;
-    margin-top: 30px;
-    background-color: ;
+    color: #25345f;
+    font-size: 18px;
+    padding-top: 40px;
+    font-style: italic;
+    margin-left: 100px;
+}
+
+.resultados {
+    text-align: left;
+    margin: 30px 80px 0 80px;
+    color:#25345f;
+    font-size: 18px;
+    font-style: italic ;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    margin: 20px;
 }
 
 .container .propobox {
-    max-width: 950px;
-    margin: 0 auto;
+    flex: 1 1 60%;
+    margin: 5px 60px 10px 40px;
     background-color: #babac4;
-    border-radius: 10px;
+    border-radius: 5px;
+    padding: 15px;
 }
 
 .container .propobox h2{
@@ -79,17 +151,21 @@ body{
     line-height: 2.5px;
     font-weight: 3px;
     text-align: justify;
+    padding-top: 30px;
+    margin: 15px;
 }
 
 .container .propobox p{
     color: #25345f;
     text-align: justify;
+    margin-left: 15px;
+    margin-right: 45px;
   
 }
-
 
 footer {
     background-color: #76C7CC;
     display: flex;
     justify-content: center;
+    height: 20px;
 }
