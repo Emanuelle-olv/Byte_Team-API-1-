@@ -32,6 +32,7 @@ header .barranav ul {
     list-style: none;
     display: flex;
     gap: 40px;
+    font-weight: bold;
 }
 
 
@@ -55,8 +56,9 @@ body{
     text-align: center;
     display: flex;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 20px;
     margin-top: 140px;
+    font-weight: bold;
    
 }
 
@@ -78,9 +80,10 @@ body{
     border: none;
     outline: none;
     background-color: transparent;
-    color: #fff;
-    font-size: 18px;
+    color: #ffffff;
+    font-size: 20px;
     font-style: italic;
+    font-weight: bold;
 }
 
 .datetitle{
@@ -109,13 +112,13 @@ body{
     outline: none;
     background-color: transparent;
     color: #fff;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .propotitulo {
     text-align: center;
     color: #25345f;
-    font-size: 18px;
+    font-size: 20px;
     padding-top: 40px;
     font-style: italic;
     margin-left: 100px;
@@ -127,13 +130,13 @@ body{
     color:#25345f;
     font-size: 18px;
     font-style: italic ;
+    font-weight: bold;
 }
 
 .container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-
     margin: 20px;
 }
 
@@ -160,12 +163,11 @@ body{
     text-align: justify;
     margin-left: 15px;
     margin-right: 45px;
-  
 }
 
 footer {
     background-color: #76C7CC;
     display: flex;
     justify-content: center;
-    height: 20px;
+    height: 30px;
 }
