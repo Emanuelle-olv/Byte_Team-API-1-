@@ -29,12 +29,6 @@
   font-family: 'Roboto', sans-serif;
 }
 
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .meetourteam {
   display: flex;
   flex-direction: column;
