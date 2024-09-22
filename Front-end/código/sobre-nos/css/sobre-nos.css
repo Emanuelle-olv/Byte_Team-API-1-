@@ -12,6 +12,7 @@
 
 .header-sobrenos .logo {
   margin-left: 20px;
+  width: auto;
   height: 100%;
   display: flex;
 }
@@ -42,7 +43,6 @@
 
 .perfil-sobrenos {
   display: flex;
-  flex-wrap: row wrap;
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -50,18 +50,15 @@
   padding: 0 auto;
 }
 
-.perfil-sobrenos .btnleft {
+.btnleft, .btnright {
   display: flex;
   cursor: pointer;
   border-radius: 5px;
   margin: 0 auto;
 }
 
-.perfil-sobrenos .btnright {
-  display: flex;
-  cursor: pointer;
-  border-radius: 5px;
-  margin: 0 auto;
+.btnleft:hover, .btnright:hover {
+  background-color: rgb(37, 52, 95);
 }
 
 .perfil-sobrenos > div {
@@ -84,7 +81,7 @@
 
 .perfil-sobrenos > div:hover {
   background-color: #4057e3;
-  width: 25%;
+  width: 30%;
 }
 .perfil-sobrenos > div > img {
   width: 100px;
@@ -114,4 +111,38 @@
   font-family: 'Roboto', sans-serif;
   justify-content: center;
   align-items: center;
+}
+
+@media screen and (max-width: 1200px) {
+  /* Adjustments for larger screens */
+  .perfil-sobrenos > div {
+    width: 250px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  /* Adjustments for tablets */
+  .perfil-sobrenos {
+    flex-direction: column;
+  }
+  .perfil-sobrenos > div {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /* Adjustments for smaller smartphones */
+  .header-sobrenos {
+    flex-direction: column;
+  }
+  .header-sobrenos nav {
+    text-align: center;
+  }
+  .meetourteam {
+    font-size: 32px;
+  }
+  .perfil-sobrenos > div {
+    width: 90%;
+    height: auto;
+  }
 }
