@@ -1,3 +1,5 @@
+
+
 /* Estilo geral para o corpo da página */
 body {
     font-family: 'Roboto', sans-serif; /* Define a fonte usada no texto da página */
@@ -5,6 +7,7 @@ body {
     padding: 0; /* Remove o preenchimento padrão do navegador */
     background-color: #f5f5f5; /* Define a cor de fundo da página */
     overflow-x: hidden; /* Impede que o conteúdo transborde horizontalmente */ 
+
 }
 
 /* Estilo do cabeçalho (header) */
@@ -56,51 +59,95 @@ header .logo img {
     cursor: pointer;
 }
 
+.btnsobrenos:hover {
+    background-color: #ecebeb;
+    border-radius: 50px;
+}
+
 
 #filtroEbusca{
     display: flex;
     justify-content: center;
     cursor: pointer;
+
+    margin-left: -600px;
 }
 
 #btnFiltro {
     border: none; /* Remove a borda do input */
     outline: none; /* Remove a borda de foco (outline) do input */
-    padding: 10px; /* Adicione padding se necessário */
+
     background-color: transparent;
 
     font-size: 24px;
-}
 
-
-
-#filtro {
     background-color: #76C7CC;
     border-radius: 50px;
-    color: #FFFFFF;
+
+    padding: 15px 150px; /* Adicione padding se necessário */
+    margin-left: 200px;
+    padding-left: 10px;
+}
+#btnFiltro::placeholder {
+    color: white; /* Cor do texto do placeholder */
+    opacity: 1; /* Define a opacidade do placeholder */
+    font-weight:bold ;
+    font-style: italic;
+
+   
+}
+
+#filtro img {
+    padding: 2px;
+
+    margin-right: 100px;
+    margin-left: -65px; /* Ajuste negativo para colar a imagem ao input */
+    margin-bottom: -15px;
+
 }
 
 #btnBusca {
     border: none; /* Remove a borda do input */
     outline: none; /* Remove a borda de foco (outline) do input */
-    padding: 10px; /* Adicione padding se necessário */
+    padding: 15px; /* Adicione padding se necessário */
     background-color: transparent;
     font-size: 24px;
-}
 
-#busca {
     background-color: #76C7CC;
     border-radius: 50px;
-    color: #FFFFFF;
+ 
+    padding: 15px 80px; /* Adicione padding se necessário */
+
+    padding-left: 10px;
 }
 
 
+#busca img {
+    padding: 2px;
+    margin-left: -50px; /* Ajuste negativo para colar a imagem ao input */
+    margin-bottom: -15px;
+}
+
+#btnBusca::placeholder {
+    color: white; /* Cor do texto do placeholder */
+    opacity: 1; /* Define a opacidade do placeholder */
+    font-weight: bold;
+    font-style: italic;
+
+   
+}
 
 #avancarVoltar {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Cria duas colunas iguais */
+    display: flex;
     align-items: center; /* Alinha verticalmente */
+    justify-content: space-between;
 
+    margin: 20px 0;
+
+    position: relative;
+
+    margin-bottom: -300px;
+    margin-top: 230px;
 }
 
 
@@ -112,19 +159,32 @@ header .logo img {
     background: none; /* Remove o fundo */
     border: none; /* Remove a borda */
     cursor: pointer;
+
+
+}
+
+#btnAvancar:hover {
+    background-color: #e5e5e6;
+    border-radius: 100px;
 }
 
 #btnVoltar {
     background: none; /* Remove o fundo */
     border: none; /* Remove a borda */
     cursor: pointer;
+
+   
+}
+
+#btnVoltar:hover {
+    background-color: #e5e5e6;
+    border-radius: 100px;
 }
 
 
 #candidatos {
     display: flex;
     justify-content: center; /* Centraliza os candidatos */
-    align-items: center; /* Alinha verticalmente */
 
     cursor: pointer;
 }
@@ -134,6 +194,11 @@ header .logo img {
     padding: 2%;
 }
 
+#candidato1:hover, #candidato2:hover, #candidato3:hover {
+    display: flex;
+    padding: 2%;
+    transform: scale(1.1);
+}
 
 footer {
     background-color: #76C7CC; /* Define a cor de fundo do rodapé como azul suave */
