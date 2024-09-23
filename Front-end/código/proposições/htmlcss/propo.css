@@ -13,6 +13,7 @@ header {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave abaixo do cabeçalho */
 }
 
+
 header .logo img {
     width: 100px; /* Define a largura da imagem do logo */
 }
