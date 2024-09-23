@@ -1,0 +1,7 @@
+cores usadas no logo da byte:
+
+
+[09/09/2024 16:54] : #00dadc (verde água)
+[09/09/2024 16:54] : #4057e3 (Azul meio roxo)
+[09/09/2024 16:54] : #25345f (Azul escuro)
+[09/09/2024 16:54] : #928df3 (Roxo claro)
