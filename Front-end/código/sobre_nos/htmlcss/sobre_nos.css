@@ -59,6 +59,7 @@
 
 .btnleft:hover, .btnright:hover {
   background-color: rgb(37, 52, 95);
+  transition-duration: 1s;
 }
 
 .perfil-sobrenos > div {
