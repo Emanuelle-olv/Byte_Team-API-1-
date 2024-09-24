@@ -78,6 +78,9 @@ header nav a:hover {
     border-radius: 10px; /* Arredonda os cantos da imagem */
     object-fit: cover; /* Garante que a imagem ocupe o espaço inteiro sem distorção */
 }
+.email {
+    width: 270px;
+}
 
 .card h1 {
     font-size: 22px; /* Define o tamanho da fonte do título */
