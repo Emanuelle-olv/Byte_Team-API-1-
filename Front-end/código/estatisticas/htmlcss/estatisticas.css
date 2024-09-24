@@ -3,6 +3,8 @@
     padding: 0;
 }
 
+
+
 body{
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
@@ -78,7 +80,9 @@ header nav a:hover {
  .imagens{
     margin: 10em;
     display: flex;
+    margin-left: 40px;
  }
+
 
  footer {
     background-color: #76C7CC; /* Define a cor de fundo do rodapé como azul suave */

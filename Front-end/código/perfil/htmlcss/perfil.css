@@ -28,9 +28,9 @@ header nav a {
     margin-left: 20px; /* Adiciona um espaçamento à esquerda de cada link */
     font-size: 24px; /* Aumenta o tamanho da fonte para 18px */
     line-height: 35px; /* Define o espaçamento entre linhas */
-    height: 35px; /* Altura do elemento*/
-    width: 59px; /* Largura do elemento*/
-    font-family: 'Roboto', sans-serif; /* Fonte*/ 
+    height: 35px; /* Altura do elemento */
+    width: 59px; /* Largura do elemento */
+    font-family: 'Roboto', sans-serif; /* Fonte */
 }
 
 header nav a:hover {
@@ -46,14 +46,12 @@ header nav a:hover {
     padding: 0 15px; /* Adiciona padding nas laterais para evitar que o conteúdo toque nas bordas */
     box-sizing: border-box; /* Inclui o padding e a borda no cálculo da largura total */
     gap: 30px; /* Define o espaço entre os itens do container */
-    
 }
 
 /* Estilo da seção esquerda, que contém o card do vereador */
 .left-section {
     width: 25%; /* Define a largura da seção esquerda como 25% do container */
     margin-left: auto; /* Adiciona margem automática à esquerda para centralizar */
-    
 }
 
 /* Estilo da seção direita, onde ficam as informações detalhadas */
@@ -64,13 +62,35 @@ header nav a:hover {
 
 /* Estilo do card que exibe as informações do vereador */
 .card {
-    background-color: #D9D9D9; /* Define a cor de fundo do card como branca */
-    padding: 20px; /* Define espaçamento interno (padding) de 20px */
-    border-radius: 10px; /* Arredonda os cantos do card */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave ao redor do card */
+    display: flex; /* Torna o card um contêiner flexível */
+    flex-direction: column; /* Alinha os itens verticalmente */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    justify-content: center; /* Centraliza os itens verticalmente */
+    background-color: #D9D9D9; /* Define a cor de fundo do card */
+    padding: 20px; /* Espaçamento interno */
+    border-radius: 10px; /* Arredonda os cantos */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
     text-align: center; /* Centraliza o conteúdo do card */
+    word-wrap: break-word; /* Quebra palavras longas */
+    overflow: hidden; /* Garante que não haverá transbordamento de conteúdo */
+    max-width: 100%; /* Limita a largura máxima do card */
+    width: 100%; /* Garante que o card ocupe 100% do espaço disponível */
+    box-sizing: border-box; /* Inclui padding e borda no cálculo de largura */
 }
 
+/* Evitar que o email ultrapasse a borda do card e forçar quebra no @ */
+.card p.email {
+    max-width: 100%;
+    word-break: break-word; /* Força a quebra em palavras longas */
+    white-space: normal; /* Permite que o texto ocupe mais de uma linha */
+    overflow-wrap: break-word;
+    text-align: center; /* Centraliza o conteúdo */
+    font-size: clamp(12px, 1.5vw, 16px); /* Define um tamanho de fonte responsivo */
+    padding: 5px;
+    line-height: 1.5; /* Melhora o espaçamento entre linhas */
+}
+
+/* Estilo da imagem no card */
 .card img {
     max-width: 100%; /* Garante que a imagem não exceda a largura do card */
     height: auto;
@@ -99,16 +119,10 @@ header nav a:hover {
     font-weight: 800; /* Define o peso da fonte de 100 a 900 (menos espesso a mais espesso) */
 }
 
-/* Evitar que o email ultrapasse a borda do card */
-.card p.email {
-    word-break: break-all; /* Quebra o texto se necessário (por exemplo, para emails longos) */
-}
-
 /* Estilo do botão de comentário */
 .comment-btn {
     display: block; /* Exibe o botão como um bloco */
-    background-color:#76C7CC;
-    ; /* Define a cor de fundo do botão como azul suave */
+    background-color: #76C7CC;
     color: white; /* Define a cor do texto como branca */
     border: none; /* Remove qualquer borda do botão */
     border-radius: 20px; /* Arredonda os cantos do botão */
@@ -134,8 +148,7 @@ header nav a:hover {
     justify-content: space-between; /* Espaça o campo de busca e o botão de filtro */
     align-items: center; /* Alinha os itens verticalmente ao centro */
     margin-bottom: 20px; /* Adiciona uma margem inferior de 20px */
-    background-color: #76C7CC;
-    ; /* Define a cor de fundo da barra de filtro */
+    background-color: #76C7CC; /* Define a cor de fundo da barra de filtro */
     border-radius: 20px; /* Arredonda os cantos da barra de filtro */
     padding: 10px; /* Adiciona espaçamento interno de 10px */
 }
@@ -192,7 +205,7 @@ footer {
     left: 0; /* Alinha o rodapé à esquerda */
     right: 0; /* Garante que o rodapé se estenda até o final à direita */
     font-size: 14px; /* Define o tamanho da fonte do rodapé */
-    }
+}
 
 /* Responsividade */
 
@@ -207,7 +220,6 @@ footer {
     .left-section, 
     .right-section {
         width: 100%; /* Define a largura das seções como 100% para ocupar a tela inteira */
-        
     }
 
     header .logo img {
@@ -220,6 +232,10 @@ footer {
 
     .comment-btn {
         font-size: 14px; /* Reduz o tamanho da fonte do botão */
+    }
+
+    .card p.email {
+        font-size: 14px; /* Reduz o tamanho da fonte em telas menores */
     }
 }
 
@@ -237,7 +253,6 @@ footer {
     header nav a {
         font-size: 14px; /* Reduz o tamanho da fonte dos links */
         margin-left: 10px; /* Reduz o espaçamento entre os links */
-        font-size: 16px; /* Ajuste menor para telas pequenas, caso necessário */
     }
 
     .card h1 {
@@ -259,5 +274,9 @@ footer {
 
     .info-box p {
         font-size: 12px; /* Reduz o tamanho da fonte dos parágrafos */
+    }
+
+    .card p.email {
+        font-size: 12px; /* Reduz ainda mais o tamanho da fonte em telas pequenas */
     }
 }

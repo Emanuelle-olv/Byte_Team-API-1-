@@ -60,11 +60,19 @@ body{
     margin-left: 115px; 
     width: 560px;
     height: 14px;
-    background-color: #00dadc;
+    background-color: #76C7CC;
     border-radius: 30px;
     border: none;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
+
+/*ajuste na cor da fonte*/
+.campopesquisa .filtros input::placeholder{
+    color: white;
+    opacity: 1;
+    font-weight: bold;
+}
+
 
 .campopesquisa input[type="text"]{
     width: 100%;
@@ -89,7 +97,7 @@ body{
     padding: 10px;
     width: 140px;
     height: 14px;
-    background-color: #00dadc;
+    background-color: #76C7CC;
     border-radius: 30px;
     border: none;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
