@@ -186,15 +186,16 @@ header .logo img {
     display: flex;
     justify-content: center; /* Centraliza os candidatos */
 
+
     cursor: pointer;
 }
 
-#candidato1, #candidato2, #candidato3 {
+#candidato1, #candidato2, #candidato3, #candidato4 {
     display: flex;
     padding: 2%;
 }
 
-#candidato1:hover, #candidato2:hover, #candidato3:hover {
+#candidato1:hover, #candidato2:hover, #candidato3:hover, #candidato4:hover{
     display: flex;
     padding: 2%;
     transform: scale(1.1);
