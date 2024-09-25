@@ -88,8 +88,10 @@ header nav a:hover {
  .imagens{
     margin: 10em;
     display: flex;
-    justify-content: center;
+    margin-left: 40px;
+
  }
+
 
 
  footer {
