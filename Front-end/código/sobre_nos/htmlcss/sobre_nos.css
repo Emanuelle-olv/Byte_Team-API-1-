@@ -23,7 +23,7 @@
 
 .header-sobrenos > nav > a {
   font-size: 24px;
-  color: #fff;
+  color: white;
   margin: 10px;
   text-decoration: none;
   font-family: 'Roboto', sans-serif;
@@ -34,7 +34,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: Inter;
+  font-family: 'Roboto', sans-serif;
   color: #25345f;
   font-size: 40px;
   padding: 40px;
@@ -53,27 +53,23 @@
 .btnleft, .btnright {
   display: flex;
   cursor: pointer;
-  border-radius: 5px;
-  margin: 0 auto;
-}
-
-.btnleft:hover, .btnright:hover {
-  background-color: rgb(37, 52, 95);
-  transition-duration: 1s;
+  margin: 0;
+  background-color: white;
+  border: none;
 }
 
 .perfil-sobrenos > div {
   display: flex;
   flex-direction: column;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid white;
   border-radius: 10px;
   width: calc(25% - 2em);
   height: 400px;
   justify-content: center;
   align-items: center;
   font-weight: bold;
-  color: #fff;
+  color: white;
   background-color: rgb(37, 52, 95);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -93,11 +89,11 @@
 }
 .perfil-sobrenos > div > p {
   font-size: 18px;
-  color: #fff;
+  color: white;
 }
 .perfil-sobrenos > div > p > strong {
   font-size: 24px;
-  color: #fff;
+  color: white;
 }
 .footer-sobrenos {
   background-color: rgb(37, 52, 95);
@@ -109,7 +105,7 @@
 }
 .footer-sobrenos > p {
   font-size: 14px;
-  color: #fff;
+  color: white;
   font-family: 'Roboto', sans-serif;
   justify-content: center;
   align-items: center;
