@@ -1,23 +1,28 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 
 
 body{
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
     font-family: 'Roboto', sans-serif;
+    width: 100%;
+    overflow-x: hidden;
+    background-color: #F5F5F5;
+
 }
 
 header {
     display: flex; /* Define o layout como flexbox, para alinhar itens em linha ou coluna */
     justify-content: space-between; /* Espaça os itens do header uniformemente */
     align-items: center; /* Alinha os itens verticalmente ao centro */
-    background-color: #F3F3F3; /* Define o fundo branco do cabeçalho */
+    background-color: #FFF; /* Define o fundo branco do cabeçalho */
     padding: 15px 30px; /* Define espaçamento interno (padding) de 15px nas bordas superior e inferior, e 30px nas laterais */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave abaixo do cabeçalho */
-    margin-top: 0;
+    width: 100%;
 }
 
 header .logo img {
@@ -31,9 +36,8 @@ header nav a {
     margin-left: 20px; /* Adiciona um espaçamento à esquerda de cada link */
     font-size: 24px; /* Aumenta o tamanho da fonte para 18px */
     line-height: 35px; /* Define o espaçamento entre linhas */
-    height: 35px; /* Altura do elemento*/
+    height: 35px; /* Altura do elemento */
     width: 59px; /* Largura do elemento*/
-    font-family: 'Roboto', sans-serif; /* Fonte*/ 
 }
 
 header nav a:hover {
@@ -55,10 +59,13 @@ header nav a:hover {
     color: #FFF;
     border: none;
     padding: 0.5em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
 }
 
 .filtro1{
-    background-image: url(imagensestatisticas/Filter.svg);
+    background-image: url(../imagensestatisticas/Filter.svg);
     background-repeat: no-repeat;
     background-position: 98%;
     background-size: 20px;
@@ -75,12 +82,13 @@ header nav a:hover {
     font-family: 'Roboto', sans-serif;
     color: #25345F;
     font-weight: 500;
+    font-size: 24px;
  }
 
  .imagens{
     margin: 10em;
     display: flex;
-    margin-left: 40px;
+    justify-content: center;
  }
 
 
@@ -89,10 +97,10 @@ header nav a:hover {
     color: white; /* Define a cor do texto como branca */
     text-align: center; /* Centraliza o texto */
     padding: 10px; /* Adiciona espaçamento interno */
-    position: relative; /* Define a posição relativa ao rodapé */
+    position: relative;
     width: 100%; /* Define a largura do rodapé como 100% da tela */
     bottom: 0; /* Mantém o rodapé no final da página */
-    left: 0; /* Alinha o rodapé à esquerda */
-    right: 0; /* Garante que o rodapé se estenda até o final à direita */
+    left: 0;
+    right: 0;   
     font-size: 14px; /* Define o tamanho da fonte do rodapé */
     }
