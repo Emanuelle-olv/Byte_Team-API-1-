@@ -50,45 +50,18 @@ body{
     font-size: 20px;
     margin-top: 50px;
     font-weight: bold;
+    font-family: 'Roboto', sans-serif; /* Fonte*/ 
    
 }
 
-.campopesquisa .filtros{
+/*tentativa de ajustar o filtro*/
+.campopesquisa .filtrosbtn {
     display: inline-block;
     text-align: center;
-    padding: 10px;
+    padding: 15px 70px;
     margin-left: 115px; 
-    width: 560px;
-    height: 14px;
-    background-color: #76C7CC;
-    border-radius: 30px;
-    border: none;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.campopesquisa input[type="text"]{
-    width: 100%;
-    border: none;
-    outline: none;
-    background-color: transparent;
-    color: #ffffff;
-    font-size: 20px;
-    font-style: italic;
-    font-weight: bold;
-}
-
-.datetitle{
-    margin-right: 10px;
-    margin-left: 80px;
-    font-style: italic;
-    margin-top: 5px;
-}
-
- .campopesquisa .data {
-    display: inline-block;
-    padding: 10px;
-    width: 140px;
-    height: 14px;
+    width: 520px;
+    height: 30px;
     background-color: #76C7CC;
     border-radius: 30px;
     border: none;
@@ -96,32 +69,76 @@ body{
     
 }
 
+.campopesquisa .btn-filtro{
+    width: 100%;
+    height: 100%;
+    background-color: #76C7CC;
+    color: white;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: bold;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    text-align: left; 
+    font-family: 'Roboto', sans-serif; /* Fonte*/ 
+}
+
+
+
+.datetitle{
+    margin-right: 20px; 
+    margin-left: 80px;
+    font-style: italic;
+    margin-top: 5px;
+    font-size: 24px;
+    color: #25345F;
+    font-family: 'Roboto', sans-serif; /* Fonte*/ 
+}
+
+ .campopesquisa .data {
+    display: inline-block;
+    padding: 15px 30px;
+    width:240px;
+    height: 30px;
+    background-color: #76C7CC;
+    border-radius: 30px;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-family: 'Roboto', sans-serif; /* Fonte*/ 
+    
+}
+
 
 .campopesquisa input[type="date"]{
+    text-align: center;
     width: 100%;
     border: none;
     outline: none;
     background-color: transparent;
     color: #fff;
     font-size: 18px;
+    font-family: 'Roboto', sans-serif; /* Fonte*/ 
 }
 
 .propotitulo {
     text-align: center;
     color: #25345f;
-    font-size: 20px;
+    font-size: 25px;
     padding-top: 40px;
     font-style: italic;
     margin-left: 100px;
+    font-family: 'Roboto', sans-serif; /* Fonte*/ 
 }
 
 .resultados {
     text-align: left;
     margin: 30px 80px 0 80px;
     color:#25345f;
-    font-size: 18px;
+    font-size: 20px;
     font-style: italic ;
     font-weight: bold;
+    font-family: 'Roboto', sans-serif; /* Fonte*/ 
 }
 
 .container {
@@ -129,6 +146,7 @@ body{
     flex-wrap: wrap;
     justify-content: space-between;
     margin: 20px;
+    font-family: 'Roboto', sans-serif; /* Fonte*/ 
 }
 
 .container .propobox {

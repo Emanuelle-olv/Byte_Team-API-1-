@@ -1,111 +1,118 @@
 * {
     margin: 0;
 }
+
 header {
     background-color: rgb(37, 52, 95);
     height: 80px;
+    box-shadow: 4px 4px rgba(0, 0, 0, 0.1);
     }
 header > img {
     max-height: 100%;}
 
-footer {
-    display: flex;
-    background-color: rgb(37, 52, 95) ;
-    margin-top: 40px; 
-    height: 27px; 
+body, html{ /*tamanho limitado para a tela não "vazar"*/
+    max-height: 100%;
+    max-width: 100%;
 }
+div.wrap{ /*usei esse "envelopamento" pra corrigir o scroll da página*/
+    height: 100%;
+    overflow: hidden;
+}
+body{
+    overflow: hidden; /**/
+}
+
+
 .roboto-regular {
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-style: normal;
   }
-  
-:root {
-    font-family: Inter, sans-serif;
-    font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
-  }
-  @supports (font-variation-settings: normal) {
-    :root { font-family: InterVariable, sans-serif; }
-  }
-  @font-face{
-    font-family: Inter;
-    src: local(Inter), url(fonts/Inter.ttc)
-  }
-  @font-face {
-    font-family: Roboto;
-    src:local(roboto-regular) url(fonts/Roboto);
-  }
-.textoprojeto {
+.inter-regular{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}  
+
+.textoprojeto { /*formatação do texto principal*/
     color: rgb(53, 53, 53);
-    font-family: Roboto;
+    font-family: "Roboto", sans-serif;
     display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    /* flex-wrap: nowrap; */
     text-align: center;
-    padding-left: 450px;
-    padding-right: 450px;
+    padding-left: 400px;
+    padding-right: 400px;
     padding-top: 50px;
-    font-size: 25px;
+    font-size: 20px;
 }
-.bemvindo {
-    font-family: Inter;
+.bemvindo { /*título da página*/
+    font-family: "Inter", sans-serif;
     color: #25345f;
-    font-size: 45px;
-    padding: 40px;
+    font-size: 40px;
+    padding: 15px;
     text-align: center;
-    height: 50px;
+    height: 40px;
 }
-.uppercase{
+.uppercase{ /*deixa a letra maiúscula*/
     text-transform: uppercase;
 }
-.fundo-cor{
+.fundo-cor{ /*coloca uma caixa colorida atrás do texto principal*/
     display: flex;
+    flex-wrap: nowrap;
     background-color: rgb(135, 240, 242, 28%);
     border-radius: 25px;
-    text-align: center;
-    padding: 4px 32px;
     box-sizing: border-box;
-    box-shadow: 4px 4px rgba(169, 169, 169, 0.466);
+    box-shadow: 4px 4px rgba(0, 0, 0, 0.1);
     align-items: center;
+    text-align: center;
+    height: 200px;
+    justify-content: stretch;
+}
+.center{ /*gambiarra para centralizar o maldito botão*/
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    border: 3px;
 }
 
-button {
+button { /*acho que o nome é autoexplicativo...*/
+    font-family: "Roboto", sans-serif;
     display: flex;
+    flex-wrap: nowrap;
     text-align: center;
-    border: none;
+    border: 3px;
     font-size: 25px;
     padding: 4px 32px;
     text-decoration: none;
     cursor: pointer;
     box-sizing: border-box;
     border-radius: 25px;
-    font-family: Roboto;
     color: rgb(255, 255, 255);
     background-color: rgb(76, 88, 125, 1);
-    box-shadow: 4px 4px rgba(169, 169, 169, 0.532);
+    box-shadow: 4px 4px rgba(0, 0, 0, 0.1);
     justify-content: center;
     align-items: center;
     height: 50px;
 
 }
-button:hover{
-    font-family: Roboto;
+button:hover{ /*passar ponteiro do mouse sobre o botão*/
+    font-family: "Roboto", sans-serif;
     color: rgb(169, 169, 169);
     font-size: 25px;
     background-color: rgb(49, 57, 81);
     text-align: center;
     border: darkgray;
     padding: 4px 32px;
-    transform: scale(1.2);
+    transform: scale(1.1);
     text-decoration: none;
     cursor: pointer;
     box-sizing: border-box;
-    outline: auto;
-}
-.center{
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    height: 200px;
-    border: 3px;
+    outline: darkgray;
 }
 
 article {
@@ -113,11 +120,29 @@ article {
     flex-wrap: nowrap;
     gap: 30px;
     align-items: center;
-    padding-left: 340px;
+    /* padding-left: 340px; */
     gap: 40px;
+    justify-content: center;
 }
 article > div {
+    display: flex;
+    flex-wrap: nowrap;
     height: 91px;
     margin: 20px;
 }
 
+footer { /*parte mais baixa da página*/
+    font-family: "Inter", sans-serif;
+    color: aliceblue;
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: rgb(37, 52, 95) ;
+    margin-top: 28px; 
+    height: 18px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+}
