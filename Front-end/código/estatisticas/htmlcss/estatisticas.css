@@ -103,19 +103,17 @@ header nav a:hover {
 .imagens {
     margin: 10em;
     display: flex;
-    justify-content: center;
-}
+    margin-left: 40px;
+
+ }
 
 
-footer {
-    background-color: #76C7CC;
-    /* Define a cor de fundo do rodapé como azul suave */
-    color: white;
-    /* Define a cor do texto como branca */
-    text-align: center;
-    /* Centraliza o texto */
-    padding: 10px;
-    /* Adiciona espaçamento interno */
+
+ footer {
+    background-color: #76C7CC; /* Define a cor de fundo do rodapé como azul suave */
+    color: white; /* Define a cor do texto como branca */
+    text-align: center; /* Centraliza o texto */
+    padding: 10px; /* Adiciona espaçamento interno */
     position: relative;
     width: 100%;
     /* Define a largura do rodapé como 100% da tela */
