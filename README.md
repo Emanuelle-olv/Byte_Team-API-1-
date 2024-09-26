@@ -6,6 +6,7 @@ Projeto baseado na metodologia ágil SCRUM, procurando desenvolver a Proatividad
 
 # Índice
 * [Objetivo do Projeto](#objetivo-do-projeto)
+* [Apresentação da equipe](#aoresentação-da-equipe)
 * [Funcionalidades e registros (vídeos e apresentações) das sprints](#funcionalidades-e-registros-(vídeos-e-apresentações)-das-sprints)
 * [Tecnologias utilizadas](#tecnologias-utilizadas)
 * [Backlog do produto](#Backlog-do-produto)
@@ -30,7 +31,8 @@ Sprint | Previsão | Status|
 
 
 
-|||||||||
+# Apresentação da equipe
+!imagem do sobre nos
 
 
 
