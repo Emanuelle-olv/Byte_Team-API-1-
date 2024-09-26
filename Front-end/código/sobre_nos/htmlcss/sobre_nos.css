@@ -131,7 +131,7 @@
 @media screen and (max-width: 768px) {
   /* Adjustments for smaller smartphones */
   .header-sobrenos {
-    flex-direction: column;
+    flex-direction: row;
   }
   .header-sobrenos nav {
     text-align: center;
