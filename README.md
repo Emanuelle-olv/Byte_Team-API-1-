@@ -28,8 +28,7 @@ Sprint | Previsão | Status|
 
 
 # Objetivo do Projeto
-
-
+![readme objetivo](https://github.com/user-attachments/assets/e24a4756-44d9-47f8-8284-e97d63e5be13)
 
 # Apresentação da equipe
 !imagem do sobre nos
@@ -48,13 +47,13 @@ Adicionar video e documentos nessa seção
 
 ## Tecnologias Utilizadas
 
-!imgferramentas
+![tecnologia readme](https://github.com/user-attachments/assets/b9dc918e-28a5-4bdc-8a7e-56cbcca00039)
 
 
 
 # Backlog do produto
 
-!pdf backlog do produto
+[backlog11.pdf](https://github.com/user-attachments/files/17156516/backlog11.pdf)
 
 
 # Burndown das sprints
