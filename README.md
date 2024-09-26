@@ -1,22 +1,18 @@
 # Aprendizado por Projeto Integrado (API) - Template
 
-ler a documentação do Git/GitHub
-
-Template para os projetos de API, ensinando na utilização do repositório digital "GitHub". 
+Bem-vindo ao repositório da [BYTE TECH]! Este projeto foi desenvolvido como [projeto API da turma de DSM]. Com uma abordagem inovadora e tecnologias de ponta, buscamos [oferecer agilidade e assessibiliade]. Sinta-se à vontade para explorar, contribuir e compartilhar suas ideias 
 
 Projeto baseado na metodologia ágil SCRUM, procurando desenvolver a Proatividade, Autonomia, Colaboração e Entrega de Resultados dos estudantes envolvidos
 
 # Índice
 * [Objetivo do Projeto](#objetivo-do-projeto)
 * [Funcionalidades e registros (vídeos e apresentações) das sprints](#funcionalidades-e-registros-(vídeos-e-apresentações)-das-sprints)
+* [Tecnologias utilizadas](#tecnologias-utilizadas)
 * [Backlog do produto](#Backlog-do-produto)
-* [Competências desenvolvidas](#competências-desenvolvidas)
 * [Autores](#autores)
 
 # Projeto (API) 
-Projeto pedagógico alicerçado na Metodologia API para ensino-aprendizado focado no desenvolvimento de competências e fundamentada nos pilares de aprendizado com problemas reais (RPBL), validação externa e mentalidade ágil. 
-Uso de estratégias para entender o problema, conceber uma solução viável ao desenvolver e implementar o MVP seguido de sua operação (CDIO). 
-Os resultados dos projetos devem obedecer ao Aviso Legal disponível no site da Fatec SJC com definição das datas do kickoff e das sprints
+Projeto educacional baseado na Metodologia API para ensino-aprendizagem, focado no desenvolvimento de habilidades e fundamentado nos pilares de aprendizado com problemas reais (RPBL), validação externa e mentalidade ágil. Utiliza estratégias para compreender o problema, conceber uma solução viável ao desenvolver e implementar o MVP seguido de sua operação (CDIO). Os resultados dos projetos devem seguir o Aviso Legal disponível no site da Fatec SJC, com definição das datas do kickoff e das sprints.
 
 Sprint | Previsão | Status|
 |------|--------|------|
@@ -26,17 +22,18 @@ Sprint | Previsão | Status|
 |03| 24/11/2024 | a fazer|
 |Feira de Soluções| 12/12 |a fazer |
 
-
+!
 
 
 
 # Objetivo do Projeto
-Este projeto tem como objetivo ajudar e facilitar na utilização da plataforma GitHub, visando:
-* Centralizar os trabalhos e projetos;
-* Organizar e estruturar as informações;
-* Versionar e controlar as alterações;
-* Facilitar o compartilhamento e feedback;
-* Desenvolver habilidades técnicas.
+
+
+
+|||||||||
+
+
+
 
 # Funcionalidades e registros (vídeos e apresentações) das sprints
 
@@ -45,72 +42,21 @@ Confira a seguir uma demonstraão das funcionalidades para cada tipo de usuário
 
 Adicionar video e documentos nessa seção
 
-[![Nome do Vídeo](https://img.youtube.com/vi/pBy1zgt0XPc/0.jpg)](https://www.youtube.com/embed/pBy1zgt0XPc)
+[![Nome do Vídeo](https://img.youtube.com/vi/pBy1zgt0XPc/0.jpg)](https://www.youtube.com/embed/pBy1zgt0XPc) adicionar video aqui(vini)
 
 ## Tecnologias Utilizadas
 
-* Jira Software
-* Microsoft Excel
-* Slack
-* VS CODE
-* HTML5
-* CSS3
-* Figma
-* Word
-* Github
+!imgferramentas
 
 
 
 # Backlog do produto
 
-## Sprint 1. Concepção
-- [x] Defina o propósito do template;
-- [x] Identifique os elementos principais;
-- [x] Esboce o layout;
-- [x] Escolha cores e fontes;
-- [x] Desenvolva o design;
-- [ ] Teste e revise;
-- [ ] Documente instruções de uso;
-- [ ] Criação do vídeo;
-- [ ] Finalize e aprovação.
-
-## Sprint 2. Desenvolvimento do Projeto
-- [ ] Documento passo a passo;
-- [ ] Vídeo passo a passo;
-- [ ] Treinamento com os professores;
-- [ ] Treinamento com os alunos;
-- [ ] Monitoramento e ajustes.
-      
-## Sprint 3 . Implementação
-- [x] Defina o propósito do template;
-- [x] Identifique os elementos principais;
-- [x] Esboce o layout;
-- [x] Escolha cores e fontes;
-- [x] Desenvolva o design;
-- [ ] Teste e revise;
-- [ ] Documente instruções de uso;
-- [ ] Criação do vídeo;
-- [ ] Finalize e aprovação.
-  
-# Competências desenvolvidas
-
-## Hard Skill (saber tecnológico)
-<details>
-<summary>Hard Skills desenvolvidas</summary>
-  
-| Tecnologia/Metodologia | Classificação |
-| ---------------------- | ------------- |
-| GitHub | ★ ★ ★ ★ ★ ★ ★ ☆ ☆ ☆ |
-| Gestão de Projetos | ★ ★ ★ ★ ★ ★ ☆ ☆ ☆ ☆ |
-| Scrum Master | ★ ★ ★ ★ ★ ★ ★ ☆ ☆ ☆ |
-| Prodct Owner | ★ ★ ★ ★ ★ ★ ★ ☆ ☆ ☆ |
-| Markdown | ★ ★ ★ ★ ★ ★ ★ ☆ ☆ ☆ |
-| Git Projects | ★ ★ ★ ★ ★ ★ ★ ☆ ☆ ☆ |
- 
+!pdf backlog do produto
 
 
-
-
+# Burndown das sprints
+!incluir print do jira (pinelli)
 
 
 # Autores
