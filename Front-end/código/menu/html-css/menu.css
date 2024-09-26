@@ -1,6 +1,3 @@
-
-
-/* Estilo geral para o corpo da página */
 body {
     font-family: 'Roboto', sans-serif; /* Define a fonte usada no texto da página */
     margin: 0; /* Remove a margem padrão do navegador */
@@ -121,13 +118,6 @@ header .logo img {
     padding-left: 10px;
 }
 
-
-#busca img {
-    padding: 2px;
-    margin-left: -50px; /* Ajuste negativo para colar a imagem ao input */
-    margin-bottom: -15px;
-}
-
 #btnBusca::placeholder {
     color: white; /* Cor do texto do placeholder */
     opacity: 1; /* Define a opacidade do placeholder */
@@ -137,70 +127,60 @@ header .logo img {
    
 }
 
+#busca img {
+    padding: 2px;
+    margin-left: -50px; /* Ajuste negativo para colar a imagem ao input */
+    margin-bottom: -15px;
+}
+
+
+
+#container {
+    display: flex;
+    align-items: center; /* Alinha verticalmente */
+    overflow: auto; 
+    
+   
+}
+
 #avancarVoltar {
     display: flex;
     align-items: center; /* Alinha verticalmente */
-    justify-content: space-between;
-
-    margin: 20px 0;
-
-    position: relative;
-
-    margin-bottom: -300px;
-    margin-top: 230px;
-}
-
-
-#btnAvancar {
-    display: flex;
-    align-items: right; /* Alinha verticalmente ao centro */
-    justify-self: end;
-
-    background: none; /* Remove o fundo */
-    border: none; /* Remove a borda */
-    cursor: pointer;
-
-
-}
-
-#btnAvancar:hover {
-    background-color: #e5e5e6;
-    border-radius: 100px;
+  
 }
 
 #btnVoltar {
     background: none; /* Remove o fundo */
     border: none; /* Remove a borda */
     cursor: pointer;
-
-   
+  
 }
 
-#btnVoltar:hover {
-    background-color: #e5e5e6;
-    border-radius: 100px;
+#btnAvancar {
+    background: none; /* Remove o fundo */
+    border: none; /* Remove a borda */
+    cursor: pointer;
+  
 }
-
 
 #candidatos {
     display: flex;
     justify-content: center; /* Centraliza os candidatos */
-
-
     cursor: pointer;
+    flex-grow: 1; /* Permite que o contêiner cresça e ocupe espaço */
+
 }
 
 #candidato1, #candidato2, #candidato3, #candidato4 {
     display: flex;
-    padding: 2%;
+    transform: scale(0.8);
+    transition: transform 0.3s; /* Suaviza a animação */
 }
 
-#candidato1:hover, #candidato2:hover, #candidato3:hover, #candidato4:hover{
-    display: flex;
-    padding: 2%;
-    transform: scale(1.1);
-    transition-duration: 1s;
+#candidato1:hover, #candidato2:hover, #candidato3:hover, #candidato4:hover {
+    transform: scale(1); /* Reduz a transformação no hover para 1.05 */
 }
+
 
 footer {
     background-color: #76C7CC; /* Define a cor de fundo do rodapé como azul suave */
@@ -214,3 +194,46 @@ footer {
     right: 0; /* Garante que o rodapé se estenda até o final à direita */
     font-size: 24px; /* Define o tamanho da fonte do rodapé */
     }
+
+
+
+
+    @media (max-width: 768px) {
+        header {
+             flex-direction: column;
+        width: 100%; /* Ajusta para que as seções ocupem toda a largura em telas menores */
+        margin: 0 auto; /* Centraliza o container */
+        }
+    
+        header nav a {
+            font-size: 18px; /* Diminui o tamanho da fonte em telas menores */
+            margin-left: 10px; /* Diminui a margem */
+        }
+    
+        #btnFiltro, #btnBusca {
+            padding: 10px 50px; /* Ajusta o padding em telas menores */
+            font-size: 18px; /* Diminui o tamanho da fonte */
+        }
+    
+        #container {
+            flex-direction: column; /* Alinha itens em coluna */
+            align-items: center; /* Centraliza os itens */
+        }
+    
+        #avancarVoltar {
+            flex-direction: column; /* Alinha botões em coluna */
+            margin-top: 10px; /* Ajusta o espaço */
+        }
+    
+        #candidatos {
+            flex-wrap: wrap; /* Permite que os candidatos se movam para a próxima linha */
+            justify-content: center; /* Centraliza os candidatos */
+        }
+    
+        #candidato1, #candidato2, #candidato3, #candidato4 {
+            transform: scale(1); /* Ajusta o tamanho em telas menores */
+        }
+
+        
+    }
+    
