@@ -126,6 +126,9 @@
   .perfil-sobrenos > div {
     width: 80%;
   }
+  .btnleft, .btnright {
+    display: none;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -139,5 +142,8 @@
   .perfil-sobrenos > div {
     width: 80%;
     height: auto;
+  }
+  .btnleft, .btnright {
+    display: none;
   }
 }
