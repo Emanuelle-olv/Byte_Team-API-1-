@@ -163,6 +163,12 @@ header nav a:hover {
     background-color: #76C7CC; /* Define a cor de fundo do campo de busca */
     outline: none; /* Remove a borda ao focar no campo */
 }
+#btnBusca::placeholder {
+    color: white; /* Cor do texto do placeholder */
+    opacity: 1; /* Define a opacidade do placeholder */
+    font-weight: bold;
+    font-style: italic; 
+}
 
 /* Botão de filtro */
 #btnFiltro {
@@ -175,7 +181,7 @@ header nav a:hover {
 
 /* Estilo das caixas de informações (Dados Biográficos e Histórico Político) */
 .info-box {
-    background-color: #d9d9d95e; /* Define a cor de fundo das caixas como branca */
+    background-color: #d9d9d95e; /* Define a cor de fundo das caixas */
     padding: 20px; /* Adiciona espaçamento interno */
     margin-bottom: 20px; /* Adiciona uma margem inferior */
     border-radius: 10px; /* Arredonda os cantos das caixas */

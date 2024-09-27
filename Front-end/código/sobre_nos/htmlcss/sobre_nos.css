@@ -126,13 +126,13 @@
   .perfil-sobrenos > div {
     width: 80%;
   }
+  .btnleft, .btnright {
+    display: none;
+    }
 }
 
 @media screen and (max-width: 768px) {
   /* Adjustments for smaller smartphones */
-  .header-sobrenos {
-    flex-direction: column;
-  }
   .header-sobrenos nav {
     text-align: center;
   }
@@ -142,5 +142,8 @@
   .perfil-sobrenos > div {
     width: 80%;
     height: auto;
+  }
+  .btnleft, .btnright {
+    display: none;
   }
 }

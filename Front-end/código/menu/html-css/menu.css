@@ -175,6 +175,25 @@ header .logo img {
 
 }
 
+#busca img {
+    padding: 2px;
+    margin-left: -50px; /* Ajuste negativo para colar a imagem ao input */
+    margin-bottom: -15px;
+}
+
+
+
+#container {
+    display: flex;
+    overflow:auto; 
+
+
+   flex-wrap: nowrap; /**permite q os elementos vao pra prox linha se n tiver espaco**/
+   
+  
+}
+
+
 #avancarVoltar {
     display: flex;
     align-items: center;
@@ -225,6 +244,17 @@ header .logo img {
     border-radius: 100px;
 }
 
+#btnAvancar {
+    background: none; /* Remove o fundo */
+    border: none; /* Remove a borda */
+    cursor: pointer;
+  
+}
+
+#btnAvancar:hover {
+    background-color: #e5e5e6;
+    border-radius: 100px;
+}
 
 #candidatos {
     display: flex;
