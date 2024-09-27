@@ -57,7 +57,7 @@ Adicionar video e documentos nessa seção
 
 
 # Burndown das sprints
-[foto_burndown_excel.png]()
+[foto_burndown_excel.png](https://github.com/Byte-Team-Fatec/Byte_Team-API-1-/blob/Desenvolvimento/Front-end/c%C3%B3digo/todas_imagens/foto_burndown_excel.png)
 
 
 # Autores
