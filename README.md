@@ -57,7 +57,7 @@ Adicionar video e documentos nessa seção
 
 
 # Burndown das sprints
-!incluir print do jira (pinelli)
+![foto_burndown_excel.png]()
 
 
 # Autores
