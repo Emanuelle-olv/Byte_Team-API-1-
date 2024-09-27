@@ -56,8 +56,11 @@ Adicionar video e documentos nessa seção
 [backlog11.pdf](https://github.com/user-attachments/files/17156516/backlog11.pdf)
 
 
-# Burndown das sprints
+# Burndown da sprint 1
 ![foto_burndown_excel.png](https://github.com/Byte-Team-Fatec/Byte_Team-API-1-/blob/Desenvolvimento/Front-end/c%C3%B3digo/todas_imagens/foto_burndown_excel.png)
+
+# Burndown da sprint 1 (Jira)
+![BurnDown_JIRA_Sprint1.png](https://github.com/Byte-Team-Fatec/Byte_Team-API-1-/blob/Desenvolvimento/Front-end/c%C3%B3digo/todas_imagens/BurnDown_JIRA_Sprint1.png)
 
 
 # Autores
