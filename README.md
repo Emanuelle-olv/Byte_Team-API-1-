@@ -1,4 +1,4 @@
-# Aprendizado por Projeto Integrado (API) - Template
+# Aprendizado por Projeto Integrado (API) 1° - Semestre
 
 Bem-vindo ao repositório da [BYTE TECH]! Este projeto foi desenvolvido como [projeto API da turma de DSM]. Com uma abordagem inovadora e tecnologias de ponta, buscamos [oferecer agilidade e assessibiliade]. Sinta-se à vontade para explorar, contribuir e compartilhar suas ideias 
 
