@@ -2,7 +2,7 @@
 
 Bem-vindo ao repositório da [BYTE TECH]! Este projeto foi desenvolvido como [projeto API da turma de DSM]. Com uma abordagem inovadora e tecnologias de ponta, buscamos [oferecer agilidade e assessibiliade]. Sinta-se à vontade para explorar, contribuir e compartilhar suas ideias 
 
-Projeto baseado na metodologia ágil SCRUM, procurando desenvolver a Proatividade, Autonomia, Colaboração e Entrega de Resultados dos estudantes envolvidos
+Projeto baseado na metodologia ágil SCRUM, procurando desenvolver a Proatividade, Autonomia, Colaboração e entrega de Resultados dos estudantes envolvidos.
 
 # Índice
 * [Objetivo do Projeto](#objetivo-do-projeto)
@@ -39,9 +39,9 @@ Sprint | Previsão | Status|
 # Funcionalidades e registros (vídeos e apresentações) das sprints
 
 Apresentação das funcionalidades
-Confira a seguir uma demonstraão das funcionalidades para cada tipo de usuário do sistema:
+Confira a seguir uma demonstraão das funcionalidades:
 
-Adicionar video e documentos nessa seção
+**Adicionar video e documentos nessa seção**
 
 [![Nome do Vídeo](https://img.youtube.com/vi/pBy1zgt0XPc/0.jpg)](https://www.youtube.com/embed/pBy1zgt0XPc) adicionar video aqui(vini)
 
