@@ -197,15 +197,6 @@ header .logo img {
 #avancarVoltar {
     display: flex;
     align-items: center;
-    /* Alinha verticalmente */
-    justify-content: space-between;
-
-    margin: 20px 0;
-
-    position: relative;
-
-    margin-bottom: -300px;
-    margin-top: 230px;
 }
 
 
@@ -258,27 +249,33 @@ header .logo img {
 
 #candidatos {
     display: flex;
-    justify-content: center;
-    /* Centraliza os candidatos */
 
-    cursor: pointer;
 }
+
+#candidato1 img, #candidato2 img, #candidato3 img, #candidato4 img {
+
+    width: 100%;  /* Defina a largura conforme necessário */
+
+}
+
 
 #candidato1,
 #candidato2,
-#candidato3 {
+#candidato3,
+#candidato4 {
     display: flex;
+    transform: scale(0.8);
+    transition: transform 0.3s;
 
-    padding: 2%;
+    cursor:pointer;
 }
 
 #candidato1:hover,
 #candidato2:hover,
-#candidato3:hover {
-    display: flex;
-    padding: 2%;
-    transform: scale(1.1);
-    transition-duration: 1s;
+#candidato3:hover, 
+#candidato4:hover {
+    transform: scale(1);
+
 }
 
 footer {
@@ -302,4 +299,44 @@ footer {
     /* Garante que o rodapé se estenda até o final à direita */
     font-size: 24px;
     /* Define o tamanho da fonte do rodapé */
+}
+
+
+@media (max-width: 768px) {
+    header {
+         flex-direction: column;
+    width: 100%; /* Ajusta para que as seções ocupem toda a largura em telas menores */
+    margin: 0 auto; /* Centraliza o container */
+    }
+
+    header nav a {
+        font-size: 18px; /* Diminui o tamanho da fonte em telas menores */
+        margin-left: 10px; /* Diminui a margem */
+    }
+
+    #btnFiltro, #btnBusca {
+        padding: 10px 50px; /* Ajusta o padding em telas menores */
+        font-size: 18px; /* Diminui o tamanho da fonte */
+    }
+
+    #container {
+        flex-direction: column; /* Alinha itens em coluna */
+        align-items: center; /* Centraliza os itens */
+    }
+
+    #avancarVoltar {
+        flex-direction: column; /* Alinha botões em coluna */
+        margin-top: 10px; /* Ajusta o espaço */
+    }
+
+    #candidatos {
+        flex-wrap: wrap; /* Permite que os candidatos se movam para a próxima linha */
+        justify-content: center; /* Centraliza os candidatos */
+    }
+
+    #candidato1, #candidato2, #candidato3, #candidato4 {
+        transform: scale(1); /* Ajusta o tamanho em telas menores */
+    }
+
+    
 }
