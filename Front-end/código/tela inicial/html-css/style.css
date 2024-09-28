@@ -11,8 +11,9 @@ header > img {
     max-height: 100%;}
 
 body, html{ /*tamanho limitado para a tela não "vazar"*/
-    max-height: 100%;
-    max-width: 100%;
+    max-height: auto;
+    max-width: auto;
+    overflow-x: hidden;
 }
 div.wrap{ /*usei esse "envelopamento" pra corrigir o scroll da página*/
     height: 100%;
@@ -20,6 +21,7 @@ div.wrap{ /*usei esse "envelopamento" pra corrigir o scroll da página*/
 }
 body{
     overflow: hidden; /**/
+    font-family: "Roboto", sans-serif;
 }
 
 
@@ -34,42 +36,44 @@ body{
     font-weight: 400;
     font-style: normal;
 }  
-
-.textoprojeto { /*formatação do texto principal*/
+#container{
+    display: flex;
+    overflow: auto;
+    flex-wrap: nowrap;
+}
+.texto-projeto { /*formatação do texto principal*/
+    display: flexbox;
+    background-color: rgb(135, 240, 242, 28%);
+    border-radius: 25px;
+    box-shadow: 4px 4px rgba(0, 0, 0, 0.1);
+    padding-bottom: 20px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: 70%;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+}
+.texto-projeto p {
     color: rgb(53, 53, 53);
-    font-family: "Roboto", sans-serif;
+    text-align: center;
+    font-size: 24px;
+    max-width: 900px;
+}
+.titulo h1{ /*formatação do título h1*/
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
-    /* flex-wrap: nowrap; */
-    text-align: center;
-    padding-left: 400px;
-    padding-right: 400px;
-    padding-top: 50px;
-    font-size: 20px;
-}
-.bemvindo { /*título da página*/
     font-family: "Inter", sans-serif;
     color: #25345f;
     font-size: 40px;
-    padding: 15px;
-    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
     height: 40px;
 }
 .uppercase{ /*deixa a letra maiúscula*/
     text-transform: uppercase;
-}
-.fundo-cor{ /*coloca uma caixa colorida atrás do texto principal*/
-    display: flex;
-    flex-wrap: nowrap;
-    background-color: rgb(135, 240, 242, 28%);
-    border-radius: 25px;
-    box-sizing: border-box;
-    box-shadow: 4px 4px rgba(0, 0, 0, 0.1);
-    align-items: center;
-    text-align: center;
-    height: 200px;
-    justify-content: stretch;
 }
 .center{ /*gambiarra para centralizar o maldito botão*/
     display: flex;
@@ -79,7 +83,20 @@ body{
     height: 100px;
     border: 3px;
 }
-
+.imagem img{
+    display:flex;
+    max-width: 10%; /* Garante que a imagem não exceda a largura do card */
+    height: auto;
+    width: 10%; /* Define a largura da imagem dentro do card como 80% da largura do card */
+    object-fit: cover;
+}
+section{
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    padding-left: 350px;
+    padding-right: 350px;
+}
 button { /*acho que o nome é autoexplicativo...*/
     font-family: "Roboto", sans-serif;
     display: flex;
@@ -117,32 +134,40 @@ button:hover{ /*passar ponteiro do mouse sobre o botão*/
 
 article {
     display: flex;
-    flex-wrap: nowrap;
-    gap: 30px;
-    align-items: center;
-    /* padding-left: 340px; */
-    gap: 40px;
-    justify-content: center;
+    justify-content: flex-start;
+    color: #25345f;
 }
 article > div {
-    display: flex;
-    flex-wrap: nowrap;
-    height: 91px;
-    margin: 20px;
+    height: 30px;
+    margin: 10px;
 }
-
 footer { /*parte mais baixa da página*/
-    font-family: "Inter", sans-serif;
-    color: aliceblue;
     display: flex;
-    flex-wrap: nowrap;
-    background-color: rgb(37, 52, 95) ;
-    margin-top: 28px; 
-    height: 18px;
-    position: fixed;
+    font-family: "Inter", sans-serif;
+    color: rgb(255, 255, 255);
+    background-color: rgb(37, 52, 95);
+    position: relative;
+    justify-content: space-evenly;
     width: 100%;
     bottom: 0;
     left: 0;
     right: 0;
     padding: 10px;
+}
+@media (max-width: 768px) {
+    header {
+         flex-direction: column;
+    width: 100%; /* Ajusta para que as seções ocupem toda a largura em telas menores */
+    margin: 0 auto; /* Centraliza o container */
+    }
+
+    header nav a {
+        font-size: 18px; /* Diminui o tamanho da fonte em telas menores */
+        margin-left: 10px; /* Diminui a margem */
+    }
+
+    #container {
+        flex-direction: column; /* Alinha itens em coluna */
+        align-items: center; /* Centraliza os itens */
+    }
 }
