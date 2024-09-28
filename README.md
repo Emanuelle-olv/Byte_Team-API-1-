@@ -31,7 +31,9 @@ Sprint | Previsão | Status|
 ![readme objetivo](https://github.com/user-attachments/assets/e24a4756-44d9-47f8-8284-e97d63e5be13)
 
 # Apresentação da equipe
-!imagem do sobre nos
+
+![equipe](https://github.com/user-attachments/assets/7a554ea7-7999-4a7e-841e-862ba6045080)
+
 
 
 
@@ -47,7 +49,8 @@ Confira a seguir uma demonstraão das funcionalidades:
 
 ## Tecnologias Utilizadas
 
-![tecnologia readme](https://github.com/user-attachments/assets/b9dc918e-28a5-4bdc-8a7e-56cbcca00039)
+![tecnologias](https://github.com/user-attachments/assets/a7812155-1645-45a2-ae56-c5aec408144d)
+
 
 
 
