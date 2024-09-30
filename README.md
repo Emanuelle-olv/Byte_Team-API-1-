@@ -41,11 +41,16 @@ Sprint | Previsão | Status|
 # Funcionalidades e registros (vídeos e apresentações) das sprints
 
 Apresentação das funcionalidades
-Confira a seguir uma demonstraão das funcionalidades:
+Confira a seguir uma demonstração das funcionalidades
 
-**Adicionar video e documentos nessa seção**
+**Acesso ao Nosso Vídeo:**
 
-[![Nome do Vídeo](https://img.youtube.com/vi/pBy1zgt0XPc/0.jpg)](https://www.youtube.com/embed/pBy1zgt0XPc) adicionar video aqui(vini)
+[![Vídeo da API, 1°Semestre (DSM)](https://github.com/Byte-Team-Fatec/Byte_Team-API-1-/blob/Desenvolvimento/Front-end/c%C3%B3digo/todas_imagens/website_byte.png?raw=true)](https://youtu.be/YpBmKlsOu7E)
+
+**Funcionamento do Websyte:**
+
+![ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/f823123a-15b6-4f66-9040-ac15df7d0d7d)
+
 
 ## Tecnologias Utilizadas
 
