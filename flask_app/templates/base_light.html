@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block head_extras %}{% endblock %}
+</head>
+<body>
+    <header>
+      <a href="{{ url_for('index') }}">
+        <img src="{{ url_for('static', filename='imagensestatisticas/logo.svg') }}" alt="logo da byte">
+      </a>
+      <nav>
+        <a href="{{ url_for('menu') }}">Menu</a>
+        <a href="{{ url_for('propo') }}">Proposições</a>
+        <a href="{{ url_for('estatisticas') }}">Estatísticas</a>
+      </nav>
+    </header>
+    {% block content %}{% endblock %}
+</body>
+</html>
