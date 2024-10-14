@@ -2,14 +2,14 @@
 {% block head_extras %}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="../html-css/menu.css">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'menu.css')}}">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 {% endblock %}
 {% block content %}
     <div id="sobrenos">
-        <a href="../../sobre_nos/htmlcss/sobre_nos.html">
+        <a href="{{ url_for('sobre_nos') }}">
         <button class="btnsobrenos">
-            <img src="../imagensmenu/sobrenos.svg" alt="Sobre nós">
+            <img src="{{ url_for('static', filename='imagens/imagensmenu/sobrenos.svg') }}" alt="Sobre nós">
         </button></a>
     </div>
     
@@ -18,12 +18,12 @@
 
         <div id="filtro">
             <input type="text" id="btnFiltro" placeholder="FILTROS"/>
-            <img src="../imagensmenu/Filter.svg" id="btnFiltro" alt="Filtrar"/>
+            <img src="{{ url_for('static', filename='imagens/imagensmenu/Filter.svg') }}" id="btnFiltro" alt="Filtrar"/>
         </div>
 
         <div id="busca">
             <input type="text" id="btnBusca" placeholder="BUSCAR"/>
-            <img src="../imagensmenu/Search.svg" id="btnBusca" alt="Buscar"/>
+            <img src="{{ url_for('static', filename='imagens/imagensmenu/Search.svg') }}" id="btnBusca" alt="Buscar"/>
         </div>
 
     </section>
@@ -35,7 +35,7 @@
 
     <div id="btnVoltar">
         <button id="btnVoltar">
-            <img src="../imagensmenu/btnvoltar.svg" id="btnVoltar" alt="Voltar"/>
+            <img src="{{ url_for('static', filename='imagens/imagensmenu/btnvoltar.svg') }}" id="btnVoltar" alt="Voltar"/>
         </button>
     </div>
 
@@ -45,31 +45,31 @@
 
         
         <div id="candidato1">
-            <img src="../imagensmenu/dulce.svg" alt="Dulce Rita">
+            <img src="{{ url_for('static', filename='imagens/imagensmenu/dulce.svg') }}" alt="Dulce Rita">
         </div>
 
         <div id="candidato2">
-          <a href="../../perfil/htmlcss/perfil.html">
-            <img src="../imagensmenu/marcao.svg" alt="Marcao">
+          <a href="{{ url_for('perfil') }}">
+            <img src="{{ url_for('static', filename='imagens/imagensmenu/marcao.svg') }}" alt="Marcao">
           </a>
         </div>
 
 
         <div id="candidato3">
 
-            <img src="../imagensmenu/hayashi.svg" alt="Walter">
+            <img src="{{ url_for('static', filename='imagens/imagensmenu/hayashi.svg') }}" alt="Walter">
            
         </div>
 
          <div id="candidato4">
 
-            <img src="../imagensmenu/jessica.png" alt="jessica">
+            <img src="{{ url_for('static', filename='imagens/imagensmenu/jessica.png') }}" alt="jessica">
         </div>
               </section>
                <div id="avancarVoltar">
                  <div id="btnAvancar">
             <button id="btnAvancar">
-                <img src="../imagensmenu/btnavancar.svg" id="btnAvancar" alt="Avancar"/>
+                <img src="{{ url_for('static', filename='imagens/imagensmenu/btnavancar.svg') }}" id="btnAvancar" alt="Avancar"/>
             </button>
     
         </div>

@@ -1,6 +1,6 @@
 {% extends "base_light.html" %}
 {% block head_extras %}
-    <link rel="stylesheet" href="./perfil.css">
+<link rel="stylesheet" href="{{url_for('static', filename = 'perfil.css')}}">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 {% endblock %}
 
@@ -8,7 +8,7 @@
     <div class="container">
         <div class="left-section">
             <div class="card">
-                <img src="../imagensperfil/marcao.jpg" alt="Marcão da Academia">
+                <img src="{{ url_for('static', filename='imagens/imagensperfil/marcao.jpg') }}" alt="Marcão da Academia">
                 <h1>Marcão da Academia</h1>
                 <h2>PSD</h2>
                 <p><strong>Telefone:</strong> (12) 3925-6604 / (12) 3925-6604</p>
@@ -21,7 +21,7 @@
         <div class="right-section">
             <div id="filtro">
                 <input type="text" id="btnBusca" placeholder="FILTRAR...">
-                <img src="../imagensperfil/Filter.svg" id="btnFiltro" alt="Filtrar">
+                <img src="{{ url_for('static', filename='imagens/imagensperfil/Filter.svg') }}" id="btnFiltro" alt="Filtrar">
             </div>
 
             <div class="info-box">
