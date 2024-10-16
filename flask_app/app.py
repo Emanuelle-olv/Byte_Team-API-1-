@@ -31,7 +31,7 @@ def perfil():
 # Rota para a página de proposições
 @app.route("/propo")
 def propo():
-    return render_template("propo.html")
+    return render_template("proposicoes2.html")
 
 
 # Rota para a página sobre nós
