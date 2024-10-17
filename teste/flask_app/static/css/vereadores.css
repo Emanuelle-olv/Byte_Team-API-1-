@@ -1,0 +1,55 @@
+/* Estilo geral */
+.container-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Define uma grid responsiva com colunas ajustáveis */
+    gap: 20px; /* Espaçamento entre os cards */
+    padding: 20px;
+}
+
+.card {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.card h1 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #25345F;
+}
+
+.card h2 {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.card .btn {
+    display: inline-block;
+    background-color: #76C7CC;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.card .btn:hover {
+    background-color: #64a2a8;
+}

@@ -1,0 +1,22 @@
+{% extends "base_light.html" %}
+
+{% block title %}
+    Todos os Vereadores
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/vereadores.css') }}">
+<div class="container-grid">
+    {% for id, vereador in vereadores.items() %}
+    <div class="card">
+        <img src="{{ vereador['foto'] }}" alt="{{ vereador['nome_civil'] }}">
+        <h1>{{ vereador['nome_civil'] }}</h1>
+        <h2>{{ vereador['partido'] }}</h2>
+        <p><strong>Telefone:</strong> {{ vereador['telefone'] }}</p>
+        <p><strong>E-mail:</strong> {{ vereador['email'] }}</p>
+        <a href="{{ url_for('perfil_vereador', id_vereador=id) }}" class="btn">Ver mais</a>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
