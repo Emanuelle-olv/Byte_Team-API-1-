@@ -1,0 +1,146 @@
+<!-- o arquivo html precisa estar dentro da pasta js porque senão o js não funciona/ não é aplicado -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <!--    arquivo base light html         
+        {% extends "base_light.html" %}
+        {% block head_extras %}
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link rel="stylesheet" href="{{url_for('static', filename = 'propo.css')}}">
+            <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+                rel="stylesheet">
+  {% endblock %}
+
+                    base light comentado porque começou a dar problema      -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposições</title>
+
+    <link rel="stylesheet" href="../htmlcss/propo.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <!--estilização com css-->
+        <link rel="stylesheet" href="/Front-end/comentários/generalcomments/css/gencomments.css">
+
+        <!--  ===== link que importa os ícones em formato de código, ele precisa estar aqui senão o ícone não funciona/ não é carregado/ traz todos os ícones que forem chamados no código  =======  -->
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+
+
+<body>
+
+    <!--   {% block content %}     -->
+
+    <section>  <!-- section da header :D  -->
+        <header>
+            <div class="logo"> <a href="../../tela inicial/html-css/index.html">
+                    <img src="../../imgcomments/logobyte.svg" alt="logo da byte"> </a>
+            </div>
+            <nav>
+                <a href="../../menu/html-css/menu.html">Menu</a>
+                <a href="../../proposições/htmlcss/propo.html">Proposições</a>
+                <a href="../../estatisticas/htmlcss/estatisticas.html">Estatísticas</a>
+            </nav>
+        </header>
+
+    </section>
+
+
+        <!-- section do título e ícones :D  -->
+         <section class="title" id="title">
+          
+            <div class="title-container">
+            <i class='bx bxs-quote-alt-left'></i> <!-- ícone de aspas importado que depende do outro link que tá no head pra funcionar-->
+             <h2>COMENTÁRIOS</h2> <!--título que fica no canto superior esquerdo da pág// hierarquia de itens na linha, por isso o título vem dps do item :(  -->
+        <!---    </div> -->
+
+             <div class="icon-star">
+                <i class='bx bxs-star'></i> <!--estrela inteira-->
+                <i class='bx bxs-star'></i> <!--estrela inteira-->
+                <i class='bx bxs-star'></i> <!--estrela inteira-->
+                <i class='bx bxs-star'></i>  <!--estrela inteira-->
+                <i class='bx bxs-star-half' ></i> <!--meia estrela -->
+             </div>
+
+            </div>
+        </section>
+            <!--   section do título e ícones      -->
+
+
+            <!--======  filtros section    ======-->
+        <section class="filtros" id="filtros">
+
+            <div class="filtros-container">
+
+            <div class="filtrosbtn">
+                <button class="btn-filtro">Partido</button>  <!--nova tentativa de ajustar o filtro-->
+                <i class='bx bxs-flag-alt' ></i> <!--ícone de bandeira-->
+            </div>
+
+
+            <div class="filtrosbtn">
+                <button class="btn-filtro">Candidato</button>  <!--nova tentativa de ajustar o filtro-->
+                <i class='bx bxs-user-circle'></i> <!--ícone de user em formato circular-->
+            </div>
+
+            </div>
+        </section>
+            <!--======  /filtros section    ======-->
+
+
+        <!--=====  section comentários     ======-->
+        <section class="comments" id="comments">
+
+
+
+        </section>
+        <!--=====  /section comentários     ======-->
+
+
+        <!-- ~~~~~~~~  section dos icons flutuantes :D      ~~~~~~~~~   -->
+        <section class="iconsflutuantes" id="iconsflutuantes">
+
+       <!--<div class="content">
+            <h1>Conteúdo Central</h1>
+            <p>Aqui está o conteúdo principal da página.</p>
+        </div>-->
+    
+        <div class="floating-icon left" id="icon-left">
+            🌟
+          
+        </div>
+
+        <div class="floating-icon right" id="icon-right">
+            ✨
+
+        </div>
+    
+        <script src="script.js"></script>
+
+        </section>
+          <!-- ~~~~~~~~  section dos icons flutuantes :D      ~~~~~~~~~   -->
+
+
+
+    <!--=====  section fooer     ======-->
+    <footer>
+        <h4>developed by byte</h4>
+    </footer>
+     <!--=====  /section footer     ======-->
+
+
+    <!--
+    {% endblock %}
+                    -->
+    </body>
+    </html>
