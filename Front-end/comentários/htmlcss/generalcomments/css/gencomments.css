@@ -87,8 +87,8 @@ header .logo img {
   
 
     .filtros-container .filtrosbtn {
-    display: inline-block;
-    text-align: right;
+    display: flex;
+    text-align: center;
     padding: 15px 70px;
     margin-left: 30px; 
     width: 80px;
@@ -103,7 +103,7 @@ header .logo img {
     color: white;
     font-size: 24px;
     text-align: center;
-    display: inline;
+    margin-left: 30px;
 }
 
 
@@ -125,13 +125,69 @@ header .logo img {
 
     /*filtros partido e candidato*/
 
-.icons .imgvereador {
-    height: 60px;
-    width: 60px;
-    border-radius: 50%;
-}
+    /*  =====   icons dos vereadores ======    */
+
+    .icons {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap; /* Permite que os itens se ajustem à linha */
+    }
+    
+    .icon-left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 10px; /* Espaçamento entre ícones */
+    }
+    
+    .icon-right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 10px; /* Espaçamento entre ícones */
+    }
+
+    
+    .imgvereador {
+        position: relative;
+        height: 130px;
+        width: 130px;
+        overflow: hidden; /* Para garantir que a imagem não ultrapasse o limite */
+        border: 6px solid transparent;   
+        background: linear-gradient(to right, #ce3eeb, yellow) padding-box, linear-gradient(to right, #ce3eeb, yellow) border-box  ; 
+        border-radius: 50%;
+    }
 
 
+    .imgvereador img::before {
+        content: '';
+        position: absolute;
+        top: -5px; /* Ajuste conforme a largura da borda */
+        left: -5px; /* Ajuste conforme a largura da borda */
+        right: -5px; /* Ajuste conforme a largura da borda */
+        bottom: -5px; /* Ajuste conforme a largura da borda */
+        background: linear-gradient(to right, #ce3eeb, yellow); /* Degradê da borda */
+        border-radius: 50%; /* Bordas arredondadas */
+        z-index: -1; /* Colocar atrás da imagem */
+    }
+
+
+
+    
+    .imgvereador img {
+        width: 100%; /* Ajusta a imagem para preencher o contêiner */
+        height: auto; /* Mantém a proporção da imagem */
+    }
+    
+    .caption {
+        text-align: center;
+        margin-top: 5px; /* Espaçamento acima da legenda */
+    }
+    
+
+
+            /*  =====   /icons dos vereadores ======    */
 
 
 /*=== footer section :D   ====*/
@@ -146,57 +202,3 @@ footer {
 
 
 
-
-        /*~~~~~   icons flutuantes      ~~~~~~~*/
-/*.floating-icon {
-    position: fixed;
-    font-size: 2rem;
-    cursor: pointer;
-    transition: 0.5s ease;
-    text-align: center; /* Centraliza o texto da legenda */
-}
-
-/*.left {
-   /* left: 20px; /* Distância da esquerda */
-  /*  top: 50%; /* Centralizado verticalmente */
-    /*transform: translateY(-50%); /* Ajusta para centralizar */
-} 
-
-/*.right {
-    right: 20px; /* Distância da direita */
-    /*top: 50%; /* Centralizado verticalmente */
-    /*transform: translateY(-50%); /* Ajusta para centralizar */
-} */
-
-/* .floating-icon:hover {
-    transform: scale(1.2); /* Efeito de zoom ao passar o mouse */
-} */
-
-/* Estilos da imagem */
-/* .imgvereador {
-    border-radius: 50%;
-    overflow: hidden; /* Garante que a imagem fique circular */
-    /*width: 120px; /* Ajuste o tamanho desejado */
-    /*height: 120px; /* Ajuste o tamanho desejado */
-    /*display: block; /* Garante que a imagem ocupe a largura do contêiner */
-   /* NÃO COLOCAR MARGIN*/
-}
-/*
-.imgvereador img {
-    width: 100%; /* A imagem ocupará 100% do contêiner */
-  /*  height: 100%; /* A imagem ocupará 100% do contêiner */
-   /* object-fit: cover; /* Cobre o contêiner sem distorção */
-}
-
-/* Estilos da legenda */
-/*.caption {
-    font-size: 0.8rem; /* Ajuste o tamanho da fonte desejado */
-   /* margin-top: 5px; /* Espaçamento acima da legenda */
-    /*color: #333; /* Cor do texto da legenda */
-}
-
-/* Efeito de zoom apenas para os ícones de texto */
- /* .left:hover, .right:hover:not(#icon-right2), .floating-icon:hover:not(.imgvereador) {
-    transform: scale(1.2);
-}  */
-          /*~~~~~   icons flutuantes      ~~~~~~~*/
