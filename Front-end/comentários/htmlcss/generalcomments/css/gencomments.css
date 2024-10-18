@@ -41,51 +41,80 @@ header .logo img {
 }
 
 
-    /*estilização específica dessa página*/
-.title {
-    margin-left: 100px; /* Margem à esquerda */
-   margin-top: 18px; /* Espaço acima para ficar 15px abaixo do header */
-}
-
-.title-container {
-    display: flex; /* Alinha o ícone e o título em linha */
-    align-items: center; /* Centraliza verticalmente */
-}
-
-.title h2 {
-    color: #25345f;
-    font-size: 36px;
-    font-style: italic;
-    margin-left: 18px; /* Espaço entre o ícone e o título */
-    margin-top: 30px;
-   
-    font-family: 'Roboto', sans-serif; 
-}
-
-.title-container i {
-    font-size: 7rem; 
-    margin-top: 0; /* Remove a margem superior */
-    margin-left: 80px;
-}
+    /*estilização específica dessa página*/   
 
 
-/*estilizar cor das estrelas/ teste*/
-.icon-star i {
-   color:  rgb(130, 2, 152);  /*COR TESTE*/
-   margin-left: 15px;
-   font-size: 42px;
-   margin-top: 22px;
-}
 
-     /*filtros partido e candidato*/
+     /*filtros partido e candidato*/ 
      .filtros-container {
           display: flex;
            flex-direction: row;
         justify-content: space-evenly;
-        
+     }
+
+     /* nova estilização do título + filtros*/
+
+     .title-filtros {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-left: 90px;
+        margin-top: 18px;
+        margin-right: 40px;
      }
   
+     /*nova estilização tbm*/
+.title-container {
+    display: flex;
+    align-items: center;
+}
 
+.title-container h2 {
+    color: #25345F;
+    font-size: 36px;
+    font-style: italic;
+    margin: 15px 15px 7px 8px;
+    padding-bottom: 10px;
+
+}
+
+.title-container i {
+    font-size: 7rem;
+    margin-left: 50px;
+}
+        /* ==== /estilização dos filtros    =======    */
+
+
+    /*  ==== estilização das estrelas     =====  */
+.icon-star {
+    display: flex;
+    align-items: center;
+    margin-left: 18px; /* espaço entre title e estrelas*/
+    padding-bottom: 3px;
+}
+
+.icon-star i {
+    color: rgb(130, 2, 152);
+    font-size: 42px;
+    margin-left: 15px;
+}
+     /*  ==== /estilização das estrelas     =====  */
+
+
+    /* ==== isso aqui também é estilização dos filstros e precisa deixar aqui também    ==== */
+.filtros-container {
+    display: flex;
+    align-items: center;
+}
+
+.filtrosbtn {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+}
+
+
+/* estilização dos filtros/ deixar assim */
     .filtros-container .filtrosbtn {
     display: flex;
     text-align: center;
@@ -121,12 +150,10 @@ header .logo img {
     text-align: center; 
     font-family: 'Roboto', sans-serif; /* Fonte*/ 
 }
+    /*  /filtros partido e candidato */
 
-
-    /*filtros partido e candidato*/
 
     /*  =====   icons dos vereadores ======    */
-
     .icons {
         display: flex;
         justify-content: space-between;
@@ -172,8 +199,6 @@ header .logo img {
         z-index: -1; /* Colocar atrás da imagem */
     }
 
-
-
     
     .imgvereador img {
         width: 100%; /* Ajusta a imagem para preencher o contêiner */
@@ -184,10 +209,17 @@ header .logo img {
         text-align: center;
         margin-top: 5px; /* Espaçamento acima da legenda */
     }
-    
-
-
             /*  =====   /icons dos vereadores ======    */
+
+
+
+        /*  =======  comments section   ======= */
+
+
+
+         /*  =======  /comments section   ======= */
+
+
 
 
 /*=== footer section :D   ====*/
