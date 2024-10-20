@@ -1,74 +1,46 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
+{% extends "base_light.html" %}
 
+{% block head_extras %}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proposiões Aprovadas</title>
-    <link rel="stylesheet" href="../html-css/proposicoes2.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Proposições Aprovadas</title>
 
     <link rel="stylesheet" href="{{ url_for('static', filename='proposicoes2.css') }}">
 
-</head>
-<body>
-    <header>
-        <a href="{{ url_for('index') }}" class="logo">
-        <img 
-            src="{{ url_for('static', filename='imagens/imagensproposicoes2/logo.svg') }}" 
-            alt="Logo da Byte"
-        />
-        </a>
-        <nav>
-            <a href="{{ url_for('menu') }}">Menu</a>
-            <a href="{{ url_for('propo') }}">Proposições</a>
-            <a href="{{ url_for('estatisticas') }}">Estatísticas</a>
-        </nav>
-    </header>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+{% endblock %}
 
-
-    <div id="sobrenos">
-        <a href="../../sobre_nos/htmlcss/sobre_nos.html">
-        <button class="btnsobrenos">
-            <img src="../imagensproposicoes2/sobrenos.svg" alt="Sobre nós">
-        </button></a>
-    </div>
-    
+{% block content %}
+<div id="sobrenos">
+    <a href="{{ url_for('sobre_nos') }}">
+    <button class="btnsobrenos">
+        <img src="{{ url_for('static', filename='imagens/imagensmenu/sobrenos.svg') }}" alt="Sobre nós">
+    </button></a>
+</div>
 
     <section id="busca">
-
-        <h1>
-            PROPOSIÇÕES APROVADAS
-        </h1>
+        <h1>PROPOSIÇÕES APROVADAS</h1>
 
         <div id="botoes">
             <div id="btnVereador">
                 <input type="text" id="btnVereador" placeholder="VEREADOR"/>
-                <img src="../imagensproposicoes2/Search.svg" alt="Buscar por candidato"/>
+                <img src="{{ url_for('static', filename='imagens/imagensproposicoes2/Search.svg') }}" alt="Buscar por candidato"/>
             </div>
             <div id="btnComissao">
                 <input type="text" id="btnComissao" placeholder="COMISSÃO"/>
-                <img src="../imagensproposicoes2/Search.svg"  alt="Buscar por comissão"/>
+                <img src="{{ url_for('static', filename='imagens/imagensproposicoes2/Search.svg') }}" alt="Buscar por comissão"/>
             </div>
         </div>
-
     </section>
 
     <div id="candidatos">
-
         <h3>CANDIDATOS AQUI</h3>
-
     </div>
 
     <footer>
         Clique em algum perfil para visualizar especificamente
     </footer>
-
-</body>
-</html>
-
-
+{% endblock %}

@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% block head_extras %}{% endblock %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='base_light.css') }}">
+    {% block head_extras %}
+    {% endblock %}
 </head>
 <body>
     <header>
@@ -12,10 +14,12 @@
       </a>
       <nav>
         <a href="{{ url_for('menu') }}">Menu</a>
-        <a href="{{ url_for('propo') }}">Proposições</a>
+        <a href="{{ url_for('propo') }}">Proposições aprovadas</a>
         <a href="{{ url_for('estatisticas') }}">Estatísticas</a>
+        <a href="{{ url_for('comentarios') }}">Comentários</a>
       </nav>
     </header>
-    {% block content %}{% endblock %}
+    {% block content %}
+    {% endblock %}
 </body>
 </html>

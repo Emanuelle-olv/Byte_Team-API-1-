@@ -1,0 +1,115 @@
+{% extends "base_light.html" %}
+{% block head_extras %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="{{url_for('static', filename = 'comentarios.css')}}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap"
+        rel="stylesheet">
+{% endblock %}
+{% block content %}
+
+<h2>Comentários</h2>
+
+<!-- Barra de pesquisa no topo -->
+<div id="search-bar">
+    <form method="GET" action="/comentarios_filtro">
+        <label for="vereador_id">Vereador:</label>
+        <select name="vereador_id">
+            <option value="">Todos</option>
+            {% for vereador in vereadores %}
+                <option value="{{ vereador.id }}">{{ vereador.nome }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="partido_id">Partido:</label>
+        <select name="partido_id">
+            <option value="">Todos</option>
+            {% for partido in partidos %}
+                <option value="{{ partido.id }}">{{ partido.nome }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="comissao_id">Comissão:</label>
+        <select name="comissao_id">
+            <option value="">Todas</option>
+            {% for comissao in comissoes %}
+                <option value="{{ comissao.id }}">{{ comissao.nome }}</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit">Filtrar Comentários</button>
+    </form>
+</div>
+
+<div id="comentarios">
+    <!-- Seção principal -->
+    <div id="main-content">
+        <ul>
+            {% for comentario in comentarios %}
+                <li>{{ comentario.comentario }} - {{ comentario.data }}</li>
+            {% else %}
+                <li>Nenhum comentário encontrado.</li>
+            {% endfor %}
+        </ul>
+
+        <button id="novoComentarioBtn">Escrever novo comentário</button>
+
+        <div id="novoComentarioForm" style="display:none;">
+            <form action="/enviar_comentario" method="POST">
+                <textarea name="comentario" required></textarea><br>
+                <label for="vereador_id">Vereador (opcional):</label>
+                <select name="vereador_id">
+                    <option value="">--Selecione um vereador--</option>
+                    {% for vereador in vereadores %}
+                        <option value="{{ vereador.id }}">{{ vereador.nome }}</option>
+                    {% endfor %}
+                </select><br>
+
+                <label for="partido_id">Partido (opcional):</label>
+                <select name="partido_id">
+                    <option value="">--Selecione um partido--</option>
+                    {% for partido in partidos %}
+                        <option value="{{ partido.id }}">{{ partido.nome }}</option>
+                    {% endfor %}
+                </select><br>
+
+                <label for="comissao_id">Comissão (opcional):</label>
+                <select name="comissao_id">
+                    <option value="">--Selecione uma comissão--</option>
+                    {% for comissao in comissoes %}
+                        <option value="{{ comissao.id }}">{{ comissao.nome }}</option>
+                    {% endfor %}
+                </select><br>
+
+                <input type="submit" value="Enviar Comentário">
+            </form>
+        </div>
+    </div>
+
+    <!-- Seção lateral para últimos comentários -->
+    <aside id="sidebar">
+        <h3>Últimos Comentários</h3>
+        <ul>
+            {% for comentario in ultimos_comentarios %}
+                <li>{{ comentario.comentario }} - {{ comentario.data }}</li>
+            {% endfor %}
+        </ul>
+    </aside>
+</div>
+
+<footer>
+    Clique em algum perfil para visualizar especificamente
+</footer>
+
+<script>
+document.getElementById("novoComentarioBtn").onclick = function() {
+    var form = document.getElementById("novoComentarioForm");
+    if (form.style.display === "none") {
+        form.style.display = "block";
+    } else {
+        form.style.display = "none";
+    }
+};
+</script>
+
+{% endblock %}
