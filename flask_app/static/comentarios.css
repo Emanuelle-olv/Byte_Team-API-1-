@@ -23,7 +23,31 @@ header {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Barra de pesquisa (movida para o topo) */
+/* Fotos dos vereadores em círculos */
+#vereadores-fotos {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+#vereadores-fotos img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: contain; /* Exibe a imagem completa dentro do círculo */
+    object-position: top; /* Centraliza a parte superior da imagem */
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#vereadores-fotos img:hover {
+    transform: scale(1.15);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Barra de pesquisa */
 #search-bar {
     display: flex;
     justify-content: space-around;
@@ -49,19 +73,112 @@ header {
     color: white;
     border: none;
     cursor: pointer;
+    transition: background 0.3s ease;
 }
 
 #search-bar button:hover {
     background-color: #185abc;
 }
 
-/* Estilo dos comentários */
-#comentarios {
-    display: flex;
-    justify-content: space-between;
+/* Estilo do overlay */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 900;
+    display: none;
+}
+
+#overlay.active {
+    display: block;
+}
+
+/* Estilo do formulário modal de novo comentário */
+#novoComentarioForm {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    display: none;
+    max-width: 500px;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+    border-top: 5px solid #1a73e8; /* Linha de destaque no topo */
+}
+
+/* Título e botões dentro do formulário */
+#novoComentarioForm h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+#novoComentarioForm select, 
+#novoComentarioForm textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #dadce0;
+    font-size: 14px;
+    color: #333;
+}
+
+#novoComentarioForm input[type="submit"] {
+    background: linear-gradient(90deg, #1a73e8, #4285f4);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    display: block;
+    margin: 10px auto;
+    transition: background 0.3s ease;
+}
+
+#novoComentarioForm input[type="submit"]:hover {
+    background: linear-gradient(90deg, #4285f4, #1a73e8);
+}
+
+#novoComentarioForm.active {
+    display: block;
+}
+
+/* Estilo do botão de novo comentário */
+#novoComentarioBtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    display: block;
+    margin: 20px 0;
+}
+
+#novoComentarioBtn:hover {
+    background-color: #45a049;
 }
 
 /* Seção principal */
+#comentarios {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
 #main-content {
     flex: 3;
     padding: 20px;
@@ -76,7 +193,6 @@ header {
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo para os últimos comentários */
 #sidebar h3 {
     font-size: 18px;
     margin-bottom: 15px;
@@ -101,31 +217,35 @@ header {
     cursor: pointer;
 }
 
-/* Cores e estilo para os botões */
-#novoComentarioBtn {
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    display: block;
-    margin: 20px auto;
-    font-size: 14px;
+#vereadores-carousel {
+    width: 100%; /* Define a largura total do contêiner */
+    overflow: hidden; /* Esconde as imagens fora da área de visão */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
-#novoComentarioBtn:hover {
-    background-color: #388e3c;
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease; /* Animação suave para deslizar */
 }
 
-/* Estilo para o formulário de novo comentário */
-#novoComentarioForm {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-    margin-top: 20px;
+.carousel-track img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 10px;
+    object-fit: contain;
+    object-position: top;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
+.carousel-track img:hover {
+    transform: scale(1.15);
+}
+
 
 /* Responsividade */
 @media (max-width: 768px) {

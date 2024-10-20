@@ -10,6 +10,34 @@
 
 <h2>Comentários</h2>
 
+<!-- Fotos dos vereadores em círculos no topo -->
+<div id="vereadores-carousel" class="carousel">
+    <div class="carousel-track">
+        <img src="{{ url_for('static', filename='imagens/img/35.jpg') }}" alt="Vereador 35">
+        <img src="{{ url_for('static', filename='imagens/img/38.jpg') }}" alt="Vereador 38">
+        <img src="{{ url_for('static', filename='imagens/img/40.jpg') }}" alt="Vereador 40">
+        <img src="{{ url_for('static', filename='imagens/img/43.jpg') }}" alt="Vereador 43">
+        <img src="{{ url_for('static', filename='imagens/img/44.jpg') }}" alt="Vereador 44">
+        <img src="{{ url_for('static', filename='imagens/img/45.jpg') }}" alt="Vereador 45">
+        <img src="{{ url_for('static', filename='imagens/img/47.jpg') }}" alt="Vereador 47">
+        <img src="{{ url_for('static', filename='imagens/img/50.jpg') }}" alt="Vereador 50">
+        <img src="{{ url_for('static', filename='imagens/img/55.jpg') }}" alt="Vereador 55">
+        <img src="{{ url_for('static', filename='imagens/img/234.jpg') }}" alt="Vereador 234">
+        <img src="{{ url_for('static', filename='imagens/img/237.jpg') }}" alt="Vereador 237">
+        <img src="{{ url_for('static', filename='imagens/img/238.jpg') }}" alt="Vereador 238">
+        <img src="{{ url_for('static', filename='imagens/img/239.jpg') }}" alt="Vereador 239">
+        <img src="{{ url_for('static', filename='imagens/img/240.jpg') }}" alt="Vereador 240">
+        <img src="{{ url_for('static', filename='imagens/img/242.jpg') }}" alt="Vereador 242">
+        <img src="{{ url_for('static', filename='imagens/img/243.jpg') }}" alt="Vereador 243">
+        <img src="{{ url_for('static', filename='imagens/img/244.jpg') }}" alt="Vereador 244">
+        <img src="{{ url_for('static', filename='imagens/img/245.jpg') }}" alt="Vereador 245">
+        <img src="{{ url_for('static', filename='imagens/img/246.jpg') }}" alt="Vereador 246">
+        <img src="{{ url_for('static', filename='imagens/img/247.jpg') }}" alt="Vereador 247">
+        <img src="{{ url_for('static', filename='imagens/img/249.jpg') }}" alt="Vereador 249">
+    </div>
+</div>
+
+
 <!-- Barra de pesquisa no topo -->
 <div id="search-bar">
     <form method="GET" action="/comentarios_filtro">
@@ -53,6 +81,7 @@
         </ul>
 
         <button id="novoComentarioBtn">Escrever novo comentário</button>
+        <div id="overlay"></div>
 
         <div id="novoComentarioForm" style="display:none;">
             <form action="/enviar_comentario" method="POST">
@@ -101,15 +130,45 @@
     Clique em algum perfil para visualizar especificamente
 </footer>
 
+<!-- Script para controle do modal -->
+{% block scripts %}
 <script>
-document.getElementById("novoComentarioBtn").onclick = function() {
-    var form = document.getElementById("novoComentarioForm");
-    if (form.style.display === "none") {
+    document.getElementById("novoComentarioBtn").onclick = function() {
+        var form = document.getElementById("novoComentarioForm");
+        var overlay = document.getElementById("overlay");
         form.style.display = "block";
-    } else {
+        overlay.classList.add("active");
+    };
+
+    document.getElementById("overlay").onclick = function() {
+        var form = document.getElementById("novoComentarioForm");
+        var overlay = document.getElementById("overlay");
         form.style.display = "none";
+        overlay.classList.remove("active");
+    };
+
+    // Código do carrossel
+    const track = document.querySelector('.carousel-track');
+    let index = 0;
+
+    function moveCarousel() {
+        const totalImages = document.querySelectorAll('.carousel-track img').length;
+        const imageWidth = document.querySelector('.carousel-track img').clientWidth;
+        const maxIndex = totalImages - Math.floor(window.innerWidth / (imageWidth + 20)); // Ajusta de acordo com o número visível de imagens
+
+        // Incrementa o índice para mover o carrossel
+        index++;
+        if (index > maxIndex) {
+            index = 0; // Reinicia quando chegar ao final
+        }
+
+        // Move o carrossel
+        track.style.transform = `translateX(-${index * (imageWidth + 20)}px)`;
     }
-};
+
+    // Faz o carrossel mover automaticamente a cada 3 segundos
+    setInterval(moveCarousel, 3000);
 </script>
+{% endblock %}
 
 {% endblock %}
