@@ -1,4 +1,4 @@
-/* o css precisa de uma pasta própria pra não conflitar com o js  */
+
 
 *{
     margin: 0;
@@ -122,7 +122,9 @@ header .logo img {
     margin-left: 30px; 
     width: 80px;
     height: 25px;
-    background: linear-gradient(to right, #ce3eeb, yellow); /* Gradiente */;
+        background: linear-gradient(to right, #90639E, #9AAECE);
+
+   /*  background: linear-gradient(to right, #ce3eeb, yellow); /* Gradiente/ cores teste, usadas primeiro */;
     border-radius: 30px;
     border: none;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2)
@@ -157,7 +159,10 @@ header .logo img {
     .icons {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+      /*  align-items: center;  antigo */
+
+      align-items: flex-start; 
+
         flex-wrap: wrap; /* Permite que os itens se ajustem à linha */
     }
     
@@ -173,6 +178,9 @@ header .logo img {
         flex-direction: column;
         align-items: center;
         margin: 10px; /* Espaçamento entre ícones */
+
+
+        width: 15%;
     }
 
     
@@ -182,19 +190,21 @@ header .logo img {
         width: 130px;
         overflow: hidden; /* Para garantir que a imagem não ultrapasse o limite */
         border: 6px solid transparent;   
-        background: linear-gradient(to right, #ce3eeb, yellow) padding-box, linear-gradient(to right, #ce3eeb, yellow) border-box  ; 
+        background: linear-gradient(to right, #90639E, #9AAECE) padding-box, linear-gradient(to right, #90639E, #9AAECE) border-box  ; 
+         /*  background: linear-gradient(to right, #ce3eeb, yellow); cores teste/ usadas primeiro  */
         border-radius: 50%;
     }
 
 
     .imgvereador img::before {
         content: '';
-        position: absolute;
+        position: absolute; 
         top: -5px; /* Ajuste conforme a largura da borda */
         left: -5px; /* Ajuste conforme a largura da borda */
         right: -5px; /* Ajuste conforme a largura da borda */
         bottom: -5px; /* Ajuste conforme a largura da borda */
-        background: linear-gradient(to right, #ce3eeb, yellow); /* Degradê da borda */
+        background: linear-gradient(to right, #90639E, #9AAECE); /* Degradê da borda */
+        /*  background: linear-gradient(to right, #ce3eeb, yellow); cores teste/ usadas primeiro  */
         border-radius: 50%; /* Bordas arredondadas */
         z-index: -1; /* Colocar atrás da imagem */
     }
@@ -214,6 +224,69 @@ header .logo img {
 
 
         /*  =======  comments section   ======= */
+
+        
+        
+        .comments-container {
+            display: flex;
+            flex-direction: column; /* Coloca as caixas em coluna */
+            align-items: center; /* Centraliza as caixas */
+            gap: 20px; /* Espaçamento entre as caixas */
+
+
+         /*   justify-content: center;  */
+
+
+            /*
+            margin-top: 60px;
+            margin-left: 500px;
+            margin-right: 500px;
+                                    */
+
+            max-width: 600px;    
+            
+            margin: 0 auto;
+
+            flex: 1;
+           
+        }
+
+
+        .comments-container.comments-box {
+            display: flex;
+            align-items: center;
+         /*   margin-right: 300px;   */
+        }
+
+
+
+        
+        .comments-box {
+            color: white; /* cor do texto */
+            border-radius: 8px; /* Bordas arredondadas */
+            padding: 20px; /* Espaçamento interno */
+            width: 450px; /* Largura fixa das caixas */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destaque */
+
+            background: linear-gradient(to right, #90639E, #9AAECE);
+
+            margin: 10px 0;
+        }
+
+
+        .comments-box i {
+            color: white;
+            font-size: 30px;
+        }
+        
+
+        .comments-box p {
+            color: white;
+            font-size: 20px;
+            margin-left: 24px;
+            margin-right: 24px;
+            padding-bottom: 10px;
+        }
 
 
 
