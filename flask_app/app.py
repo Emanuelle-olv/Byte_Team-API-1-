@@ -4,15 +4,17 @@ import mysql.connector
 # Inicializar a aplicação Flask
 app = Flask(__name__)
 
-# Configurar a conexão com o banco de dados
-db = mysql.connector.connect(
-    host="localhost",
-    user="apibyte",
-    password="190@Mudar",
-    database="apibyte",
-    charset='utf8mb4',
-    collation='utf8mb4_general_ci'
-)
+# Função para obter uma nova conexão com o banco de dados
+def get_db_connection():
+    # Abre uma nova conexão com o banco de dados sempre que necessário
+    return mysql.connector.connect(
+        host="localhost",
+        user="apibyte",
+        password="190@Mudar",
+        database="apibyte",
+        charset='utf8mb4',
+        collation='utf8mb4_general_ci'
+    )
 
 # Rotas já existentes
 
@@ -39,9 +41,12 @@ def propo():
 @app.route("/sobre_nos")
 def sobre_nos():
     return render_template("sobre_nos.html")
+
 # Rota para exibir os comentários com filtros e para inserir novos comentários
 @app.route("/comentarios", methods=["GET", "POST"])
 def comentarios():
+    # Abre uma conexão com o banco de dados
+    db = get_db_connection()
     cursor = db.cursor(dictionary=True)
 
     # Se o método for POST, insere um novo comentário
@@ -62,6 +67,10 @@ def comentarios():
         """, (comentario, vereador_id, partido_id, comissao_id))
         db.commit()
 
+        # Fecha a conexão
+        cursor.close()
+        db.close()
+
         return redirect("/comentarios")
 
     # Se for GET, renderiza a página de comentários com os filtros
@@ -79,14 +88,18 @@ def comentarios():
         # Selecionar todos os comentários (sem filtro)
         cursor.execute("SELECT * FROM comentarios")
         comentarios = cursor.fetchall()
-        
+
+        # Fecha a conexão
         cursor.close()
+        db.close()
 
         return render_template("comentarios.html", vereadores=vereadores, partidos=partidos, comissoes=comissoes, comentarios=comentarios)
 
 # Rota para aplicar os filtros nos comentários
 @app.route("/comentarios_filtro", methods=["GET"])
 def comentarios_filtro():
+    # Abre uma conexão com o banco de dados
+    db = get_db_connection()
     cursor = db.cursor(dictionary=True)
 
     # Filtros
@@ -122,10 +135,13 @@ def comentarios_filtro():
     cursor.execute("SELECT id, nome FROM comissoes")
     comissoes = cursor.fetchall()
 
+    # Fecha a conexão
     cursor.close()
+    db.close()
 
     # Renderizar a página com os comentários filtrados
     return render_template("comentarios.html", comentarios=comentarios, vereadores=vereadores, partidos=partidos, comissoes=comissoes)
+
 # Rodar a aplicação
 if __name__ == "__main__":
     app.run(debug=True)
