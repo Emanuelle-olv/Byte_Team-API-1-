@@ -68,6 +68,7 @@ header .logo img {
 
 
 
+
 #sobrenos {
     display: flex;
     justify-content: flex-end;
@@ -94,7 +95,7 @@ header .logo img {
     justify-content: center;
     cursor: pointer;
 
-    margin-left: -600px;
+    margin-left: -300px;
 }
 
 #btnFiltro {
@@ -113,7 +114,7 @@ header .logo img {
     padding: 15px 150px;
     /* Adicione padding se necessário */
     margin-left: 200px;
-    padding-left: 10px;
+    padding-left: 40px;
 }
 
 #btnFiltro::placeholder {
@@ -133,7 +134,7 @@ header .logo img {
     margin-right: 100px;
     margin-left: -65px;
     /* Ajuste negativo para colar a imagem ao input */
-    margin-bottom: -15px;
+    margin-bottom: 10px;
 
 }
 
@@ -153,7 +154,7 @@ header .logo img {
     padding: 15px 80px;
     /* Adicione padding se necessário */
 
-    padding-left: 10px;
+    padding-left: 40px;
 }
 
 
@@ -161,7 +162,7 @@ header .logo img {
     padding: 2px;
     margin-left: -50px;
     /* Ajuste negativo para colar a imagem ao input */
-    margin-bottom: -15px;
+    margin-bottom: 10px;
 }
 
 #btnBusca::placeholder {
@@ -175,108 +176,78 @@ header .logo img {
 
 }
 
-#busca img {
-    padding: 2px;
-    margin-left: -50px; /* Ajuste negativo para colar a imagem ao input */
-    margin-bottom: -15px;
-}
 
 
-
-#container {
-    display: flex;
-    overflow:auto; 
-
-
-   flex-wrap: nowrap; /**permite q os elementos vao pra prox linha se n tiver espaco**/
-   
-  
-}
-
-
-#avancarVoltar {
-    display: flex;
-    align-items: center;
-}
-
-
-#btnAvancar {
-    display: flex;
-    align-items: right;
-    /* Alinha verticalmente ao centro */
-    justify-self: end;
-
-    background: none;
-    /* Remove o fundo */
+#btnAvancar, #btnVoltar {
+    background-color: transparent;
+    text-decoration: none;
     border: none;
-    /* Remove a borda */
+    outline: none;
+    box-shadow: none;
+
+}
+#btnAvancar{
+    margin-right: -5%;
+}
+#btnVoltar{
+    margin-left: -5%;
+}
+
+
+
+
+
+
+
+.carousel-inner {
+    display: flex; /* Permite que os itens sejam alinhados horizontalmente */
+    flex-direction: row;
+}
+
+
+
+.carousel-item img {
+    display: flex; /* Alinha as imagens na horizontal */
+    flex-direction: row;
+    transition: transform 0.3s; /* Para a animação de aumento */
     cursor: pointer;
 
-
+    border-radius: 100%;
 }
 
-#btnAvancar:hover {
-    background-color: #e5e5e6;
-    border-radius: 100px;
+.carousel-item img:hover {
+    transform: scale(1.1); /* Aumenta a imagem ao passar o mouse */
 }
 
-#btnVoltar {
-    background: none;
-    /* Remove o fundo */
-    border: none;
-    /* Remove a borda */
-    cursor: pointer;
-
-
+.carousel-control-prev img,
+.carousel-control-next img {
+    transition: filter 0.3s; /* Para a animação de escurecimento */
 }
 
-#btnVoltar:hover {
-    background-color: #e5e5e6;
-    border-radius: 100px;
-}
-
-#btnAvancar {
-    background: none; /* Remove o fundo */
-    border: none; /* Remove a borda */
-    cursor: pointer;
-  
-}
-
-#btnAvancar:hover {
-    background-color: #e5e5e6;
-    border-radius: 100px;
-}
-
-#candidatos {
-    display: flex;
-
-}
-
-#candidato1 img, #candidato2 img, #candidato3 img, #candidato4 img {
-
-    width: 100%;  /* Defina a largura conforme necessário */
-
+.carousel-control-prev img:hover,
+.carousel-control-next img:hover {
+    filter: brightness(0.7); /* Escurece a imagem dos botões ao passar o mouse */
 }
 
 
-#candidato1,
-#candidato2,
-#candidato3,
-#candidato4 {
-    display: flex;
-    transform: scale(0.8);
-    transition: transform 0.3s;
 
-    cursor:pointer;
-}
 
-#candidato1:hover,
-#candidato2:hover,
-#candidato3:hover, 
-#candidato4:hover {
-    transform: scale(1);
 
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 footer {
     background-color: #76C7CC;
@@ -300,6 +271,23 @@ footer {
     font-size: 24px;
     /* Define o tamanho da fonte do rodapé */
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @media (max-width: 768px) {

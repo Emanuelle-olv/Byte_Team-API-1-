@@ -50,31 +50,9 @@
 
     <div id="container">
       <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-        <!-- Indicadores -->
-        <div class="carousel-indicators" id="carousel-indicators"></div>
-
-        <!-- Imagens do carrossel -->
         <div class="carousel-inner" id="carousel-inner">
-          <div class="carousel-item active">
-            <div class="carousel-images"> <!-- Novo contêiner para alinhar horizontalmente -->
-                <img src="../imagensmenu/dulce.svg" alt="Dulce Rita" />
-                <img src="../imagensmenu/marcao.svg" alt="Marcao" />
-                <img src="../imagensmenu/hayashi.svg" alt="Walter" />
-                <img src="../imagensmenu/jessica.png" alt="Jessica" />
-            </div>
-          </div>
-          <div class="carousel-item">
-
-              <!-- Novo contêiner para alinhar horizontalmente -->
-              <img src="../imagensmenu/hayashi.svg" alt="Extra 1" />
-              <img src="../imagensmenu/hayashi.svg" alt="Extra 2" />
-              <img src="../imagensmenu/hayashi.svg" alt="Extra 3" />
-              <img src="../imagensmenu/hayashi.svg" alt="Extra 4" />
-
-          </div>
+          <div class="carousel-item"></div>
         </div>
-
-        <!-- Botão personalizado de voltar -->
         <button
           class="carousel-control-prev"
           type="button"
@@ -89,8 +67,6 @@
           />
           <span class="visually-hidden">Anterior</span>
         </button>
-
-        <!-- Botão personalizado de avançar -->
         <button
           class="carousel-control-next"
           type="button"
@@ -113,21 +89,33 @@
 
     <script>
       const images = [
-        { src: "../imagensmenu/dulce.svg", alt: "Dulce Rita" },
+        { src: "/teste/flask_app/static/img/35.jpg", alt: "", caption: "Amélia" },
         {
-          src: "../imagensmenu/marcao.svg",
+          src: "/teste/flask_app/static/img/47.jpg",
           alt: "Marcao",
           link: "../../perfil/htmlcss/perfil.html",
         },
-        { src: "../imagensmenu/hayashi.svg", alt: "Walter" },
-        { src: "../imagensmenu/jessica.png", alt: "Jessica" },
-        { src: "../imagensmenu/hayashi.svg", alt: "Extra 1" },
-        { src: "../imagensmenu/hayashi.svg", alt: "Extra 2" },
-        { src: "../imagensmenu/hayashi.svg", alt: "Extra 3" },
-        { src: "../imagensmenu/hayashi.svg", alt: "Extra 4" },
+        { src:"/teste/flask_app/static/img/38.jpg", alt:"" },
+        {  src:"/teste/flask_app/static/img/45.jpg", alt:"" },
+        {  src:"/teste/flask_app/static/img/40.jpg", alt:""},
+        {  src:"/teste/flask_app/static/img/44.jpg", alt:""},
+        {  src:"/teste/flask_app/static/img/43.jpg", alt:"" },
+        {  src:"/teste/flask_app/static/img/246.jpg", alt:"" },
+        {  src:"/teste/flask_app/static/img/247.jpg", alt:"" },
+        {  src:"/teste/flask_app/static/img/238.jpg", alt:"" },
+        {  src:"/teste/flask_app/static/img/47.jpg", alt:"" },
+        {  src:"/teste/flask_app/static/img/244.jpg", alt:"" },
+        {  src:"/teste/flask_app/static/img/242.jpg", alt:"" },
+        {  src:"/teste/flask_app/static/img/243.jpg", alt:"" },
+        {  src:"/teste/flask_app/static/img/245.jpg", alt:"" },
+        {  src:"/teste/flask_app/static/img/50.jpg", alt:"" },
+        {  src:"/teste/flask_app/static/img/234.jpg", alt:"" },
+        {  src:"/teste/flask_app/static/img/248.jpg", alt:"" },
+        {  src:"/teste/flask_app/static/img/239.jpg", alt:"" },
+        {  src:"/teste/flask_app/static/img/55.jpg", alt:"" },
       ];
 
-      const itemsPerPage = 4;
+      const itemsPerPage = 3;
       let currentIndex = 0;
       const carouselInner = document.getElementById("carousel-inner");
 
