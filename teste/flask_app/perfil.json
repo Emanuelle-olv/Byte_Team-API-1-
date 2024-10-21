@@ -5,7 +5,18 @@
         "partido": "PARTIDO DOS TRABALHADORES (PT)",
         "telefone": "/ (12) 3925-6588",
         "email": "amelia@camarasjc.sp.gov.br",
-        "foto": "static/img/35.jpg"
+        "foto": "static/img/35.jpg",
+        "mocoes": "466",
+        "projeto_de_lei":"333",
+        "projeto_de_lei_aprovados":"72",
+        "requerimento":"4252",
+        "partido_sigla":"PT",
+        "comissoes_atuantes_id":["37","26"],
+        "presenca":"305",
+        "faltas":"0",
+        "faltas_justificadas":"5",
+        "gabinete":null
+
     },
     "238": {
         "id": 238,
@@ -13,7 +24,17 @@
         "partido": "PARTIDO DA SOCIAL DEMOCRACIA BRASILEIRA (PSDB)",
         "telefone": "/ (12) 3925-6701",
         "email": "joseclaudio@camarasjc.sp.gov.br",
-        "foto": "static/img/238.jpg"
+        "foto": "static/img/238.jpg",
+        "mocoes":"93",
+        "projeto_de_lei":"188",
+        "projeto_de_lei_aprovados":"41",
+        "requerimento":"481",
+        "partido_sigla":"PSDB",
+        "comissoes_atuantes_id":["40","42","38"],
+        "presenca":"302",
+        "faltas":"0",
+        "faltas_justificadas":"8",
+        "gabinete":null
     },
     "38": {
         "id": 38,
@@ -21,7 +42,17 @@
         "partido": "PARTIDO UNI\u00c3O BRASIL (UNI\u00c3O BRASIL)",
         "telefone": "/ (12) 3925-6534",
         "email": "dulce.rita@camarasjc.sp.gov.br",
-        "foto": "static/img/38.jpg"
+        "foto": "static/img/38.jpg",
+        "mocoes":"39",
+        "projeto_de_lei":"797",
+        "projeto_de_lei_aprovados":"336",
+        "requerimento":"10997",
+        "partido_sigla":"UNIAO BRASIL",
+        "comissoes_atuantes":["39","38"],
+        "presenca":"288",
+        "faltas":"0",
+        "faltas_justificadas":"22",
+        "gabinete":null
     },
     "247": {
         "id": 247,
@@ -29,7 +60,17 @@
         "partido": "PARTIDO SOCIAL DEMOCR\u00c1TICO (PSD)",
         "telefone": "/ (12) 3925-6570",
         "email": "fabiaozagueiro@camarasjc.sp.gov.br",
-        "foto": "static/img/247.jpg"
+        "foto": "static/img/247.jpg",
+        "mocoes":"24",
+        "projeto_de_lei":"166",
+        "projeto_de_lei_aprovados":"72",
+        "requerimento":"145",
+        "partido_sigla":"PSD",
+        "comissoes_atuantes":["39","26"],
+        "presenca":"310",
+        "faltas":"0",
+        "faltas_justificadas":"0",
+        "gabinete":null
     },
     "40": {
         "id": 40,
@@ -37,7 +78,17 @@
         "partido": "MOVIMENTO DEMOCR\u00c1TICO BRASILEIRO (MDB)",
         "telefone": "/ (12) 3925-6650",
         "email": "fernandopetiti@camarasjc.sp.gov.br",
-        "foto": "static/img/40.jpg"
+        "foto": "static/img/40.jpg",
+        "mocoes":"93",
+        "projeto_de_lei":"400",
+        "projeto_de_lei_aprovados":"99",
+        "requerimento": "1768",
+        "partido_sigla":"MDB",
+        "comissoes_atuantes":["43","40","41"],
+        "presenca":"296",
+        "faltas":"0",
+        "faltas_justificadas":"14",
+        "gabinete":null
     },
     "43": {
         "id": 43,
@@ -45,7 +96,17 @@
         "partido": "PARTIDO DOS TRABALHADORES (PT)",
         "telefone": "(12) 3925-6528 / (12) 3925-6666",
         "email": "julianafraga@camarasjc.sp.gov.br",
-        "foto": "static/img/43.jpg"
+        "foto": "static/img/43.jpg",
+        "mocoes":"217",
+        "projeto_de_lei":"222",
+        "projeto_de_lei_aprovados":"27",
+        "requerimento":"1597",
+        "partido_sigla": "PT",
+        "comissoes_atuantes":["8","26","40"],
+        "presenca":"304",
+        "faltas":"0",
+        "faltas_justificadas":"6",
+        "gabinete":"Sala 14 - 1º Andar"
     },
     "246": {
         "id": 246,
@@ -53,7 +114,17 @@
         "partido": "MOVIMENTO DEMOCR\u00c1TICO BRASILEIRO (MDB)",
         "telefone": "/ (12) 3925-6610",
         "email": "juniordafarmacia@camarasjc.sp.gov.br",
-        "foto": "static/img/246.jpg"
+        "foto": "static/img/246.jpg",
+        "mocoes":"25",
+        "projeto_de_lei":"140",
+        "projeto_de_lei_aprovados":"64",
+        "requerimento":"1146",
+        "partido_sigla":"MDB",
+        "comissoes_atuantes":["36","42"],
+        "presenca":"306",
+        "faltas":"0",
+        "faltas_justificadas":"4",
+        "gabinete": null
     },
     "44": {
         "id": 44,
@@ -61,7 +132,17 @@
         "partido": "PARTIDO SOCIAL DEMOCR\u00c1TICO (PSD)",
         "telefone": "(12) 3925-6565 / (12) 3925-6565",
         "email": "juvenil@camarasjc.sp.gov.br",
-        "foto": "static/img/44.jpg"
+        "foto": "static/img/44.jpg",
+        "mocoes":"56",
+        "projeto_de_lei":"348",
+        "projeto_de_lei_aprovados":"365",
+        "requerimento":"844",
+        "partido_sigla":"PSD",
+        "comissoes_atuantes":["37","43","40"],
+        "presenca":"397",
+        "faltas":"3",
+        "faltas_justificadas":"10",
+        "gabinete": "Nº do Gabinete:Sala 23 - 1º Andar"
     },
     "45": {
         "id": 45,
@@ -69,7 +150,17 @@
         "partido": "PARTIDO LIBERAL (PL)",
         "telefone": "(12) 3925-6335 / (12) 3925-6620",
         "email": "linobispo@camarasjc.sp.gov.br",
-        "foto": "static/img/45.jpg"
+        "foto": "static/img/45.jpg",
+        "mocoes":"48",
+        "projeto_de_lei":"100",
+        "projeto_de_lei_aprovados":"42",
+        "requerimento":"332",
+        "partido_sigla":"PL",
+        "comissoes_atuantes":["40","42","41"],
+        "presenca":"292",
+        "faltas":"2",
+        "faltas_justificadas":"16",
+        "gabinete": null
     },
     "47": {
         "id": 47,
@@ -77,7 +168,17 @@
         "partido": "PARTIDO SOCIAL DEMOCR\u00c1TICO (PSD)",
         "telefone": "(12) 3925-6604 / (12) 3925-6604",
         "email": "marcaodaacademia@camarasjc.sp.gov.br",
-        "foto": "static/img/47.jpg"
+        "foto": "static/img/47.jpg",
+        "mocoes":"37",
+        "projeto_de_lei":"495",
+        "projeto_de_lei_aprovados":"154",
+        "requerimento":"1657",
+        "partido_sigla":"PSD",
+        "comissoes_atuantes":["42","41"],
+        "presenca":"299",
+        "faltas":"3",
+        "faltas_justificadas":"8",
+        "gabinete":"Nº do Gabinete:Sala 6 - Térreo"
     },
     "244": {
         "id": 244,
@@ -85,7 +186,17 @@
         "partido": "PARTIDO RENOVA\u00c7\u00c3O DEMOCR\u00c1TICA (PRD)",
         "telefone": "/ (12) 3925-6625",
         "email": "marcelogarcia@camarasjc.sp.gov.br",
-        "foto": "static/img/244.jpg"
+        "foto": "static/img/244.jpg",
+        "mocoes":"9",
+        "projeto_de_lei":"74",
+        "projeto_de_lei_aprovados":"36",
+        "requerimento":"265",
+        "partido_sigla":"PRD",
+        "comissoes_atuantes":["43","42"],
+        "presenca":"309",
+        "faltas":"0",
+        "faltas_justificadas":"1",
+        "gabinete": null
     },
     "242": {
         "id": 242,
@@ -93,7 +204,17 @@
         "partido": "REPUBLICANOS (REPUBLICANOS)",
         "telefone": "/ (12) 3925-6529",
         "email": "mvfilho@camarasjc.sp.gov.br",
-        "foto": "static/img/242.jpg"
+        "foto": "static/img/242.jpg",
+        "mocoes":"37",
+        "projeto_de_lei":"99",
+        "projeto_de_lei_aprovados":"42",
+        "requerimento":"58",
+        "partido_sigla":"REPUBLICANOS",
+        "comissoes_atuantes":["26","38"],
+        "presenca":"288",
+        "faltas":"3",
+        "faltas_justificadas":"19",
+        "gabinete":null
     },
     "243": {
         "id": 243,
@@ -101,7 +222,17 @@
         "partido": "PARTIDO SOCIAL DEMOCR\u00c1TICO (PSD)",
         "telefone": "/ (12) 3925-6700",
         "email": "pascucci@camarasjc.sp.gov.br",
-        "foto": "static/img/243.jpg"
+        "foto": "static/img/243.jpg",
+        "mocoes":"18",
+        "projeto_de_lei":"59",
+        "projeto_de_lei_aprovados":"27",
+        "requerimento":"176",
+        "partido_sigla":"PSD",
+        "comissoes_atuantes":["43","40","41"],
+        "presenca":"296",
+        "faltas":"0",
+        "faltas_justificadas":"14",
+        "gabinete": null
     },
     "245": {
         "id": 245,
@@ -109,7 +240,17 @@
         "partido": "PARTIDO UNI\u00c3O BRASIL (UNI\u00c3O BRASIL)",
         "telefone": "(12) 3925-6697 / (12) 3925-6623",
         "email": "renatosantiago@camarasjc.sp.gov.br",
-        "foto": "static/img/245.jpg"
+        "foto": "static/img/245.jpg",
+        "mocoes":"14",
+        "projeto_de_lei":"157",
+        "projeto_de_lei_aprovados":"65",
+        "requerimento":"688",
+        "partido_sigla":"UNIAO BRASIL",
+        "comissoes_atuantes":["8","40","42"],
+        "presenca":"300",
+        "faltas":"0",
+        "faltas_justificadas":"10",
+        "gabinete": null
     },
     "50": {
         "id": 50,
@@ -117,7 +258,17 @@
         "partido": "PARTIDO RENOVA\u00c7\u00c3O DEMOCR\u00c1TICA (PRD)",
         "telefone": "/ (12) 3925-6747",
         "email": "E-mail n\u00e3o encontrado",
-        "foto": "static/img/50.jpg"
+        "foto": "static/img/50.jpg",
+        "mocoes":"36",
+        "projeto_de_lei":"201",
+        "projeto_de_lei_aprovados":"91",
+        "requerimento":"409",
+        "partido_sigla":"PRD",
+        "comissoes_atuantes":["50","39","38"],
+        "presenca":"302",
+        "faltas":"1",
+        "faltas_justificadas":"7",
+        "gabinete": null
     },
     "240": {
         "id": 240,
@@ -125,7 +276,17 @@
         "partido": "PARTIDO LIBERAL (PL)",
         "telefone": "/ (12) 3925-6607",
         "email": "robertochagas@camarasjc.sp.gov.br",
-        "foto": "static/img/240.jpg"
+        "foto": "static/img/240.jpg",
+        "mocoes":"11",
+        "projeto_de_lei":"52",
+        "projeto_de_lei_aprovados":"23",
+        "requerimento":"268",
+        "partido_sigla":"PL",
+        "comissoes_atuantes":["37","43","40"],
+        "presenca":"306",
+        "faltas":"0",
+        "faltas_justificadas":"4",
+        "gabinete": null
     },
     "234": {
         "id": 234,
@@ -133,7 +294,17 @@
         "partido": "PARTIDO SOCIAL DEMOCR\u00c1TICO (PSD)",
         "telefone": "(12) 3925-6568 / (12) 3925-6568",
         "email": "robertodoeleven@camarasjc.sp.gov.br",
-        "foto": "static/img/234.jpg"
+        "foto": "static/img/234.jpg",
+        "mocoes":"15",
+        "projeto_de_lei":"197",
+        "projeto_de_lei_aprovados":"99",
+        "requerimento":"324",
+        "partido_sigla":"PSD",
+        "comissoes_atuantes":[null],
+        "presenca":"309",
+        "faltas":"0",
+        "faltas_justificadas":"1",
+        "gabinete":"Nº do Gabinete:Sala 09 - Térreo"
     },
     "249": {
         "id": 249,
@@ -141,7 +312,17 @@
         "partido": "PARTIDO PROGRESSISTA (PROGRESSISTAS)",
         "telefone": "/ (12) 3925-6748",
         "email": "E-mail n\u00e3o encontrado",
-        "foto": "static/img/249.jpg"
+        "foto": "static/img/249.jpg",
+        "mocoes":"37",
+        "projeto_de_lei":"50",
+        "projeto_de_lei_aprovados":"22",
+        "requerimento":"568",
+        "partido_sigla":"PROGRESSISTAS",
+        "comissoes_atuantes":["37","41"],
+        "presenca":"153",
+        "faltas":"1",
+        "faltas_justificadas":"11'",
+        "gabinete": null
     },
     "239": {
         "id": 239,
@@ -149,7 +330,17 @@
         "partido": "PARTIDO LIBERAL (PL)",
         "telefone": "/ (12) 3925-6611",
         "email": "thomazhenrique@camarasjc.sp.gov.br",
-        "foto": "static/img/239.jpg"
+        "foto": "static/img/239.jpg",
+        "mocoes":"42",
+        "projeto_de_lei":"70",
+        "projeto_de_lei_aprovados":"11",
+        "requerimento":"184",
+        "partido_sigla":"PL",
+        "comissoes_atuantes":["41","43","26","40"],
+        "presenca":"301",
+        "faltas":"1",
+        "faltas_justificadas":"8",
+        "gabinete": null
     },
     "55": {
         "id": 55,
@@ -157,6 +348,16 @@
         "partido": "PARTIDO UNI\u00c3O BRASIL (UNI\u00c3O BRASIL)",
         "telefone": "(12) 3925-6525 / (12) 3925-6525",
         "email": "walterhayashi@camarasjc.sp.gov.br",
-        "foto": "static/img/55.jpg"
+        "foto": "static/img/55.jpg",
+        "mocoes":"219",
+        "projeto_de_lei":"290",
+        "projeto_de_lei_aprovados":"130",
+        "requerimento":"1037",
+        "partido_sigla":"UNIAO BRASIL",
+        "comissoes_atuantes":["39","38"],
+        "presenca":"302",
+        "faltas":"1",
+        "faltas_justificadas":"7",
+        "gabinete": "Nº do Gabinete:Sala 20 - 1º Andar"
     }
 }
