@@ -1,3 +1,4 @@
+CREATE DATABASE apibyte;
 USE apibyte;
 
 CREATE TABLE vereadores (
