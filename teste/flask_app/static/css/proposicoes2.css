@@ -143,11 +143,36 @@ h1 {
 }
 
 
-#candidatos {
 
-   
+
+
+.icons {
+    display: flex;
+    justify-content: space-between;
+  /*  align-items: center;  antigo */
+
+  align-items: flex-start; 
+
+    flex-wrap: wrap; /* Permite que os itens se ajustem à linha */
+} 
+.imgvereador img {
+    border-radius: 100%;
+    cursor: pointer;
+   margin: 10px;
+}
+.imgvereador img:hover {
+    transform: scale(1);
 }
 
+.caption {
+    text-align: center;
+    margin-top: 5px; /* Espaçamento acima da legenda */
+
+}
+
+.icon:hover{
+    transform: scale(1.05); /* aumenta um pouco a imagem */
+}
 
 
 
@@ -172,6 +197,7 @@ footer {
     /* Garante que o rodapé se estenda até o final à direita */
     font-size: 24px;
     /* Define o tamanho da fonte do rodapé */
+    margin-top: 2%;
 }
 
 @media (max-width: 768px) {
