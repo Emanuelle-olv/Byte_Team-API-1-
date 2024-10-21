@@ -95,7 +95,7 @@ header .logo img {
     justify-content: center;
     cursor: pointer;
 
-    margin-left: -600px;
+    margin-left: -300px;
 }
 
 #btnFiltro {
@@ -114,7 +114,7 @@ header .logo img {
     padding: 15px 150px;
     /* Adicione padding se necessário */
     margin-left: 200px;
-    padding-left: 10px;
+    padding-left: 40px;
 }
 
 #btnFiltro::placeholder {
@@ -134,7 +134,7 @@ header .logo img {
     margin-right: 100px;
     margin-left: -65px;
     /* Ajuste negativo para colar a imagem ao input */
-    margin-bottom: -10;
+    margin-bottom: 10px;
 
 }
 
@@ -154,7 +154,7 @@ header .logo img {
     padding: 15px 80px;
     /* Adicione padding se necessário */
 
-    padding-left: 10px;
+    padding-left: 40px;
 }
 
 
@@ -162,7 +162,7 @@ header .logo img {
     padding: 2px;
     margin-left: -50px;
     /* Ajuste negativo para colar a imagem ao input */
-    margin-bottom: 8;
+    margin-bottom: 10px;
 }
 
 #btnBusca::placeholder {
@@ -201,19 +201,18 @@ header .logo img {
 
 .carousel-inner {
     display: flex; /* Permite que os itens sejam alinhados horizontalmente */
+    flex-direction: row;
 }
 
 
 
 .carousel-item img {
     display: flex; /* Alinha as imagens na horizontal */
-    justify-content: center;
-    gap: 10px; /* Espaçamento entre as imagens */
-
-
-
+    flex-direction: row;
     transition: transform 0.3s; /* Para a animação de aumento */
     cursor: pointer;
+
+    border-radius: 100%;
 }
 
 .carousel-item img:hover {
