@@ -18,23 +18,18 @@
     </a>
 </div>
 
-<section id="filtroEbusca">
-    <div id="filtro">
-        <input type="text" id="btnFiltro" placeholder="FILTROS" />
-        <img src="{{ url_for('static', filename='imagens/imagensmenu/Filter.svg') }}" id="btnFiltro" alt="Filtrar" />
-    </div>
+<section id="busca-section">
     <div id="busca">
-        <input type="text" id="btnBusca" placeholder="BUSCAR" />
-        <img src="{{ url_for('static', filename='imagens/imagensmenu/Search.svg') }}" id="btnBusca" alt="Buscar" />
+        <input type="text" id="btnBusca" placeholder="BUSCAR" onkeyup="filtrarVereadores()" />
+        <img src="{{ url_for('static', filename='imagens/imagensmenu/Search.svg') }}" alt="Buscar" />
     </div>
 </section>
 
 <div class="container">
     <div class="left-section">
-        <div class="card-container">
+        <div class="card-container" id="cardContainer">
             {% for vereador in vereadores %}
             <div class="card">
-                <!-- O link ao redor da imagem e do nome -->
                 <a href="{{ url_for('perfil', id_vereador=vereador.id) }}">
                     <img src="{{ url_for('static', filename=vereador.foto) }}" alt="{{ vereador.nome_civil }}">
                     <h1>{{ vereador.nome_civil }}</h1>
@@ -49,4 +44,28 @@
 <footer>
     Clique em algum perfil para visualizar especificamente
 </footer>
+
+<script>
+    function filtrarVereadores() {
+        const input = document.getElementById('btnBusca');
+        const filter = normalizarTexto(input.value.toLowerCase());
+        const cardContainer = document.getElementById('cardContainer');
+        const cards = cardContainer.getElementsByClassName('card');
+
+        for (let i = 0; i < cards.length; i++) {
+            const nome = normalizarTexto(cards[i].getElementsByTagName('h1')[0].innerText.toLowerCase());
+            const partido = normalizarTexto(cards[i].getElementsByTagName('h2')[0].innerText.toLowerCase());
+
+            if (nome.includes(filter) || partido.includes(filter)) {
+                cards[i].style.display = '';
+            } else {
+                cards[i].style.display = 'none';
+            }
+        }
+    }
+
+    function normalizarTexto(texto) {
+        return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    }
+</script>
 {% endblock %}
