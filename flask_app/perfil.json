@@ -711,12 +711,12 @@
         "biografia": "Walter Hayashi (número de urna 44100) é candidato a vereador de São José Dos Campos pelo UNIÃO nas Eleições 2024. Nascido em Garça (SP) em 24/03/1946, tem 78 anos, é químico com ensino superior completo e casado(a)."
     },
     "237": {
-        "id": 55,
+        "id": 237,
         "nome_civil": "Ver. Zé Luis",
         "partido": "PARTIDO SOCIAL DEMOCRÁTICO (PSD)",
         "telefone": "(12) 3925-6770",
         "email": "zeluis@camarasjc.sp.gov.br",
-        "foto": "static/img/237.jpg",
+        "foto": "imagens/img/237.jpg",
         "mocoes":"146",
         "projeto_de_lei":"138",
         "projeto_de_lei_aprovados":"61",
