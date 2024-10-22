@@ -22,12 +22,13 @@
         <div class="right-section">
             <div id="filtro">
                 <select id="filtro-selecao">
-                    <option value="biografia">Dados Biográficos</option>
-                    <option value="projetos_aprovados">Projetos Aprovados</option>
-                    <option value="frequencia_sessoes">Frequência nas Sessões</option>
-                    <option value="proposicoes">Proposições</option>
-                    <option value="comissoes">Atuação em Comissões</option>
+                    <option value="biografia" {% if filtro == 'biografia' %}selected{% endif %}>Dados Biográficos</option>
+                    <option value="projetos_aprovados" {% if filtro == 'projetos_aprovados' %}selected{% endif %}>Projetos Aprovados</option>
+                    <option value="frequencia_sessoes" {% if filtro == 'frequencia_sessoes' %}selected{% endif %}>Frequência nas Sessões</option>
+                    <option value="proposicoes" {% if filtro == 'proposicoes' %}selected{% endif %}>Proposições</option>
+                    <option value="comissoes" {% if filtro == 'comissoes' %}selected{% endif %}>Atuação em Comissões</option>
                 </select>
+                
                 
                 <button id="btnFiltrar">Filtrar</button>
             </div>

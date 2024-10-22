@@ -54,11 +54,13 @@ def perfil(id_vereador):
         vereador = vereadores.get(str(id_vereador))
 
         if vereador:
-            return render_template("perfil.html", vereador=vereador)
+            filtro = request.args.get('filtro', 'projetos_aprovados')
+            return render_template("perfil.html", vereador=vereador, filtro=filtro)
         else:
             return "Vereador não encontrado", 404
     except Exception as e:
         return f"Erro ao carregar o perfil do vereador: {e}", 500
+
 
 @app.route('/perfil/filtros')
 def filtros_vereador():
@@ -145,9 +147,21 @@ def filtros_vereador():
         print(f"Erro ao carregar os dados: {e}")
         return jsonify({"error": "Erro ao carregar informações."}), 500
 
-@app.route("/propo")
-def propo():
-    return render_template("proposicoes2.html")
+@app.route("/proposicoes_aprovadas")
+def proposicoes_aprovadas():
+    try:
+        with open("flask_app/perfil.json", encoding='utf-8') as f:
+            vereadores = json.load(f)
+        
+        # Converte para uma lista de vereadores, caso necessário
+        vereadores_lista = [v for v in vereadores.values()]
+
+        return render_template("proposicoes2.html", vereadores=vereadores_lista)
+
+    except Exception as e:
+        return f"Erro ao carregar proposições aprovadas: {e}", 500
+
+
 
 @app.route("/sobre_nos")
 def sobre_nos():
