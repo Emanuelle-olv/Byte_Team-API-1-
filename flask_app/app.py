@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, jsonify
 import mysql.connector
 import json
 
@@ -7,7 +7,6 @@ app = Flask(__name__)
 
 # Função para obter uma nova conexão com o banco de dados
 def get_db_connection():
-    # Abre uma nova conexão com o banco de dados sempre que necessário
     return mysql.connector.connect(
         host="localhost",
         user="apibyte",
@@ -33,15 +32,49 @@ def estatisticas():
 
 @app.route("/perfil/<int:id_vereador>")
 def perfil(id_vereador):
-    with open("flask_app/perfil.json") as f:
-        vereadores = json.load(f)
-    
-    vereador = vereadores.get(str(id_vereador))
-    
-    if vereador:
-        return render_template("perfil.html", vereador=vereador)
-    else:
-        return "Vereador não encontrado", 404
+    try:
+        with open("flask_app/perfil.json", encoding='utf-8') as f:
+            vereadores = json.load(f)
+        vereador = vereadores.get(str(id_vereador))
+
+        if vereador:
+            return render_template("perfil.html", vereador=vereador)
+        else:
+            return "Vereador não encontrado", 404
+    except Exception as e:
+        return f"Erro ao carregar o perfil do vereador: {e}", 500
+
+@app.route('/perfil/filtros')
+def filtros_vereador():
+    vereador_id = request.args.get('vereador_id')
+    filtro = request.args.get('filtro')
+
+    try:
+        # Carregar os arquivos JSON
+        with open('flask_app/leis_aprovadas_vereadores.json', encoding='utf-8') as file:
+            leis_aprovadas = json.load(file)
+
+        with open('flask_app/perfil.json', encoding='utf-8') as file:
+            perfil = json.load(file)
+
+        response_data = {}
+
+        if filtro == 'projetos_aprovados':
+            projetos_aprovados = leis_aprovadas.get(str(vereador_id), [])
+            print(f"Projetos aprovados para vereador {vereador_id}: {projetos_aprovados}")
+            response_data['projetos_aprovados'] = projetos_aprovados if projetos_aprovados else "Nenhum projeto aprovado encontrado para este vereador."
+
+        elif filtro == 'biografia':
+            biografia = perfil.get(str(vereador_id), {}).get('biografia', "Informação biográfica não disponível")
+            print(f"Biografia do vereador {vereador_id}: {biografia}")
+            response_data['biografia'] = biografia
+
+        return jsonify(response_data)
+
+    except Exception as e:
+        print(f"Erro ao carregar os dados: {e}")
+        return jsonify({"error": "Erro ao carregar informações."}), 500
+
 
 @app.route("/propo")
 def propo():
@@ -54,37 +87,29 @@ def sobre_nos():
 # Rota para exibir os comentários com filtros e para inserir novos comentários
 @app.route("/comentarios", methods=["GET", "POST"])
 def comentarios():
-    # Abre uma conexão com o banco de dados
     db = get_db_connection()
     cursor = db.cursor(dictionary=True)
 
-    # Se o método for POST, insere um novo comentário
     if request.method == "POST":
         comentario = request.form['comentario']
         vereador_id = request.form.get('vereador_id')
         partido_id = request.form.get('partido_id')
         comissao_id = request.form.get('comissao_id')
 
-        # Verifica se ao menos um filtro foi preenchido
         if not vereador_id and not partido_id and not comissao_id:
             return "Erro: Pelo menos um filtro (vereador, partido ou comissão) deve ser preenchido."
 
-        # Insere o comentário no banco de dados
         cursor.execute("""
             INSERT INTO comentarios (comentario, vereador_id, partido_id, comissao_id)
             VALUES (%s, %s, %s, %s)
         """, (comentario, vereador_id, partido_id, comissao_id))
         db.commit()
-
-        # Fecha a conexão
         cursor.close()
         db.close()
 
         return redirect("/comentarios")
 
-    # Se for GET, renderiza a página de comentários com os filtros
     else:
-        # Carregar vereadores, partidos e comissões para os dropdowns
         cursor.execute("SELECT id, nome FROM vereadores")
         vereadores = cursor.fetchall()
 
@@ -94,11 +119,9 @@ def comentarios():
         cursor.execute("SELECT id, nome FROM comissoes")
         comissoes = cursor.fetchall()
 
-        # Selecionar todos os comentários (sem filtro)
         cursor.execute("SELECT * FROM comentarios")
         comentarios = cursor.fetchall()
 
-        # Fecha a conexão
         cursor.close()
         db.close()
 
@@ -107,20 +130,16 @@ def comentarios():
 # Rota para aplicar os filtros nos comentários
 @app.route("/comentarios_filtro", methods=["GET"])
 def comentarios_filtro():
-    # Abre uma conexão com o banco de dados
     db = get_db_connection()
     cursor = db.cursor(dictionary=True)
 
-    # Filtros
     vereador_id = request.args.get('vereador_id')
     partido_id = request.args.get('partido_id')
     comissao_id = request.args.get('comissao_id')
 
-    # Query básica para selecionar todos os comentários
     query = "SELECT * FROM comentarios WHERE 1=1"
     params = []
 
-    # Adicionar filtros à query conforme preenchido
     if vereador_id:
         query += " AND vereador_id = %s"
         params.append(vereador_id)
@@ -134,7 +153,6 @@ def comentarios_filtro():
     cursor.execute(query, params)
     comentarios = cursor.fetchall()
 
-    # Carregar vereadores, partidos e comissões para os dropdowns
     cursor.execute("SELECT id, nome FROM vereadores")
     vereadores = cursor.fetchall()
 
@@ -144,11 +162,9 @@ def comentarios_filtro():
     cursor.execute("SELECT id, nome FROM comissoes")
     comissoes = cursor.fetchall()
 
-    # Fecha a conexão
     cursor.close()
     db.close()
 
-    # Renderizar a página com os comentários filtrados
     return render_template("comentarios.html", comentarios=comentarios, vereadores=vereadores, partidos=partidos, comissoes=comissoes)
 
 # Rodar a aplicação
