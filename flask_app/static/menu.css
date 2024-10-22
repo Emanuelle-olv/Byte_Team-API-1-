@@ -127,103 +127,51 @@ body {
 }
 
 
-
-#container {
+.card-container {
     display: flex;
-    overflow:auto; 
-
-
-   flex-wrap: nowrap; /**permite q os elementos vao pra prox linha se n tiver espaco**/
-   
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
   
-}
-
-
-#avancarVoltar {
-    display: flex;
-    align-items: center;
-}
-
-
-#btnAvancar {
-    display: flex;
-    align-items: right;
-    /* Alinha verticalmente ao centro */
-    justify-self: end;
-
-    background: none;
-    /* Remove o fundo */
-    border: none;
-    /* Remove a borda */
-    cursor: pointer;
-
-
-}
-
-#btnAvancar:hover {
-    background-color: #e5e5e6;
-    border-radius: 100px;
-}
-
-#btnVoltar {
-    background: none;
-    /* Remove o fundo */
-    border: none;
-    /* Remove a borda */
-    cursor: pointer;
-
-
-}
-
-#btnVoltar:hover {
-    background-color: #e5e5e6;
-    border-radius: 100px;
-}
-
-#btnAvancar {
-    background: none; /* Remove o fundo */
-    border: none; /* Remove a borda */
-    cursor: pointer;
+  .card {
+    width: calc(33.33% - 20px); /* Três cards por linha */
+    margin-bottom: 20px; /* Espaçamento inferior entre os cards */
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave ao card */
+    border-radius: 10px; /* Adiciona cantos arredondados */
+  }
   
-}
+  .card img {
+    margin-top: 30px;
+    width: 80%;
+    height: auto;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Transição suave para a imagem */
+  }
 
-#btnAvancar:hover {
-    background-color: #e5e5e6;
-    border-radius: 100px;
-}
-
-#candidatos {
-    display: flex;
-
-}
-
-#candidato1 img, #candidato2 img, #candidato3 img, #candidato4 img {
-
-    width: 100%;  /* Defina a largura conforme necessário */
-
-}
-
-
-#candidato1,
-#candidato2,
-#candidato3,
-#candidato4 {
-    display: flex;
-    transform: scale(0.8);
-    transition: transform 0.3s;
-
-    cursor:pointer;
-}
-
-#candidato1:hover,
-#candidato2:hover,
-#candidato3:hover, 
-#candidato4:hover {
-    transform: scale(1);
-
-}
-
-footer {
+  .card:hover {
+    transform: scale(1.05); /* Aumenta o card em 5% ao passar o mouse */
+  }
+  .card h1, .card h2 {
+    margin: 10px 0;
+    font-size: 18px;
+  }
+  
+  .card a {
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #322e82; /* Cor do link */
+    font-weight: bold;  
+  }
+  
+  .card a:hover {
+    color: #555; /* Cor ao passar o mouse sobre o link */
+  }
+  
+  footer {
     background-color: #76C7CC;
     /* Define a cor de fundo do rodapé como azul suave */
     color: white;
@@ -245,6 +193,7 @@ footer {
     font-size: 24px;
     /* Define o tamanho da fonte do rodapé */
 }
+  
 
 
 @media (max-width: 768px) {
@@ -262,25 +211,6 @@ footer {
     #btnFiltro, #btnBusca {
         padding: 10px 50px; /* Ajusta o padding em telas menores */
         font-size: 18px; /* Diminui o tamanho da fonte */
-    }
-
-    #container {
-        flex-direction: column; /* Alinha itens em coluna */
-        align-items: center; /* Centraliza os itens */
-    }
-
-    #avancarVoltar {
-        flex-direction: column; /* Alinha botões em coluna */
-        margin-top: 10px; /* Ajusta o espaço */
-    }
-
-    #candidatos {
-        flex-wrap: wrap; /* Permite que os candidatos se movam para a próxima linha */
-        justify-content: center; /* Centraliza os candidatos */
-    }
-
-    #candidato1, #candidato2, #candidato3, #candidato4 {
-        transform: scale(1); /* Ajusta o tamanho em telas menores */
     }
 
     
