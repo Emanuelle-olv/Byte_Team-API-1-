@@ -1,85 +1,51 @@
 {% extends "base_light.html" %}
+ 
 {% block head_extras %}
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="{{url_for('static', filename = 'menu.css')}}">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="{{ url_for('static', filename='menu.css') }}">
+<link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
 {% endblock %}
+ 
 {% block content %}
-    <div id="sobrenos">
-        <a href="{{ url_for('sobre_nos') }}">
+<div id="sobrenos">
+    <a href="{{ url_for('sobre_nos') }}">
         <button class="btnsobrenos">
             <img src="{{ url_for('static', filename='imagens/imagensmenu/sobrenos.svg') }}" alt="Sobre nós">
-        </button></a>
-    </div>
-    
-
-    <section id="filtroEbusca">
-
-        <div id="filtro">
-            <input type="text" id="btnFiltro" placeholder="FILTROS"/>
-            <img src="{{ url_for('static', filename='imagens/imagensmenu/Filter.svg') }}" id="btnFiltro" alt="Filtrar"/>
-        </div>
-
-        <div id="busca">
-            <input type="text" id="btnBusca" placeholder="BUSCAR"/>
-            <img src="{{ url_for('static', filename='imagens/imagensmenu/Search.svg') }}" id="btnBusca" alt="Buscar"/>
-        </div>
-
-    </section>
-
-    <div id="container">
-
-
-    <div id="avancarVoltar">
-
-    <div id="btnVoltar">
-        <button id="btnVoltar">
-            <img src="{{ url_for('static', filename='imagens/imagensmenu/btnvoltar.svg') }}" id="btnVoltar" alt="Voltar"/>
         </button>
+    </a>
+</div>
+ 
+<section id="filtroEbusca">
+    <div id="filtro">
+        <input type="text" id="btnFiltro" placeholder="FILTROS" />
+        <img src="{{ url_for('static', filename='imagens/imagensmenu/Filter.svg') }}" id="btnFiltro" alt="Filtrar" />
     </div>
-
+    <div id="busca">
+        <input type="text" id="btnBusca" placeholder="BUSCAR" />
+        <img src="{{ url_for('static', filename='imagens/imagensmenu/Search.svg') }}" id="btnBusca" alt="Buscar" />
     </div>
-
-    <section id="candidatos">
-
-        
-        <div id="candidato1">
-            <img src="{{ url_for('static', filename='imagens/imagensmenu/dulce.svg') }}" alt="Dulce Rita">
+</section>
+ 
+<div class="container">
+    <div class="left-section">
+        <div class="card-container">
+            {% for vereador in vereadores %}
+            <div class="card">
+                <img src="{{ url_for('static', filename=vereador.foto) }}" alt="{{ vereador.nome_civil }}">
+                <h1>{{ vereador.nome_civil }}</h1>
+                <h2>{{ vereador.partido }}</h2>
+                <a href="{{ url_for('perfil', id_vereador=vereador.id) }}">Ver Perfil</a>
+            </div>
+            {% endfor %}
         </div>
-
-        <div id="candidato2">
-          <a href="{{ url_for('perfil') }}">
-            <img src="{{ url_for('static', filename='imagens/imagensmenu/marcao.svg') }}" alt="Marcao">
-          </a>
-        </div>
-
-
-        <div id="candidato3">
-
-            <img src="{{ url_for('static', filename='imagens/imagensmenu/hayashi.svg') }}" alt="Walter">
-           
-        </div>
-
-         <div id="candidato4">
-
-            <img src="{{ url_for('static', filename='imagens/imagensmenu/jessica.png') }}" alt="jessica">
-        </div>
-              </section>
-               <div id="avancarVoltar">
-                 <div id="btnAvancar">
-            <button id="btnAvancar">
-                <img src="{{ url_for('static', filename='imagens/imagensmenu/btnavancar.svg') }}" id="btnAvancar" alt="Avancar"/>
-            </button>
-    
-        </div>
-    
     </div>
-
- </div>
-    <footer>
-        Clique em algum perfil para visualizar especificamente
-    </footer>
-    {% endblock %}
-
-
+</div>
+ 
+<footer>
+    Clique em algum perfil para visualizar especificamente
+</footer>
+{% endblock %}
+ 
