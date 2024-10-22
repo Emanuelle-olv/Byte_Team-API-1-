@@ -131,25 +131,27 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-  }
-  
-  .card {
-    width: calc(33.33% - 20px); /* Três cards por linha */
+}
+
+.card {
+    width: calc(25% - 20px); /* Quatro cards por linha */
     margin-bottom: 20px; /* Espaçamento inferior entre os cards */
     text-align: center;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave ao card */
     border-radius: 10px; /* Adiciona cantos arredondados */
-  }
+}
+
   
   .card img {
-    margin-top: 30px;
-    width: 80%;
+    margin-top: 20px;
+    width: 50%; /* Reduz a largura para 60% */
     height: auto;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     cursor: pointer;
     transition: transform 0.3s ease; /* Transição suave para a imagem */
-  }
+}
+
 
   .card:hover {
     transform: scale(1.05); /* Aumenta o card em 5% ao passar o mouse */
