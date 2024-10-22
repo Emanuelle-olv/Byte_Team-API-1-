@@ -15,13 +15,14 @@ header .logo img {
 header nav a {
     text-decoration: none; /* Remove a sublinhado dos links. */
     color: #25345F; /* Define a cor do texto dos links em azul escuro. */
-    font-weight: 500; /* Define a espessura da fonte como 500 (seminegrito). */
+    font-weight: 500!important; /* Define a espessura da fonte como 500 (seminegrito). */
     margin-left: 35px; /* Adiciona um espaçamento de 20px à esquerda de cada link, espaçando-os horizontalmente. */
     font-size: 24px; /* Define o tamanho da fonte dos links como 24px. */
     line-height: 35px; /* Define a altura da linha para 35px, centralizando verticalmente o texto nos links. */
     height: 35px; /* Define a altura dos links como 35px (alinhada com o line-height). */
     width: 59px; /* Define a largura dos links como 59px (essa largura pode ser removida se for restritiva). */
     font-family: 'Roboto', sans-serif; /* Define a família de fonte como 'Roboto'. */
+    
 }
 
 header nav a:hover {

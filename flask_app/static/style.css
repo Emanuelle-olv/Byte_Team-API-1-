@@ -2,46 +2,51 @@
     margin: 0;
 }
 
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    overflow: hidden; /**/
+    font-family: "Roboto", sans-serif;
+    background-color: #f5f5f5;
+    flex-grow: 1;
+}
+
 header {
     background-color: rgb(37, 52, 95);
     height: 80px;
     box-shadow: 4px 4px rgba(0, 0, 0, 0.1);
-    }
+}
+
 header > img {
-    max-height: 100%;}
-
-body, html{ /*tamanho limitado para a tela não "vazar"*/
-    max-height: auto;
-    max-width: auto;
-    overflow-x: hidden;
+    max-height: 100%;
 }
-div.wrap{ /*usei esse "envelopamento" pra corrigir o scroll da página*/
-    height: 100%;
-    overflow: hidden;
-}
-body{
-    overflow: hidden; /**/
-    font-family: "Roboto", sans-serif;
-}
-
 
 .roboto-regular {
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-style: normal;
-  }
-.inter-regular{
+}
+
+.inter-regular {
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-}  
-#container{
+}
+
+#container {
     display: flex;
     overflow: auto;
     flex-wrap: nowrap;
 }
-.texto-projeto { /*formatação do texto principal*/
+
+.texto-projeto {
     display: flexbox;
     background-color: rgb(135, 240, 242, 28%);
     border-radius: 25px;
@@ -55,13 +60,15 @@ body{
     justify-content: center;
     justify-items: center;
 }
+
 .texto-projeto p {
     color: rgb(53, 53, 53);
     text-align: center;
     font-size: 24px;
     max-width: 900px;
 }
-.titulo h1{ /*formatação do título h1*/
+
+.titulo h1 {
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
@@ -72,10 +79,12 @@ body{
     padding-bottom: 25px;
     height: 40px;
 }
-.uppercase{ /*deixa a letra maiúscula*/
+
+.uppercase {
     text-transform: uppercase;
 }
-.center{ /*gambiarra para centralizar o maldito botão*/
+
+.center {
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
@@ -83,21 +92,32 @@ body{
     height: 100px;
     border: 3px;
 }
-.imagem img{
-    display:flex;
-    max-width: 10%; /* Garante que a imagem não exceda a largura do card */
+a {
+    text-decoration: none; /* Remove o sublinhado dos links */
+}
+
+a:hover {
+    text-decoration: none; /* Garante que o sublinhado não apareça ao passar o mouse */
+}
+
+.imagem img {
+    display: flex;
+    max-width: 10%;
     height: auto;
-    width: 10%; /* Define a largura da imagem dentro do card como 80% da largura do card */
+    width: 10%;
     object-fit: cover;
 }
-section{
+
+section {
     display: grid;
     justify-content: center;
     justify-items: center;
     padding-left: 350px;
     padding-right: 350px;
+    flex-grow: 1; /* O conteúdo principal cresce e empurra o footer para baixo */
 }
-button { /*acho que o nome é autoexplicativo...*/
+
+button {
     font-family: "Roboto", sans-serif;
     display: flex;
     flex-wrap: nowrap;
@@ -115,9 +135,9 @@ button { /*acho que o nome é autoexplicativo...*/
     justify-content: center;
     align-items: center;
     height: 50px;
-
 }
-button:hover{ /*passar ponteiro do mouse sobre o botão*/
+
+button:hover {
     font-family: "Roboto", sans-serif;
     color: rgb(169, 169, 169);
     font-size: 25px;
@@ -137,37 +157,40 @@ article {
     justify-content: flex-start;
     color: #25345f;
 }
+
 article > div {
     height: 30px;
     margin: 10px;
 }
-footer { /*parte mais baixa da página*/
+
+footer {
     display: flex;
     font-family: "Inter", sans-serif;
     color: rgb(255, 255, 255);
     background-color: rgb(37, 52, 95);
-    position: relative;
     justify-content: space-evenly;
     width: 100%;
+    padding: 10px;
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 10px;
+    position: relative;
 }
+
 @media (max-width: 768px) {
     header {
-         flex-direction: column;
-    width: 100%; /* Ajusta para que as seções ocupem toda a largura em telas menores */
-    margin: 0 auto; /* Centraliza o container */
+        flex-direction: column;
+        width: 100%;
+        margin: 0 auto;
     }
 
     header nav a {
-        font-size: 18px; /* Diminui o tamanho da fonte em telas menores */
-        margin-left: 10px; /* Diminui a margem */
+        font-size: 18px;
+        margin-left: 10px;
     }
 
     #container {
-        flex-direction: column; /* Alinha itens em coluna */
-        align-items: center; /* Centraliza os itens */
+        flex-direction: column;
+        align-items: center;
     }
 }
