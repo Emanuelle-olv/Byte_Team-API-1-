@@ -656,7 +656,7 @@
     "55": {
         "id": 55,
         "nome_civil": "Ver. Walter Hayashi",
-        "partido": "PARTIDO UNI\u00c3O BRASIL (UNI\u00c3O BRASIL)",
+        "partido": "PARTIDO UNIÃO BRASIL (UNIÃO BRASIL)",
         "telefone": "(12) 3925-6525 / (12) 3925-6525",
         "email": "walterhayashi@camarasjc.sp.gov.br",
         "foto": "static/img/55.jpg",
@@ -689,5 +689,41 @@
         "faltas_justificadas_2023":"0",
         "faltas_justificadas_2024":"1",
         "gabinete": "Nº do Gabinete:Sala 20 - 1º Andar"
+    },
+    "237": {
+        "id": 55,
+        "nome_civil": "Ver. Zé Luis",
+        "partido": "PARTIDO SOCIAL DEMOCRÁTICO (PSD)",
+        "telefone": "(12) 3925-6770",
+        "email": "zeluis@camarasjc.sp.gov.br",
+        "foto": "static/img/237.jpg",
+        "mocoes":"146",
+        "projeto_de_lei":"138",
+        "projeto_de_lei_aprovados":"61",
+        "requerimento":"643",
+        "partido_sigla":"PSD",
+        "comissoes_atuantes":["26","38","39"],
+        "comissoes_atuantes_2021_id":null,
+        "comissoes_atuantes_2022_id":null,
+        "comissoes_atuantes_2023_id":["26","38","39"],
+        "comissoes_atuantes_2024_id":["26","38","39"],
+        "presenca_totais":"310",
+        "presenca_2021":"86",
+        "presenca_2022":"84",
+        "presenca_2023":"80",
+        "presenca_2024":"60",
+        "faltas_totais":"0",
+        "faltas_2021":"0",
+        "faltas_2022":"0",
+        "faltas_2023":"0",
+        "faltas_2024":"0",
+        "faltas_justificadas_totais":"0",
+        "faltas_justificadas_2021":"0",
+        "faltas_justificadas_2022":"0",
+        "faltas_justificadas_2023":"0",
+        "faltas_justificadas_2024":"0",
+        "gabinete":null
+            
+            
     }
 }
