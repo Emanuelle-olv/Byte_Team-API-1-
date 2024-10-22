@@ -196,23 +196,29 @@ header .logo img {
 
 
 
-
+#container {
+    display: flex;
+    align-items: center; /* Alinha verticalmente no centro */
+    justify-content: center; /* Centraliza horizontalmente */
+    margin-left: 100px;
+  }
 
 
 .carousel-inner {
     display: flex; /* Permite que os itens sejam alinhados horizontalmente */
-    flex-direction: row;
+
 }
 
 
 
 .carousel-item img {
-    display: flex; /* Alinha as imagens na horizontal */
-    flex-direction: row;
     transition: transform 0.3s; /* Para a animação de aumento */
     cursor: pointer;
 
     border-radius: 100%;
+
+    padding: 30px;
+
 }
 
 .carousel-item img:hover {
@@ -222,6 +228,11 @@ header .logo img {
 .carousel-control-prev img,
 .carousel-control-next img {
     transition: filter 0.3s; /* Para a animação de escurecimento */
+}
+
+
+.carousel-control-prev img{
+    margin-left: -120px;
 }
 
 .carousel-control-prev img:hover,
@@ -285,16 +296,11 @@ footer {
 
 
 
-
-
-
-
-
 @media (max-width: 768px) {
     header {
-         flex-direction: column;
-    width: 100%; /* Ajusta para que as seções ocupem toda a largura em telas menores */
-    margin: 0 auto; /* Centraliza o container */
+        flex-direction: column;
+        width: 100%; /* Ajusta para que as seções ocupem toda a largura em telas menores */
+        margin: 0 auto; /* Centraliza o container */
     }
 
     header nav a {
@@ -302,29 +308,36 @@ footer {
         margin-left: 10px; /* Diminui a margem */
     }
 
+    #filtroEbusca {
+        flex-direction: column; /* Muda a direção para coluna */
+        align-items: center; /* Centraliza os itens */
+        margin-left: 0; /* Remove a margem esquerda */
+    }
+
     #btnFiltro, #btnBusca {
         padding: 10px 50px; /* Ajusta o padding em telas menores */
         font-size: 18px; /* Diminui o tamanho da fonte */
+        margin-bottom: 10px; /* Adiciona margem abaixo para espaçamento */
     }
 
-    #container {
-        flex-direction: column; /* Alinha itens em coluna */
-        align-items: center; /* Centraliza os itens */
+    /* Ajuste para as imagens ficarem em coluna */
+    .carousel-inner {
+        flex-direction: column; /* Alinha os itens em coluna */
     }
 
-    #avancarVoltar {
-        flex-direction: column; /* Alinha botões em coluna */
-        margin-top: 10px; /* Ajusta o espaço */
+    .carousel-item img {
+        width: 100%; /* Imagens ocupam toda a largura disponível */
+        margin-bottom: 10px; /* Espaçamento entre as imagens */
     }
+}
 
-    #candidatos {
-        flex-wrap: wrap; /* Permite que os candidatos se movam para a próxima linha */
-        justify-content: center; /* Centraliza os candidatos */
+@media (max-width: 480px) {
+    .carousel-item img {
+        width: 90%; /* Imagens ocupam mais espaço em telas pequenas */
     }
-
-    #candidato1, #candidato2, #candidato3, #candidato4 {
-        transform: scale(1); /* Ajusta o tamanho em telas menores */
-    }
-
     
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
 }

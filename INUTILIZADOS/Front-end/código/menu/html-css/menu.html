@@ -50,74 +50,202 @@
 
     <div id="container">
       <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner" id="carousel-inner">
-          <div class="carousel-item"></div>
+        <!-- Indicadores -->
+        <div class="carousel-indicators" id="carousel-indicators"></div>
+
+        <!-- Botões personalizados -->
+        <div class="carousel-controls">
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExample"
+            data-bs-slide="prev"
+            id="btnVoltar"
+          >
+            <img
+              src="../imagensmenu/btnvoltar.svg"
+              alt="Voltar"
+              class="d-block"
+            />
+            <span class="visually-hidden">Anterior</span>
+          </button>
         </div>
-        <button
-          class="carousel-control-prev"
-          type="button"
-          data-bs-target="#carouselExample"
-          data-bs-slide="prev"
-          id="btnVoltar"
-        >
-          <img
-            src="../imagensmenu/btnvoltar.svg"
-            alt="Voltar"
-            class="d-block"
-          />
-          <span class="visually-hidden">Anterior</span>
-        </button>
-        <button
-          class="carousel-control-next"
-          type="button"
-          data-bs-target="#carouselExample"
-          data-bs-slide="next"
-          id="btnAvancar"
-        >
-          <img
-            src="../imagensmenu/btnavancar.svg"
-            alt="Avançar"
-            class="d-block"
-          />
-          <span class="visually-hidden">Próximo</span>
-        </button>
+
+        <!-- Imagens do carrossel -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="carousel-images">
+              <div class="image-wrapper">
+                <img
+                  src="../../../../../flask_app/static/imagens/img/35.jpg"
+                  alt="Dulce Rita"
+                />
+                <p class="image-caption">Vereador</p>
+              </div>
+              <div class="image-wrapper">
+                <img
+                  src="../../../../../flask_app/static/imagens/img/38.jpg"
+                  alt="Marcao"
+                />
+                <p class="image-caption">Vereador</p>
+              </div>
+              <div class="image-wrapper">
+                <img
+                  src="../../../../../flask_app/static/imagens/img/40.jpg"
+                  alt="Walter"
+                />
+                <p class="image-caption">Vereador</p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="carousel-images">
+              <div class="image-wrapper">
+                <img
+                  src="../../../../../flask_app/static/imagens/img/43.jpg"
+                  alt="Imagem 1"
+                />
+                <p class="image-caption">Imagem 1</p>
+              </div>
+              <div class="image-wrapper">
+                <img
+                  src="../../../../../flask_app/static/imagens/img/44.jpg"
+                  alt="Imagem 2"
+                />
+                <p class="image-caption">Imagem 2</p>
+              </div>
+              <div class="image-wrapper">
+                <img
+                  src="../../../../../flask_app/static/imagens/img/45.jpg"
+                  alt="Imagem 3"
+                />
+                <p class="image-caption">Imagem 3</p>
+              </div>
+              <div class="image-wrapper">
+                <img
+                  src="../../../../../flask_app/static/imagens/img/47.jpg"
+                  alt="Imagem 4"
+                />
+                <p class="image-caption">Imagem 4</p>
+              </div>
+              <div class="image-wrapper">
+                <img
+                  src="../../../../../flask_app/static/imagens/img/50.jpg"
+                  alt="Imagem 5"
+                />
+                <p class="image-caption">Imagem 5</p>
+              </div>
+              <div class="image-wrapper">
+                <img
+                  src="../../../../../flask_app/static/imagens/img/55.jpg"
+                  alt="Imagem 6"
+                />
+                <p class="image-caption">Imagem 6</p>
+              </div>
+              <div class="image-wrapper">
+                <img
+                  src="../../../../../flask_app/static/imagens/img/243.jpg"
+                  alt="Imagem 7"
+                />
+                <p class="image-caption">Imagem 7</p>
+              </div>
+              <div class="image-wrapper">
+                <img
+                  src="../../../../../flask_app/static/imagens/img/55.jpg"
+                  alt="Imagem 8"
+                />
+                <p class="image-caption">Imagem 8</p>
+              </div>
+              <div class="image-wrapper">
+                <img
+                  src="../../../../../flask_app/static/imagens/img/55.jpg"
+                  alt="Imagem 9"
+                />
+                <p class="image-caption">Imagem 9</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-controls">
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExample"
+            data-bs-slide="next"
+            id="btnAvancar"
+          >
+            <img
+              src="../imagensmenu/btnavancar.svg"
+              alt="Avançar"
+              class="d-block"
+            />
+            <span class="visually-hidden">Próximo</span>
+          </button>
+        </div>
       </div>
     </div>
 
     <footer>Clique em algum perfil para visualizar especificamente</footer>
 
-
     <script>
       const images = [
-        { src: "/teste/flask_app/static/img/35.jpg", alt: "", caption: "Amélia" },
         {
-          src: "/teste/flask_app/static/img/47.jpg",
-          alt: "Marcao",
-          link: "../../perfil/htmlcss/perfil.html",
+          src: "../../../../../flask_app/static/imagens/img/35.jpg",
+          alt: "Amélia",
         },
-        { src:"/teste/flask_app/static/img/38.jpg", alt:"" },
-        {  src:"/teste/flask_app/static/img/45.jpg", alt:"" },
-        {  src:"/teste/flask_app/static/img/40.jpg", alt:""},
-        {  src:"/teste/flask_app/static/img/44.jpg", alt:""},
-        {  src:"/teste/flask_app/static/img/43.jpg", alt:"" },
-        {  src:"/teste/flask_app/static/img/246.jpg", alt:"" },
-        {  src:"/teste/flask_app/static/img/247.jpg", alt:"" },
-        {  src:"/teste/flask_app/static/img/238.jpg", alt:"" },
-        {  src:"/teste/flask_app/static/img/47.jpg", alt:"" },
-        {  src:"/teste/flask_app/static/img/244.jpg", alt:"" },
-        {  src:"/teste/flask_app/static/img/242.jpg", alt:"" },
-        {  src:"/teste/flask_app/static/img/243.jpg", alt:"" },
-        {  src:"/teste/flask_app/static/img/245.jpg", alt:"" },
-        {  src:"/teste/flask_app/static/img/50.jpg", alt:"" },
-        {  src:"/teste/flask_app/static/img/234.jpg", alt:"" },
-        {  src:"/teste/flask_app/static/img/248.jpg", alt:"" },
-        {  src:"/teste/flask_app/static/img/239.jpg", alt:"" },
-        {  src:"/teste/flask_app/static/img/55.jpg", alt:"" },
+        {
+          src: "../../../../../flask_app/static/imagens/img/38.jpg",
+          alt: "Marcao",
+        },
+        {
+          src: "../../../../../flask_app/static/imagens/img/40.jpg",
+          alt: "Walter",
+        },
+        {
+          src: "../../../../../flask_app/static/imagens/img/43.jpg",
+          alt: "Extra 1",
+        },
+        {
+          src: "../../../../../flask_app/static/imagens/img/44.jpg",
+          alt: "Extra 1",
+        },
+        {
+          src: "../../../../../flask_app/static/imagens/img/45.jpg",
+          alt: "Extra 1",
+        },
+        {
+          src: "../../../../../flask_app/static/imagens/img/47.jpg",
+          alt: "Extra 1",
+          
+        },
+        {
+          src: "../../../../../flask_app/static/imagens/img/50.jpg",
+          alt: "Extra 1",
+        },
+        {
+          src: "../../../../../flask_app/static/imagens/img/55.jpg",
+          alt: "Extra 1",
+        },
+        {
+          src: "../../../../../flask_app/static/imagens/img/234.jpg",
+          alt: "Extra 1",
+        },
+        {
+          src: "../../../../../flask_app/static/imagens/img/243.jpg",
+          alt: "Extra 1",
+        },
+        {
+          src: "../../../../../flask_app/static/imagens/img/50.jpg",
+          alt: "Extra 1",
+        },
+
+        // Adicione mais imagens aqui
       ];
 
       const itemsPerPage = 3;
       let currentIndex = 0;
-      const carouselInner = document.getElementById("carousel-inner");
+      const carouselInner = document.querySelector(".carousel-inner");
 
       function updateCarousel() {
         carouselInner.innerHTML = ""; // Limpa o carrossel
@@ -129,22 +257,13 @@
         const itemsToShow = images.slice(start, end);
 
         itemsToShow.forEach((image) => {
-          const imgContainer = document.createElement("div");
-          if (image.link) {
-            const link = document.createElement("a");
-            link.href = image.link;
-            const img = document.createElement("img");
-            img.src = image.src;
-            img.alt = image.alt;
-            link.appendChild(img);
-            imgContainer.appendChild(link);
-          } else {
-            const img = document.createElement("img");
-            img.src = image.src;
-            img.alt = image.alt;
-            imgContainer.appendChild(img);
-          }
-          carouselItem.appendChild(imgContainer);
+          const img = document.createElement("img");
+          img.src = image.src;
+          img.alt = image.alt;
+          img.style.width = "30%"; // Defina a largura de acordo com seu layout
+          img.style.margin = "0 10px"; // Ajuste o espaçamento
+
+          carouselItem.appendChild(img);
         });
 
         carouselInner.appendChild(carouselItem);
