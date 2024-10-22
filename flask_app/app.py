@@ -71,10 +71,10 @@ def filtros_vereador():
     filtro = request.args.get("filtro")
 
     try:
-        with open("flask_app/leis_aprovadas_vereadores.json", encoding="utf-8") as file:
+        with open("leis_aprovadas_vereadores.json", encoding="utf-8") as file:
             leis_aprovadas = json.load(file)
 
-        with open("flask_app/perfil.json", encoding="utf-8") as file:
+        with open("perfil.json", encoding="utf-8") as file:
             perfil = json.load(file)
 
         comissoes_validas = [
