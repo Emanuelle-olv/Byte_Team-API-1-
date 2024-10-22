@@ -1,19 +1,20 @@
 {% extends "base_light.html" %}
 {% block head_extras %}
 <link rel="stylesheet" href="{{url_for('static', filename = 'perfil.css')}}">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
     <div class="container">
         <div class="left-section">
             <div class="card">
-                <img src="{{ url_for('static', filename='imagens/imagensperfil/marcao.jpg') }}" alt="Marcão da Academia">
-                <h1>Marcão da Academia</h1>
-                <h2>PSD</h2>
-                <p><strong>Telefone:</strong> (12) 3925-6604 / (12) 3925-6604</p>
-                <p class="email" id="email"><strong>E-mail:</strong> marcaodaacademia@camarasjc.sp.gov.br</p>
-                <p><strong>Nº do Gabinete:</strong> Sala 6 - Térreo</p>
+                <!-- A foto do vereador será exibida aqui no card da esquerda -->
+                <img src="{{ url_for('static', filename=vereador['foto']) }}" alt="{{ vereador['nome'] }}">
+                <h1>{{ vereador['nome_civil'] }}</h1>
+                <h2>{{ vereador['partido_sigla'] }}</h2>
+                <p><strong>Telefone:</strong> {{ vereador['telefone'] }}</p>
+                <p class="email" id="email"><strong>E-mail:</strong> {{ vereador['email'] }}</p>
+                <p><strong>Nº do Gabinete:</strong> {{ vereador['gabinete'] or 'Informação não disponível' }}</p>
             </div>
             <button class="comment-btn">ADICIONE UM COMENTÁRIO...</button>
         </div>
@@ -21,23 +22,18 @@
         <div class="right-section">
             <div id="filtro">
                 <input type="text" id="btnBusca" placeholder="FILTRAR...">
+                <!-- Aqui o ícone de filtro é exibido corretamente -->
                 <img src="{{ url_for('static', filename='imagens/imagensperfil/Filter.svg') }}" id="btnFiltro" alt="Filtrar">
             </div>
 
-            <div class="info-box">
+            <div class="info-box" id="info-box">
                 <h2>DADOS BIOGRÁFICOS</h2>
-                <p>Marco Aurélio Simão Rodrigues, mais conhecido como Marcão da Academia, nasceu no dia 5 de abril de 1979 na cidade de São José dos Campos (SP). Empresário, entrou para a política, incentivado pelo pai, professor Ney Rodrigues, que foi suplente de Deputado Federal nas eleições de 1986, deixando inclusive o seu nome registrado na Constituição de 1988, e que implantou com a esposa, Sueli Simão, suas primeiras academias na cidade. O edil lembra a época da inauguração. “Meus pais montaram em 1982 as primeiras academias em São José dos Campos, a La Belle Center e a Ginastic Center, depois em 1985, o complexo esportivo La Belle Sport Center. Eu tinha três anos e cresci dentro da academia. Meu pai, que era professor de educação física, foi me direcionando em várias modalidades. Eu foquei mais no tênis e joguei dos 13 aos 18 anos, inclusive em quadra ao lado do Guga (Gustavo Kuerten), rodei o Brasil”.</p>
-
-                <p>Com 18 anos de idade, Marcão teve que tomar uma decisão importante. Continuar no tênis e jogar fora do país com bolsa de estudo ou parar e buscar outro direcionamento. Ele conta sua decisão. “Resolvi direcionar minha vida, fui para a faculdade de educação física e montei uma academia. Meu pai tinha aparelhos parados e com eles implantei a academia no Bosque dos Eucaliptos, um bairro em crescimento na época. E o nome foi dado pelo meu pai, valorizando meu nome, aí ficou Academia do Marcão, e nesse período também me dediquei ao levantamento de peso, conquistando o campeonato brasileiro”. Pontuou o vereador.</p>
+                <p>{{ vereador['biografia'] }}</p>
             </div>
 
-            <div class="info-box">
+            <div class="info-box" id="historico-box">
                 <h2>HISTÓRICO POLÍTICO</h2>
-                <p>Com o trabalho na academia, Marcão percebeu a importância de ajudar as pessoas com atividades esportivas, com escolinhas de futebol e movimentos nos bairros. Foi quando o pai chamou a atenção para a política. “Aos 24 anos ele me incentivou a entrar na política e disse que ali eu poderia ajudar ainda mais as pessoas. Fui candidato e tive quase setecentos votos, mas não me elegi. Quatro anos depois, me candidatei de novo e obtive 1.206 votos, também não conseguindo me eleger. Só que o prefeito eleito, Eduardo Cury (PSDB) me chamou para a secretaria de esporte e levei para lá o paradesporto e as academias ao ar livre, onde criei o programa “Cidade em Movimento” com profissionais de educação física. Em 2010, instalamos oito academias com 16 mil atendimentos. Os bairros pediam academias”, destaca o vereador.
-
-                <p>Em 2012, Marcão foi para mais uma eleição e saltou para 3.622 votos, mas não se elegeu, mesmo tendo mais votos do que oito vereadores que entraram. A persistência continuou e voltou a ser candidato em 2016, se elegendo com 3.125 votos e se reelegendo em 2020 com 4.470 votos, sendo atualmente líder do governo na Câmara Municipal, já tendo exercido a função de primeiro secretário da mesa em outras oportunidades.</p>
-                    
-                <p>Marcão que se destaca na área de esportes, surpreendentemente é um dos vereadores que têm mais projetos aprovados na área de saúde no município.</p>
+                <p>{{ vereador['historico_politico'] }}</p>
             </div>
         </div>
     </div>
@@ -45,4 +41,23 @@
     <footer>
         <h4>developed by byte</h4>
     </footer>
-    {% endblock %}
+
+    <script>
+        function filtrarDados(tipo) {
+            // Aqui você pode fazer uma requisição fetch para buscar dados filtrados
+            fetch(`/perfil/filtros?vereador_id={{ vereador['id'] }}&filtro=${tipo}`)
+                .then(response => response.json())
+                .then(data => {
+                    // Atualizar a área de informações com os dados recebidos
+                    document.querySelector("#info-box").innerHTML = data.biografia;
+                    document.querySelector("#historico-box").innerHTML = data.historico_politico;
+                });
+        }
+
+        // Adiciona evento de clique nos filtros
+        document.getElementById("btnFiltro").addEventListener("click", function() {
+            const filtroSelecionado = document.getElementById("btnBusca").value;
+            filtrarDados(filtroSelecionado);
+        });
+    </script>
+{% endblock %}
