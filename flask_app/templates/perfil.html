@@ -9,7 +9,7 @@
         <div class="left-section">
             <div class="card">
                 <!-- A foto do vereador será exibida aqui no card da esquerda -->
-                <img src="{{ url_for('static', filename=vereador['foto']) }}" alt="{{ vereador['nome'] }}">
+                <img src="{{ url_for('static', filename=vereador['id']) }}" alt="{{ vereador['nome'] }}">
                 <h1>{{ vereador['nome_civil'] }}</h1>
                 <h2>{{ vereador['partido_sigla'] }}</h2>
                 <p><strong>Telefone:</strong> {{ vereador['telefone'] }}</p>
