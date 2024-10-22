@@ -21,19 +21,18 @@
 
         <div class="right-section">
             <div id="filtro">
-                <input type="text" id="btnBusca" placeholder="FILTRAR...">
-                <!-- Aqui o ícone de filtro é exibido corretamente -->
-                <img src="{{ url_for('static', filename='imagens/imagensperfil/Filter.svg') }}" id="btnFiltro" alt="Filtrar">
+                <select id="filtro-selecao">
+                    <option value="biografia">Dados Biográficos</option>
+                    <option value="projetos_aprovados">Projetos Aprovados</option>
+                </select>
+                <button id="btnFiltrar">Filtrar</button>
             </div>
 
             <div class="info-box" id="info-box">
-                <h2>DADOS BIOGRÁFICOS</h2>
-                <p>{{ vereador['biografia'] }}</p>
-            </div>
-
-            <div class="info-box" id="historico-box">
-                <h2>HISTÓRICO POLÍTICO</h2>
-                <p>{{ vereador['historico_politico'] }}</p>
+                <h2>INFORMAÇÕES</h2>
+                <div id="conteudo-card">
+                    <p>Selecione um filtro para ver as informações correspondentes.</p>
+                </div>
             </div>
         </div>
     </div>
@@ -43,20 +42,42 @@
     </footer>
 
     <script>
-        function filtrarDados(tipo) {
-            // Aqui você pode fazer uma requisição fetch para buscar dados filtrados
-            fetch(`/perfil/filtros?vereador_id={{ vereador['id'] }}&filtro=${tipo}`)
-                .then(response => response.json())
+        function filtrarDados(filtroSelecionado) {
+            console.log("Filtro selecionado:", filtroSelecionado); // Verifica se o filtro está correto
+            
+            fetch(`/perfil/filtros?vereador_id={{ vereador['id'] }}&filtro=${filtroSelecionado}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Erro na requisição: ' + response.status);
+                    }
+                    return response.json();
+                })
                 .then(data => {
-                    // Atualizar a área de informações com os dados recebidos
-                    document.querySelector("#info-box").innerHTML = data.biografia;
-                    document.querySelector("#historico-box").innerHTML = data.historico_politico;
+                    console.log("Dados recebidos:", data); // Verifica os dados recebidos
+                    const conteudoCard = document.getElementById("conteudo-card");
+                    conteudoCard.innerHTML = ""; // Limpa o conteúdo anterior
+
+                    if (filtroSelecionado === "biografia") {
+                        conteudoCard.innerHTML = `<p>${data.biografia}</p>`;
+                    } else if (filtroSelecionado === "projetos_aprovados") {
+                        const ul = document.createElement("ul");
+                        data.projetos_aprovados.forEach(projeto => {
+                            const li = document.createElement("li");
+                            li.innerHTML = `<strong>${projeto.titulo}</strong> - ${projeto.descricao} <a href="${projeto.link_detalhes}" target="_blank">Ver Detalhes</a>`;
+                            ul.appendChild(li);
+                        });
+                        conteudoCard.appendChild(ul);
+                    }
+                })
+                .catch(error => {
+                    console.error("Erro ao filtrar dados:", error); // Mostra erros no console
+                    document.getElementById("conteudo-card").innerHTML = "<p>Erro ao carregar informações. Tente novamente mais tarde.</p>";
                 });
         }
 
-        // Adiciona evento de clique nos filtros
-        document.getElementById("btnFiltro").addEventListener("click", function() {
-            const filtroSelecionado = document.getElementById("btnBusca").value;
+        // Evento de clique no botão de filtro
+        document.getElementById("btnFiltrar").addEventListener("click", function() {
+            const filtroSelecionado = document.getElementById("filtro-selecao").value;
             filtrarDados(filtroSelecionado);
         });
     </script>

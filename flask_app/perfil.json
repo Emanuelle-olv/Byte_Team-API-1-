@@ -1,7 +1,7 @@
 {
     "35": {
         "id": 35,
-        "nome_civil": "Ver. Am\u00e9lia Naomi",
+        "nome_civil": "Ver. Amélia Naomi",
         "partido": "PARTIDO DOS TRABALHADORES (PT)",
         "telefone": "/ (12) 3925-6588",
         "email": "amelia@camarasjc.sp.gov.br",
@@ -31,12 +31,13 @@
         "faltas_justificadas_2022":"0",
         "faltas_justificadas_2023":"3",
         "faltas_justificadas_2024":"2",
-        "gabinete":null
+        "gabinete":null,
+        "biografia":"Amelia Naomi (número de urna 13500) é candidata a vereadora de São José Dos Campos pelo PT nas Eleições 2024. Nascida em Aparecida D Oeste (SP) em 12/06/1960, tem 64 anos, é assistente social com ensino superior completo e casado(a)." 
  
     },
     "238": {
         "id": 238,
-        "nome_civil": "Ver. Dr. Jos\u00e9 Cl\u00e1udio",
+        "nome_civil": "Ver. Dr. José Cláudio",
         "partido": "PARTIDO DA SOCIAL DEMOCRACIA BRASILEIRA (PSDB)",
         "telefone": "/ (12) 3925-6701",
         "email": "joseclaudio@camarasjc.sp.gov.br",
@@ -66,12 +67,13 @@
         "faltas_justificadas_2022":"4",
         "faltas_justificadas_2023":"0",
         "faltas_justificadas_2024":"0",
-        "gabinete":null
+        "gabinete":null,
+        "biografia":"Dr. José Claudio (número de urna 45345) é candidato a vereador de São José Dos Campos pelo PSDB nas Eleições 2024. Nascido em Paraibuna (SP) em 30/09/1966, tem 58 anos, é médico com ensino superior completo e casado(a)."
     },
     "38": {
         "id": 38,
         "nome_civil": "Ver. Dulce Rita",
-        "partido": "PARTIDO UNI\u00c3O BRASIL (UNI\u00c3O BRASIL)",
+        "partido": "PARTIDO UNIÃO BRASIL (UNIÃO BRASIL)",
         "telefone": "/ (12) 3925-6534",
         "email": "dulce.rita@camarasjc.sp.gov.br",
         "foto": "imagens/img/38.jpg",
@@ -100,12 +102,13 @@
         "faltas_justificadas_2022":"1",
         "faltas_justificadas_2023":"6",
         "faltas_justificadas_2024":"6",
-        "gabinete":null
+        "gabinete":null,
+        "biografia":"Dulce Rita (número de urna 44) é candidata à Prefeitura de São José Dos Campos pelo UNIÃO nas Eleições 2024. Nascida em Campos Do Jordão (SP) em 26/05/1950, tem 74 anos, é economista com ensino superior completo e viúvo(a)."
     },
     "247": {
         "id": 247,
-        "nome_civil": "Ver. Fabi\u00e3o Zagueiro",
-        "partido": "PARTIDO SOCIAL DEMOCR\u00c1TICO (PSD)",
+        "nome_civil": "Ver. Fabião Zagueiro",
+        "partido": "PARTIDO SOCIAL DEMOCRÁTICO (PSD)",
         "telefone": "/ (12) 3925-6570",
         "email": "fabiaozagueiro@camarasjc.sp.gov.br",
         "foto": "imagens/img/247.jpg",
@@ -134,12 +137,13 @@
         "faltas_justificadas_2022":"0",
         "faltas_justificadas_2023":"0",
         "faltas_justificadas_2024":"0",
-        "gabinete":null
+        "gabinete":null,
+        "biografia":"Fabião Zagueiro (número de urna 55699) é candidato a vereador de São José Dos Campos pelo PSD nas Eleições 2024. Nascido em São José Dos Campos (SP) em 06/06/1975, tem 49 anos, é empresário com ensino superior completo e casado(a)."
     },
     "40": {
         "id": 40,
         "nome_civil": "Ver. Fernando Petiti",
-        "partido": "MOVIMENTO DEMOCR\u00c1TICO BRASILEIRO (MDB)",
+        "partido": "MOVIMENTO DEMOCRÁTICO BRASILEIRO (MDB)",
         "telefone": "/ (12) 3925-6650",
         "email": "fernandopetiti@camarasjc.sp.gov.br",
         "foto": "imagens/img/40.jpg",
@@ -168,7 +172,8 @@
         "faltas_justificadas_2022":"1",
         "faltas_justificadas_2023":"7",
         "faltas_justificadas_2024":"1",
-        "gabinete":null
+        "gabinete":null,
+        "biografia":"Fernando Petiti (número de urna 45605) é candidato a vereador de São José Dos Campos pelo PSDB nas Eleições 2024. Nascido em São José Dos Campos (SP) em 10/06/1970, tem 54 anos, é vereador com ensino superior completo e casado(a)."
     },
     "43": {
         "id": 43,
@@ -202,12 +207,13 @@
         "faltas_justificadas_2022":"0",
         "faltas_justificadas_2023":"4",
         "faltas_justificadas_2024":"0",
-        "gabinete":"Sala 14 - 1º Andar"
+        "gabinete":"Sala 14 - 1º Andar",
+        "biografia":"Filha de Marinilza e Lázaro, irmã de Renata e esposa de Claudio. Tenho uma filha chamada Catarina e moro no Distrito de Eugênio de Melo, onde nasci, cresci e vivi"
     },
     "246": {
         "id": 246,
-        "nome_civil": "Ver. J\u00fanior da Farm\u00e1cia",
-        "partido": "MOVIMENTO DEMOCR\u00c1TICO BRASILEIRO (MDB)",
+        "nome_civil": "Ver. Júnior da Farmácia",
+        "partido": "MOVIMENTO DEMOCRÁTICO BRASILEIRO (MDB)",
         "telefone": "/ (12) 3925-6610",
         "email": "juniordafarmacia@camarasjc.sp.gov.br",
         "foto": "imagens/img/246.jpg",
@@ -236,13 +242,14 @@
         "faltas_justificadas_2022":"1",
         "faltas_justificadas_2023":"0",
         "faltas_justificadas_2024":"0",
-        "gabinete":null
+        "gabinete":null,
+        "biografia":"Júnior Da Farmácia (número de urna 15999) é candidato a vereador de São José Dos Campos pelo MDB nas Eleições 2024. Nascido em São Sepé (RS) em 11/10/1973, tem 51 anos, é comerciante com ensino superior completo e casado(a)."
         
     },
     "44": {
         "id": 44,
-        "nome_civil": "Ver. Juvenil Silv\u00e9rio",
-        "partido": "PARTIDO SOCIAL DEMOCR\u00c1TICO (PSD)",
+        "nome_civil": "Ver. Juvenil Silvério",
+        "partido": "PARTIDO SOCIAL DEMOCRÁTICO (PSD)",
         "telefone": "(12) 3925-6565 / (12) 3925-6565",
         "email": "juvenil@camarasjc.sp.gov.br",
         "foto": "imagens/img/44.jpg",
@@ -271,7 +278,8 @@
         "faltas_justificadas_2022":"2",
         "faltas_justificadas_2023":"2",
         "faltas_justificadas_2024":"0",
-        "gabinete": "Nº do Gabinete:Sala 23 - 1º Andar"
+        "gabinete": "Nº do Gabinete:Sala 23 - 1º Andar",
+        "biografia": "Filho de mineiros, que foram tentar a sorte no norte do Paraná na década de 60, Juvenil de Almeida Silvério nasceu na pequena Jaboti em 28 de maio de 1970. Pouco tempo depois, a família de onze irmãos veio para São José dos Campos, onde Juvenil começou a trabalhar cedo. Foi aprendiz da prefeitura trabalhando no setor de Informática. Depois passou pela Avibras, Caixa Econômica Federal e Inpe. Casado, pai de dois filhos, Juvenil é Graduado em Publicidade e Propaganda pela UNIVAP, além de ser pósgraduado em Gerência de Cidades pela FAAP."
     },
     "45": {
         "id": 45,
@@ -308,12 +316,13 @@
         "faltas_justificadas_2022":"8",
         "faltas_justificadas_2023":"2",
         "faltas_justificadas_2024":"2",
-        "gabinete":null
+        "gabinete":null,
+        "biografia":"Lino Bispo (número de urna 22100) é candidato a vereador de São José Dos Campos pelo PL nas Eleições 2024. Nascido em Florestópolis (PR) em 31/08/1962, tem 62 anos, é vendedor de comércio varejista e atacadista com ensino médio completo e casado(a)."
     },
     "47": {
         "id": 47,
-        "nome_civil": "Ver. Marc\u00e3o da Academia",
-        "partido": "PARTIDO SOCIAL DEMOCR\u00c1TICO (PSD)",
+        "nome_civil": "Ver. Marcão da Academia",
+        "partido": "PARTIDO SOCIAL DEMOCRÁTICO (PSD)",
         "telefone": "(12) 3925-6604 / (12) 3925-6604",
         "email": "marcaodaacademia@camarasjc.sp.gov.br",
         "foto": "imagens/img/47.jpg",
@@ -342,12 +351,13 @@
         "faltas_justificadas_2022":"2",
         "faltas_justificadas_2023":"2",
         "faltas_justificadas_2024":"0",
-        "gabinete":"Nº do Gabinete:Sala 6 - Térreo"
+        "gabinete":"Nº do Gabinete:Sala 6 - Térreo",
+        "biografia":"Marcão Da Academia Ao Ar Livre (número de urna 55000) é candidato a vereador de São José Dos Campos pelo PSD nas Eleições 2024. Nascido em São José Dos Campos (SP) em 05/04/1979, tem 45 anos, é vereador com ensino superior completo e solteiro(a)."
     },
     "244": {
         "id": 244,
         "nome_civil": "Ver. Marcelo Garcia",
-        "partido": "PARTIDO RENOVA\u00c7\u00c3O DEMOCR\u00c1TICA (PRD)",
+        "partido": "PARTIDO RENOVAÇÃO DEMOCRÁTICA (PRD)",
         "telefone": "/ (12) 3925-6625",
         "email": "marcelogarcia@camarasjc.sp.gov.br",
         "foto": "imagens/img/244.jpg",
@@ -376,7 +386,8 @@
         "faltas_justificadas_2022":"0",
         "faltas_justificadas_2023":"1",
         "faltas_justificadas_2024":"0",
-        "gabinete":null
+        "gabinete":null,
+        "biografia":"Marcelo Garcia (número de urna 25000) é candidato a vereador de São José Dos Campos pelo PRD nas Eleições 2024. Nascido em Jacareí (SP) em 10/06/1974, tem 50 anos, é vereador com superior incompleto e casado(a)."
     },
     "242": {
         "id": 242,
@@ -410,12 +421,13 @@
         "faltas_justificadas_2022":"2",
         "faltas_justificadas_2023":"4",
         "faltas_justificadas_2024":"6",
-        "gabinete":null
+        "gabinete":null,
+        "biografia":"Milton Vieira Filho (número de urna 10300) é candidato a vereador de São José Dos Campos pelo REPUBLICANOS nas Eleições 2024. Nascido em São Paulo (SP) em 02/01/1983, tem 41 anos, é vereador com superior incompleto e divorciado(a)."
     },
     "243": {
         "id": 243,
         "nome_civil": "Ver. Rafael Pascucci",
-        "partido": "PARTIDO SOCIAL DEMOCR\u00c1TICO (PSD)",
+        "partido": "PARTIDO SOCIAL DEMOCRÁTICO (PSD)",
         "telefone": "/ (12) 3925-6700",
         "email": "pascucci@camarasjc.sp.gov.br",
         "foto": "imagens/img/243.jpg",
@@ -444,12 +456,13 @@
         "faltas_justificadas_2022":"2",
         "faltas_justificadas_2023":"2",
         "faltas_justificadas_2024":"0",
-        "gabinete":null
+        "gabinete":null,
+        "biografia":"Rafael Pascucci (número de urna 55676) é candidato a vereador de São José Dos Campos pelo PSD nas Eleições 2024. Nascido em São Paulo (SP) em 30/05/1984, tem 40 anos, é servidor público municipal com ensino superior completo e casado(a)."
     },
     "245": {
         "id": 245,
         "nome_civil": "Ver. Renato Santiago",
-        "partido": "PARTIDO UNI\u00c3O BRASIL (UNI\u00c3O BRASIL)",
+        "partido": "PARTIDO UNIÃO BRASIL (UNIÃO BRASIL)",
         "telefone": "(12) 3925-6697 / (12) 3925-6623",
         "email": "renatosantiago@camarasjc.sp.gov.br",
         "foto": "imagens/img/245.jpg",
@@ -478,14 +491,15 @@
         "faltas_justificadas_2022":"1",
         "faltas_justificadas_2023":"2",
         "faltas_justificadas_2024":"3",
-        "gabinete":null
+        "gabinete":null,
+        "biografia":"Renato Santiago (número de urna 44999) é candidato a vereador de São José Dos Campos pelo UNIÃO nas Eleições 2024. Nascido em Juiz De Fora (MG) em 19/06/1977, tem 47 anos, é professor de ensino médio com ensino superior completo e casado(a)."
     },
     "50": {
         "id": 50,
         "nome_civil": "Ver. Robertinho da Padaria",
-        "partido": "PARTIDO RENOVA\u00c7\u00c3O DEMOCR\u00c1TICA (PRD)",
+        "partido": "PARTIDO RENOVAÇÃO DEMOCRÁTICA (PRD)",
         "telefone": "/ (12) 3925-6747",
-        "email": "E-mail n\u00e3o encontrado",
+        "email": "E-mail não encontrado",
         "foto": "imagens/img/50.jpg",
         "mocoes":"36",
         "projeto_de_lei":"201",
@@ -515,7 +529,8 @@
         "faltas_justificadas_2022":"1",
         "faltas_justificadas_2023":"1",
         "faltas_justificadas_2024":"3",
-        "gabinete":null
+        "gabinete":null,
+        "biografia": "O vereador Robertinho da Padaria cresceu no bairro rural do Sobrado, onde começou a trabalhar aos 12 anos para ajudar sua família, que vivia da produção de leite. Com dedicação, abriu seu primeiro negócio, uma padaria, que começou como um trailer. Casado há 32 anos, tem duas filhas e duas netas, além de cinco cachorros. Toda sua vida e trabalho estão voltados para São José, com foco em projetos de mobilidade, proteção animal e educação, além de ser um defensor do São José Esporte Clube"
     },
     "240": {
         "id": 240,
@@ -549,12 +564,13 @@
         "faltas_justificadas_2022":"0",
         "faltas_justificadas_2023":"0",
         "faltas_justificadas_2024":"0",
-        "gabinete":null
+        "gabinete":null,
+        "biografia": "Roberto Chagas (número de urna 22222) é candidato a vereador de São José Dos Campos pelo PL nas Eleições 2024. Nascido em Itajubá (MG) em 22/12/1979, tem 44 anos, é senador, deputado e vereador com ensino médio incompleto e casado(a)."
     },
     "234": {
         "id": 234,
         "nome_civil": "Ver. Roberto do Eleven",
-        "partido": "PARTIDO SOCIAL DEMOCR\u00c1TICO (PSD)",
+        "partido": "PARTIDO SOCIAL DEMOCRÁTICO (PSD)",
         "telefone": "(12) 3925-6568 / (12) 3925-6568",
         "email": "robertodoeleven@camarasjc.sp.gov.br",
         "foto": "imagens/img/234.jpg",
@@ -583,14 +599,15 @@
         "faltas_justificadas_2022":"1",
         "faltas_justificadas_2023":"0",
         "faltas_justificadas_2024":"0",
-        "gabinete":"Nº do Gabinete:Sala 09 - Térreo"
+        "gabinete":"Nº do Gabinete:Sala 09 - Térreo",
+        "biografia":"Roberto Do Eleven (número de urna 55111) é candidato a vereador de São José Dos Campos pelo PSD nas Eleições 2024. Nascido em Caxambu (MG) em 02/11/1964, tem 59 anos, é comerciante com ensino superior completo e separado(a) judicialmente."
     },
     "249": {
         "id": 249,
-        "nome_civil": "Ver. Rog\u00e9rio da ACASEM",
+        "nome_civil": "Ver. Rogério da ACASEM",
         "partido": "PARTIDO PROGRESSISTA (PROGRESSISTAS)",
         "telefone": "/ (12) 3925-6748",
-        "email": "E-mail n\u00e3o encontrado",
+        "email": "E-mail não encontrado",
         "foto": "imagens/img/249.jpg",
         "mocoes":"37",
         "projeto_de_lei":"50",
@@ -617,7 +634,8 @@
         "faltas_justificadas_2022":"1",
         "faltas_justificadas_2023":"9",
         "faltas_justificadas_2024":"1",
-        "gabinete":null
+        "gabinete":null,
+        "biografia":"Rogério Da Acasem (número de urna 11500) é candidato a vereador de São José Dos Campos pelo PP nas Eleições 2024. Nascido em São Jerônimo Da Serra (PR) em 25/07/1975, tem 49 anos, é outros com ensino superior completo e solteiro(a)."
     },
     "239": {
         "id": 239,
@@ -651,12 +669,13 @@
         "faltas_justificadas_2022":"3",
         "faltas_justificadas_2023":"1",
         "faltas_justificadas_2024":"3",
-        "gabinete":null
+        "gabinete":null,
+        "biografia":"Thomaz Henrique (número de urna 22000) é candidato a vereador de São José Dos Campos pelo PL nas Eleições 2024. Nascido em São José Dos Campos (SP) em 14/12/1990, tem 33 anos, é vereador com ensino superior completo e casado(a)."
     },
     "55": {
         "id": 55,
         "nome_civil": "Ver. Walter Hayashi",
-        "partido": "PARTIDO UNI\u00c3O BRASIL (UNI\u00c3O BRASIL)",
+        "partido": "PARTIDO UNIÃO BRASIL (UNIÃO BRASIL)",
         "telefone": "(12) 3925-6525 / (12) 3925-6525",
         "email": "walterhayashi@camarasjc.sp.gov.br",
         "foto": "imagens/img/55.jpg",
@@ -688,6 +707,44 @@
         "faltas_justificadas_2022":"6",
         "faltas_justificadas_2023":"0",
         "faltas_justificadas_2024":"1",
-        "gabinete": "Nº do Gabinete:Sala 20 - 1º Andar"
+        "gabinete": "Nº do Gabinete:Sala 20 - 1º Andar",
+        "biografia": "Walter Hayashi (número de urna 44100) é candidato a vereador de São José Dos Campos pelo UNIÃO nas Eleições 2024. Nascido em Garça (SP) em 24/03/1946, tem 78 anos, é químico com ensino superior completo e casado(a)."
+    },
+    "237": {
+        "id": 237,
+        "nome_civil": "Ver. Zé Luis",
+        "partido": "PARTIDO SOCIAL DEMOCRÁTICO (PSD)",
+        "telefone": "(12) 3925-6770",
+        "email": "zeluis@camarasjc.sp.gov.br",
+        "foto": "imagens/img/237.jpg",
+        "mocoes":"146",
+        "projeto_de_lei":"138",
+        "projeto_de_lei_aprovados":"61",
+        "requerimento":"643",
+        "partido_sigla":"PSD",
+        "comissoes_atuantes":["26","38","39"],
+        "comissoes_atuantes_2021_id":null,
+        "comissoes_atuantes_2022_id":null,
+        "comissoes_atuantes_2023_id":["26","38","39"],
+        "comissoes_atuantes_2024_id":["26","38","39"],
+        "presenca_totais":"310",
+        "presenca_2021":"86",
+        "presenca_2022":"84",
+        "presenca_2023":"80",
+        "presenca_2024":"60",
+        "faltas_totais":"0",
+        "faltas_2021":"0",
+        "faltas_2022":"0",
+        "faltas_2023":"0",
+        "faltas_2024":"0",
+        "faltas_justificadas_totais":"0",
+        "faltas_justificadas_2021":"0",
+        "faltas_justificadas_2022":"0",
+        "faltas_justificadas_2023":"0",
+        "faltas_justificadas_2024":"0",
+        "gabinete":null,
+        "biografia":"Zé Luís (número de urna 55055) é candidato a vereador de São José Dos Campos pelo PSD nas Eleições 2024. Nascido em São José Dos Campos (SP) em 14/01/1970, tem 54 anos, é professor de ensino médio com ensino superior completo e casado(a)."
+            
+            
     }
 }
