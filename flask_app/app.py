@@ -24,7 +24,23 @@ def index():
 
 @app.route("/menu")
 def menu():
-    return render_template("menu.html")
+    with open("flask_app/perfil.json", encoding='utf-8', errors='ignore') as f:
+        vereadores = json.load(f)
+ 
+    # Extraindo todos os vereadores para exibição
+    vereadores_list = [
+        {
+            'id': int(id_),
+            'nome_civil': v['nome_civil'],
+            'partido': v['partido'],
+            'foto': v['foto']
+        }
+        for id_, v in vereadores.items()
+    ]
+ 
+    return render_template("menu.html", vereadores=vereadores_list)
+ 
+ 
 
 @app.route("/estatisticas")
 def estatisticas():
