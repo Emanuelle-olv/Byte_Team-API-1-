@@ -24,7 +24,11 @@
                 <select id="filtro-selecao">
                     <option value="biografia">Dados Biográficos</option>
                     <option value="projetos_aprovados">Projetos Aprovados</option>
+                    <option value="frequencia_sessoes">Frequência nas Sessões</option>
+                    <option value="proposicoes">Proposições</option>
+                    <option value="comissoes">Atuação em Comissões</option>
                 </select>
+                
                 <button id="btnFiltrar">Filtrar</button>
             </div>
 
@@ -67,6 +71,44 @@
                             ul.appendChild(li);
                         });
                         conteudoCard.appendChild(ul);
+                    } else if (filtroSelecionado === "frequencia_sessoes") {
+                        conteudoCard.innerHTML = `
+                            <p><strong>Presença Total:</strong> ${data.frequencia.presenca_totais}</p>
+                            <p><strong>Presença 2021:</strong> ${data.frequencia.presenca_2021}</p>
+                            <p><strong>Presença 2022:</strong> ${data.frequencia.presenca_2022}</p>
+                            <p><strong>Presença 2023:</strong> ${data.frequencia.presenca_2023}</p>
+                            <p><strong>Presença 2024:</strong> ${data.frequencia.presenca_2024}</p>
+                            <p><strong>Faltas Totais:</strong> ${data.frequencia.faltas_totais}</p>
+                            <p><strong>Faltas 2021:</strong> ${data.frequencia.faltas_2021}</p>
+                            <p><strong>Faltas 2022:</strong> ${data.frequencia.faltas_2022}</p>
+                            <p><strong>Faltas 2023:</strong> ${data.frequencia.faltas_2023}</p>
+                            <p><strong>Faltas 2024:</strong> ${data.frequencia.faltas_2024}</p>
+                            <p><strong>Faltas Justificadas Totais:</strong> ${data.frequencia.faltas_justificadas_totais}</p>
+                            <p><strong>Faltas Justificadas 2021:</strong> ${data.frequencia.faltas_justificadas_2021}</p>
+                            <p><strong>Faltas Justificadas 2022:</strong> ${data.frequencia.faltas_justificadas_2022}</p>
+                            <p><strong>Faltas Justificadas 2023:</strong> ${data.frequencia.faltas_justificadas_2023}</p>
+                            <p><strong>Faltas Justificadas 2024:</strong> ${data.frequencia.faltas_justificadas_2024}</p>
+                        `;
+                    } else if (filtroSelecionado === "proposicoes") {
+                        conteudoCard.innerHTML = `
+                            <p><strong>Moções:</strong> ${data.proposicoes.mocoes}</p>
+                            <p><strong>Projetos de Lei:</strong> ${data.proposicoes.projeto_de_lei}</p>
+                            <p><strong>Projetos de Lei Aprovados:</strong> ${data.proposicoes.projeto_de_lei_aprovados}</p>
+                            <p><strong>Requerimentos:</strong> ${data.proposicoes.requerimento}</p>
+                        `;
+                    } else if (filtroSelecionado === "comissoes") {
+                        const conteudoCard = document.getElementById("conteudo-card");
+                        conteudoCard.innerHTML = "";
+                        for (let ano in data.comissoes) {
+                            const ul = document.createElement("ul");
+                            ul.innerHTML = `<strong>Comissões de ${ano}</strong>`;
+                            data.comissoes[ano].forEach(comissao => {
+                                const li = document.createElement("li");
+                                li.innerText = comissao;
+                                ul.appendChild(li);
+                            });
+                            conteudoCard.appendChild(ul);
+                        }
                     }
                 })
                 .catch(error => {

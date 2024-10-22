@@ -50,31 +50,84 @@ def filtros_vereador():
     filtro = request.args.get('filtro')
 
     try:
-        # Carregar os arquivos JSON
         with open('flask_app/leis_aprovadas_vereadores.json', encoding='utf-8') as file:
             leis_aprovadas = json.load(file)
 
         with open('flask_app/perfil.json', encoding='utf-8') as file:
             perfil = json.load(file)
 
+        comissoes_validas = [
+            (37, "Comissão de Cultura e Esportes"),
+            (43, "Comissão de Economia, Finanças e Orçamento"),
+            (26, "Comissão de Educação e Promoção Social"),
+            (40, "Comissão de Ética"),
+            (39, "Comissão de Justiça, Redação e Direitos Humanos"),
+            (42, "Comissão de Meio Ambiente"),
+            (41, "Comissão de Planejamento Urbano, Obras e Transportes"),
+            (38, "Comissão de Saúde")
+        ]
+        comissoes_dict = {str(id): nome for id, nome in comissoes_validas}
+
         response_data = {}
 
         if filtro == 'projetos_aprovados':
             projetos_aprovados = leis_aprovadas.get(str(vereador_id), [])
-            print(f"Projetos aprovados para vereador {vereador_id}: {projetos_aprovados}")
             response_data['projetos_aprovados'] = projetos_aprovados if projetos_aprovados else "Nenhum projeto aprovado encontrado para este vereador."
 
         elif filtro == 'biografia':
             biografia = perfil.get(str(vereador_id), {}).get('biografia', "Informação biográfica não disponível")
-            print(f"Biografia do vereador {vereador_id}: {biografia}")
             response_data['biografia'] = biografia
+
+        elif filtro == 'frequencia_sessoes':
+            frequencia = perfil.get(str(vereador_id), {})
+            response_data['frequencia'] = {
+                'presenca_totais': frequencia.get('presenca_totais', 'N/A'),
+                'presenca_2021': frequencia.get('presenca_2021', 'N/A'),
+                'presenca_2022': frequencia.get('presenca_2022', 'N/A'),
+                'presenca_2023': frequencia.get('presenca_2023', 'N/A'),
+                'presenca_2024': frequencia.get('presenca_2024', 'N/A'),
+                'faltas_totais': frequencia.get('faltas_totais', 'N/A'),
+                'faltas_2021': frequencia.get('faltas_2021', 'N/A'),
+                'faltas_2022': frequencia.get('faltas_2022', 'N/A'),
+                'faltas_2023': frequencia.get('faltas_2023', 'N/A'),
+                'faltas_2024': frequencia.get('faltas_2024', 'N/A'),
+                'faltas_justificadas_totais': frequencia.get('faltas_justificadas_totais', 'N/A'),
+                'faltas_justificadas_2021': frequencia.get('faltas_justificadas_2021', 'N/A'),
+                'faltas_justificadas_2022': frequencia.get('faltas_justificadas_2022', 'N/A'),
+                'faltas_justificadas_2023': frequencia.get('faltas_justificadas_2023', 'N/A'),
+                'faltas_justificadas_2024': frequencia.get('faltas_justificadas_2024', 'N/A')
+            }
+
+        elif filtro == 'proposicoes':
+            proposicoes = perfil.get(str(vereador_id), {})
+            response_data['proposicoes'] = {
+                'mocoes': proposicoes.get('mocoes', 'N/A'),
+                'projeto_de_lei': proposicoes.get('projeto_de_lei', 'N/A'),
+                'projeto_de_lei_aprovados': proposicoes.get('projeto_de_lei_aprovados', 'N/A'),
+                'requerimento': proposicoes.get('requerimento', 'N/A')
+            }
+
+        elif filtro == 'comissoes':
+            comissoes_anos = {
+                '2021': perfil.get(str(vereador_id), {}).get('comissoes_atuantes_2021_id', []),
+                '2022': perfil.get(str(vereador_id), {}).get('comissoes_atuantes_2022_id', []),
+                '2023': perfil.get(str(vereador_id), {}).get('comissoes_atuantes_2023_id', []),
+                '2024': perfil.get(str(vereador_id), {}).get('comissoes_atuantes_2024_id', [])
+            }
+            
+            comissoes_final = {}
+            for ano, comissoes in comissoes_anos.items():
+                if comissoes:  # Verifica se há comissões
+                    nomes_comissoes = [comissoes_dict.get(str(comissao_id), f"Comissão ID {comissao_id} não encontrada") for comissao_id in comissoes]
+                    comissoes_final[ano] = nomes_comissoes
+            
+            response_data['comissoes'] = comissoes_final
 
         return jsonify(response_data)
 
     except Exception as e:
         print(f"Erro ao carregar os dados: {e}")
         return jsonify({"error": "Erro ao carregar informações."}), 500
-
 
 @app.route("/propo")
 def propo():
