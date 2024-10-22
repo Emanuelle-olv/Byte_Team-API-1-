@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect
 import mysql.connector
+import json
 
 # Inicializar a aplicação Flask
 app = Flask(__name__)
@@ -30,9 +31,17 @@ def menu():
 def estatisticas():
     return render_template("estatisticas.html")
 
-@app.route("/perfil")
-def perfil():
-    return render_template("perfil.html")
+@app.route("/perfil/<int:id_vereador>")
+def perfil(id_vereador):
+    with open("flask_app/perfil.json") as f:
+        vereadores = json.load(f)
+    
+    vereador = vereadores.get(str(id_vereador))
+    
+    if vereador:
+        return render_template("perfil.html", vereador=vereador)
+    else:
+        return "Vereador não encontrado", 404
 
 @app.route("/propo")
 def propo():
