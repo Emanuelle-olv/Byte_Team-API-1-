@@ -4,13 +4,13 @@ import PyPDF2
 import os
 
 # Caminho da pasta onde os PDFs estão localizados
-pasta_pdf = r'C:\Users\Fuska\Documents\GitHub\Byte_Team-API-1-\flask_app\extratoteste'  # Substitua pelo caminho correto da sua pasta
+pasta_pdf = r'flask_app\extratoteste'  # Substitua pelo caminho correto da sua pasta
 
 # Verificar todos os arquivos na pasta e pegar apenas os PDFs
 arquivos_pdf = [f for f in os.listdir(pasta_pdf) if f.endswith('.pdf')]
 
 # Nome do arquivo JSON onde os dados serão armazenados
-json_file_path = 'extratos_votacao.json'
+json_file_path = r'flask_app\extratos_votacao.json'
 
 # Verificar se o arquivo JSON já existe
 if os.path.exists(json_file_path):
@@ -24,6 +24,31 @@ if os.path.exists(json_file_path):
 else:
     # Se o arquivo não existir, iniciar uma nova lista
     dados_existentes = []
+
+# Dicionário de correspondência de nomes para IDs (sem "id", apenas números)
+nomes_para_ids = {
+    "lia Naomi": "001",
+    "Claudio": "002",
+    "Dulce Rita": "003",
+    "o Zagueiro": "004",
+    "Fernando Petiti": "005",
+    "Juliana Fraga": "006",
+    "rio": "007",
+    "cia": "008",
+    "Lino Bispo": "009",
+    "o da Academia": "010",
+    "Marcelo Garcia": "011",
+    "Milton Vieira Filho": "012",
+    "Rafael Pascucci": "013",
+    "Renato Santiago": "014",
+    "Robertinho da Padaria": "015",
+    "Roberto Chagas": "016",
+    "rio da ACASEM": "017",
+    "Thomaz Henrique": "018",
+    "Walter Hayashi": "019",
+    "Luis": "020",
+    "Roberto do Eleven": "021"
+}
 
 # Loop por todos os arquivos PDF na pasta
 for pdf_file in arquivos_pdf:
@@ -57,24 +82,22 @@ for pdf_file in arquivos_pdf:
         resultado = resultados[i] if i < len(resultados) else 'Desconhecido'
         
         # Captura o bloco de texto correspondente à sessão atual
-        # Aqui garantimos que pegamos apenas até o próximo título (para evitar repetição)
         inicio_votacao = texto.index(titulo)
         if i + 1 < len(titulos_unicos):
             proximo_titulo = titulos_unicos[i + 1][1]  # O título da próxima votação
             fim_votacao = texto.index(proximo_titulo)
             sessao_texto = texto[inicio_votacao:fim_votacao]
         else:
-            # Se for a última votação, pegamos até o final do texto
             sessao_texto = texto[inicio_votacao:]
         
         # Captura os votos para essa sessão
         votos = padrao_votacao.findall(sessao_texto)
         
-        # Estrutura os dados
+        # Estrutura os dados com substituição de nomes por IDs (apenas números)
         votacao = {
             'titulo': titulo.strip(),
             'resultado': resultado,
-            'votos': [{'nome': nome.strip(), 'voto': voto} for nome, voto in votos]
+            'votos': [{'id': nomes_para_ids.get(nome.strip(), nome.strip()), 'voto': voto} for nome, voto in votos]
         }
         extratos.append(votacao)
 
