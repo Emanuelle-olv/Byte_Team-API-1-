@@ -27,8 +27,8 @@
                     <option value="frequencia_sessoes" {% if filtro == 'frequencia_sessoes' %}selected{% endif %}>Frequência nas Sessões</option>
                     <option value="proposicoes" {% if filtro == 'proposicoes' %}selected{% endif %}>Proposições</option>
                     <option value="comissoes" {% if filtro == 'comissoes' %}selected{% endif %}>Atuação em Comissões</option>
+                    <option value="posicionamento_votacoes" {% if filtro == 'posicionamento_votacoes' %}selected{% endif %}>Posicionamento em Votações</option>
                 </select>
-                
                 
                 <button id="btnFiltrar">Filtrar</button>
             </div>
@@ -98,7 +98,6 @@
                             <p><strong>Requerimentos:</strong> ${data.proposicoes.requerimento}</p>
                         `;
                     } else if (filtroSelecionado === "comissoes") {
-                        const conteudoCard = document.getElementById("conteudo-card");
                         conteudoCard.innerHTML = "";
                         for (let ano in data.comissoes) {
                             const ul = document.createElement("ul");
@@ -110,6 +109,14 @@
                             });
                             conteudoCard.appendChild(ul);
                         }
+                    } else if (filtroSelecionado === "posicionamento_votacoes") {
+                        const ul = document.createElement("ul");
+                        data.posicionamento_votacoes.forEach(votacao => {
+                            const li = document.createElement("li");
+                            li.innerHTML = `<strong>${votacao.titulo}</strong> - Autoria: ${votacao.autoria}, Resultado: ${votacao.resultado}, Voto: ${votacao.voto}`;
+                            ul.appendChild(li);
+                        });
+                        conteudoCard.appendChild(ul);
                     }
                 })
                 .catch(error => {

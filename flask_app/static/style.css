@@ -22,6 +22,25 @@ header {
     height: 80px;
     box-shadow: 4px 4px rgba(0, 0, 0, 0.1);
 }
+#sobrenos {
+    display: flex;
+    justify-content: flex-end;
+    /* Alinha os itens à direita */
+}
+
+.btnsobrenos {
+
+    background: none;
+    /* Remove o fundo */
+    border: none;
+    /* Remove a borda */
+    cursor: pointer;
+}
+
+.btnsobrenos:hover {
+    background-color: #ecebeb;
+    border-radius: 50px;
+}
 
 header > img {
     max-height: 100%;

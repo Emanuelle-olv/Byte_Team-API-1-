@@ -114,7 +114,6 @@ body {
     transform: scale(1.05);
 }
 
-
 /* Estilo da seção direita, onde ficam as informações detalhadas */
 .right-section {
     width: 65%; /* Define a largura da seção como 65% da tela */
@@ -159,50 +158,63 @@ body {
 
 /* Estilo das caixas de informações (Dados Biográficos e Histórico Político) */
 .info-box {
-    background-color: #d9d9d95e; /* Define a cor de fundo das caixas */
-    padding: 20px; /* Adiciona espaçamento interno */
-    margin-bottom: 20px; /* Adiciona uma margem inferior */
-    border-radius: 10px; /* Arredonda os cantos das caixas */
+    background-color: #d9d9d95e; /* Fundo translúcido */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
 }
 
+/* Uniformização para conteúdo em info-box (filtros) */
 .info-box h2 {
-    font-size: 18px; /* Define o tamanho da fonte dos títulos */
-    color: #333; /* Define a cor do título como cinza escuro */
-    margin-bottom: 10px; /* Adiciona uma margem inferior ao título */
+    font-size: 20px; /* Tamanho uniforme para títulos */
+    color: #25345F;
+    margin-bottom: 15px;
+    font-weight: 700; /* Título mais destacado */
 }
 
-.info-box p {
-    font-size: 14px; /* Define o tamanho da fonte do parágrafo */
-    color: #555; /* Define a cor do texto */
-    line-height: 1.8; /* Define o espaçamento entre as linhas do texto */
+.info-box p, 
+.info-box li { /* Aplica estilo para parágrafos e itens de lista */
+    font-size: 16px; /* Tamanho uniforme para o conteúdo */
+    color: #555;
+    line-height: 1.8; /* Melhor espaçamento entre linhas */
+    margin-bottom: 10px; /* Espaçamento entre parágrafos e itens */
 }
 
-/* Estilo do rodapé */
-footer {
-    background-color: #76C7CC; /* Define a cor de fundo do rodapé como azul suave */
-    color: white; /* Define a cor do texto como branca */
-    text-align: center; /* Centraliza o texto */
-    padding: 10px; /* Adiciona espaçamento interno */
-    position: relative; /* Define a posição relativa ao rodapé */
-    width: 100%; /* Define a largura do rodapé como 100% da tela */
-    bottom: 0; /* Mantém o rodapé no final da página */
-    left: 0; /* Alinha o rodapé à esquerda */
-    right: 0; /* Garante que o rodapé se estenda até o final à direita */
-    font-size: 14px; /* Define o tamanho da fonte do rodapé */
+/* Estilo para listas */
+.info-box ul {
+    padding-left: 20px; /* Espaçamento à esquerda para listas */
+    list-style-type: disc; /* Marcadores nas listas */
+}
+
+.info-box li {
+    margin-bottom: 10px; /* Espaçamento entre itens da lista */
 }
 
 /* Estilo do seletor de filtro */
 #filtro-selecao {
-    padding: 10px; /* Adiciona espaçamento interno */
-    width: 250px; /* Define a largura do seletor */
-    border-radius: 10px; /* Arredonda os cantos */
-    border: none; /* Remove a borda padrão */
-    background-color: #76C7CC; /* Define a cor de fundo */
-    color: white; /* Define a cor do texto */
-    font-size: 16px; /* Define o tamanho da fonte */
-    font-weight: bold; /* Deixa o texto em negrito */
-    cursor: pointer; /* Altera o cursor para uma mãozinha ao passar por cima */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Suaviza a transição das cores ao passar o mouse */
+    padding: 10px;
+    width: 280px;
+    border-radius: 10px;
+    border: none;
+    background-color: #76C7CC;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+/* Estilo dos links */
+.info-box a {
+    text-decoration: none; /* Remove o sublinhado padrão */
+    color: #0033cc; /* Define a cor padrão do link */
+    font-weight: bold; /* Deixa o link em negrito */
+    transition: color 0.3s ease, border-bottom 0.3s ease; /* Suaviza a transição de cor e borda ao passar o mouse */
+    border-bottom: 2px solid transparent; /* Inicialmente, sem borda */
+}
+
+.info-box a:hover {
+    color: #1a53ff; /* Muda a cor ao passar o mouse */
+    border-bottom: 2px solid #1a53ff; /* Adiciona uma borda inferior suave ao passar o mouse */
 }
 
 #filtro-selecao:hover {
@@ -211,21 +223,21 @@ footer {
 
 /* Estilo do botão de filtrar */
 #btnFiltrar {
-    padding: 10px 20px; /* Adiciona espaçamento interno no botão */
-    border-radius: 10px; /* Arredonda os cantos do botão */
-    border: none; /* Remove a borda padrão */
-    background-color: #25345F; /* Define a cor de fundo do botão */
-    color: white; /* Define a cor do texto */
-    font-size: 16px; /* Define o tamanho da fonte */
-    font-weight: bold; /* Deixa o texto em negrito */
-    cursor: pointer; /* Altera o cursor para uma mãozinha ao passar por cima */
-    margin-left: 10px; /* Adiciona um espaço à esquerda do botão */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Suaviza a transição de cores e escala ao passar o mouse */
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: #25345F;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 #btnFiltrar:hover {
-    background-color: #3e557a; /* Muda a cor de fundo ao passar o mouse */
-    transform: scale(1.05); /* Aumenta levemente o tamanho do botão ao passar o mouse */
+    background-color: #3e557a;
+    transform: scale(1.05);
 }
 
 /* Adiciona espaçamento extra entre o seletor de filtro e o botão */
@@ -260,6 +272,32 @@ footer {
 .comment-btn:hover {
     background-color: #3e557a; /* Muda a cor do botão ao passar o mouse */
     transform: scale(1.05); /* Aumenta levemente o tamanho do botão ao passar o mouse */
+}
+
+.conteudo-card ul {
+    max-height: 300px; /* Limite de altura para mostrar os primeiros 20 itens */
+    overflow: hidden; /* Esconde os itens adicionais */
+    transition: max-height 0.3s ease; /* Transição suave ao expandir/colapsar */
+}
+
+.conteudo-card.expanded ul {
+    max-height: 1000px; /* Aumenta a altura quando o conteúdo é expandido */
+}
+
+#toggle-button {
+    background-color: #25345F; /* Cor de fundo do botão */
+    color: white; /* Cor do texto */
+    border: none; /* Remove a borda */
+    border-radius: 10px; /* Arredonda os cantos */
+    padding: 10px 20px; /* Espaçamento interno */
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer; /* Cursor de mão */
+    margin-top: 10px; /* Espaçamento superior */
+    transition: background-color 0.3s ease; /* Suaviza a mudança de cor ao passar o mouse */
+}
+
+#toggle-button:hover {
+    background-color: #1a53ff; /* Cor ao passar o mouse */
 }
 
 
@@ -335,4 +373,18 @@ footer {
     .card p.email {
         font-size: 12px; /* Reduz ainda mais o tamanho da fonte em telas pequenas */
     }
+}
+
+/* Estilo do rodapé */
+footer {
+    background-color: #76C7CC; /* Define a cor de fundo do rodapé como azul suave */
+    color: white; /* Define a cor do texto como branca */
+    text-align: center; /* Centraliza o texto */
+    padding: 10px; /* Adiciona espaçamento interno */
+    position: relative; /* Define a posição relativa ao rodapé */
+    width: 100%; /* Define a largura do rodapé como 100% da tela */
+    bottom: 0; /* Mantém o rodapé no final da página */
+    left: 0; /* Alinha o rodapé à esquerda */
+    right: 0; /* Garante que o rodapé se estenda até o final à direita */
+    font-size: 14px; /* Define o tamanho da fonte do rodapé */
 }

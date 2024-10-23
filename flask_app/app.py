@@ -3,8 +3,6 @@ from datetime import datetime
 import mysql.connector
 import json
 
-
-
 # Inicializar a aplicação Flask
 app = Flask(__name__)
 
@@ -143,12 +141,69 @@ def filtros_vereador():
                     comissoes_final[ano] = nomes_comissoes
             
             response_data['comissoes'] = comissoes_final
+        
+        # Adicionando o novo filtro 'Posicionamento em Votações'
+        elif filtro == 'posicionamento_votacoes':
+            try:
+                with open('flask_app/extratos_votacao.json', encoding='utf-8') as file:
+                    votacoes = json.load(file)
+
+                # Mapeamento de IDs dos vereadores para nomes
+                vereadores_validos = [
+                    (35, 'Amélia Naomi'),
+                    (238, 'Dr. José Claudio'),
+                    (38, 'Dulce Rita'),
+                    (247, 'Fabião Zagueiro'),
+                    (40, 'Fernando Petiti'),
+                    (43, 'Juliana Fraga'),
+                    (246, 'Junior da Farmácia'),
+                    (44, 'Juvenil Silvério'),
+                    (45, 'Lino Bispo'),
+                    (47, 'Marcão da Academia'),
+                    (244, 'Marcelo Garcia'),
+                    (242, 'Milton Vieira Filho'),
+                    (243, 'Rafael Pascucci'),
+                    (245, 'Renato Santiago'),
+                    (50, 'Robertinho da Padaria'),
+                    (240, 'Roberto Chagas'),
+                    (234, 'Roberto do Eleven'),
+                    (249, 'Rogério da ACASEM'),
+                    (239, 'Thomaz Henrique'),
+                    (55, 'Walter Hayashi'),
+                    (237, 'Zé Luís')
+                ]
+
+                # Criar um dicionário para facilitar a busca
+                vereadores_dict = {str(id): nome for id, nome in vereadores_validos}
+
+                votacoes_filtradas = []
+                for votacao in votacoes:
+                    for voto in votacao['votos']:
+                        if voto['id'] == str(vereador_id):
+                            # Substituir o ID da autoria pelo nome do vereador
+                            autoria_nome = vereadores_dict.get(votacao['Autoria'], f"Vereador ID {votacao['Autoria']} não encontrado")
+                            votacoes_filtradas.append({
+                                'titulo': votacao['titulo'],
+                                'autoria': autoria_nome,  # Relacionar o nome do vereador pela autoria
+                                'resultado': votacao['resultado'],
+                                'voto': voto['voto']
+                            })
+
+                if votacoes_filtradas:
+                    response_data['posicionamento_votacoes'] = votacoes_filtradas
+                else:
+                    response_data['posicionamento_votacoes'] = "Nenhum posicionamento em votações encontrado para este vereador."
+
+            except Exception as e:
+                print(f"Erro ao carregar os dados de votações: {e}")
+                response_data['posicionamento_votacoes'] = "Erro ao carregar posicionamento em votações."
 
         return jsonify(response_data)
 
     except Exception as e:
         print(f"Erro ao carregar os dados: {e}")
         return jsonify({"error": "Erro ao carregar informações."}), 500
+
 
 @app.route("/proposicoes_aprovadas")
 def proposicoes_aprovadas():
@@ -170,7 +225,7 @@ def proposicoes_aprovadas():
 def sobre_nos():
     return render_template("sobre_nos.html")
 
-# Rota para exibir os comentários com filtros e para inserir novos comentários
+
 # Rota para exibir os comentários com filtros e para inserir novos comentários
 @app.route("/comentarios", methods=["GET", "POST"])
 def comentarios():

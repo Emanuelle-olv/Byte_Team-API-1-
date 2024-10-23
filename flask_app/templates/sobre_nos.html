@@ -16,28 +16,25 @@
         </a>
         <nav>
             <a href="{{ url_for('menu') }}">Menu</a>
-            <a href="{{ url_for('propo') }}">Proposições</a>
-            <a href="{{ url_for('estatisticas') }}">Estatísticas</a>
-        </nav>
+            <a href="{{ url_for('proposicoes_aprovadas') }}">Proposições aprovadas</a>
+            <!-- <a href="{{ url_for('estatisticas') }}">Estatísticas</a> -->
+            <a href="{{ url_for('comentarios') }}">Comentários</a>
+          </nav>
     </header>
     <main>
         <section class="meetourteam">
         <h2>Conheça Nossa Equipe</h2>
         </section>
         <section class="perfil-sobrenos">
-        <button type="button" class="btnleft">
-            <img
-            src="{{ url_for('static', filename='imagens/imagensmenu/btnvoltar.svg') }}"
-            id="btnVoltar"
-            alt="Voltar"
-            />
-        </button>
+       
+            
         <div>
-            <img src="{{ url_for('static', filename='imagens/imagens_integrantes/foto_gabriel.jpg') }}" alt="Foto do membro ## da Equipe Byte Tech" /><br />
-            <p>Gabriel</p>
+            <img src="{{ url_for('static', filename='imagens/imagens_integrantes/foto_manu.jpg') }}" alt="Foto do membro ## da Equipe Byte Tech" /><br />
+            <p><a href="https://emanuelle-olv.github.io/Portflio-ESGO/" target="_blank">Emanuelle</a></p>
             <br />
-            <p><strong>SCRUM MASTER</strong></p>
+            <p><strong>P.O</strong></p>
         </div>
+        
         <div>
             <img src="{{ url_for('static', filename='imagens/imagens_integrantes/foto-francisco .jpg') }}" alt="Foto do membro ## da Equipe Byte Tech" /><br />
             <p>Francisco</p>
@@ -45,42 +42,25 @@
             <p><strong>DEV TEAM</strong></p>
         </div>
         <div>
-            <img src="{{ url_for('static', filename='imagens/imagens_integrantes/foto_manu.jpg') }}" alt="Foto do membro ## da Equipe Byte Tech" /><br />
-            <p>Emanuelle</p>
-            <br />
-            <p><strong>P.O</strong></p>
-        </div>
-        <div>
             <img src="{{ url_for('static', filename='imagens/imagens_integrantes/foto-lavinia.jpg') }}" alt="Foto do membro ## da Equipe Byte Tech" /><br />
-            <p>Lavinia</p>
+            <p><a href="https://laviniappiratello.github.io/portfolio/" target="_blank"> Lavínia</a></p>
             <br />
-            <p><strong>DEV TEAM</strong></p>
+            <p><strong>SCRUM MASTER</strong></p>
         </div>
         <div>
             <img src="{{ url_for('static', filename='imagens/imagens_integrantes/lucasperfil.jpeg') }}" alt="Foto do membro ## da Equipe Byte Tech" /><br />
-            <p>Lucas</p>
+            <p><a href="https://lucasguerra12.github.io" target="_blank">Lucas</a></p>
             <br />
             <p><strong>DEV TEAM</strong></p>
         </div>
-        <div>
-            <img src="{{ url_for('static', filename='imagens/imagens_integrantes/foto_mael.png') }}" alt="Foto do membro ## da Equipe Byte Tech" /><br />
-            <p>Maria Isabel</p>
-            <br />
-            <p><strong>DEV TEAM</strong></p>
-        </div>
+        
         <div>
             <img src="{{ url_for('static', filename='imagens/imagens_integrantes/foto_vinicius.jpg') }}" alt="Foto do membro ## da Equipe Byte Tech" /><br />
             <p>Vinicius</p>
             <br />
             <p><strong>DEV TEAM</strong></p>
         </div>
-        <button type="button" class="btnright">
-            <img
-            src="{{ url_for('static', filename='imagens/imagensmenu/btnavancar.svg') }}"
-            id="btnAvancar"
-            alt="Avancar"
-            />
-        </button>
+        
         </section>
     </main>
     <footer class="footer-sobrenos">
