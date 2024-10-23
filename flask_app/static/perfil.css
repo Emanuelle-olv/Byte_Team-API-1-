@@ -89,23 +89,31 @@ body {
     font-weight: 800; /* Define o peso da fonte de 100 a 900 (menos espesso a mais espesso) */
 }
 
-/* Estilo do botão de comentário */
 .comment-btn {
-    display: block; /* Exibe o botão como um bloco */
-    background-color: #76C7CC;
-    color: white; /* Define a cor do texto como branca */
-    border: none; /* Remove qualquer borda do botão */
-    border-radius: 20px; /* Arredonda os cantos do botão */
-    padding: 10px; /* Define o espaçamento interno do botão */
-    font-size: 16px; /* Define o tamanho da fonte do botão */
-    width: 100%; /* Define a largura do botão como 100% do card */
-    margin-top: 20px; /* Adiciona uma margem superior de 20px */
-    cursor: pointer; /* Mostra o cursor de mão quando o botão é clicável */
+    text-decoration: none; /* Remove o sublinhado do link */
+    display: block;
+    background-color: #76C7CC; /* Cor anterior restaurada */
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 15px;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+    max-width: 80%; /* Ajustar o tamanho para ser igual ao card */
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .comment-btn:hover {
-    background-color: #74b3f0; /* Muda a cor do fundo do botão quando o mouse passa por cima */
+    background-color: #3e557a; /* Cor ao passar o mouse */
+    transform: scale(1.05);
 }
+
 
 /* Estilo da seção direita, onde ficam as informações detalhadas */
 .right-section {
@@ -182,6 +190,78 @@ footer {
     right: 0; /* Garante que o rodapé se estenda até o final à direita */
     font-size: 14px; /* Define o tamanho da fonte do rodapé */
 }
+
+/* Estilo do seletor de filtro */
+#filtro-selecao {
+    padding: 10px; /* Adiciona espaçamento interno */
+    width: 250px; /* Define a largura do seletor */
+    border-radius: 10px; /* Arredonda os cantos */
+    border: none; /* Remove a borda padrão */
+    background-color: #76C7CC; /* Define a cor de fundo */
+    color: white; /* Define a cor do texto */
+    font-size: 16px; /* Define o tamanho da fonte */
+    font-weight: bold; /* Deixa o texto em negrito */
+    cursor: pointer; /* Altera o cursor para uma mãozinha ao passar por cima */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Suaviza a transição das cores ao passar o mouse */
+}
+
+#filtro-selecao:hover {
+    background-color: #5bb5b8; /* Muda a cor de fundo ao passar o mouse */
+}
+
+/* Estilo do botão de filtrar */
+#btnFiltrar {
+    padding: 10px 20px; /* Adiciona espaçamento interno no botão */
+    border-radius: 10px; /* Arredonda os cantos do botão */
+    border: none; /* Remove a borda padrão */
+    background-color: #25345F; /* Define a cor de fundo do botão */
+    color: white; /* Define a cor do texto */
+    font-size: 16px; /* Define o tamanho da fonte */
+    font-weight: bold; /* Deixa o texto em negrito */
+    cursor: pointer; /* Altera o cursor para uma mãozinha ao passar por cima */
+    margin-left: 10px; /* Adiciona um espaço à esquerda do botão */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Suaviza a transição de cores e escala ao passar o mouse */
+}
+
+#btnFiltrar:hover {
+    background-color: #3e557a; /* Muda a cor de fundo ao passar o mouse */
+    transform: scale(1.05); /* Aumenta levemente o tamanho do botão ao passar o mouse */
+}
+
+/* Adiciona espaçamento extra entre o seletor de filtro e o botão */
+#filtro {
+    display: flex; /* Define um layout flexível para alinhar os itens horizontalmente */
+    align-items: center; /* Alinha os itens ao centro verticalmente */
+    justify-content: flex-start; /* Alinha os itens à esquerda horizontalmente */
+    gap: 15px; /* Define o espaçamento entre os elementos internos */
+    margin-bottom: 20px; /* Adiciona um espaço abaixo do filtro */
+    padding: 10px; /* Adiciona espaçamento interno */
+    border-radius: 20px; /* Arredonda os cantos */
+    background-color: #d9d9d95e; /* Define uma cor de fundo clara e translúcida */
+}
+
+/* Melhorias no botão de comentário */
+.comment-btn {
+    display: block; /* O botão será exibido como um bloco, ocupando 100% da largura disponível */
+    background-color: #25345F; /* Define a cor de fundo */
+    color: white; /* Define a cor do texto */
+    border: none; /* Remove qualquer borda */
+    border-radius: 20px; /* Arredonda os cantos */
+    padding: 15px; /* Adiciona espaçamento interno */
+    font-size: 16px; /* Define o tamanho da fonte */
+    text-transform: uppercase; /* Faz com que o texto fique todo em maiúsculo */
+    text-align: center; /* Centraliza o texto dentro do botão */
+    width: 100%; /* O botão ocupa toda a largura disponível */
+    cursor: pointer; /* Mostra o cursor de mão quando o botão é clicável */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Suaviza a transição de cor e tamanho ao passar o mouse */
+    margin-top: 20px; /* Adiciona uma margem acima do botão */
+}
+
+.comment-btn:hover {
+    background-color: #3e557a; /* Muda a cor do botão ao passar o mouse */
+    transform: scale(1.05); /* Aumenta levemente o tamanho do botão ao passar o mouse */
+}
+
 
 /* Responsividade */
 
