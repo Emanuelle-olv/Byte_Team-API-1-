@@ -239,6 +239,63 @@ header {
     padding: 20px;
 }
 
+/* Estilo atualizado para os comentários em cards */
+#main-content ul {
+    list-style-type: none; /* Remove os marcadores de lista */
+    padding: 0; /* Remove o padding padrão */
+    display: flex;
+    flex-direction: column; /* Coloca os cards em uma coluna */
+    gap: 20px; /* Espaçamento entre os cards */
+}
+
+#main-content ul li {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    font-size: 16px;
+    color: #333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#main-content ul li:hover {
+    transform: scale(1.02); /* Aumenta levemente o tamanho do card ao passar o mouse */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#novoComentarioBtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px; /* Altere para 25px para ficar mais redondo */
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    display: block;
+    margin: 20px auto; /* Adiciona centralização horizontal */
+    text-align: center;
+}
+.comentario-detalhes {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.85em;
+    color: #888; /* Cor mais clara para o texto secundário */
+}
+
+.comentario-data {
+    font-size: 0.85em;
+    color: #666; /* Cor um pouco mais escura que o direcionamento */
+}
+
+.comentario-para {
+    font-size: 0.75em;
+    color: #999; /* Cor mais clara para deixar menos destaque */
+    margin-left: 10px; /* Pequeno recuo para afastar do comentário */
+}
+
+
+
 /* Seção lateral (últimos comentários) */
 #sidebar {
     flex: 1;
@@ -300,6 +357,39 @@ header {
 .carousel-track img:hover {
     transform: scale(1.15);
 }
+/* Estilo para o footer */
+footer {
+    background-color: #25345F; /* Cor de fundo sólida */
+    color: #ffffff; /* Cor do texto branco para contraste */
+    text-align: center; /* Centraliza o texto no footer */
+    padding: 20px 0; /* Espaçamento interno para o footer */
+    font-size: 14px; /* Tamanho da fonte do footer */
+    border-top: 5px solid #1a73e8; /* Linha de destaque na parte superior */
+}
+
+footer a {
+    color: #76C7CC; /* Cor de destaque para links */
+    text-decoration: none; /* Remove o sublinhado padrão dos links */
+    transition: color 0.3s ease; /* Animação suave para mudança de cor */
+}
+
+footer a:hover {
+    color: #ffffff; /* Muda a cor do link ao passar o mouse */
+}
+
+footer p {
+    margin: 0; /* Remove margens internas desnecessárias */
+    font-size: 14px; /* Define um tamanho de fonte mais discreto */
+}
+
+footer p a {
+    color: #76C7CC; /* Define a cor dos links */
+}
+
+footer p a:hover {
+    color: #ffffff; /* Muda a cor dos links no hover */
+}
+
 
 /* Responsividade */
 @media (max-width: 768px) {

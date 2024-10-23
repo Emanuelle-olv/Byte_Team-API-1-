@@ -1,6 +1,9 @@
 from flask import Flask, render_template, request, redirect, jsonify
+from datetime import datetime
 import mysql.connector
 import json
+
+
 
 # Inicializar a aplicação Flask
 app = Flask(__name__)
@@ -168,16 +171,94 @@ def sobre_nos():
     return render_template("sobre_nos.html")
 
 # Rota para exibir os comentários com filtros e para inserir novos comentários
+# Rota para exibir os comentários com filtros e para inserir novos comentários
 @app.route("/comentarios", methods=["GET", "POST"])
 def comentarios():
     db = get_db_connection()
     cursor = db.cursor(dictionary=True)
 
+    # Criação dos dicionários (listas predefinidas)
+    vereadores_validos = [
+        (35, 'Amélia Naomi'),
+        (238, 'Dr. José Claudio'),
+        (38, 'Dulce Rita'),
+        (247, 'Fabião Zagueiro'),
+        (40, 'Fernando Petiti'),
+        (43, 'Juliana Fraga'),
+        (246, 'Junior da Farmácia'),
+        (44, 'Juvenil Silvério'),
+        (45, 'Lino Bispo'),
+        (47, 'Marcão da Academia'),
+        (244, 'Marcelo Garcia'),
+        (242, 'Milton Vieira Filho'),
+        (243, 'Rafael Pascucci'),
+        (245, 'Renato Santiago'),
+        (50, 'Robertinho da Padaria'),
+        (240, 'Roberto Chagas'),
+        (234, 'Roberto do Eleven'),
+        (249, 'Rogério da ACASEM'),
+        (239, 'Thomaz Henrique'),
+        (55, 'Walter Hayashi'),
+        (237, 'Zé Luís')
+    ]
+
+    comissoes_validas = [
+        (37, "Comissão de Cultura e Esportes"),
+        (43, "Comissão de Economia, Finanças e Orçamento"),
+        (26, "Comissão de Educação e Promoção Social"),
+        (40, "Comissão de Ética"),
+        (39, "Comissão de Justiça, Redação e Direitos Humanos"),
+        (42, "Comissão de Meio Ambiente"),
+        (41, "Comissão de Planejamento Urbano, Obras e Transportes"),
+        (38, "Comissão de Saúde")
+    ]
+
+    partidos_validos = [
+        (1, "Avante"),
+        (2, "Cidadania"),
+        (3, "Democracia Cristã (DC)"),
+        (4, "Movimento Democrático Brasileiro (MDB)"),
+        (5, "Partido Comunista Brasileiro (PCB)"),
+        (6, "Partido Comunista do Brasil (PCdoB)"),
+        (7, "Partido da Causa Operária (PCO)"),
+        (8, "Partido da Mulher Brasileira (PMB)"),
+        (9, "Partido da Renovação Democrática (PRD)"),
+        (10, "Partido Democrático Trabalhista (PDT)"),
+        (11, "Partido Liberal (PL)"),
+        (12, "Partido Novo (NOVO)"),
+        (13, "Partido Progressistas (PP)"),
+        (14, "Partido Republicano da Ordem Social (PROS)"),
+        (15, "Partido Renovador Trabalhista Brasileiro (PRTB)"),
+        (16, "Partido Social Cristão (PSC)"),
+        (17, "Partido Social Democrático (PSD)"),
+        (18, "Partido Social Democracia Brasileira (PSDB)"),
+        (19, "Partido Socialista Brasileiro (PSB)"),
+        (20, "Partido Socialismo e Liberdade (PSOL)"),
+        (21, "Partido Socialista dos Trabalhadores Unificado (PSTU)"),
+        (22, "Partido Trabalhista Brasileiro (PTB)"),
+        (23, "Partido dos Trabalhadores (PT)"),
+        (24, "Podemos (PODE)"),
+        (25, "Rede Sustentabilidade (REDE)"),
+        (26, "Republicanos"),
+        (27, "Solidariedade"),
+        (28, "Unidade Popular (UP)"),
+        (29, "União Brasil"),
+        (30, "Aliança pelo Brasil (em formação)"),
+        (31, "Patriota"),
+        (32, "Partido Verde (PV)"),
+        (33, "Progressistas (PP)")
+    ]
+
+    # Converte as listas para dicionários
+    vereadores = {id: nome for id, nome in vereadores_validos}
+    comissoes = {id: nome for id, nome in comissoes_validas}
+    partidos = {id: nome for id, nome in partidos_validos}
+
     if request.method == "POST":
         comentario = request.form['comentario']
-        vereador_id = request.form.get('vereador_id')
-        partido_id = request.form.get('partido_id')
-        comissao_id = request.form.get('comissao_id')
+        vereador_id = request.form.get('vereador_id') or None
+        partido_id = request.form.get('partido_id') or None
+        comissao_id = request.form.get('comissao_id') or None
 
         if not vereador_id and not partido_id and not comissao_id:
             return "Erro: Pelo menos um filtro (vereador, partido ou comissão) deve ser preenchido."
@@ -187,28 +268,24 @@ def comentarios():
             VALUES (%s, %s, %s, %s)
         """, (comentario, vereador_id, partido_id, comissao_id))
         db.commit()
-        cursor.close()
-        db.close()
 
-        return redirect("/comentarios")
+    # Buscando os comentários
+    cursor.execute("SELECT * FROM comentarios")
+    comentarios = cursor.fetchall()
 
-    else:
-        cursor.execute("SELECT id, nome FROM vereadores")
-        vereadores = cursor.fetchall()
+    # Formatar as datas
+    for comentario in comentarios:
+        if comentario['data']:  # Verifica se o campo 'data' existe e não está vazio
+            comentario['data'] = comentario['data'].strftime('%d/%m/%Y %H:%M')
 
-        cursor.execute("SELECT id, nome FROM partidos")
-        partidos = cursor.fetchall()
+    # Busca os últimos 5 comentários (ou a quantidade que desejar)
+    cursor.execute("SELECT * FROM comentarios ORDER BY data DESC LIMIT 5")
+    ultimos_comentarios = cursor.fetchall()
 
-        cursor.execute("SELECT id, nome FROM comissoes")
-        comissoes = cursor.fetchall()
+    cursor.close()
+    db.close()
 
-        cursor.execute("SELECT * FROM comentarios")
-        comentarios = cursor.fetchall()
-
-        cursor.close()
-        db.close()
-
-        return render_template("comentarios.html", vereadores=vereadores, partidos=partidos, comissoes=comissoes, comentarios=comentarios)
+    return render_template("comentarios.html", vereadores=vereadores, partidos=partidos, comissoes=comissoes, comentarios=comentarios, ultimos_comentarios=ultimos_comentarios)
 
 # Rota para aplicar os filtros nos comentários
 @app.route("/comentarios_filtro", methods=["GET"])
