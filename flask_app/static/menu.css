@@ -82,80 +82,86 @@ body {
 
 }
 
-#btnBusca {
-    border: none;
-    /* Remove a borda do input */
-    outline: none;
-    /* Remove a borda de foco (outline) do input */
-    padding: 15px;
-    /* Adicione padding se necessário */
-    background-color: transparent;
-    font-size: 24px;
-
-    background-color: #76C7CC;
-    border-radius: 50px;
-
-    padding: 15px 80px;
-    /* Adicione padding se necessário */
-
-    padding-left: 10px;
+#filtroEbusca {
+    display: flex;
+    justify-content: flex-start; /* Ajusta para começar do início */
+    align-items: center; /* Alinha verticalmente ao centro */
+    margin-left: 20px; /* Dá uma margem à esquerda para afastar do canto */
 }
 
+#filtroEbusca {
+    display: flex;
+    justify-content: flex-start; /* Ajuste para iniciar da esquerda */
+    align-items: center; /* Alinha o botão e a lupa verticalmente ao centro */
+    margin-left: 20px; /* Margem para afastar do canto esquerdo */
+}
+
+#filtroEbusca {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 20px; /* Adiciona uma margem à esquerda */
+    gap: 10px; /* Espaçamento entre o botão e a lupa */
+}
+
+#btnBusca {
+    border: none;
+    outline: none;
+    padding: 10px 50px; /* Reduz o padding para diminuir o tamanho do campo */
+    background-color: #76C7CC;
+    border-radius: 50px;
+    font-size: 15px; /* Diminui o tamanho da fonte */
+    font-weight: bold;
+    color: white;
+    margin-left: 20px;
+}
 
 #busca img {
     padding: 2px;
-    margin-left: -50px;
-    /* Ajuste negativo para colar a imagem ao input */
-    margin-bottom: -15px;
+    margin-left: -10px;
+    position: relative;
+    height: 20px;
+    width: 20px;
 }
+
 
 #btnBusca::placeholder {
     color: white;
-    /* Cor do texto do placeholder */
-    opacity: 1;
-    /* Define a opacidade do placeholder */
+    opacity: 2;
     font-weight: bold;
     font-style: italic;
-
-
-}
-
-#busca img {
-    padding: 2px;
-    margin-left: -50px; /* Ajuste negativo para colar a imagem ao input */
-    margin-bottom: -15px;
 }
 
 
 .card-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center; /* Ajusta para centralizar as cartas */
+    gap: 20px; /* Espaço entre as cartas */
 }
 
 .card {
-    width: calc(25% - 20px); /* Quatro cards por linha */
-    margin-bottom: 20px; /* Espaçamento inferior entre os cards */
+    width: calc(25% - 20px); /* Reduz a largura do card para garantir espaço */
+    margin-bottom: 20px;
     text-align: center;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave ao card */
-    border-radius: 10px; /* Adiciona cantos arredondados */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
 }
 
-  
-  .card img {
+.card img {
     margin-top: 20px;
-    width: 50%; /* Reduz a largura para 60% */
+    width: 50%;
     height: auto;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: transform 0.3s ease; /* Transição suave para a imagem */
+    transition: transform 0.3s ease;
 }
 
+.card:hover {
+    transform: scale(1.05);
+}
 
-  .card:hover {
-    transform: scale(1.05); /* Aumenta o card em 5% ao passar o mouse */
-  }
   .card h1, .card h2 {
     margin: 10px 0;
     font-size: 18px;

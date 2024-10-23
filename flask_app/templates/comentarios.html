@@ -13,30 +13,14 @@
 <!-- Fotos dos vereadores em círculos no topo -->
 <div id="vereadores-carousel" class="carousel">
     <div class="carousel-track">
-        <img src="{{ url_for('static', filename='imagens/img/35.jpg') }}" alt="Vereador 35">
-        <img src="{{ url_for('static', filename='imagens/img/38.jpg') }}" alt="Vereador 38">
-        <img src="{{ url_for('static', filename='imagens/img/40.jpg') }}" alt="Vereador 40">
-        <img src="{{ url_for('static', filename='imagens/img/43.jpg') }}" alt="Vereador 43">
-        <img src="{{ url_for('static', filename='imagens/img/44.jpg') }}" alt="Vereador 44">
-        <img src="{{ url_for('static', filename='imagens/img/45.jpg') }}" alt="Vereador 45">
-        <img src="{{ url_for('static', filename='imagens/img/47.jpg') }}" alt="Vereador 47">
-        <img src="{{ url_for('static', filename='imagens/img/50.jpg') }}" alt="Vereador 50">
-        <img src="{{ url_for('static', filename='imagens/img/55.jpg') }}" alt="Vereador 55">
-        <img src="{{ url_for('static', filename='imagens/img/234.jpg') }}" alt="Vereador 234">
-        <img src="{{ url_for('static', filename='imagens/img/237.jpg') }}" alt="Vereador 237">
-        <img src="{{ url_for('static', filename='imagens/img/238.jpg') }}" alt="Vereador 238">
-        <img src="{{ url_for('static', filename='imagens/img/239.jpg') }}" alt="Vereador 239">
-        <img src="{{ url_for('static', filename='imagens/img/240.jpg') }}" alt="Vereador 240">
-        <img src="{{ url_for('static', filename='imagens/img/242.jpg') }}" alt="Vereador 242">
-        <img src="{{ url_for('static', filename='imagens/img/243.jpg') }}" alt="Vereador 243">
-        <img src="{{ url_for('static', filename='imagens/img/244.jpg') }}" alt="Vereador 244">
-        <img src="{{ url_for('static', filename='imagens/img/245.jpg') }}" alt="Vereador 245">
-        <img src="{{ url_for('static', filename='imagens/img/246.jpg') }}" alt="Vereador 246">
-        <img src="{{ url_for('static', filename='imagens/img/247.jpg') }}" alt="Vereador 247">
-        <img src="{{ url_for('static', filename='imagens/img/249.jpg') }}" alt="Vereador 249">
+        <!-- Lista de vereadores -->
+        {% for vereador in vereadores %}
+            <a href="{{ url_for('perfil', id_vereador=vereador.id) }}">
+                <img src="{{ url_for('static', filename='imagens/img/' ~ vereador.id ~ '.jpg') }}" alt="Vereador {{ vereador.id }}">
+            </a>
+        {% endfor %}
     </div>
 </div>
-
 
 <!-- Barra de pesquisa no topo -->
 <div id="search-bar">
@@ -138,6 +122,7 @@
         var overlay = document.getElementById("overlay");
         form.style.display = "block";
         overlay.classList.add("active");
+        form.classList.add("active");  // Adiciona a classe active para permitir o fechamento com Esc
     };
 
     document.getElementById("overlay").onclick = function() {
@@ -145,7 +130,21 @@
         var overlay = document.getElementById("overlay");
         form.style.display = "none";
         overlay.classList.remove("active");
+        form.classList.remove("active");  // Remove a classe active ao fechar
     };
+
+    // Fecha o modal com a tecla 'Esc'
+    document.addEventListener('keydown', function(event) {
+        if (event.key === "Escape") {
+            var form = document.getElementById("novoComentarioForm");
+            var overlay = document.getElementById("overlay");
+            if (form.classList.contains('active')) {
+                form.style.display = "none";
+                overlay.classList.remove("active");
+                form.classList.remove("active");
+            }
+        }
+    });
 
     // Código do carrossel
     const track = document.querySelector('.carousel-track');
@@ -154,12 +153,12 @@
     function moveCarousel() {
         const totalImages = document.querySelectorAll('.carousel-track img').length;
         const imageWidth = document.querySelector('.carousel-track img').clientWidth;
-        const maxIndex = totalImages - Math.floor(window.innerWidth / (imageWidth + 20)); // Ajusta de acordo com o número visível de imagens
+        const maxIndex = totalImages - Math.floor(window.innerWidth / (imageWidth + 20));
 
         // Incrementa o índice para mover o carrossel
         index++;
         if (index > maxIndex) {
-            index = 0; // Reinicia quando chegar ao final
+            index = 0;
         }
 
         // Move o carrossel

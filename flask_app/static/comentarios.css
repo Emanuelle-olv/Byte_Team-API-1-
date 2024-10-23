@@ -2,7 +2,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
-    padding: 0;
+    padding: 0 20px; /* Adiciona padding lateral */
     background-color: #f5f5f5;
     overflow-x: hidden;
 }
@@ -45,7 +45,6 @@ header {
     transform: scale(1.15);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
-
 
 /* Barra de pesquisa */
 #search-bar {
@@ -114,6 +113,13 @@ header {
     border-top: 5px solid #1a73e8; /* Linha de destaque no topo */
 }
 
+/* Aumentar a altura da textarea para o comentário */
+#novoComentarioForm textarea {
+    height: 200px; /* Aumenta a altura mínima */
+    resize: none; /* Impede o redimensionamento */
+    background-color: #f5f5f5;
+}
+
 /* Título e botões dentro do formulário */
 #novoComentarioForm h2 {
     font-size: 22px;
@@ -131,6 +137,7 @@ header {
     border: 1px solid #dadce0;
     font-size: 14px;
     color: #333;
+    background-color: #f5f5f5;
 }
 
 #novoComentarioForm input[type="submit"] {
@@ -152,6 +159,54 @@ header {
 
 #novoComentarioForm.active {
     display: block;
+}
+
+/* Estilo dos selects na barra de pesquisa */
+#search-bar select {
+    padding: 10px;
+    width: 250px; /* Largura dos selects */
+    border-radius: 10px; /* Arredonda os cantos */
+    border: none; /* Remove a borda */
+    background-color: #76C7CC; /* Define a cor de fundo dos selects */
+    color: white; /* Define a cor do texto dos selects */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 10px; /* Espaçamento entre selects e botão */
+}
+
+#search-bar select:hover {
+    background-color: #5bb5b8; /* Muda a cor de fundo ao passar o mouse */
+}
+
+/* Estilo do botão de filtrar */
+#search-bar button {
+    padding: 10px 20px; /* Define o espaçamento interno */
+    border-radius: 10px; /* Arredonda os cantos do botão */
+    border: none; /* Remove a borda padrão */
+    background-color: #25345F; /* Define a cor de fundo */
+    color: white; /* Define a cor do texto */
+    font-size: 16px; /* Define o tamanho da fonte */
+    font-weight: bold; /* Deixa o texto em negrito */
+    cursor: pointer; /* Mostra o cursor de mão quando o botão é clicável */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#search-bar button:hover {
+    background-color: #3e557a; /* Muda a cor de fundo ao passar o mouse */
+    transform: scale(1.05); /* Aumenta levemente o tamanho do botão ao passar o mouse */
+}
+
+/* Ajuste geral para a barra de pesquisa */
+#search-bar {
+    display: flex; /* Define o layout como flexbox */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    justify-content: flex-start; /* Alinha os itens à esquerda */
+    gap: 15px; /* Define o espaçamento entre os elementos internos */
+    padding: 10px;
+    border-radius: 20px; /* Arredonda os cantos */
+    background-color: #d9d9d95e; /* Define uma cor de fundo clara e translúcida */
 }
 
 /* Estilo do botão de novo comentário */
@@ -245,7 +300,6 @@ header {
 .carousel-track img:hover {
     transform: scale(1.15);
 }
-
 
 /* Responsividade */
 @media (max-width: 768px) {
