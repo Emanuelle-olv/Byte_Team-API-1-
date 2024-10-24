@@ -9,7 +9,7 @@ Projeto baseado na metodologia ágil SCRUM, procurando desenvolver a Proatividad
 * [Apresentação da equipe](#aoresentação-da-equipe)
 * [Funcionalidades e registros (vídeos e apresentações) das sprints](#funcionalidades-e-registros-(vídeos-e-apresentações)-das-sprints)
 * [Tecnologias utilizadas](#tecnologias-utilizadas)
-* [Backlog do produto](#backlog-do-produto)
+* [Sprints](#sprints)
 * [Backlog do produto](#Backlog-do-produto)
 * [Autores](#autores)
 
