@@ -9,6 +9,7 @@ Projeto baseado na metodologia ágil SCRUM, focado no desenvolvimento de Proativ
 * [Apresentação da equipe](#apresentação-da-equipe)
 * [Funcionalidades e registros](#funcionalidades-e-registros)
 * [Tecnologias utilizadas](#tecnologias-utilizadas)
+* [Sprints](#sprints)
 * [Backlog do produto](#backlog-do-produto)
 * [Autores](#autores)
 
@@ -47,12 +48,16 @@ Confira a seguir uma demonstração das funcionalidades:
 - HTML5, CSS3, JavaScript
 - JIRA
 
+
+##Sprints 
+
+[Sprint 1 →](./docs/sprint-1/sprint-1.md)
+
+[Sprint 2 →](./docs/sprint-2/sprint-2.md)
+
+[Sprint 3 →](./docs/sprint-3/sprint-3.md)
+
 ## Backlog do Produto
 
 [backlog11.pdf](https://github.com/user-attachments/files/17156516/backlog11.pdf)
 
-## Burndown da Sprint 1
-![foto_burndown_excel.png](https://github.com/Byte-Team-Fatec/Byte_Team-API-1-/blob/Desenvolvimento/Front-end/código/todas_imagens/foto_burndown_excel.png)
-
-## Burndown da Sprint 1 (Jira)
-![BurnDown_JIRA_Sprint1.png](https://github.com/Byte-Team-Fatec/Byte_Team-API-1-/blob/Desenvolvimento/Front-end/código/todas_imagens/BurnDown_JIRA_Sprint1.png)
