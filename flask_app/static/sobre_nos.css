@@ -1,24 +1,36 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .header-sobrenos {
   background-color: rgb(37, 52, 95);
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 80px;
+  padding: 0 20px;
 }
 
 .header-sobrenos .logo {
-  margin-left: 20px;
   width: auto;
   height: 100%;
   display: flex;
 }
 
 .header-sobrenos .logo:hover {
-  box-shadow: 0 0 20px rgba(125, 185, 215, 0.2);
+  box-shadow: 0 0 20px #25345f(125, 185, 215, 0.2);
 }
 
 .header-sobrenos > nav > a {
@@ -36,43 +48,34 @@
   justify-content: center;
   font-family: 'Roboto', sans-serif;
   color: #25345f;
-  font-size: 40px;
+  font-size: 35px; /* Diminui o tamanho da fonte */
   padding: 40px;
-  height: 50px;
 }
 
 .perfil-sobrenos {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  padding: 0 auto;
-}
-
-.btnleft, .btnright {
-  display: flex;
-  cursor: pointer;
-  margin: 0;
-  background-color: white;
-  border: none;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+  gap: 10px; /* Diminui o espaço entre os cards */
+  margin: 0 40px; /* Afasta um pouco os cards das laterais */
 }
 
 .perfil-sobrenos > div {
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 20px;
+  margin: 20px;
   border: 1px solid white;
   border-radius: 10px;
-  width: calc(25% - 2em);
-  height: 400px;
+  width: 250px;
+  height: 420px;
   justify-content: center;
   align-items: center;
   font-weight: bold;
   color: white;
-  background-color: rgb(37, 52, 95);
+  background: linear-gradient(135deg, #0c225d, #345a82); /* Adiciona o degradê suave */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
 }
@@ -81,68 +84,88 @@
   transform: scale(1.10);
   box-shadow: 0 0 20px rgba(108, 187, 227, 0.2);
 }
+
 .perfil-sobrenos > div > img {
-  width: 100px;
-  height: 100px;
-  margin: 10px;
-  border-radius: 10%;
+  width: 150px;
+  height: 180px;
+  margin-bottom: 15px;
+  border-radius: 15px; /* Foto retangular com cantos arredondados */
 }
+
+/* Remove sublinhado e muda a cor dos links */
+.perfil-sobrenos a {
+  text-decoration: none; /* Remove o sublinhado */
+  color: white; /* Muda a cor para branco */
+}
+
+.perfil-sobrenos a:hover {
+  text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+  color: #cff6e9; /* Altera a cor no hover para contraste */
+}
+
+
+
 .perfil-sobrenos > div > p {
-  font-size: 18px;
+  font-size: 25px;
   color: white;
 }
+
 .perfil-sobrenos > div > p > strong {
   font-size: 24px;
-  color: white;
+  color: rgba(255, 255, 255, 0.641);
 }
+
 .footer-sobrenos {
-  background-color: rgb(37, 52, 95);
+  background-color: #25345f;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 40px; 
-  height: 27px;
+  height: 60px;
+  margin-top: auto;
 }
+
 .footer-sobrenos > p {
   font-size: 14px;
   color: white;
   font-family: 'Roboto', sans-serif;
-  justify-content: center;
-  align-items: center;
 }
 
 @media screen and (max-width: 1200px) {
-  /* Adjustments for larger screens */
   .perfil-sobrenos > div {
     width: 250px;
   }
 }
 
 @media screen and (max-width: 992px) {
-  /* Adjustments for tablets */
   .perfil-sobrenos {
     flex-direction: column;
+    align-items: center;
   }
+  
   .perfil-sobrenos > div {
-    width: 80%;
+    width: 80%; 
+    margin-bottom: 20px;
   }
+
   .btnleft, .btnright {
     display: none;
-    }
+  }
 }
 
 @media screen and (max-width: 768px) {
-  /* Adjustments for smaller smartphones */
   .header-sobrenos nav {
     text-align: center;
   }
+
   .meetourteam {
     font-size: 32px;
   }
+
   .perfil-sobrenos > div {
-    width: 80%;
+    width: 100%;
     height: auto;
   }
+
   .btnleft, .btnright {
     display: none;
   }

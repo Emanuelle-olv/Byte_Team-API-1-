@@ -1,4 +1,4 @@
-{% extends "base_light.html" %}
+{% extends "base_light.html" %} 
 {% block head_extras %}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,9 +14,9 @@
 <div id="vereadores-carousel" class="carousel">
     <div class="carousel-track">
         <!-- Lista de vereadores -->
-        {% for vereador in vereadores %}
-            <a href="{{ url_for('perfil', id_vereador=vereador.id) }}">
-                <img src="{{ url_for('static', filename='imagens/img/' ~ vereador.id ~ '.jpg') }}" alt="Vereador {{ vereador.id }}">
+        {% for vereador_id, vereador_nome in vereadores.items() %}
+            <a href="{{ url_for('perfil', id_vereador=vereador_id) }}">
+                <img src="{{ url_for('static', filename='imagens/img/' ~ vereador_id ~ '.jpg') }}" alt="Vereador {{ vereador_nome }}">
             </a>
         {% endfor %}
     </div>
@@ -28,24 +28,24 @@
         <label for="vereador_id">Vereador:</label>
         <select name="vereador_id">
             <option value="">Todos</option>
-            {% for vereador in vereadores %}
-                <option value="{{ vereador.id }}">{{ vereador.nome }}</option>
+            {% for vereador_id, vereador_nome in vereadores.items() %}
+                <option value="{{ vereador_id }}">{{ vereador_nome }}</option>
             {% endfor %}
         </select>
 
         <label for="partido_id">Partido:</label>
         <select name="partido_id">
             <option value="">Todos</option>
-            {% for partido in partidos %}
-                <option value="{{ partido.id }}">{{ partido.nome }}</option>
+            {% for partido_id, partido_nome in partidos.items() %}
+                <option value="{{ partido_id }}">{{ partido_nome }}</option>
             {% endfor %}
         </select>
 
         <label for="comissao_id">Comissão:</label>
         <select name="comissao_id">
             <option value="">Todas</option>
-            {% for comissao in comissoes %}
-                <option value="{{ comissao.id }}">{{ comissao.nome }}</option>
+            {% for comissao_id, comissao_nome in comissoes.items() %}
+                <option value="{{ comissao_id }}">{{ comissao_nome }}</option>
             {% endfor %}
         </select>
 
@@ -53,44 +53,62 @@
     </form>
 </div>
 
+<button id="novoComentarioBtn">Escrever novo comentário</button>
+        <div id="overlay"></div>
+
 <div id="comentarios">
     <!-- Seção principal -->
     <div id="main-content">
         <ul>
             {% for comentario in comentarios %}
-                <li>{{ comentario.comentario }} - {{ comentario.data }}</li>
+                <li>
+                    {{ comentario.comentario }} 
+                    <div class="comentario-detalhes">
+                        <!-- Exibir a data -->
+                        <span class="comentario-data">{{ comentario.data }}</span>
+        
+                        <!-- Exibir para quem o comentário foi feito -->
+                        {% if comentario.vereador_id %}
+                            <span class="comentario-para">Comentário para o vereador: {{ vereadores[comentario.vereador_id] }}</span>
+                        {% elif comentario.partido_id %}
+                            <span class="comentario-para">Comentário para o partido: {{ partidos[comentario.partido_id] }}</span>
+                        {% elif comentario.comissao_id %}
+                            <span class="comentario-para">Comentário para a comissão: {{ comissoes[comentario.comissao_id] }}</span>
+                        {% else %}
+                            <span class="comentario-para">Comentário geral</span>
+                        {% endif %}
+                    </div>
+                </li>
             {% else %}
                 <li>Nenhum comentário encontrado.</li>
             {% endfor %}
         </ul>
-
-        <button id="novoComentarioBtn">Escrever novo comentário</button>
-        <div id="overlay"></div>
+        
 
         <div id="novoComentarioForm" style="display:none;">
-            <form action="/enviar_comentario" method="POST">
+            <form action="/comentarios" method="POST">
                 <textarea name="comentario" required></textarea><br>
                 <label for="vereador_id">Vereador (opcional):</label>
                 <select name="vereador_id">
                     <option value="">--Selecione um vereador--</option>
-                    {% for vereador in vereadores %}
-                        <option value="{{ vereador.id }}">{{ vereador.nome }}</option>
+                    {% for vereador_id, vereador_nome in vereadores.items() %}
+                        <option value="{{ vereador_id }}">{{ vereador_nome }}</option>
                     {% endfor %}
                 </select><br>
 
                 <label for="partido_id">Partido (opcional):</label>
                 <select name="partido_id">
                     <option value="">--Selecione um partido--</option>
-                    {% for partido in partidos %}
-                        <option value="{{ partido.id }}">{{ partido.nome }}</option>
+                    {% for partido_id, partido_nome in partidos.items() %}
+                        <option value="{{ partido_id }}">{{ partido_nome }}</option>
                     {% endfor %}
                 </select><br>
 
                 <label for="comissao_id">Comissão (opcional):</label>
                 <select name="comissao_id">
                     <option value="">--Selecione uma comissão--</option>
-                    {% for comissao in comissoes %}
-                        <option value="{{ comissao.id }}">{{ comissao.nome }}</option>
+                    {% for comissao_id, comissao_nome in comissoes.items() %}
+                        <option value="{{ comissao_id }}">{{ comissao_nome }}</option>
                     {% endfor %}
                 </select><br>
 

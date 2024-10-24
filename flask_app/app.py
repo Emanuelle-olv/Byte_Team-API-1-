@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, redirect, jsonify
+from datetime import datetime
 import mysql.connector
 import json
 
@@ -150,6 +151,62 @@ def filtros_vereador():
                     comissoes_final[ano] = nomes_comissoes
             
             response_data['comissoes'] = comissoes_final
+        
+        # Adicionando o novo filtro 'Posicionamento em Votações'
+        elif filtro == 'posicionamento_votacoes':
+            try:
+                with open('flask_app/extratos_votacao.json', encoding='utf-8') as file:
+                    votacoes = json.load(file)
+
+                # Mapeamento de IDs dos vereadores para nomes
+                vereadores_validos = [
+                    (35, 'Amélia Naomi'),
+                    (238, 'Dr. José Claudio'),
+                    (38, 'Dulce Rita'),
+                    (247, 'Fabião Zagueiro'),
+                    (40, 'Fernando Petiti'),
+                    (43, 'Juliana Fraga'),
+                    (246, 'Junior da Farmácia'),
+                    (44, 'Juvenil Silvério'),
+                    (45, 'Lino Bispo'),
+                    (47, 'Marcão da Academia'),
+                    (244, 'Marcelo Garcia'),
+                    (242, 'Milton Vieira Filho'),
+                    (243, 'Rafael Pascucci'),
+                    (245, 'Renato Santiago'),
+                    (50, 'Robertinho da Padaria'),
+                    (240, 'Roberto Chagas'),
+                    (234, 'Roberto do Eleven'),
+                    (249, 'Rogério da ACASEM'),
+                    (239, 'Thomaz Henrique'),
+                    (55, 'Walter Hayashi'),
+                    (237, 'Zé Luís')
+                ]
+
+                # Criar um dicionário para facilitar a busca
+                vereadores_dict = {str(id): nome for id, nome in vereadores_validos}
+
+                votacoes_filtradas = []
+                for votacao in votacoes:
+                    for voto in votacao['votos']:
+                        if voto['id'] == str(vereador_id):
+                            # Substituir o ID da autoria pelo nome do vereador
+                            autoria_nome = vereadores_dict.get(votacao['Autoria'], f"Vereador ID {votacao['Autoria']} não encontrado")
+                            votacoes_filtradas.append({
+                                'titulo': votacao['titulo'],
+                                'autoria': autoria_nome,  # Relacionar o nome do vereador pela autoria
+                                'resultado': votacao['resultado'],
+                                'voto': voto['voto']
+                            })
+
+                if votacoes_filtradas:
+                    response_data['posicionamento_votacoes'] = votacoes_filtradas
+                else:
+                    response_data['posicionamento_votacoes'] = "Nenhum posicionamento em votações encontrado para este vereador."
+
+            except Exception as e:
+                print(f"Erro ao carregar os dados de votações: {e}")
+                response_data['posicionamento_votacoes'] = "Erro ao carregar posicionamento em votações."
 
         return jsonify(response_data)
 
@@ -157,25 +214,32 @@ def filtros_vereador():
         print(f"Erro ao carregar os dados: {e}")
         return jsonify({"error": "Erro ao carregar informações."}), 500
 
+
 @app.route("/proposicoes_aprovadas")
 def proposicoes_aprovadas():
     try:
         with open("flask_app/perfil.json", encoding='utf-8') as f:
             vereadores = json.load(f)
         
-        # Converte para uma lista de vereadores, caso necessário
+        # Converte o campo 'projeto_de_lei_aprovados' para inteiro em cada vereador
+        for vereador in vereadores.values():
+            vereador['projeto_de_lei_aprovados'] = int(vereador['projeto_de_lei_aprovados'])
+        
+        # Converte para uma lista de vereadores
         vereadores_lista = [v for v in vereadores.values()]
+
+        # Ordena a lista em ordem decrescente de projetos aprovados
+        vereadores_lista.sort(key=lambda x: x['projeto_de_lei_aprovados'], reverse=True)
 
         return render_template("proposicoes2.html", vereadores=vereadores_lista)
 
     except Exception as e:
         return f"Erro ao carregar proposições aprovadas: {e}", 500
 
-
-
 @app.route("/sobre_nos")
 def sobre_nos():
     return render_template("sobre_nos.html")
+
 
 # Rota para exibir os comentários com filtros e para inserir novos comentários
 @app.route("/comentarios", methods=["GET", "POST"])
@@ -183,11 +247,88 @@ def comentarios():
     db = get_db_connection()
     cursor = db.cursor(dictionary=True)
 
+    # Criação dos dicionários (listas predefinidas)
+    vereadores_validos = [
+        (35, 'Amélia Naomi'),
+        (238, 'Dr. José Claudio'),
+        (38, 'Dulce Rita'),
+        (247, 'Fabião Zagueiro'),
+        (40, 'Fernando Petiti'),
+        (43, 'Juliana Fraga'),
+        (246, 'Junior da Farmácia'),
+        (44, 'Juvenil Silvério'),
+        (45, 'Lino Bispo'),
+        (47, 'Marcão da Academia'),
+        (244, 'Marcelo Garcia'),
+        (242, 'Milton Vieira Filho'),
+        (243, 'Rafael Pascucci'),
+        (245, 'Renato Santiago'),
+        (50, 'Robertinho da Padaria'),
+        (240, 'Roberto Chagas'),
+        (234, 'Roberto do Eleven'),
+        (249, 'Rogério da ACASEM'),
+        (239, 'Thomaz Henrique'),
+        (55, 'Walter Hayashi'),
+        (237, 'Zé Luís')
+    ]
+
+    comissoes_validas = [
+        (37, "Comissão de Cultura e Esportes"),
+        (43, "Comissão de Economia, Finanças e Orçamento"),
+        (26, "Comissão de Educação e Promoção Social"),
+        (40, "Comissão de Ética"),
+        (39, "Comissão de Justiça, Redação e Direitos Humanos"),
+        (42, "Comissão de Meio Ambiente"),
+        (41, "Comissão de Planejamento Urbano, Obras e Transportes"),
+        (38, "Comissão de Saúde")
+    ]
+
+    partidos_validos = [
+        (1, "Avante"),
+        (2, "Cidadania"),
+        (3, "Democracia Cristã (DC)"),
+        (4, "Movimento Democrático Brasileiro (MDB)"),
+        (5, "Partido Comunista Brasileiro (PCB)"),
+        (6, "Partido Comunista do Brasil (PCdoB)"),
+        (7, "Partido da Causa Operária (PCO)"),
+        (8, "Partido da Mulher Brasileira (PMB)"),
+        (9, "Partido da Renovação Democrática (PRD)"),
+        (10, "Partido Democrático Trabalhista (PDT)"),
+        (11, "Partido Liberal (PL)"),
+        (12, "Partido Novo (NOVO)"),
+        (13, "Partido Progressistas (PP)"),
+        (14, "Partido Republicano da Ordem Social (PROS)"),
+        (15, "Partido Renovador Trabalhista Brasileiro (PRTB)"),
+        (16, "Partido Social Cristão (PSC)"),
+        (17, "Partido Social Democrático (PSD)"),
+        (18, "Partido Social Democracia Brasileira (PSDB)"),
+        (19, "Partido Socialista Brasileiro (PSB)"),
+        (20, "Partido Socialismo e Liberdade (PSOL)"),
+        (21, "Partido Socialista dos Trabalhadores Unificado (PSTU)"),
+        (22, "Partido Trabalhista Brasileiro (PTB)"),
+        (23, "Partido dos Trabalhadores (PT)"),
+        (24, "Podemos (PODE)"),
+        (25, "Rede Sustentabilidade (REDE)"),
+        (26, "Republicanos"),
+        (27, "Solidariedade"),
+        (28, "Unidade Popular (UP)"),
+        (29, "União Brasil"),
+        (30, "Aliança pelo Brasil (em formação)"),
+        (31, "Patriota"),
+        (32, "Partido Verde (PV)"),
+        (33, "Progressistas (PP)")
+    ]
+
+    # Converte as listas para dicionários
+    vereadores = {id: nome for id, nome in vereadores_validos}
+    comissoes = {id: nome for id, nome in comissoes_validas}
+    partidos = {id: nome for id, nome in partidos_validos}
+
     if request.method == "POST":
         comentario = request.form['comentario']
-        vereador_id = request.form.get('vereador_id')
-        partido_id = request.form.get('partido_id')
-        comissao_id = request.form.get('comissao_id')
+        vereador_id = request.form.get('vereador_id') or None
+        partido_id = request.form.get('partido_id') or None
+        comissao_id = request.form.get('comissao_id') or None
 
         if not vereador_id and not partido_id and not comissao_id:
             return "Erro: Pelo menos um filtro (vereador, partido ou comissão) deve ser preenchido."
@@ -197,28 +338,24 @@ def comentarios():
             VALUES (%s, %s, %s, %s)
         """, (comentario, vereador_id, partido_id, comissao_id))
         db.commit()
-        cursor.close()
-        db.close()
 
-        return redirect("/comentarios")
+    # Buscando os comentários
+    cursor.execute("SELECT * FROM comentarios")
+    comentarios = cursor.fetchall()
 
-    else:
-        cursor.execute("SELECT id, nome FROM vereadores")
-        vereadores = cursor.fetchall()
+    # Formatar as datas
+    for comentario in comentarios:
+        if comentario['data']:  # Verifica se o campo 'data' existe e não está vazio
+            comentario['data'] = comentario['data'].strftime('%d/%m/%Y %H:%M')
 
-        cursor.execute("SELECT id, nome FROM partidos")
-        partidos = cursor.fetchall()
+    # Busca os últimos 5 comentários (ou a quantidade que desejar)
+    cursor.execute("SELECT * FROM comentarios ORDER BY data DESC LIMIT 5")
+    ultimos_comentarios = cursor.fetchall()
 
-        cursor.execute("SELECT id, nome FROM comissoes")
-        comissoes = cursor.fetchall()
+    cursor.close()
+    db.close()
 
-        cursor.execute("SELECT * FROM comentarios")
-        comentarios = cursor.fetchall()
-
-        cursor.close()
-        db.close()
-
-        return render_template("comentarios.html", vereadores=vereadores, partidos=partidos, comissoes=comissoes, comentarios=comentarios)
+    return render_template("comentarios.html", vereadores=vereadores, partidos=partidos, comissoes=comissoes, comentarios=comentarios, ultimos_comentarios=ultimos_comentarios)
 
 # Rota para aplicar os filtros nos comentários
 @app.route("/comentarios_filtro", methods=["GET"])
@@ -246,14 +383,18 @@ def comentarios_filtro():
     cursor.execute(query, params)
     comentarios = cursor.fetchall()
 
+    # Converte listas para dicionários
     cursor.execute("SELECT id, nome FROM vereadores")
-    vereadores = cursor.fetchall()
+    vereadores_list = cursor.fetchall()
+    vereadores = {v['id']: v['nome'] for v in vereadores_list}
 
     cursor.execute("SELECT id, nome FROM partidos")
-    partidos = cursor.fetchall()
+    partidos_list = cursor.fetchall()
+    partidos = {p['id']: p['nome'] for p in partidos_list}
 
     cursor.execute("SELECT id, nome FROM comissoes")
-    comissoes = cursor.fetchall()
+    comissoes_list = cursor.fetchall()
+    comissoes = {c['id']: c['nome'] for c in comissoes_list}
 
     cursor.close()
     db.close()
