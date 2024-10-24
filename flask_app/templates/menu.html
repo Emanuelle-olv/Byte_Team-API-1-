@@ -24,7 +24,6 @@
     </div>
 </section>
 
-
 <div class="container">
     <div class="left-section">
         <div class="card-container" id="cardContainer">
@@ -35,6 +34,11 @@
                     <h1>{{ vereador.nome_civil }}</h1>
                 </a>
                 <h2>{{ vereador.partido }}</h2>
+                {% for info in vereadores_lista %}
+                {% if info.id == vereador.id %}
+                <p>Reeleito por: {{ info.votos }} votos</p>
+                {% endif %}
+                {% endfor %}
             </div>
             {% endfor %}
         </div>
