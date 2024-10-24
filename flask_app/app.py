@@ -211,15 +211,20 @@ def proposicoes_aprovadas():
         with open("flask_app/perfil.json", encoding='utf-8') as f:
             vereadores = json.load(f)
         
-        # Converte para uma lista de vereadores, caso necessário
+        # Converte o campo 'projeto_de_lei_aprovados' para inteiro em cada vereador
+        for vereador in vereadores.values():
+            vereador['projeto_de_lei_aprovados'] = int(vereador['projeto_de_lei_aprovados'])
+        
+        # Converte para uma lista de vereadores
         vereadores_lista = [v for v in vereadores.values()]
+
+        # Ordena a lista em ordem decrescente de projetos aprovados
+        vereadores_lista.sort(key=lambda x: x['projeto_de_lei_aprovados'], reverse=True)
 
         return render_template("proposicoes2.html", vereadores=vereadores_lista)
 
     except Exception as e:
         return f"Erro ao carregar proposições aprovadas: {e}", 500
-
-
 
 @app.route("/sobre_nos")
 def sobre_nos():
@@ -368,14 +373,18 @@ def comentarios_filtro():
     cursor.execute(query, params)
     comentarios = cursor.fetchall()
 
+    # Converte listas para dicionários
     cursor.execute("SELECT id, nome FROM vereadores")
-    vereadores = cursor.fetchall()
+    vereadores_list = cursor.fetchall()
+    vereadores = {v['id']: v['nome'] for v in vereadores_list}
 
     cursor.execute("SELECT id, nome FROM partidos")
-    partidos = cursor.fetchall()
+    partidos_list = cursor.fetchall()
+    partidos = {p['id']: p['nome'] for p in partidos_list}
 
     cursor.execute("SELECT id, nome FROM comissoes")
-    comissoes = cursor.fetchall()
+    comissoes_list = cursor.fetchall()
+    comissoes = {c['id']: c['nome'] for c in comissoes_list}
 
     cursor.close()
     db.close()
