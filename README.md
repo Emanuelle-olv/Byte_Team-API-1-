@@ -49,7 +49,7 @@ Confira a seguir uma demonstração das funcionalidades:
 - JIRA
 
 
-##Sprints 
+## Sprints 
 
 [Sprint 1 →](./docs/sprint-1/sprint-1.md)
 
