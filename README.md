@@ -9,6 +9,7 @@ Projeto baseado na metodologia ágil SCRUM, procurando desenvolver a Proatividad
 * [Apresentação da equipe](#aoresentação-da-equipe)
 * [Funcionalidades e registros (vídeos e apresentações) das sprints](#funcionalidades-e-registros-(vídeos-e-apresentações)-das-sprints)
 * [Tecnologias utilizadas](#tecnologias-utilizadas)
+* [Backlog do produto](#backlog-do-produto)
 * [Backlog do produto](#Backlog-do-produto)
 * [Autores](#autores)
 
@@ -51,6 +52,13 @@ Confira a seguir uma demonstração das funcionalidades
 
 ![ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/f823123a-15b6-4f66-9040-ac15df7d0d7d)
 
+## Sprints
+
+[Sprint 1 →](./docs/sprint-1/sprint-1.md)
+
+[Sprint 2 →](./docs/sprint-2/sprint-2.md)
+
+[Sprint 3 →](./docs/sprint-3/sprint-3.md)
 
 ## Tecnologias Utilizadas
 
@@ -63,12 +71,6 @@ Confira a seguir uma demonstração das funcionalidades
 
 [backlog11.pdf](https://github.com/user-attachments/files/17156516/backlog11.pdf)
 
-
-# Burndown da sprint 1
-![foto_burndown_excel.png](https://github.com/Byte-Team-Fatec/Byte_Team-API-1-/blob/Desenvolvimento/Front-end/c%C3%B3digo/todas_imagens/foto_burndown_excel.png)
-
-# Burndown da sprint 1 (Jira)
-![BurnDown_JIRA_Sprint1.png](https://github.com/Byte-Team-Fatec/Byte_Team-API-1-/blob/Desenvolvimento/Front-end/c%C3%B3digo/todas_imagens/BurnDown_JIRA_Sprint1.png)
 
 
 # Autores
