@@ -39,9 +39,26 @@ def menu():
         for id_, v in vereadores.items()
     ]
  
-    return render_template("menu.html", vereadores=vereadores_list)
+    # Lista com as informações adicionais dos votos
+    vereadores_lista = [
+        {"id": 35, "nome": "Amélia Naomi", "status": "Reeleito", "votos": 8679},
+        {"id": 247, "nome": "Fabião Zagueiro", "status": "Reeleito", "votos": 8310},
+        {"id": 239, "nome": "Thomaz Henrique", "status": "Reeleito", "votos": 8221},
+        {"id": 240, "nome": "Roberto Chagas", "status": "Reeleito", "votos": 8017},
+        {"id": 40, "nome": "Fernando Petiti", "status": "Reeleito", "votos": 7726},
+        {"id": 47, "nome": "Marcão da Academia", "status": "Reeleito", "votos": 7386},
+        {"id": 237, "nome": "Zé Luís", "status": "Reeleito", "votos": 6891},
+        {"id": 245, "nome": "Renato Santiago", "status": "Reeleito", "votos": 6051},
+        {"id": 43, "nome": "Juliana Fraga", "status": "Reeleito", "votos": 5937},
+        {"id": 243, "nome": "Rafael Pascucci", "status": "Reeleito", "votos": 5801},
+        {"id": 234, "nome": "Roberto do Eleven", "status": "Reeleito", "votos": 5674},
+        {"id": 45, "nome": "Lino Bispo", "status": "Reeleito", "votos": 5274},
+        {"id": 244, "nome": "Marcelo Garcia", "status": "Reeleito", "votos": 4780},
+        {"id": 242, "nome": "Milton Vieira Filho", "status": "Reeleito", "votos": 4410},
+        {"id": 249, "nome": "Rogério da ACASEM", "status": "Reeleito", "votos": 4069}
+    ]
  
- 
+    return render_template("menu.html", vereadores=vereadores_list, vereadores_lista=vereadores_lista)
 
 @app.route("/estatisticas")
 def estatisticas():
