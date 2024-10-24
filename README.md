@@ -33,7 +33,7 @@ Sprint | Previsão | Status|
 
 # Apresentação da equipe
 
-![equipe](https://github.com/user-attachments/assets/7a554ea7-7999-4a7e-841e-862ba6045080)
+![equipe](https://raw.githubusercontent.com/Byte-Team-Fatec/Byte_Team-API-1-/bbad2bd5ade30b6fd4f720d77649941b8310c57b/sobrenos.png)
 
 
 
