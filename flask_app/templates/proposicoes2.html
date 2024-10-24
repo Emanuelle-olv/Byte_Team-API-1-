@@ -32,6 +32,13 @@
             <p class="projetos">
                 <span class="num-projetos">{{ vereador.projeto_de_lei_aprovados }}</span> Projetos Aprovados
             </p>
+            
+            <!-- Adicionando as informações de Reeleito e Votos -->
+            {% if vereador.status and vereador.votos %}
+            <p class="reeleito">Reeleito mandato 2025 a 2028 </p>
+            <p class="votos">Quantidade de votos: {{ vereador.votos }}</p>
+            {% endif %}
+
             <a href="{{ url_for('perfil', id_vereador=vereador.id) }}?filtro=projetos_aprovados">Ver Perfil</a>
         </div>
         {% endfor %}

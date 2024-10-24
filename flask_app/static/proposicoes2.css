@@ -105,6 +105,15 @@ h1 {
     color: white;
 }
 
+  /* Estilo para a informação "Reeleito por" */
+  .card p {
+    font-size: 14px; /* Diminui o tamanho da fonte */
+    color: #666; /* Cor cinza para deixá-la mais discreta */
+    margin-top: 5px; /* Espaçamento superior */
+    text-align: center; /* Centraliza o texto */
+    font-style: italic; /* Adiciona um estilo itálico para diferenciação */
+}
+
 footer {
     background-color: #76c7cc;
     color: white;
