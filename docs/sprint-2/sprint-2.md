@@ -17,5 +17,5 @@
 | MÉDIA | Como usuário, quero ter uma lista de todos os atuais vereadores, clicável para ver as informações individuais | Lavínia | 07/10/2024 | 24/10/2024
 | MÉDIA | Como usuário, quero ter uma página de comentários | Emanuelle | 07/10/2024 | 24/10/2024
 | MÉDIA | Como usuário, quero poder acessar tabelas podendo aplicar certos filtros para visualizar apenas informações individuais | Emanuelle | 07/10/2024 | 24/10/2024
-| Documentação | Atualizar o README | 07/10/2024 | Lavínia | 25/10/2024
+| Documentação | Atualizar o README | Lavínia  | 07/10/2024 | 25/10/2024
  
