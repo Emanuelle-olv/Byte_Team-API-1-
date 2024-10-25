@@ -8,8 +8,7 @@
     <div class="container">
         <div class="left-section">
             <div class="card">
-                <!-- A foto do vereador será exibida aqui no card da esquerda -->
-                <img src="{{ url_for('static', filename=vereador['id']) }}" alt="{{ vereador['nome'] }}">
+                <img src="{{ url_for('static', filename=vereador['foto']) }}" alt="{{ vereador['nome'] }}">
                 <h1>{{ vereador['nome_civil'] }}</h1>
                 <h2>{{ vereador['partido_sigla'] }}</h2>
                 <p><strong>Telefone:</strong> {{ vereador['telefone'] }}</p>
@@ -29,7 +28,6 @@
                     <option value="comissoes" {% if filtro == 'comissoes' %}selected{% endif %}>Atuação em Comissões</option>
                     <option value="posicionamento_votacoes" {% if filtro == 'posicionamento_votacoes' %}selected{% endif %}>Posicionamento em Votações</option>
                 </select>
-                
                 <button id="btnFiltrar">Filtrar</button>
             </div>
 
@@ -48,19 +46,11 @@
 
     <script>
         function filtrarDados(filtroSelecionado) {
-            console.log("Filtro selecionado:", filtroSelecionado); // Verifica se o filtro está correto
-            
             fetch(`/perfil/filtros?vereador_id={{ vereador['id'] }}&filtro=${filtroSelecionado}`)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Erro na requisição: ' + response.status);
-                    }
-                    return response.json();
-                })
+                .then(response => response.json())
                 .then(data => {
-                    console.log("Dados recebidos:", data); // Verifica os dados recebidos
                     const conteudoCard = document.getElementById("conteudo-card");
-                    conteudoCard.innerHTML = ""; // Limpa o conteúdo anterior
+                    conteudoCard.innerHTML = "";
 
                     if (filtroSelecionado === "biografia") {
                         conteudoCard.innerHTML = `<p>${data.biografia}</p>`;
@@ -96,6 +86,7 @@
                             <p><strong>Projetos de Lei:</strong> ${data.proposicoes.projeto_de_lei}</p>
                             <p><strong>Projetos de Lei Aprovados:</strong> ${data.proposicoes.projeto_de_lei_aprovados}</p>
                             <p><strong>Requerimentos:</strong> ${data.proposicoes.requerimento}</p>
+                            <p>Para saber todas as proposições que o vereador realizou durante o mandato 2021-2024 clique em: <a href="${data.link_detalhamento_proposicoes}" target="_blank">Ver proposições</a></p>
                         `;
                     } else if (filtroSelecionado === "comissoes") {
                         conteudoCard.innerHTML = "";
@@ -120,12 +111,11 @@
                     }
                 })
                 .catch(error => {
-                    console.error("Erro ao filtrar dados:", error); // Mostra erros no console
+                    console.error("Erro ao filtrar dados:", error);
                     document.getElementById("conteudo-card").innerHTML = "<p>Erro ao carregar informações. Tente novamente mais tarde.</p>";
                 });
         }
 
-        // Evento de clique no botão de filtro
         document.getElementById("btnFiltrar").addEventListener("click", function() {
             const filtroSelecionado = document.getElementById("filtro-selecao").value;
             filtrarDados(filtroSelecionado);
