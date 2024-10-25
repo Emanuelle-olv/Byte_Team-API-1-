@@ -44,10 +44,6 @@ Sprint | Previsão | Status|
 Apresentação das funcionalidades
 Confira a seguir uma demonstração das funcionalidades
 
-**Acesso ao Nosso Vídeo:**
-
-[![Vídeo da API, 1°Semestre (DSM)](https://github.com/Byte-Team-Fatec/Byte_Team-API-1-/blob/Desenvolvimento/gifsprint2.gif)](https://youtu.be/s-RR2tH72GYE)
-
 **Funcionamento do Websyte:**
 
 ![ezgif com-video-to-gif-converter](https://github.com/Byte-Team-Fatec/Byte_Team-API-1-/blob/Desenvolvimento/gifsprint2.gif)
