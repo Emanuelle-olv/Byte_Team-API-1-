@@ -85,14 +85,30 @@ def filtros_vereador():
     vereador_id = request.args.get('vereador_id')
     filtro = request.args.get('filtro')
 
-    try:
-        with open('flask_app/leis_aprovadas_vereadores.json', encoding='utf-8') as file:
-            leis_aprovadas = json.load(file)
-
-        with open('flask_app/perfil.json', encoding='utf-8') as file:
-            perfil = json.load(file)
-
-        comissoes_validas = [
+    vereadores_link_proposicoes = [
+        {"id":35, "nome":"Amélia Naomi", "link_detalhamento_proposicoes": "https://camarasempapel.camarasjc.sp.gov.br/spl/consulta-producao.aspx?autor=1137&inicio=01/01/2021&procuraTexto=DocumentoInicial" },
+        {"id":238, "nome":"Dr. José Claudio", "link_detalhamento_proposicoes": "https://camarasempapel.camarasjc.sp.gov.br/spl/consulta-producao.aspx?autor=3702&inicio=01/01/2021&procuraTexto=DocumentoInicial" },
+        {"id":38, "nome":"Dulce Rita", "link_detalhamento_proposicoes": "https://camarasempapel.camarasjc.sp.gov.br/spl/consulta-producao.aspx?autor=1140&inicio=01/01/2021&procuraTexto=DocumentoInicial" },
+        {"id":247, "nome":"Fabião Zagueiro", "link_detalhamento_proposicoes": "https://camarasempapel.camarasjc.sp.gov.br/spl/consulta-producao.aspx?autor=3703&inicio=01/01/2021&procuraTexto=DocumentoInicial" },
+        {"id":40, "nome":"Fernando Petiti", "link_detalhamento_proposicoes": "https://camarasempapel.camarasjc.sp.gov.br/spl/consulta-producao.aspx?autor=1141&inicio=01/01/2021&procuraTexto=DocumentoInicial"},
+        {"id":43, "nome":"Juliana Fraga", "link_detalhamento_proposicoes": "https://camarasempapel.camarasjc.sp.gov.br/spl/consulta-producao.aspx?autor=1160&inicio=01/01/2021&procuraTexto=DocumentoInicial" },
+        {"id":246,"nome": "Junior da Farmácia", "link_detalhamento_proposicoes": "https://camarasempapel.camarasjc.sp.gov.br/spl/consulta-producao.aspx?autor=3704&inicio=01/01/2021&procuraTexto=DocumentoInicial"},
+        {"id":44, "nome":"Juvenil Silvério", "link_detalhamento_proposicoes": "https://camarasempapel.camarasjc.sp.gov.br/spl/consulta-producao.aspx?autor=1144&inicio=01/01/2021&procuraTexto=DocumentoInicial" },
+        {"id":45, "nome":"Lino Bispo", "link_detalhamento_proposicoes": "https://camarasempapel.camarasjc.sp.gov.br/spl/consulta-producao.aspx?autor=1145&inicio=01/01/2021&procuraTexto=DocumentoInicial" },
+        {"id":47, "nome":"Marcão da Academia", "link_detalhamento_proposicoes": "https://camarasempapel.camarasjc.sp.gov.br/spl/consulta-producao.aspx?autor=1148&inicio=01/01/2021&procuraTexto=DocumentoInicial" },
+        {"id":244, "nome":"Marcelo Garcia", "link_detalhamento_proposicoes": "https://camarasempapel.camarasjc.sp.gov.br/spl/consulta-producao.aspx?autor=3705&inicio=01/01/2021&procuraTexto=DocumentoInicial" },
+        {"id":242, "nome":"Milton Vieira Filho", "link_detalhamento_proposicoes": "https://camarasempapel.camarasjc.sp.gov.br/spl/consulta-producao.aspx?autor=3706&inicio=01/01/2021&procuraTexto=DocumentoInicial" },
+        {"id":243, "nome":"Rafael Pascucci", "link_detalhamento_proposicoes": "https://camarasempapel.camarasjc.sp.gov.br/spl/consulta-producao.aspx?autor=3707&inicio=01/01/2021&procuraTexto=DocumentoInicial"},
+        {"id":245, "nome":"Renato Santiago", "link_detalhamento_proposicoes": "https://camarasempapel.camarasjc.sp.gov.br/spl/consulta-producao.aspx?autor=3708&inicio=01/01/2021&procuraTexto=DocumentoInicial"},
+        {"id":50, "nome":"Robertinho da Padaria", "link_detalhamento_proposicoes": "https://camarasempapel.camarasjc.sp.gov.br/spl/consulta-producao.aspx?autor=1151&inicio=01/01/2021&procuraTexto=DocumentoInicial"},
+        {"id":240,"nome":"Roberto Chagas", "link_detalhamento_proposicoes": "https://camarasempapel.camarasjc.sp.gov.br/spl/consulta-producao.aspx?autor=3709&inicio=01/01/2021&procuraTexto=DocumentoInicial"},
+        {"id":234, "nome":"Roberto do Eleven", "link_detalhamento_proposicoes": "https://camarasempapel.camarasjc.sp.gov.br/spl/consulta-producao.aspx?autor=1152&inicio=01/01/2021&procuraTexto=DocumentoInicial"},
+        {"id":249, "nome":"Rogério da ACASEM", "link_detalhamento_proposicoes": "https://camarasempapel.camarasjc.sp.gov.br/spl/consulta-producao.aspx?autor=4140&inicio=01/01/2021&procuraTexto=DocumentoInicial" },
+        {"id":239, "nome":"Thomaz Henrique", "link_detalhamento_proposicoes": "https://camarasempapel.camarasjc.sp.gov.br/spl/consulta-producao.aspx?autor=3710&inicio=01/01/2021&procuraTexto=DocumentoInicial" },
+        {"id":55, "nome":"Walter Hayashi", "link_detalhamento_proposicoes": "https://camarasempapel.camarasjc.sp.gov.br/spl/consulta-producao.aspx?autor=1156&inicio=01/01/2021&procuraTexto=DocumentoInicial"},
+        {"id":237, "nome":"Zé Luís", "link_detalhamento_proposicoes": "https://camarasempapel.camarasjc.sp.gov.br/spl/consulta-producao.aspx?autor=1274&inicio=01/01/2021&procuraTexto=DocumentoInicial" }
+    ]
+    comissoes_validas = [
             (37, "Comissão de Cultura e Esportes"),
             (43, "Comissão de Economia, Finanças e Orçamento"),
             (26, "Comissão de Educação e Promoção Social"),
@@ -101,14 +117,26 @@ def filtros_vereador():
             (42, "Comissão de Meio Ambiente"),
             (41, "Comissão de Planejamento Urbano, Obras e Transportes"),
             (38, "Comissão de Saúde")
-        ]
-        comissoes_dict = {str(id): nome for id, nome in comissoes_validas}
+    ]
+    comissoes_dict = {str(id): nome for id, nome in comissoes_validas}
+
+    response_data = {}
+
+    try:
+        with open('flask_app/leis_aprovadas_vereadores.json', encoding='utf-8') as file:
+            leis_aprovadas = json.load(file)
+
+        with open('flask_app/perfil.json', encoding='utf-8') as file:
+            perfil = json.load(file)
 
         response_data = {}
 
         if filtro == 'projetos_aprovados':
             projetos_aprovados = leis_aprovadas.get(str(vereador_id), [])
-            response_data['projetos_aprovados'] = projetos_aprovados if projetos_aprovados else "Nenhum projeto aprovado encontrado para este vereador."
+            if projetos_aprovados:
+                response_data['projetos_aprovados'] = projetos_aprovados
+            else:
+                response_data['projetos_aprovados'] = "Nenhum projeto aprovado encontrado para este vereador."
 
         elif filtro == 'biografia':
             biografia = perfil.get(str(vereador_id), {}).get('biografia', "Informação biográfica não disponível")
@@ -142,6 +170,9 @@ def filtros_vereador():
                 'projeto_de_lei_aprovados': proposicoes.get('projeto_de_lei_aprovados', 'N/A'),
                 'requerimento': proposicoes.get('requerimento', 'N/A')
             }
+            # Adiciona o link de proposições do vereador
+            link_detalhamento = next((v['link_detalhamento_proposicoes'] for v in vereadores_link_proposicoes if v['id'] == int(vereador_id)), None)
+            response_data['link_detalhamento_proposicoes'] = link_detalhamento or "Link de proposições não disponível."
 
         elif filtro == 'comissoes':
             comissoes_anos = {
@@ -150,22 +181,20 @@ def filtros_vereador():
                 '2023': perfil.get(str(vereador_id), {}).get('comissoes_atuantes_2023_id', []),
                 '2024': perfil.get(str(vereador_id), {}).get('comissoes_atuantes_2024_id', [])
             }
-            
+
             comissoes_final = {}
             for ano, comissoes in comissoes_anos.items():
                 if comissoes:  # Verifica se há comissões
                     nomes_comissoes = [comissoes_dict.get(str(comissao_id), f"Comissão ID {comissao_id} não encontrada") for comissao_id in comissoes]
                     comissoes_final[ano] = nomes_comissoes
-            
+
             response_data['comissoes'] = comissoes_final
-        
-        # Adicionando o novo filtro 'Posicionamento em Votações'
+
         elif filtro == 'posicionamento_votacoes':
             try:
                 with open('flask_app/extratos_votacao.json', encoding='utf-8') as file:
                     votacoes = json.load(file)
 
-                # Mapeamento de IDs dos vereadores para nomes
                 vereadores_validos = [
                     (35, 'Amélia Naomi'),
                     (238, 'Dr. José Claudio'),
@@ -190,26 +219,21 @@ def filtros_vereador():
                     (237, 'Zé Luís')
                 ]
 
-                # Criar um dicionário para facilitar a busca
                 vereadores_dict = {str(id): nome for id, nome in vereadores_validos}
 
                 votacoes_filtradas = []
                 for votacao in votacoes:
                     for voto in votacao['votos']:
                         if voto['id'] == str(vereador_id):
-                            # Substituir o ID da autoria pelo nome do vereador
                             autoria_nome = vereadores_dict.get(votacao['Autoria'], f"Vereador ID {votacao['Autoria']} não encontrado")
                             votacoes_filtradas.append({
                                 'titulo': votacao['titulo'],
-                                'autoria': autoria_nome,  # Relacionar o nome do vereador pela autoria
+                                'autoria': autoria_nome, 
                                 'resultado': votacao['resultado'],
                                 'voto': voto['voto']
                             })
 
-                if votacoes_filtradas:
-                    response_data['posicionamento_votacoes'] = votacoes_filtradas
-                else:
-                    response_data['posicionamento_votacoes'] = "Nenhum posicionamento em votações encontrado para este vereador."
+                response_data['posicionamento_votacoes'] = votacoes_filtradas if votacoes_filtradas else "Nenhum posicionamento em votações encontrado para este vereador."
 
             except Exception as e:
                 print(f"Erro ao carregar os dados de votações: {e}")
