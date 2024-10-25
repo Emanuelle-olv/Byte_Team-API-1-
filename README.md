@@ -20,11 +20,10 @@ Sprint | Previsão | Status|
 |------|--------|------|
 |Kick Off | 02/09/2024 | concluido|
 |01 | 29/09/2024 | concluido|
-|02|  27/10/2024 | em progresso |
+|02|  27/10/2024 | concluido |
 |03| 24/11/2024 | a fazer|
 |Feira de Soluções| 12/12 |a fazer |
 
-!
 
 
 
@@ -41,16 +40,11 @@ Sprint | Previsão | Status|
 
 # Funcionalidades e registros (vídeos e apresentações) das sprints
 
-Apresentação das funcionalidades
 Confira a seguir uma demonstração das funcionalidades
 
 **Acesso ao Nosso Vídeo:**
 
-[![Vídeo da API, 1°Semestre (DSM)](https://github.com/Byte-Team-Fatec/Byte_Team-API-1-/blob/Desenvolvimento/Front-end/c%C3%B3digo/todas_imagens/website_byte.png?raw=true)](https://youtu.be/YpBmKlsOu7E)
-
-**Funcionamento do Websyte:**
-
-![ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/f823123a-15b6-4f66-9040-ac15df7d0d7d)
+[![Vídeo da API, 2°Semestre (DSM)](https://github.com/user-attachments/assets/f823123a-15b6-4f66-9040-ac15df7d0d7d)](https://youtu.be/s-RR2tH72GY)
 
 ## Sprints
 
@@ -69,7 +63,7 @@ Confira a seguir uma demonstração das funcionalidades
 
 # Backlog do produto
 
-[backlog11.pdf](https://github.com/user-attachments/files/17156516/backlog11.pdf)
+[backlog2.pdf](https://github.com/Byte-Team-Fatec/Byte_Team-API-1-/blob/main/BACKLOG._SPRINT.pdf)
 
 
 
