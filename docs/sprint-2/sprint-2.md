@@ -6,7 +6,7 @@
 | ALTA | Como usuário, quero uma ferramenta de buscas para achar diretamente o que me interessa | Emanuelle | 07/10/2024 | 24/10/2024
 | ALTA | Como usuário, quero acessar propostas aprovadas e conferir os detalhes para tomar minhas decisões | Lucas | 07/10/2024 | 24/10/2024
 | ALTA | Criação do modelo conceitual do banco de dados | Emanuelle | 07/10/2024 | 24/10/2024
-| ALTA | Trocar o nome do vereador pelo ID para facilitar na raspagem | Vinicius | 07/10/2024 | 24/10/2024
+| ALTA | Raspagem de dados das votações, dos tipos de sessão e das posições de cada candidato numa votação | Vinicius | 07/10/2024 | 24/10/2024
 | ALTA| Fazer a conexão do front-end com o back-end e criar o banco de dados| Emanuelle | 07/10/2024 | 24/10/2024
 | ALTA | Como usuário, quero poder acessar projetos de lei, requerimentos e moções apresentadas por cada vereador para me informar melhor | Lucas | 07/10/2024 | 24/10/2024
 | ALTA | Como usuário, quero visualizar também dados biográficos e seu histórico político para saber mais sobre o candidato | Emanuelle | 07/10/2024 | 24/10/2024
