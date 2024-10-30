@@ -59,7 +59,7 @@ Confira a seguir uma demonstração das funcionalidades
 
 ## Tecnologias Utilizadas
 
-![tecnologias](https://github.com/user-attachments/assets/a7812155-1645-45a2-ae56-c5aec408144d)
+![Img att](https://github.com/user-attachments/assets/7c7c33ac-b275-4d78-89ef-0182d7c0a19c)
 
 
 
