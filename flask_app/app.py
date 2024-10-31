@@ -27,7 +27,7 @@ def index():
 def menu():
     with open("flask_app/perfil.json", encoding='utf-8', errors='ignore') as f:
         vereadores = json.load(f)
- 
+
     # Extraindo todos os vereadores para exibição
     vereadores_list = [
         {
