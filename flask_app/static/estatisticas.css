@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* box-sizing: border-box; */
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    overflow-x: hidden;
+    background-color: #F5F5F5;
+}
+
+.container_filtros {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2em;
+
+}
+
+.filtros {
+    background-color: #76C7CC;
+    border-radius: 50px;
+    color: #FFF;
+    border: none;
+    padding: 0.5em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    outline: none;
+    text-align: left;
+    padding-left: 2.5em;
+}
+
+.filtro1 {
+    width: 500px;
+    font-style: italic;
+}
+
+.data {
+    font-family: 'Roboto', sans-serif;
+    color: #25345F;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.imagens {
+    margin: 10em;
+    display: flex;
+    margin-left: 40px;
+
+ }
+
+
+
+ footer {
+    background-color: #76C7CC; /* Define a cor de fundo do rodapé como azul suave */
+    color: white; /* Define a cor do texto como branca */
+    text-align: center; /* Centraliza o texto */
+    padding: 10px; /* Adiciona espaçamento interno */
+    position: relative;
+    width: 100%;
+    /* Define a largura do rodapé como 100% da tela */
+    bottom: 0;
+    /* Mantém o rodapé no final da página */
+    left: 0;
+    right: 0;
+    font-size: 14px;
+    /* Define o tamanho da fonte do rodapé */
+}
+
+@media (max-width: 992px) {
+    .container_filtros {
+        flex-direction: column;
+    }
+
+    .filtros {
+        margin: 1em;
+    }
+
+    .imagens {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .container_filtros {
+        flex-direction: column;
+    }
+
+    .filtros {
+        margin: 1em;
+    }
+
+    .imagens {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,390 @@
+/* Estilo geral para o corpo da página */
+body {
+    font-family: 'Roboto', sans-serif; /* Define a fonte usada no texto da página */
+    margin: 0; /* Remove a margem padrão do navegador */
+    padding: 0; /* Remove o preenchimento padrão do navegador */
+    background-color: #f5f5f5; /* Define a cor de fundo da página */
+    overflow-x: hidden; /* Impede que o conteúdo transborde horizontalmente */ 
+}
+
+/* Container principal */
+.container {
+    display: flex; /* Define um layout flexível para organizar os itens em linha */
+    justify-content: center; /* Centraliza o conteúdo dentro do container */
+    margin: 20px auto; /* Centraliza o container horizontalmente e adiciona uma margem vertical */
+    max-width: 95%; /* Limita a largura do container a 95% da tela, deixando espaço nas laterais */
+    padding: 0 15px; /* Adiciona padding nas laterais para evitar que o conteúdo toque nas bordas */
+    box-sizing: border-box; /* Inclui o padding e a borda no cálculo da largura total */
+    gap: 30px; /* Define o espaço entre os itens do container */
+}
+
+/* Estilo da seção esquerda, que contém o card do vereador */
+.left-section {
+    width: 25%; /* Define a largura da seção esquerda como 25% do container */
+    margin-left: auto; /* Adiciona margem automática à esquerda para centralizar */
+}
+
+/* Estilo da seção direita, onde ficam as informações detalhadas */
+.right-section {
+    width: 70%; /* Define a largura da seção direita como 65% do container */
+    margin-right: auto; /* Adiciona margem automática à direita para centralizar */
+}
+
+/* Estilo do card que exibe as informações do vereador */
+.card {
+    display: flex; /* Torna o card um contêiner flexível */
+    flex-direction: column; /* Alinha os itens verticalmente */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    justify-content: center; /* Centraliza os itens verticalmente */
+    background-color: #D9D9D9; /* Define a cor de fundo do card */
+    padding: 20px; /* Espaçamento interno */
+    border-radius: 10px; /* Arredonda os cantos */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    text-align: center; /* Centraliza o conteúdo do card */
+    word-wrap: break-word; /* Quebra palavras longas */
+    overflow: hidden; /* Garante que não haverá transbordamento de conteúdo */
+    max-width: 100%; /* Limita a largura máxima do card */
+    width: 100%; /* Garante que o card ocupe 100% do espaço disponível */
+    box-sizing: border-box; /* Inclui padding e borda no cálculo de largura */
+}
+
+/* Evitar que o email ultrapasse a borda do card e forçar quebra no @ */
+.card p.email {
+    max-width: 100%;
+    word-break: break-word; /* Força a quebra em palavras longas */
+    white-space: normal; /* Permite que o texto ocupe mais de uma linha */
+    overflow-wrap: break-word;
+    text-align: center; /* Centraliza o conteúdo */
+    font-size: clamp(12px, 1.5vw, 16px); /* Define um tamanho de fonte responsivo */
+    padding: 5px;
+    line-height: 1.5; /* Melhora o espaçamento entre linhas */
+}
+
+/* Estilo da imagem no card */
+.card img {
+    max-width: 100%; /* Garante que a imagem não exceda a largura do card */
+    height: auto;
+    width: 80%; /* Define a largura da imagem dentro do card como 80% da largura do card */
+    border-radius: 10px; /* Arredonda os cantos da imagem */
+    object-fit: cover; /* Garante que a imagem ocupe o espaço inteiro sem distorção */
+}
+
+.card h1 {
+    font-size: 22px; /* Define o tamanho da fonte do título */
+    margin: 15px 0 5px; /* Define margens ao redor do título (15px em cima, 0px à direita/esquerda, 5px embaixo) */
+    color: #25345F; /* Define a cor do título como azul mais suave */
+}
+
+.card h2 {
+    font-size: 20px; /* Define o tamanho da fonte para o subtítulo */
+    color: #25345F; /* Define a cor do subtítulo como cinza */
+}
+
+/* Estilo dos parágrafos dentro do card */
+.card p {
+    font-size: 16px; /* Define o tamanho da fonte dos parágrafos */
+    color: #25345F; /* Define a cor do texto como cinza escuro */
+    margin: 5px 0; /* Define margens ao redor do parágrafo */
+    line-height: 2; /* Define o espaçamento entre as linhas de texto. Um valor de 1.6 significa que a altura da linha será 2 vezes o tamanho da fonte. */
+    font-weight: 800; /* Define o peso da fonte de 100 a 900 (menos espesso a mais espesso) */
+}
+
+.comment-btn {
+    text-decoration: none; /* Remove o sublinhado do link */
+    display: block;
+    background-color: #76C7CC; /* Cor anterior restaurada */
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 15px;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+    max-width: 80%; /* Ajustar o tamanho para ser igual ao card */
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.comment-btn:hover {
+    background-color: #3e557a; /* Cor ao passar o mouse */
+    transform: scale(1.05);
+}
+
+/* Estilo da seção direita, onde ficam as informações detalhadas */
+.right-section {
+    width: 65%; /* Define a largura da seção como 65% da tela */
+}
+
+/* Estilo do campo de busca e botão de filtro */
+#filtro {
+    display: flex; /* Define o layout como flexbox */
+    justify-content: space-between; /* Espaça o campo de busca e o botão de filtro */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    margin-bottom: 20px; /* Adiciona uma margem inferior de 20px */
+    background-color: #76C7CC; /* Define a cor de fundo da barra de filtro */
+    border-radius: 20px; /* Arredonda os cantos da barra de filtro */
+    padding: 10px; /* Adiciona espaçamento interno de 10px */
+}
+
+#btnBusca {
+    width: 85%; /* Define a largura do campo de busca */
+    padding: 10px; /* Adiciona espaçamento interno */
+    border-radius: 20px; /* Arredonda os cantos do campo de busca */
+    border: none; /* Remove a borda padrão */
+    font-size: 16px; /* Define o tamanho da fonte */
+    color: white; /* Define a cor do texto como branca */
+    background-color: #76C7CC; /* Define a cor de fundo do campo de busca */
+    outline: none; /* Remove a borda ao focar no campo */
+}
+#btnBusca::placeholder {
+    color: white; /* Cor do texto do placeholder */
+    opacity: 1; /* Define a opacidade do placeholder */
+    font-weight: bold;
+    font-style: italic; 
+}
+
+/* Botão de filtro */
+#btnFiltro {
+    width: 35px; /* Define a largura do botão de filtro */
+    cursor: pointer; /* Altera o cursor para mão ao passar por cima */
+    background-color: #76C7CC; /* Define a cor de fundo do botão */
+    border-radius: 50%; /* Arredonda totalmente o botão, tornando-o circular */
+    padding: 5px; /* Adiciona espaçamento interno */
+}
+
+/* Estilo das caixas de informações (Dados Biográficos e Histórico Político) */
+.info-box {
+    background-color: #d9d9d95e; /* Fundo translúcido */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+/* Uniformização para conteúdo em info-box (filtros) */
+.info-box h2 {
+    font-size: 20px; /* Tamanho uniforme para títulos */
+    color: #25345F;
+    margin-bottom: 15px;
+    font-weight: 700; /* Título mais destacado */
+}
+
+.info-box p, 
+.info-box li { /* Aplica estilo para parágrafos e itens de lista */
+    font-size: 16px; /* Tamanho uniforme para o conteúdo */
+    color: #555;
+    line-height: 1.8; /* Melhor espaçamento entre linhas */
+    margin-bottom: 10px; /* Espaçamento entre parágrafos e itens */
+}
+
+/* Estilo para listas */
+.info-box ul {
+    padding-left: 20px; /* Espaçamento à esquerda para listas */
+    list-style-type: disc; /* Marcadores nas listas */
+}
+
+.info-box li {
+    margin-bottom: 10px; /* Espaçamento entre itens da lista */
+}
+
+/* Estilo do seletor de filtro */
+#filtro-selecao {
+    padding: 10px;
+    width: 280px;
+    border-radius: 10px;
+    border: none;
+    background-color: #76C7CC;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+/* Estilo dos links */
+.info-box a {
+    text-decoration: none; /* Remove o sublinhado padrão */
+    color: #0033cc; /* Define a cor padrão do link */
+    font-weight: bold; /* Deixa o link em negrito */
+    transition: color 0.3s ease, border-bottom 0.3s ease; /* Suaviza a transição de cor e borda ao passar o mouse */
+    border-bottom: 2px solid transparent; /* Inicialmente, sem borda */
+}
+
+.info-box a:hover {
+    color: #1a53ff; /* Muda a cor ao passar o mouse */
+    border-bottom: 2px solid #1a53ff; /* Adiciona uma borda inferior suave ao passar o mouse */
+}
+
+#filtro-selecao:hover {
+    background-color: #5bb5b8; /* Muda a cor de fundo ao passar o mouse */
+}
+
+/* Estilo do botão de filtrar */
+#btnFiltrar {
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: #25345F;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#btnFiltrar:hover {
+    background-color: #3e557a;
+    transform: scale(1.05);
+}
+
+/* Adiciona espaçamento extra entre o seletor de filtro e o botão */
+#filtro {
+    display: flex; /* Define um layout flexível para alinhar os itens horizontalmente */
+    align-items: center; /* Alinha os itens ao centro verticalmente */
+    justify-content: flex-start; /* Alinha os itens à esquerda horizontalmente */
+    gap: 15px; /* Define o espaçamento entre os elementos internos */
+    margin-bottom: 20px; /* Adiciona um espaço abaixo do filtro */
+    padding: 10px; /* Adiciona espaçamento interno */
+    border-radius: 20px; /* Arredonda os cantos */
+    background-color: #d9d9d95e; /* Define uma cor de fundo clara e translúcida */
+}
+
+/* Melhorias no botão de comentário */
+.comment-btn {
+    display: block; /* O botão será exibido como um bloco, ocupando 100% da largura disponível */
+    background-color: #25345F; /* Define a cor de fundo */
+    color: white; /* Define a cor do texto */
+    border: none; /* Remove qualquer borda */
+    border-radius: 20px; /* Arredonda os cantos */
+    padding: 15px; /* Adiciona espaçamento interno */
+    font-size: 16px; /* Define o tamanho da fonte */
+    text-transform: uppercase; /* Faz com que o texto fique todo em maiúsculo */
+    text-align: center; /* Centraliza o texto dentro do botão */
+    width: 100%; /* O botão ocupa toda a largura disponível */
+    cursor: pointer; /* Mostra o cursor de mão quando o botão é clicável */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Suaviza a transição de cor e tamanho ao passar o mouse */
+    margin-top: 20px; /* Adiciona uma margem acima do botão */
+}
+
+.comment-btn:hover {
+    background-color: #3e557a; /* Muda a cor do botão ao passar o mouse */
+    transform: scale(1.05); /* Aumenta levemente o tamanho do botão ao passar o mouse */
+}
+
+.conteudo-card ul {
+    max-height: 300px; /* Limite de altura para mostrar os primeiros 20 itens */
+    overflow: hidden; /* Esconde os itens adicionais */
+    transition: max-height 0.3s ease; /* Transição suave ao expandir/colapsar */
+}
+
+.conteudo-card.expanded ul {
+    max-height: 1000px; /* Aumenta a altura quando o conteúdo é expandido */
+}
+
+#toggle-button {
+    background-color: #25345F; /* Cor de fundo do botão */
+    color: white; /* Cor do texto */
+    border: none; /* Remove a borda */
+    border-radius: 10px; /* Arredonda os cantos */
+    padding: 10px 20px; /* Espaçamento interno */
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer; /* Cursor de mão */
+    margin-top: 10px; /* Espaçamento superior */
+    transition: background-color 0.3s ease; /* Suaviza a mudança de cor ao passar o mouse */
+}
+
+#toggle-button:hover {
+    background-color: #1a53ff; /* Cor ao passar o mouse */
+}
+
+
+/* Responsividade */
+
+/* Estilos para telas menores, como tablets */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        width: 100%; /* Ajusta para que as seções ocupem toda a largura em telas menores */
+        margin: 0 auto; /* Centraliza o container */
+    }
+
+    .left-section, 
+    .right-section {
+        width: 100%; /* Define a largura das seções como 100% para ocupar a tela inteira */
+    }
+
+    header .logo img {
+        width: 80px; /* Reduz o tamanho do logo em telas menores */
+    }
+
+    #btnBusca {
+        width: 75%; /* Reduz a largura do campo de busca */
+    }
+
+    .comment-btn {
+        font-size: 14px; /* Reduz o tamanho da fonte do botão */
+    }
+
+    .card p.email {
+        font-size: 14px; /* Reduz o tamanho da fonte em telas menores */
+    }
+}
+
+/* Estilos para telas bem pequenas, como celulares */
+@media (max-width: 480px) {
+    header {
+        flex-direction: column; /* Empilha os itens do header em coluna */
+        padding: 10px; /* Reduz o espaçamento interno */
+    }
+
+    header .logo img {
+        width: 60px; /* Reduz o tamanho do logo ainda mais */
+    }
+
+    header nav a {
+        font-size: 14px; /* Reduz o tamanho da fonte dos links */
+        margin-left: 10px; /* Reduz o espaçamento entre os links */
+    }
+
+    .card h1 {
+        font-size: 18px; /* Reduz o tamanho da fonte do título no card */
+    }
+
+    .card h2 {
+        font-size: 16px; /* Reduz o tamanho da fonte do subtítulo */
+    }
+
+    #btnBusca {
+        width: 70%; /* Reduz a largura do campo de busca */
+        font-size: 14px; /* Reduz o tamanho da fonte do campo de busca */
+    }
+
+    .info-box h2 {
+        font-size: 16px; /* Reduz o tamanho da fonte dos títulos nas caixas de informação */
+    }
+
+    .info-box p {
+        font-size: 12px; /* Reduz o tamanho da fonte dos parágrafos */
+    }
+
+    .card p.email {
+        font-size: 12px; /* Reduz ainda mais o tamanho da fonte em telas pequenas */
+    }
+}
+
+/* Estilo do rodapé */
+footer {
+    background-color: #76C7CC; /* Define a cor de fundo do rodapé como azul suave */
+    color: white; /* Define a cor do texto como branca */
+    text-align: center; /* Centraliza o texto */
+    padding: 10px; /* Adiciona espaçamento interno */
+    position: relative; /* Define a posição relativa ao rodapé */
+    width: 100%; /* Define a largura do rodapé como 100% da tela */
+    bottom: 0; /* Mantém o rodapé no final da página */
+    left: 0; /* Alinha o rodapé à esquerda */
+    right: 0; /* Garante que o rodapé se estenda até o final à direita */
+    font-size: 14px; /* Define o tamanho da fonte do rodapé */
+}

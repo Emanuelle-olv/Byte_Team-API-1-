@@ -44,7 +44,8 @@ Confira a seguir uma demonstração das funcionalidades
 
 **Acesso ao Nosso Vídeo:**
 
-[![Vídeo da API, 2°Semestre (DSM)](https://github.com/user-attachments/assets/f823123a-15b6-4f66-9040-ac15df7d0d7d)](https://youtu.be/s-RR2tH72GY)
+[![Vídeo da API, 2°Semestre (DSM)](https://github.com/Byte-Team-Fatec/Byte_Team-API-1-/blob/Desenvolvimento/gifsprint2.gif)]
+
 
 ## Sprints
 
@@ -56,7 +57,8 @@ Confira a seguir uma demonstração das funcionalidades
 
 ## Tecnologias Utilizadas
 
-![tecnologias](https://github.com/user-attachments/assets/a7812155-1645-45a2-ae56-c5aec408144d)
+![Img att](https://github.com/user-attachments/assets/7c7c33ac-b275-4d78-89ef-0182d7c0a19c)
+
 
 
 
@@ -66,7 +68,6 @@ Confira a seguir uma demonstração das funcionalidades
 [backlog2.pdf](https://github.com/Byte-Team-Fatec/Byte_Team-API-1-/blob/main/BACKLOG._SPRINT.pdf)
 
 
-
 # Autores
 |    Função     | Nome                                  |                                                                                                                                                      LinkedIn & GitHub                                                                                                                                                      |
 | :-----------: | :------------------------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
@@ -74,4 +75,4 @@ Confira a seguir uma demonstração das funcionalidades
 |  Scrum Master  | Lavínia Piratello Pansutti dos Anjos  |         [![Linkedin Badge](https://img.shields.io/badge/Linkedin-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://br.linkedin.com/in/lavinia-piratello-6a82101b1?trk=people-guest_people_search-card) [![GitHub Badge](https://img.shields.io/badge/GitHub-111217?style=flat-square&logo=github&logoColor=white)](https://github.com/laviniappiratello)   |
 | Dev Team |   Lucas Guerra         |     [![Linkedin Badge](https://img.shields.io/badge/Linkedin-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/lucas-guerra000/) [![GitHub Badge](https://img.shields.io/badge/GitHub-111217?style=flat-square&logo=github&logoColor=white)](https://github.com/lucasguerra12)              |
 |  Dev Team  | Francisco Rafael Pires   |         [![Linkedin Badge](https://img.shields.io/badge/Linkedin-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/francisco-rafael-pires-755958163/) [![GitHub Badge](https://img.shields.io/badge/GitHub-111217?style=flat-square&logo=github&logoColor=white)](https://github.com/franciscorafaelpires)  |  
-|  Dev Team  | Vinicius Lima Cabral e Souza  |         [![Linkedin Badge](https://img.shields.io/badge/Linkedin-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/vinicius-lima-cabral-e-souza-7794b3287/) [![GitHub Badge](https://img.shields.io/badge/GitHub-111217?style=flat-square&logo=github&logoColor=white)](https://github.com/ViniciusLimaCabraleSouza)   |
+

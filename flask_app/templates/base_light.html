@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='base_light.css') }}">
+    {% block head_extras %}
+    {% endblock %}
+</head>
+<body>
+    <header>
+      <a href="{{ url_for('index') }}">
+        <img src="{{ url_for('static', filename='imagens/imagensestatisticas/logo.svg') }}" alt="logo da byte">
+      </a>
+      <nav>
+        <a href="{{ url_for('menu') }}">Menu</a>
+        <a href="{{ url_for('proposicoes_aprovadas') }}">Proposições aprovadas</a>
+        <!-- <a href="{{ url_for('estatisticas') }}">Estatísticas</a> -->
+        <a href="{{ url_for('comentarios') }}">Comentários</a>
+      </nav>
+    </header>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,30 @@
+/* Estilo do cabeçalho (nav) */
+header {
+    display: flex; /* Utiliza o modelo de caixa flexível para organizar o conteúdo do cabeçalho. */
+    justify-content: space-between; /* Distribui o espaço disponível entre os elementos (logo à esquerda, navegação à direita). */
+    align-items: center; /* Alinha verticalmente os itens ao centro. */
+    background-color: white; /* Define a cor de fundo do cabeçalho como branco. */
+    padding: 15px 30px; /* Adiciona 15px de espaçamento interno no topo e embaixo, e 30px nas laterais. */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra leve para destacar o cabeçalho. */
+}
+
+header .logo img {
+    width: 100px; /* Define a largura da imagem do logo como 100px. */
+}
+
+header nav a {
+    text-decoration: none; /* Remove a sublinhado dos links. */
+    color: #25345F; /* Define a cor do texto dos links em azul escuro. */
+    font-weight: 500!important; /* Define a espessura da fonte como 500 (seminegrito). */
+    margin-left: 35px; /* Adiciona um espaçamento de 20px à esquerda de cada link, espaçando-os horizontalmente. */
+    font-size: 24px; /* Define o tamanho da fonte dos links como 24px. */
+    line-height: 35px; /* Define a altura da linha para 35px, centralizando verticalmente o texto nos links. */
+    height: 35px; /* Define a altura dos links como 35px (alinhada com o line-height). */
+    width: 59px; /* Define a largura dos links como 59px (essa largura pode ser removida se for restritiva). */
+    font-family: 'Roboto', sans-serif; /* Define a família de fonte como 'Roboto'. */
+    
+}
+
+header nav a:hover {
+    color: #2d98da; /* Altera a cor do texto dos links para azul claro quando o mouse passa por cima (hover). */
+}

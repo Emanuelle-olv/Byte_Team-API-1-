@@ -1,0 +1,172 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header-sobrenos {
+  background-color: rgb(37, 52, 95);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  padding: 0 20px;
+}
+
+.header-sobrenos .logo {
+  width: auto;
+  height: 100%;
+  display: flex;
+}
+
+.header-sobrenos .logo:hover {
+  box-shadow: 0 0 20px #25345f(125, 185, 215, 0.2);
+}
+
+.header-sobrenos > nav > a {
+  font-size: 24px;
+  color: white;
+  margin: 10px;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+}
+
+.meetourteam {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
+  color: #25345f;
+  font-size: 35px; /* Diminui o tamanho da fonte */
+  padding: 40px;
+}
+
+.perfil-sobrenos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+  gap: 10px; /* Diminui o espaço entre os cards */
+  margin: 0 40px; /* Afasta um pouco os cards das laterais */
+}
+
+.perfil-sobrenos > div {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid white;
+  border-radius: 10px;
+  width: 250px;
+  height: 420px;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, #0c225d, #345a82); /* Adiciona o degradê suave */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.perfil-sobrenos > div:hover {
+  transform: scale(1.10);
+  box-shadow: 0 0 20px rgba(108, 187, 227, 0.2);
+}
+
+.perfil-sobrenos > div > img {
+  width: 150px;
+  height: 180px;
+  margin-bottom: 15px;
+  border-radius: 15px; /* Foto retangular com cantos arredondados */
+}
+
+/* Remove sublinhado e muda a cor dos links */
+.perfil-sobrenos a {
+  text-decoration: none; /* Remove o sublinhado */
+  color: white; /* Muda a cor para branco */
+}
+
+.perfil-sobrenos a:hover {
+  text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+  color: #cff6e9; /* Altera a cor no hover para contraste */
+}
+
+
+
+.perfil-sobrenos > div > p {
+  font-size: 25px;
+  color: white;
+}
+
+.perfil-sobrenos > div > p > strong {
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.641);
+}
+
+.footer-sobrenos {
+  background-color: #25345f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  margin-top: auto;
+}
+
+.footer-sobrenos > p {
+  font-size: 14px;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+@media screen and (max-width: 1200px) {
+  .perfil-sobrenos > div {
+    width: 250px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .perfil-sobrenos {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .perfil-sobrenos > div {
+    width: 80%; 
+    margin-bottom: 20px;
+  }
+
+  .btnleft, .btnright {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header-sobrenos nav {
+    text-align: center;
+  }
+
+  .meetourteam {
+    font-size: 32px;
+  }
+
+  .perfil-sobrenos > div {
+    width: 100%;
+    height: auto;
+  }
+
+  .btnleft, .btnright {
+    display: none;
+  }
+}

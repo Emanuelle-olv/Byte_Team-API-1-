@@ -1,0 +1,215 @@
+* {
+    margin: 0;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    overflow: hidden; /**/
+    font-family: "Roboto", sans-serif;
+    background-color: #f5f5f5;
+    flex-grow: 1;
+}
+
+header {
+    background-color: rgb(37, 52, 95);
+    height: 80px;
+    box-shadow: 4px 4px rgba(0, 0, 0, 0.1);
+}
+#sobrenos {
+    display: flex;
+    justify-content: flex-end;
+    /* Alinha os itens à direita */
+}
+
+.btnsobrenos {
+
+    background: none;
+    /* Remove o fundo */
+    border: none;
+    /* Remove a borda */
+    cursor: pointer;
+}
+
+.btnsobrenos:hover {
+    background-color: #ecebeb;
+    border-radius: 50px;
+}
+
+header > img {
+    max-height: 100%;
+}
+
+.roboto-regular {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-regular {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#container {
+    display: flex;
+    overflow: auto;
+    flex-wrap: nowrap;
+}
+
+.texto-projeto {
+    display: flexbox;
+    background-color: rgb(135, 240, 242, 28%);
+    border-radius: 25px;
+    box-shadow: 4px 4px rgba(0, 0, 0, 0.1);
+    padding-bottom: 20px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: 70%;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+.texto-projeto p {
+    color: rgb(53, 53, 53);
+    text-align: center;
+    font-size: 24px;
+    max-width: 900px;
+}
+
+.titulo h1 {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    font-family: "Inter", sans-serif;
+    color: #25345f;
+    font-size: 40px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    height: 40px;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.center {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    border: 3px;
+}
+a {
+    text-decoration: none; /* Remove o sublinhado dos links */
+}
+
+a:hover {
+    text-decoration: none; /* Garante que o sublinhado não apareça ao passar o mouse */
+}
+
+.imagem img {
+    display: flex;
+    max-width: 10%;
+    height: auto;
+    width: 10%;
+    object-fit: cover;
+}
+
+section {
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    padding-left: 350px;
+    padding-right: 350px;
+    flex-grow: 1; /* O conteúdo principal cresce e empurra o footer para baixo */
+}
+
+button {
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    flex-wrap: nowrap;
+    text-align: center;
+    border: 3px;
+    font-size: 25px;
+    padding: 4px 32px;
+    text-decoration: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    border-radius: 25px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(76, 88, 125, 1);
+    box-shadow: 4px 4px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+
+button:hover {
+    font-family: "Roboto", sans-serif;
+    color: rgb(169, 169, 169);
+    font-size: 25px;
+    background-color: rgb(49, 57, 81);
+    text-align: center;
+    border: darkgray;
+    padding: 4px 32px;
+    transform: scale(1.1);
+    text-decoration: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    outline: darkgray;
+}
+
+article {
+    display: flex;
+    justify-content: flex-start;
+    color: #25345f;
+}
+
+article > div {
+    height: 30px;
+    margin: 10px;
+}
+
+footer {
+    display: flex;
+    font-family: "Inter", sans-serif;
+    color: rgb(255, 255, 255);
+    background-color: rgb(37, 52, 95);
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 10px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    header nav a {
+        font-size: 18px;
+        margin-left: 10px;
+    }
+
+    #container {
+        flex-direction: column;
+        align-items: center;
+    }
+}

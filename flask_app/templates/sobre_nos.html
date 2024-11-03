@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sobre Nós</title>
+    <link rel="stylesheet" href="{{url_for('static', filename = 'sobre_nos.css')}}">
+</head>
+<body>
+    <header class="header-sobrenos">
+        <a href="{{ url_for('index') }}" class="logo">
+        <img
+            src="{{ url_for('static', filename='imagens/imagens/image 3.png') }}"
+            alt="Logotipo da equipe Byte Tech"
+        />
+        </a>
+        <nav>
+            <a href="{{ url_for('menu') }}">Menu</a>
+            <a href="{{ url_for('proposicoes_aprovadas') }}">Proposições aprovadas</a>
+            <!-- <a href="{{ url_for('estatisticas') }}">Estatísticas</a> -->
+            <a href="{{ url_for('comentarios') }}">Comentários</a>
+          </nav>
+    </header>
+    <main>
+        <section class="meetourteam">
+        <h2>Conheça Nossa Equipe</h2>
+        </section>
+        <section class="perfil-sobrenos">
+       
+            
+        <div>
+            <img src="{{ url_for('static', filename='imagens/imagens_integrantes/foto_manu.jpg') }}" alt="Foto do membro ## da Equipe Byte Tech" /><br />
+            <p><a href="https://emanuelle-olv.github.io/Portflio-ESGO/" target="_blank">Emanuelle</a></p>
+            <br />
+            <p><strong>P.O</strong></p>
+        </div>
+        
+        <div>
+            <img src="{{ url_for('static', filename='imagens/imagens_integrantes/foto-francisco .jpg') }}" alt="Foto do membro ## da Equipe Byte Tech" />
+            <br /><a href="https://franciscorafaelpires.github.io/portfolio-francisco-rafael-pires/" target=>Francisco</a></p>
+            <br />
+            <p><strong>DEV TEAM</strong></p>
+        </div>
+        <div>
+            <img src="{{ url_for('static', filename='imagens/imagens_integrantes/foto-lavinia.jpg') }}" alt="Foto do membro ## da Equipe Byte Tech" /><br />
+            <p><a href="https://laviniappiratello.github.io/portfolio/" target="_blank"> Lavínia</a></p>
+            <br />
+            <p><strong>SCRUM MASTER</strong></p>
+        </div>
+        <div>
+            <img src="{{ url_for('static', filename='imagens/imagens_integrantes/lucasperfil.jpeg') }}" alt="Foto do membro ## da Equipe Byte Tech" /><br />
+            <p><a href="https://lucasguerra12.github.io" target="_blank">Lucas</a></p>
+            <br />
+            <p><strong>DEV TEAM</strong></p>
+        </div>
+        
+        <div>
+            <img src="{{ url_for('static', filename='imagens/imagens_integrantes/foto_vinicius.jpg') }}" alt="Foto do membro ## da Equipe Byte Tech" /><br />
+            <p><a href="https://viniciuslimacabralesouza.github.io" target="_blank">Vinicius</a></p>
+            <br />
+            <p><strong>DEV TEAM</strong></p>
+        </div>     
+        
+        </section>
+    </main>
+    <footer class="footer-sobrenos">
+        <p>Clique em algum perfil para visualizar especificamente</p>
+    </footer>
+</body>
+</html>

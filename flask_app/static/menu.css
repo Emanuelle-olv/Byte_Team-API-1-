@@ -1,0 +1,235 @@
+/* Estilo geral para o corpo da página */
+body {
+    font-family: 'Roboto', sans-serif;
+    /* Define a fonte usada no texto da página */
+    margin: 0;
+    /* Remove a margem padrão do navegador */
+    padding: 0;
+    /* Remove o preenchimento padrão do navegador */
+    background-color: #f5f5f5;
+    /* Define a cor de fundo da página */
+    overflow-x: hidden;
+    /* Impede que o conteúdo transborde horizontalmente */
+
+}
+
+#sobrenos {
+    display: flex;
+    justify-content: flex-end;
+    /* Alinha os itens à direita */
+}
+
+.btnsobrenos {
+
+    background: none;
+    /* Remove o fundo */
+    border: none;
+    /* Remove a borda */
+    cursor: pointer;
+}
+
+.btnsobrenos:hover {
+    background-color: #ecebeb;
+    border-radius: 50px;
+}
+
+
+#filtroEbusca {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+
+    margin-left: -600px;
+}
+
+#btnFiltro {
+    border: none;
+    /* Remove a borda do input */
+    outline: none;
+    /* Remove a borda de foco (outline) do input */
+
+    background-color: transparent;
+
+    font-size: 24px;
+
+    background-color: #76C7CC;
+    border-radius: 50px;
+
+    padding: 15px 150px;
+    /* Adicione padding se necessário */
+    margin-left: 200px;
+    padding-left: 10px;
+}
+
+#btnFiltro::placeholder {
+    color: white;
+    /* Cor do texto do placeholder */
+    opacity: 1;
+    /* Define a opacidade do placeholder */
+    font-weight: bold;
+    font-style: italic;
+
+
+}
+
+#filtro img {
+    padding: 2px;
+
+    margin-right: 100px;
+    margin-left: -65px;
+    /* Ajuste negativo para colar a imagem ao input */
+    margin-bottom: -15px;
+
+}
+
+#filtroEbusca {
+    display: flex;
+    justify-content: flex-start; /* Ajusta para começar do início */
+    align-items: center; /* Alinha verticalmente ao centro */
+    margin-left: 20px; /* Dá uma margem à esquerda para afastar do canto */
+}
+
+#filtroEbusca {
+    display: flex;
+    justify-content: flex-start; /* Ajuste para iniciar da esquerda */
+    align-items: center; /* Alinha o botão e a lupa verticalmente ao centro */
+    margin-left: 20px; /* Margem para afastar do canto esquerdo */
+}
+
+#filtroEbusca {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 20px; /* Adiciona uma margem à esquerda */
+    gap: 10px; /* Espaçamento entre o botão e a lupa */
+}
+
+#btnBusca {
+    border: none;
+    outline: none;
+    padding: 10px 50px; /* Reduz o padding para diminuir o tamanho do campo */
+    background-color: #76C7CC;
+    border-radius: 50px;
+    font-size: 15px; /* Diminui o tamanho da fonte */
+    font-weight: bold;
+    color: white;
+    margin-left: 20px;
+}
+
+#busca img {
+    padding: 2px;
+    margin-left: -10px;
+    position: relative;
+    height: 20px;
+    width: 20px;
+}
+
+
+#btnBusca::placeholder {
+    color: white;
+    opacity: 2;
+    font-weight: bold;
+    font-style: italic;
+}
+
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Ajusta para centralizar as cartas */
+    gap: 20px; /* Espaço entre as cartas */
+}
+
+.card {
+    width: calc(25% - 20px); /* Reduz a largura do card para garantir espaço */
+    margin-bottom: 20px;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.card img {
+    margin-top: 20px;
+    width: 50%;
+    height: auto;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+  .card h1, .card h2 {
+    margin: 10px 0;
+    font-size: 18px;
+  }
+  
+  .card a {
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #322e82; /* Cor do link */
+    font-weight: bold;  
+  }
+  
+  .card a:hover {
+    color: #555; /* Cor ao passar o mouse sobre o link */
+  }
+
+  /* Estilo para a informação "Reeleito por" */
+.card p {
+    font-size: 14px; /* Diminui o tamanho da fonte */
+    color: #666; /* Cor cinza para deixá-la mais discreta */
+    margin-top: 5px; /* Espaçamento superior */
+    text-align: center; /* Centraliza o texto */
+    font-style: italic; /* Adiciona um estilo itálico para diferenciação */
+}
+
+  
+  footer {
+    background-color: #76C7CC;
+    /* Define a cor de fundo do rodapé como azul suave */
+    color: white;
+    /* Define a cor do texto como branca */
+    text-align: center;
+    /* Centraliza o texto */
+    padding: 10px;
+    /* Adiciona espaçamento interno */
+    position: relative;
+    /* Define a posição relativa ao rodapé */
+    width: 100%;
+    /* Define a largura do rodapé como 100% da tela */
+    bottom: 0;
+    /* Mantém o rodapé no final da página */
+    left: 0;
+    /* Alinha o rodapé à esquerda */
+    right: 0;
+    /* Garante que o rodapé se estenda até o final à direita */
+    font-size: 24px;
+    /* Define o tamanho da fonte do rodapé */
+}
+  
+
+
+@media (max-width: 768px) {
+    header {
+         flex-direction: column;
+    width: 100%; /* Ajusta para que as seções ocupem toda a largura em telas menores */
+    margin: 0 auto; /* Centraliza o container */
+    }
+
+    header nav a {
+        font-size: 18px; /* Diminui o tamanho da fonte em telas menores */
+        margin-left: 10px; /* Diminui a margem */
+    }
+
+    #btnFiltro, #btnBusca {
+        padding: 10px 50px; /* Ajusta o padding em telas menores */
+        font-size: 18px; /* Diminui o tamanho da fonte */
+    }
+
+    
+}

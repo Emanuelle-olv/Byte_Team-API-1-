@@ -1,0 +1,191 @@
+{% extends "base_light.html" %} 
+{% block head_extras %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="{{url_for('static', filename = 'comentarios.css')}}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap"
+        rel="stylesheet">
+{% endblock %}
+{% block content %}
+
+<h2>Comentários</h2>
+
+<!-- Fotos dos vereadores em círculos no topo -->
+<div id="vereadores-carousel" class="carousel">
+    <div class="carousel-track">
+        <!-- Lista de vereadores -->
+        {% for vereador_id, vereador_nome in vereadores.items() %}
+            <a href="{{ url_for('perfil', id_vereador=vereador_id) }}">
+                <img src="{{ url_for('static', filename='imagens/img/' ~ vereador_id ~ '.jpg') }}" alt="Vereador {{ vereador_nome }}">
+            </a>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- Barra de pesquisa no topo -->
+<div id="search-bar">
+    <form method="GET" action="/comentarios_filtro">
+        <label for="vereador_id">Vereador:</label>
+        <select name="vereador_id">
+            <option value="">Todos</option>
+            {% for vereador_id, vereador_nome in vereadores.items() %}
+                <option value="{{ vereador_id }}">{{ vereador_nome }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="partido_id">Partido:</label>
+        <select name="partido_id">
+            <option value="">Todos</option>
+            {% for partido_id, partido_nome in partidos.items() %}
+                <option value="{{ partido_id }}">{{ partido_nome }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="comissao_id">Comissão:</label>
+        <select name="comissao_id">
+            <option value="">Todas</option>
+            {% for comissao_id, comissao_nome in comissoes.items() %}
+                <option value="{{ comissao_id }}">{{ comissao_nome }}</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit">Filtrar Comentários</button>
+    </form>
+</div>
+
+<button id="novoComentarioBtn">Escrever novo comentário</button>
+        <div id="overlay"></div>
+
+<div id="comentarios">
+    <!-- Seção principal -->
+    <div id="main-content">
+        <ul>
+            {% for comentario in comentarios %}
+                <li>
+                    {{ comentario.comentario }} 
+                    <div class="comentario-detalhes">
+                        <!-- Exibir a data -->
+                        <span class="comentario-data">{{ comentario.data }}</span>
+        
+                        <!-- Exibir para quem o comentário foi feito -->
+                        {% if comentario.vereador_id %}
+                            <span class="comentario-para">Comentário para o vereador: {{ vereadores[comentario.vereador_id] }}</span>
+                        {% elif comentario.partido_id %}
+                            <span class="comentario-para">Comentário para o partido: {{ partidos[comentario.partido_id] }}</span>
+                        {% elif comentario.comissao_id %}
+                            <span class="comentario-para">Comentário para a comissão: {{ comissoes[comentario.comissao_id] }}</span>
+                        {% else %}
+                            <span class="comentario-para">Comentário geral</span>
+                        {% endif %}
+                    </div>
+                </li>
+            {% else %}
+                <li>Nenhum comentário encontrado.</li>
+            {% endfor %}
+        </ul>
+        
+
+        <div id="novoComentarioForm" style="display:none;">
+            <form action="/comentarios" method="POST">
+                <textarea name="comentario" required></textarea><br>
+                <label for="vereador_id">Vereador (opcional):</label>
+                <select name="vereador_id">
+                    <option value="">--Selecione um vereador--</option>
+                    {% for vereador_id, vereador_nome in vereadores.items() %}
+                        <option value="{{ vereador_id }}">{{ vereador_nome }}</option>
+                    {% endfor %}
+                </select><br>
+
+                <label for="partido_id">Partido (opcional):</label>
+                <select name="partido_id">
+                    <option value="">--Selecione um partido--</option>
+                    {% for partido_id, partido_nome in partidos.items() %}
+                        <option value="{{ partido_id }}">{{ partido_nome }}</option>
+                    {% endfor %}
+                </select><br>
+
+                <label for="comissao_id">Comissão (opcional):</label>
+                <select name="comissao_id">
+                    <option value="">--Selecione uma comissão--</option>
+                    {% for comissao_id, comissao_nome in comissoes.items() %}
+                        <option value="{{ comissao_id }}">{{ comissao_nome }}</option>
+                    {% endfor %}
+                </select><br>
+
+                <input type="submit" value="Enviar Comentário">
+            </form>
+        </div>
+    </div>
+
+    <!-- Seção lateral para últimos comentários -->
+    <aside id="sidebar">
+        <h3>Últimos Comentários</h3>
+        <ul>
+            {% for comentario in ultimos_comentarios %}
+                <li>{{ comentario.comentario }} - {{ comentario.data }}</li>
+            {% endfor %}
+        </ul>
+    </aside>
+</div>
+
+<footer>
+    Clique em algum perfil para visualizar especificamente
+</footer>
+
+<!-- Script para controle do modal -->
+{% block scripts %}
+<script>
+    document.getElementById("novoComentarioBtn").onclick = function() {
+        var form = document.getElementById("novoComentarioForm");
+        var overlay = document.getElementById("overlay");
+        form.style.display = "block";
+        overlay.classList.add("active");
+        form.classList.add("active");  // Adiciona a classe active para permitir o fechamento com Esc
+    };
+
+    document.getElementById("overlay").onclick = function() {
+        var form = document.getElementById("novoComentarioForm");
+        var overlay = document.getElementById("overlay");
+        form.style.display = "none";
+        overlay.classList.remove("active");
+        form.classList.remove("active");  // Remove a classe active ao fechar
+    };
+
+    // Fecha o modal com a tecla 'Esc'
+    document.addEventListener('keydown', function(event) {
+        if (event.key === "Escape") {
+            var form = document.getElementById("novoComentarioForm");
+            var overlay = document.getElementById("overlay");
+            if (form.classList.contains('active')) {
+                form.style.display = "none";
+                overlay.classList.remove("active");
+                form.classList.remove("active");
+            }
+        }
+    });
+
+    // Código do carrossel
+    const track = document.querySelector('.carousel-track');
+    let index = 0;
+
+    function moveCarousel() {
+        const totalImages = document.querySelectorAll('.carousel-track img').length;
+        const imageWidth = document.querySelector('.carousel-track img').clientWidth;
+        const maxIndex = totalImages - Math.floor(window.innerWidth / (imageWidth + 20));
+
+        // Incrementa o índice para mover o carrossel
+        index++;
+        if (index > maxIndex) {
+            index = 0;
+        }
+
+        // Move o carrossel
+        track.style.transform = `translateX(-${index * (imageWidth + 20)}px)`;
+    }
+
+    // Faz o carrossel mover automaticamente a cada 3 segundos
+    setInterval(moveCarousel, 3000);
+</script>
+{% endblock %}
+
+{% endblock %}

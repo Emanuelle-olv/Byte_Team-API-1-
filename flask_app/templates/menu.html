@@ -1,0 +1,75 @@
+{% extends "base_light.html" %}
+
+{% block head_extras %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="{{ url_for('static', filename='menu.css') }}">
+<link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div id="sobrenos">
+    <a href="{{ url_for('sobre_nos') }}">
+        <button class="btnsobrenos">
+            <img src="{{ url_for('static', filename='imagens/imagensmenu/sobrenos.svg') }}" alt="Sobre nós">
+        </button>
+    </a>
+</div>
+
+<section id="busca-section"> 
+    <div id="busca">
+        <input type="text" id="btnBusca" placeholder="BUSCAR" onkeyup="filtrarVereadores()" />
+    </div>
+</section>
+
+<div class="container">
+    <div class="left-section">
+        <div class="card-container" id="cardContainer">
+            {% for vereador in vereadores %}
+            <div class="card">
+                <a href="{{ url_for('perfil', id_vereador=vereador.id) }}">
+                    <img src="{{ url_for('static', filename=vereador.foto) }}" alt="{{ vereador.nome_civil }}">
+                    <h1>{{ vereador.nome_civil }}</h1>
+                </a>
+                <h2>{{ vereador.partido }}</h2>
+                {% for info in vereadores_lista %}
+                {% if info.id == vereador.id %}
+                <p>Reeleito por: {{ info.votos }} votos</p>
+                {% endif %}
+                {% endfor %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<footer>
+    Clique em algum perfil para visualizar especificamente
+</footer>
+
+<script>
+    function filtrarVereadores() {
+        const input = document.getElementById('btnBusca');
+        const filter = normalizarTexto(input.value.toLowerCase());
+        const cardContainer = document.getElementById('cardContainer');
+        const cards = cardContainer.getElementsByClassName('card');
+
+        for (let i = 0; i < cards.length; i++) {
+            const nome = normalizarTexto(cards[i].getElementsByTagName('h1')[0].innerText.toLowerCase());
+            const partido = normalizarTexto(cards[i].getElementsByTagName('h2')[0].innerText.toLowerCase());
+
+            if (nome.includes(filter) || partido.includes(filter)) {
+                cards[i].style.display = '';
+            } else {
+                cards[i].style.display = 'none';
+            }
+        }
+    }
+
+    function normalizarTexto(texto) {
+        return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    }
+</script>
+{% endblock %}
