@@ -1,29 +1,316 @@
+
+
 {% extends "base_light.html" %}
 
 {% block head_extras %}
-<link rel="stylesheet" href="{{ url_for('static', filename='estatisticas.css') }}">
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='estatisticas.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 {% endblock %}
 
 {% block content %}
-<div class="container_filtros">
-    <div class="filtro">
-        <button class="filtros filtro1">FILTROS</button>
+<div class="container_graficos">
+    <!-- Gráfico de Projetos Aprovados -->
+    <div class="container_projetos">
+        <h2>Estatísticas dos Vereadores - Projetos Aprovados</h2>
+        <button id="btnProjetosAprovados" style="background-color: rgb(17, 194, 129); color: white;">Projetos de lei aprovados</button>
+        <button id="btnVoltar" style="display: none; background-color: red; color: white;">Voltar</button>
+        <div id="chart_div" style="width: 100%; height: 700px; display: none;"></div>
     </div>
-    <div class="data">
-        DE: <input type="date" class="filtros" placeholder="Data1" />
+
+    <!-- Gráfico de Presença -->
+    <div class="container_presenca">
+        <h2>Estatísticas dos Vereadores - Presenças</h2>
+        <button id="btnPresenca" style="background-color: rgb(17, 194, 129); color: white;">Presença dos vereadores</button>
+        <button id="btnVoltarPresenca" style="display: none; background-color: red; color: white;">Voltar</button>
+        <div id="chart_div_presenca" style="width: 100%; height: 700px; display: none;"></div>
     </div>
-    <div class="data">
-        A: <input type="date" class="filtros" placeholder="Data2" />
+
+    <!-- Gráfico de Faltas -->
+    <div class="container_faltas">
+        <h2>Estatísticas dos Vereadores - Faltas</h2>
+        <button id="btnFaltas" style="background-color: rgb(17, 194, 129); color: white;">Faltas dos vereadores</button>
+        <button id="btnVoltarFaltas" style="display: none; background-color: red; color: white;">Voltar</button>
+        <div id="chart_div_faltas" style="width: 100%; height: 700px; display: none;"></div>
+    </div>
+
+    <!-- Gráfico de Requerimentos -->
+    <div class="container_requerimentos">
+        <h2>Estatísticas dos Vereadores - Requerimentos</h2>
+        <button id="btnRequerimentos" style="background-color: rgb(17, 194, 129); color: white;">Requerimentos</button>
+        <button id="btnVoltarRequerimentos" style="display: none; background-color: red; color: white;">Voltar</button>
+        <div id="chart_div_requerimentos" style="width: 100%; height: 700px; display: none;"></div>
+    </div>
+
+    <!-- Gráfico de Moções -->
+    <div class="container_mocoes">
+        <h2>Estatísticas dos Vereadores - Moções</h2>
+        <button id="btnMocoes" style="background-color: rgb(17, 194, 129); color: white;">Moções</button>
+        <button id="btnVoltarMocoes" style="display: none; background-color: red; color: white;">Voltar</button>
+        <div id="chart_div_mocoes" style="width: 100%; height: 700px; display: none;"></div>
+    </div>
+
+    <!-- Gráfico de Projetos de Lei -->
+    <div class="container_projetos_lei">
+        <h2>Estatísticas dos Vereadores - Projetos de Lei</h2>
+        <button id="btnProjetosLei" style="background-color: rgb(17, 194, 129); color: white;">Projetos de Lei</button>
+        <button id="btnVoltarProjetosLei" style="display: none; background-color: red; color: white;">Voltar</button>
+        <div id="chart_div_projetos_lei" style="width: 100%; height: 700px; display: none;"></div>
+    </div>
+
+    <!-- Gráfico de Partido -->
+    <div class="container_partido">
+        <h2>Estatísticas dos Vereadores - Partido</h2>
+        <button id="btnPartido" style="background-color: rgb(17, 194, 129); color: white;">Partido dos vereadores</button>
+        <button id="btnVoltarPartido" style="display: none; background-color: red; color: white;">Voltar</button>
+        <div id="chart_div_partido" style="width: 100%; height: 700px; display: none;"></div>
     </div>
 </div>
-<div class="imagens">
-    <div id="grafico1">
-        <img src="{{ url_for('static', filename='imagens/imagensestatisticas/grafico.svg') }}" alt="grafico1">
-    </div>
-    <div id="grafico2">
-        <img src="{{ url_for('static', filename='imagens/imagensestatisticas/grafico.svg') }}" alt="grafico2">
-    </div>
-</div>
-<footer>developed by byte</footer>
+
+<script type="text/javascript">
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(initCharts);
+
+    function initCharts() {
+        setupChartToggle("btnProjetosAprovados", "btnVoltar", "chart_div", drawProjetosChart);
+        setupChartToggle("btnPresenca", "btnVoltarPresenca", "chart_div_presenca", drawPresencaChart);
+        setupChartToggle("btnFaltas", "btnVoltarFaltas", "chart_div_faltas", drawFaltasChart);
+        setupChartToggle("btnRequerimentos", "btnVoltarRequerimentos", "chart_div_requerimentos", drawRequerimentosChart);
+        setupChartToggle("btnMocoes", "btnVoltarMocoes", "chart_div_mocoes", drawMocoesChart);
+        setupChartToggle("btnPartido", "btnVoltarPartido", "chart_div_partido", drawPartidoChart);
+        setupChartToggle("btnProjetosLei", "btnVoltarProjetosLei", "chart_div_projetos_lei", drawProjetosLeiChart);
+    }
+
+    const vereadores = [
+    {% for vereador in vereadores_lista %}
+    {
+        nome: '{{ vereador['nome_civil'] }}',
+        projetos_aprovados: parseInt('{{ vereador['projeto_de_lei_aprovados'] }}') || 0,
+        presenca_totais: parseInt('{{ vereador['presenca_totais'] }}') || 0,
+        faltas_totais: parseInt('{{ vereador['faltas_totais'] }}') || 0,
+        requerimento: parseInt('{{ vereador['requerimento'] }}') || 0,
+        mocoes: parseInt('{{ vereador['mocoes'] }}') || 0,
+        projetos_lei: parseInt('{{ vereador['projeto_de_lei'] }}') || 0,
+        partido: '{{ vereador['partido_sigla'] }}',
+        foto: '{{ url_for("static", filename=vereador["foto"]) }}'
+    },
+    {% endfor %}
+];
+
+    
+
+    function setupChartToggle(buttonId, backButtonId, chartDivId, drawChartFn) {
+        document.getElementById(buttonId).addEventListener('click', function() {
+            document.getElementById(chartDivId).style.display = 'block';
+            drawChartFn();
+            document.getElementById(backButtonId).style.display = 'inline-block';
+            this.style.display = 'none';
+        });
+        document.getElementById(backButtonId).addEventListener('click', function() {
+            document.getElementById(chartDivId).style.display = 'none';
+            this.style.display = 'none';
+            document.getElementById(buttonId).style.display = 'inline-block';
+        });
+    }
+
+    function getDefaultChartOptions(title, color) {
+    return {
+        title: title,
+        hAxis: { 
+            slantedText: true, 
+            slantedTextAngle: 45, 
+            textStyle: { fontSize: 13 }  // Tamanho da fonte ajustado para o eixo X
+        },
+        vAxis: { 
+            minValue: 0, 
+            format: '0' 
+        },
+        backgroundColor: '#f0f0f0',
+        colors: [color],
+        legend: { position: 'none' },
+        tooltip: { isHtml: true }
+    };
+}
+
+function drawProjetosChart() {
+    const sortedData = [...vereadores].sort((a, b) => b.projetos_aprovados - a.projetos_aprovados);
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Vereador');
+    data.addColumn('number', 'Projetos Aprovados');
+    data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+
+    sortedData.forEach(vereador => {
+        const tooltip = `
+            <div style="padding: 10px;">
+                <img src="${vereador.foto}" style="width: 50px; height: 50px; object-fit: cover; border-radius: 50%;"><br>
+                <strong>${vereador.nome}</strong><br>
+                Projetos Aprovados: ${vereador.projetos_aprovados}
+            </div>
+        `;
+        data.addRow([vereador.nome, vereador.projetos_aprovados, tooltip]);
+    });
+
+    var options = getDefaultChartOptions('Projetos de Lei Aprovados', '#33a8ff');
+    var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+    chart.draw(data, options);
+}
+
+function drawPresencaChart() {
+    const sortedData = [...vereadores].sort((a, b) => b.presenca_totais - a.presenca_totais);
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Vereador');
+    data.addColumn('number', 'Presenças');
+    data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+
+    sortedData.forEach(vereador => {
+        const tooltip = `
+            <div style="padding: 10px;">
+                <img src="${vereador.foto}" style="width: 50px; height: 50px; object-fit: cover; border-radius: 50%;"><br>
+                <strong>${vereador.nome}</strong><br>
+                Presenças: ${vereador.presenca_totais}
+            </div>
+        `;
+        data.addRow([vereador.nome, vereador.presenca_totais, tooltip]);
+    });
+
+    var options = getDefaultChartOptions('Presença dos Vereadores', '#4caf50');
+    var chart = new google.visualization.ColumnChart(document.getElementById('chart_div_presenca'));
+    chart.draw(data, options);
+}
+
+function drawFaltasChart() {
+    const sortedData = [...vereadores].sort((a, b) => b.faltas_totais - a.faltas_totais);
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Vereador');
+    data.addColumn('number', 'Faltas');
+    data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+
+    sortedData.forEach(vereador => {
+        const tooltip = `
+            <div style="padding: 10px;">
+                <img src="${vereador.foto}" style="width: 50px; height: 50px; object-fit: cover; border-radius: 50%;"><br>
+                <strong>${vereador.nome}</strong><br>
+                Faltas: ${vereador.faltas_totais}
+            </div>
+        `;
+        data.addRow([vereador.nome, vereador.faltas_totais, tooltip]);
+    });
+
+    var options = getDefaultChartOptions('Faltas dos Vereadores', '#ff7043');
+    var chart = new google.visualization.ColumnChart(document.getElementById('chart_div_faltas'));
+    chart.draw(data, options);
+}
+
+function drawRequerimentosChart() {
+    const sortedData = [...vereadores].sort((a, b) => b.requerimento - a.requerimento);
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Vereador');
+    data.addColumn('number', 'Requerimentos');
+    data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+
+    sortedData.forEach(vereador => {
+        const tooltip = `
+            <div style="padding: 10px;">
+                <img src="${vereador.foto}" style="width: 50px; height: 50px; object-fit: cover; border-radius: 50%;"><br>
+                <strong>${vereador.nome}</strong><br>
+                Requerimentos: ${vereador.requerimento}
+            </div>
+        `;
+        data.addRow([vereador.nome, vereador.requerimento, tooltip]);
+    });
+
+    var options = getDefaultChartOptions('Requerimentos dos Vereadores', '#ffca28');
+    var chart = new google.visualization.ColumnChart(document.getElementById('chart_div_requerimentos'));
+    chart.draw(data, options);
+}
+
+function drawMocoesChart() {
+    const sortedData = [...vereadores].sort((a, b) => b.mocoes - a.mocoes);
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Vereador');
+    data.addColumn('number', 'Moções');
+    data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+
+    sortedData.forEach(vereador => {
+        const tooltip = `
+            <div style="padding: 10px;">
+                <img src="${vereador.foto}" style="width: 50px; height: 50px; object-fit: cover; border-radius: 50%;"><br>
+                <strong>${vereador.nome}</strong><br>
+                Moções: ${vereador.mocoes}
+            </div>
+        `;
+        data.addRow([vereador.nome, vereador.mocoes, tooltip]);
+    });
+
+    var options = getDefaultChartOptions('Moções dos Vereadores', '#42a5f5');
+    var chart = new google.visualization.ColumnChart(document.getElementById('chart_div_mocoes'));
+    chart.draw(data, options);
+}
+
+function drawProjetosLeiChart() {
+    const sortedData = [...vereadores].sort((a, b) => b.projetos_lei - a.projetos_lei);
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Vereador');
+    data.addColumn('number', 'Projetos de Lei');
+    data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+
+    sortedData.forEach(vereador => {
+        const tooltip = `
+            <div style="padding: 10px;">
+                <img src="${vereador.foto}" style="width: 50px; height: 50px; object-fit: cover; border-radius: 50%;"><br>
+                <strong>${vereador.nome}</strong><br>
+                Projetos de Lei: ${vereador.projetos_lei}
+            </div>
+        `;
+        data.addRow([vereador.nome, vereador.projetos_lei, tooltip]);
+    });
+
+    var options = getDefaultChartOptions('Projetos de Lei por Vereador', '#ab47bc');
+    var chart = new google.visualization.ColumnChart(document.getElementById('chart_div_projetos_lei'));
+    chart.draw(data, options);
+}
+
+function drawPartidoChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Partido');
+    data.addColumn('number', 'Vereadores');
+    data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+
+    var partidoCount = {};
+    vereadores.forEach(vereador => {
+        partidoCount[vereador.partido] = (partidoCount[vereador.partido] || 0) + 1;
+    });
+
+    Object.entries(partidoCount).sort((a, b) => b[1] - a[1]).forEach(([partido, count]) => {
+        const tooltip = `
+            <div style="padding: 10px;">
+                <strong>Partido: ${partido}</strong><br>
+                Vereadores: ${count}
+            </div>
+        `;
+        data.addRow([partido, count, tooltip]);
+    });
+
+    var options = {
+        title: 'Vereadores por Partido',
+        backgroundColor: '#f0f0f0',
+        colors: ['#ffa726'],
+        tooltip: { isHtml: true },
+        legend: { position: 'none' },
+        hAxis: {
+            slantedText: false,  // Faz com que os rótulos fiquem na horizontal
+            textStyle: { fontSize: 12 }
+        },
+        vAxis: {
+            minValue: 0,
+            format: '0'
+        }
+    };
+    var chart = new google.visualization.ColumnChart(document.getElementById('chart_div_partido'));
+    chart.draw(data, options);
+}
+
+
+
+</script>
 {% endblock %}

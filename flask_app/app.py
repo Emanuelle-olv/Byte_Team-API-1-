@@ -1,7 +1,10 @@
-from flask import Flask, render_template, request, redirect, jsonify
+from flask import Flask, render_template, request, url_for, jsonify
 from datetime import datetime
+from flask import Flask, render_template
+import pandas as pd
 import mysql.connector
 import json
+import os
 
 # Inicializar a aplicação Flask
 app = Flask(__name__)
@@ -60,9 +63,67 @@ def menu():
  
     return render_template("menu.html", vereadores=vereadores_list, vereadores_lista=vereadores_lista)
 
-@app.route("/estatisticas")
+# Função para carregar os dados dos vereadores do arquivo JSON
+def carregar_dados_vereadores():
+    try:
+        with open("flask_app/perfil.json", encoding="utf-8") as f:
+            vereadores_data = json.load(f)
+        return pd.DataFrame.from_dict(vereadores_data, orient="index")
+    except (ValueError, FileNotFoundError) as e:
+        print(f"Erro ao ler o JSON: {e}")
+        return pd.DataFrame()
+
+vereadores_validos = [
+    (35, 'Amélia Naomi'),
+    (238, 'Dr. José Claudio'),
+    (38, 'Dulce Rita'),
+    (247, 'Fabião Zagueiro'),
+    (40, 'Fernando Petiti'),
+    (43, 'Juliana Fraga'),
+    (246, 'Junior da Farmácia'),
+    (44, 'Juvenil Silvério'),
+    (45, 'Lino Bispo'),
+    (47, 'Marcão da Academia'),
+    (244, 'Marcelo Garcia'),
+    (242, 'Milton Vieira Filho'),
+    (243, 'Rafael Pascucci'),
+    (245, 'Renato Santiago'),
+    (50, 'Robertinho da Padaria'),
+    (240, 'Roberto Chagas'),
+    (234, 'Roberto do Eleven'),
+    (249, 'Rogério da ACASEM'),
+    (239, 'Thomaz Henrique'),
+    (55, 'Walter Hayashi'),
+    (237, 'Zé Luís')
+]
+
+@app.route('/estatisticas')
 def estatisticas():
-    return render_template("estatisticas.html")
+    # Carregar o JSON do perfil dos vereadores
+    with open("flask_app/perfil.json", encoding="utf-8") as f:
+        vereadores_data = json.load(f)
+
+    vereadores_lista = [
+        {
+            "id": v.get("id"),
+            "nome_civil": v.get("nome_civil"),
+            "projeto_de_lei_aprovados": v.get("projeto_de_lei_aprovados"),
+            "foto": v.get("foto"),
+            "presenca_totais": v.get("presenca_totais"),
+            "faltas_totais": v.get("faltas_totais"),
+            "faltas_justificadas_totais": v.get("faltas_justificadas_totais"),
+            "projeto_de_lei": v.get("projeto_de_lei"),
+            "requerimento": v.get("requerimento"),
+            "mocoes": v.get("mocoes"),
+            "partido_sigla": v.get("partido_sigla")
+        }
+        for v in vereadores_data.values()
+        if v.get("id") is not None and v.get("nome_civil") is not None and v.get("foto") is not None
+    ]
+
+    return render_template("estatisticas.html", vereadores_lista=vereadores_lista)
+
+
 
 @app.route("/perfil/<int:id_vereador>")
 def perfil(id_vereador):

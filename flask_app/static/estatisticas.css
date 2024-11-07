@@ -1,101 +1,121 @@
-* {
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f0f0;
+    color: #444;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-body {
-    /* box-sizing: border-box; */
-    font-family: 'Roboto', sans-serif;
-    width: 100%;
-    overflow-x: hidden;
-    background-color: #F5F5F5;
+.container_graficos {
+    max-width: 90%;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    text-align: center;
 }
 
-.container_filtros {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    margin: 2em;
-
-}
-
-.filtros {
-    background-color: #76C7CC;
-    border-radius: 50px;
-    color: #FFF;
+button {
+    margin: 15px;
+    padding: 12px 25px;
+    font-size: 16px;
     border: none;
-    padding: 0.5em;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
-    font-size: 24px;
-    outline: none;
-    text-align: left;
-    padding-left: 2.5em;
+    background-color: #4caf50;
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
-.filtro1 {
-    width: 500px;
-    font-style: italic;
+button#btnVoltar {
+    background-color: #d32f2f;
 }
 
-.data {
-    font-family: 'Roboto', sans-serif;
-    color: #25345F;
-    font-weight: bold;
-    font-size: 24px;
+button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
 }
 
-.imagens {
-    margin: 10em;
-    display: flex;
-    margin-left: 40px;
-
- }
-
-
-
- footer {
-    background-color: #76C7CC; /* Define a cor de fundo do rodapé como azul suave */
-    color: white; /* Define a cor do texto como branca */
-    text-align: center; /* Centraliza o texto */
-    padding: 10px; /* Adiciona espaçamento interno */
-    position: relative;
-    width: 100%;
-    /* Define a largura do rodapé como 100% da tela */
-    bottom: 0;
-    /* Mantém o rodapé no final da página */
-    left: 0;
-    right: 0;
-    font-size: 14px;
-    /* Define o tamanho da fonte do rodapé */
+button#btnVoltar:hover {
+    background-color: #c62828;
 }
 
-@media (max-width: 992px) {
-    .container_filtros {
-        flex-direction: column;
+h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Estilizando o gráfico para mantê-lo centralizado e responsivo */
+.container_graficos > div {
+    overflow-x: auto;
+    padding-bottom: 20px;
+}
+
+/* Estilo para as imagens dos vereadores */
+#images_div {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#images_div img {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#images_div img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Ajustes de responsividade para telas menores */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 24px;
     }
 
-    .filtros {
-        margin: 1em;
+    button {
+        font-size: 14px;
+        padding: 10px 15px;
     }
 
-    .imagens {
-        flex-direction: column;
+    .container_graficos {
+        padding: 20px;
+    }
+
+    #images_div img {
+        width: 60px;
+        height: 60px;
+    }
+
+    /* Reduzindo a altura dos gráficos em dispositivos menores */
+    #chart_div, #chart_div_presenca, #chart_div_faltas, 
+    #chart_div_requerimentos, #chart_div_mocoes, 
+    #chart_div_projetos_lei, #chart_div_partido {
+        height: 400px;
     }
 }
 
 @media (max-width: 480px) {
-    .container_filtros {
-        flex-direction: column;
+    button {
+        width: 100%;
+        margin-bottom: 10px;
     }
 
-    .filtros {
-        margin: 1em;
+    #images_div img {
+        width: 50px;
+        height: 50px;
     }
 
-    .imagens {
-        flex-direction: column;
+    .container_graficos {
+        padding: 15px;
+    }
+
+    /* Reduzindo ainda mais a altura dos gráficos em telas muito pequenas */
+    #chart_div, #chart_div_presenca, #chart_div_faltas, 
+    #chart_div_requerimentos, #chart_div_mocoes, 
+    #chart_div_projetos_lei, #chart_div_partido {
+        height: 300px;
     }
 }
