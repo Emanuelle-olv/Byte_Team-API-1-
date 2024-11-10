@@ -40,30 +40,29 @@ header img {
 }
 
 /* Botão Sobre Nós menor e sem faixa de fundo */
-.btnsobrenos {
+#sobrenos {
+    position: absolute;
+    top: 80px;
+    right: 20px;
     background: none;
-    border: none;
-    cursor: pointer;
-    padding: 5px;
-    font-size: 14px;
-    border-radius: 50px;
-    transition: background-color 0.3s, transform 0.3s;
-    color: #ffffff;
-    font-weight: bold;
 }
 
-/* Remove qualquer fundo no contêiner do botão */
-#sobrenos {
-    background: none !important; /* Remove fundo indesejado */
-    display: flex;
-    position: relative;
-    justify-content: flex-end;
-    flex-grow: 1;
+.btnsobrenos {
+    background-color: white;
+    color: #25345f;
+    border: none;
+    border-radius: 25px;
+    padding: 6px 15px; /* Reduzido o padding */
+    font-size: 12px; /* Reduzido o tamanho da fonte */
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .btnsobrenos:hover {
-    background-color: #3e4a6f;
-    transform: scale(1.1);
+    transform: scale(1.05);
+    background-color: white; /* Mantém o fundo branco no hover */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 .titulo h1 {
@@ -76,22 +75,22 @@ header img {
 }
 
 .btn-entrar {
-    background-color: rgba(37, 52, 95, 0.05);
-    color: #25345f75;
-    font-size: 15px;
-    padding: 8px 20px;
-    border: 1px solid rgba(37, 52, 95, 0.1);
+    background-color: #25345f;
+    color: white;
+    font-size: 18px;
+    padding: 10px 32px;
+    border: none;
     border-radius: 25px;
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
-    margin-top: 10px;
-    display: inline-block;
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 4px 4px rgba(0, 0, 0, 0.1);
 }
 
 .btn-entrar:hover {
-    background-color: rgba(37, 52, 95, 0.15);
-    color: #25345fc6;
-    box-shadow: 0px 4px 8px rgba(37, 52, 95, 0.2);
+    background-color: #313951;
+    color: #a9a9a9;
+    transform: scale(1.1);
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
 }
 
 .texto-projeto {

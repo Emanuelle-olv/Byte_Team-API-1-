@@ -42,6 +42,10 @@
             </div>
             {% endfor %}
         </div>
+        
+        <div id="semResultados" style="display: none; text-align: center; margin-top: 20px; color: #666;">
+            <p>Vereador não encontrado! Verifique se o nome ou partido estão corretos.</p>
+        </div>
     </div>
 </div>
 
@@ -55,6 +59,9 @@
         const filter = normalizarTexto(input.value.toLowerCase());
         const cardContainer = document.getElementById('cardContainer');
         const cards = cardContainer.getElementsByClassName('card');
+        const semResultadosDiv = document.getElementById('semResultados');
+        
+        let encontrouVereador = false;
 
         for (let i = 0; i < cards.length; i++) {
             const nome = normalizarTexto(cards[i].getElementsByTagName('h1')[0].innerText.toLowerCase());
@@ -62,9 +69,17 @@
 
             if (nome.includes(filter) || partido.includes(filter)) {
                 cards[i].style.display = '';
+                encontrouVereador = true;
             } else {
                 cards[i].style.display = 'none';
             }
+        }
+
+        // Mostrar ou ocultar a mensagem de "sem resultados"
+        if (encontrouVereador || filter.trim() === '') {
+            semResultadosDiv.style.display = 'none';
+        } else {
+            semResultadosDiv.style.display = 'block';
         }
     }
 
