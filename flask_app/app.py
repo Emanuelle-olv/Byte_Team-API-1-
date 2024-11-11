@@ -1,26 +1,29 @@
 from flask import Flask, render_template, request, url_for, jsonify
 from datetime import datetime
 from flask import Flask, render_template
+from dotenv import load_dotenv
 import pandas as pd
 import mysql.connector
 import json
 import os
 
+# Carregar variáveis do .env
+load_dotenv()
 # Inicializar a aplicação Flask
 app = Flask(__name__)
 
 # Função para obter uma nova conexão com o banco de dados
 def get_db_connection():
     return mysql.connector.connect(
-        host="localhost",
-        user="apibyte",
-        password="190@Mudar",
-        database="apibyte",
-        charset='utf8mb4',
-        collation='utf8mb4_general_ci'
+        host=os.getenv("DB_HOST"),
+        user=os.getenv("DB_USER"),
+        password=os.getenv("DB_PASSWORD"),
+        database=os.getenv("DB_NAME"),
+        charset=os.getenv("DB_CHARSET"),
+        collation=os.getenv("DB_COLLATION")
     )
 
-# Rotas já existentes
+
 
 @app.route("/")
 def index():
