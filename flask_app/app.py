@@ -23,8 +23,6 @@ def get_db_connection():
         collation=os.getenv("DB_COLLATION")
     )
 
-
-
 @app.route("/")
 def index():
     return render_template("index.html")
