@@ -1,51 +1,35 @@
-# Aprendizado por Projeto Integrado (API) 1° - Semestre
+# FATEC Profº Jessen Vidal - São José dos Campos - 1º Semestre DSM
 
-Bem-vindo ao repositório da [BYTE TECH]! Este projeto foi desenvolvido como [projeto API da turma de DSM]. Com uma abordagem inovadora e tecnologias de ponta, buscamos [oferecer agilidade e assessibiliade]. Sinta-se à vontade para explorar, contribuir e compartilhar suas ideias 
-
-Projeto baseado na metodologia ágil SCRUM, procurando desenvolver a Proatividade, Autonomia, Colaboração e entrega de Resultados dos estudantes envolvidos.
-
-# Índice
-* [Objetivo do Projeto](#objetivo-do-projeto)
-* [Apresentação da equipe](#aoresentação-da-equipe)
-* [Funcionalidades e registros (vídeos e apresentações) das sprints](#funcionalidades-e-registros-(vídeos-e-apresentações)-das-sprints)
-* [Tecnologias utilizadas](#tecnologias-utilizadas)
-* [Sprints](#sprints)
-* [Backlog do produto](#Backlog-do-produto)
-* [Autores](#autores)
-
-# Projeto (API) 
-Projeto educacional baseado na Metodologia API para ensino-aprendizagem, focado no desenvolvimento de habilidades e fundamentado nos pilares de aprendizado com problemas reais (RPBL), validação externa e mentalidade ágil. Utiliza estratégias para compreender o problema, conceber uma solução viável ao desenvolver e implementar o MVP seguido de sua operação (CDIO). Os resultados dos projetos devem seguir o Aviso Legal disponível no site da Fatec SJC, com definição das datas do kickoff e das sprints.
-
-Sprint | Previsão | Status|
-|------|--------|------|
-|Kick Off | 02/09/2024 | concluido|
-|01 | 29/09/2024 | concluido|
-|02|  27/10/2024 | concluido |
-|03| 24/11/2024 | a fazer|
-|Feira de Soluções| 12/12 |a fazer |
+Bem-vindo ao repositório da BYTE TECH. Este projeto foi desenvolvido como parte do API, ou "Aprendizagem por Projetos Integrados", com foco em agilidade e acessibilidade. Baseado na metodologia ágil SCRUM, visa promover proatividade, autonomia, colaboração e resultados eficientes entre os estudantes envolvidos.
 
 
+## Índice
 
+<p style="text-align: center">
+    <a href="#about">Sobre o Projeto</a> |
+    <a href="#tech">Tecnologias</a> |
+    <a href="#mvp">MVP</a> |
+    <a href="#sprints">Sprints</a> |
+    <a href="#backlog">BackLog</a> | 
+    <a href="#team">Equipe</a>
+</p>
 
-# Objetivo do Projeto
-![readme objetivo](https://github.com/user-attachments/assets/e24a4756-44d9-47f8-8284-e97d63e5be13)
+<span id="about">
+    
+## Sobre o Projeto
 
-# Apresentação da equipe
+Este projeto se trata de um website para a leitura e armazenamento de dados referentes aos vereadores da cidade de São José dos Campos disponibilizados na [Câmara sem papel](https://camarasempapel.camarasjc.sp.gov.br/legislacao/). O objetivo é aprimorar a visualização das informações, tornando-as mais acessíveis e transparentes para os eleitores, facilitando o acesso e o entendimento dos dados legislativos.
+<span id="tech">
+    
+## Tecnologias
 
-![equipe](https://raw.githubusercontent.com/Byte-Team-Fatec/Byte_Team-API-1-/b946eaa8377365b20f45bef62b95666c934faf21/sobrenos2.png)
+GitHub / Flask / Html / Css / Python / MySQL / Figma / Jira / Json / Git
 
+<span id="mvp">
+    
+## MVP
 
-
-
-
-# Funcionalidades e registros (vídeos e apresentações) das sprints
-
-Confira a seguir uma demonstração das funcionalidades
-
-**Acesso ao Nosso Vídeo:**
-
-[![Vídeo da API, 2°Semestre (DSM)](https://github.com/Byte-Team-Fatec/Byte_Team-API-1-/blob/Desenvolvimento/gifsprint2.gif)]
-
+*video da 3 sprint vai aqui*
 
 ## Sprints
 
@@ -53,22 +37,28 @@ Confira a seguir uma demonstração das funcionalidades
 
 [Sprint 2 →](./docs/sprint-2/sprint-2.md)
 
-[Sprint 3 →](./docs/sprint-3/sprint-3.md)
+Sprint 3:
 
-## Tecnologias Utilizadas
+| Prioridade | Tarefas | Responsável | Data de início  | Data de término
+|------|-----------|--|--|--|
+| ALTA | Implementação da biblioteca Pandas | Emanuelle | 04/11/2024 | 11/11/2024
+| ALTA | Criação da Venv | Francisco | 04/11/2024 | 24/11/2024
+| ALTA | Subir o site para AWS | Francisco, Lucas | 04/11/2024 | 24/11/2024
+| ALTA | Subir o banco de dados| Emanuelle | 04/11/2024 | 24/11/2024
+| MÉDIA | Adicionar manual de uso | Lavínia | 04/11/2024 | 24/11/2024
+| Documentação | Organizar o Github | Lavínia  | 04/11/2024 | 24/11/2024
 
-![Img att](https://github.com/user-attachments/assets/7c7c33ac-b275-4d78-89ef-0182d7c0a19c)
-
-
-
-
-
-# Backlog do produto
+<span id="backlog">
+    
+## Backlog
 
 [backlog2.pdf](https://github.com/Byte-Team-Fatec/Byte_Team-API-1-/blob/main/BACKLOG._SPRINT.pdf)
 
 
-# Autores
+<span id="team">
+  
+## Equipe
+
 |    Função     | Nome                                  |                                                                                                                                                      LinkedIn & GitHub                                                                                                                                                      |
 | :-----------: | :------------------------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
 | Product Owner   |Emanuelle Oliveira        |         [![Linkedin Badge](https://img.shields.io/badge/Linkedin-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/emanuelle-oliveira-ab9716296/) [![GitHub Badge](https://img.shields.io/badge/GitHub-111217?style=flat-square&logo=github&logoColor=white)](https://github.com/Emanuelle-olv)        |
