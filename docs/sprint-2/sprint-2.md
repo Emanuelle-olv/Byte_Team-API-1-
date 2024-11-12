@@ -1,6 +1,8 @@
-
+## MVP
 ![ezgif com-video-to-gif-converter](https://github.com/Byte-Team-Fatec/Byte_Team-API-1-/blob/Desenvolvimento/gifsprint2.gif)
- 
+
+## Sprint 2 
+
 | Prioridade | Tarefas | Responsável | Data de início  | Data de término
 |------|-----------|--|--|--|
 | ALTA | Como usuário, quero uma ferramenta de buscas para achar diretamente o que me interessa | Emanuelle | 07/10/2024 | 24/10/2024
