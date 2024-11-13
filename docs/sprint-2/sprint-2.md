@@ -1,5 +1,6 @@
 ## MVP
-![ezgif com-video-to-gif-converter](https://github.com/Byte-Team-Fatec/Byte_Team-API-1-/blob/Desenvolvimento/gifsprint2.gif)
+![gifsprint2](https://github.com/user-attachments/assets/b02829d5-de9d-4435-a957-51f6b4c7f9f2)
+
 
 ## Sprint 2 
 
