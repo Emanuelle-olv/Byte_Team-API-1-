@@ -1,5 +1,6 @@
 ## MVP
-![ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/f823123a-15b6-4f66-9040-ac15df7d0d7d)
+![gifsprint1](https://github.com/user-attachments/assets/8c03bb1b-0f2c-451e-8b33-68bc8e7acf57)
+
 
 ## Sprint 1 
 
