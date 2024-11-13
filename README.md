@@ -23,7 +23,10 @@ Este projeto se trata de um website para a leitura e armazenamento de dados refe
     
 ## Tecnologias
 
-GitHub / Flask / Html / Css / Python / MySQL / Figma / Jira / Json / Git
+| ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) | ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) | ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) | ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) |
+| --- | --- | --- | --- |
+| ![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white) | ![MySQL](https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white) | ![FIGMA](https://img.shields.io/badge/Figma-0D1117?style=for-the-badge&logo=figma) |![JSON](https://img.shields.io/badge/json-4479A1.svg?style=for-the-badge&logo=json&logoColor=white) 
+| |![Jira](https://img.shields.io/badge/jira-%230A0FFF.svg?style=for-the-badge&logo=jira&logoColor=white) | ![Github](https://img.shields.io/badge/github-4479A1.svg?style=for-the-badge&logo=github&logoColor=black)||
 
 <span id="mvp">
     
