@@ -22,11 +22,8 @@ Este projeto se trata de um website para a leitura e armazenamento de dados refe
 <span id="tech">
     
 ## Tecnologias
+HTML / CSS / JAVASCRIPT / PYTHON / FLASK / MYSQL / FIGMA / JIRA / GITHUB
 
-| ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) | ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) | ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) | ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) |
-| --- | --- | --- | --- |
-| ![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white) | ![MySQL](https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white) | ![FIGMA](https://img.shields.io/badge/Figma-0D1117?style=for-the-badge&logo=figma) |![JSON](https://img.shields.io/badge/json-4479A1.svg?style=for-the-badge&logo=json&logoColor=white) 
-| |![Jira](https://img.shields.io/badge/jira-%230A0FFF.svg?style=for-the-badge&logo=jira&logoColor=white) | ![Github](https://img.shields.io/badge/github-4479A1.svg?style=for-the-badge&logo=github&logoColor=black)||
 
 <span id="mvp">
     
@@ -36,13 +33,66 @@ Este projeto se trata de um website para a leitura e armazenamento de dados refe
 
 ## Sprints
 
-[Sprint 1 →](./docs/sprint-1/sprint-1.md)
 
-[Sprint 2 →](./docs/sprint-2/sprint-2.md)
+ <details>
+  <summary>Sprint 1</summary>
+  
+## MVP
+![gifsprint1](https://github.com/user-attachments/assets/8c03bb1b-0f2c-451e-8b33-68bc8e7acf57)
 
-Sprint 3:
+## Sprint 1 
+
+| Prioridade    | Tarefas                      | Responsável        | Data de início | Data de término |
+|---------------|------------------------------|--------------------|----------------|-----------------|
+| ALTA          | Criação da tela proposições  | Maria Isabel       | 09/09/2024     | 29/09/2024      |
+| ALTA          | Criação da tela inicial      | Vinicius e Lucas   | 09/09/2024     | 29/09/2024      |
+| ALTA          | Criação da tela perfil       | Emanuelle          | 09/09/2024     | 29/09/2024      |
+| ALTA          | Criação da tela menu         | Lavínia            | 09/09/2024     | 29/09/2024      |
+| ALTA          | Criação do modelo lógico     | Lucas              | 09/09/2024     | 29/09/2024      |
+| MÉDIA         | Criação da tela sobre nós    | Francisco          | 09/09/2024     | 29/09/2024      |
+| MÉDIA         | Criação da tela estatísticas | Lavínia            | 09/09/2024     | 29/09/2024      |
+| BAIXA         | Criação do modelo conceitual | Emanuelle          | 09/09/2024     | 29/09/2024      |
+
+</details>
+
+ <details>
+  <summary>Sprint 2</summary>
+
+## MVP
+![gifsprint2](https://github.com/user-attachments/assets/b02829d5-de9d-4435-a957-51f6b4c7f9f2)
+
+## Sprint 2 
+
+| Prioridade    | Tarefas                                                         | Responsável        | Data de início | Data de término |
+|---------------|-----------------------------------------------------------------|--------------------|----------------|-----------------|
+| ALTA          | Criação do modelo conceitual e lógico do banco de dados         | Emanuelle          | 07/10/2024     | 24/10/2024      |
+| ALTA          | Raspagem de dados para informações de votação dos vereadores    | Lucas              | 07/10/2024     | 24/10/2024      |
+| ALTA          | Organização do arquivo `extrato_votacao.json`                   | Vinicius e Lavínia | 07/10/2024     | 24/10/2024      |
+| ALTA          | Fazer a conexão do front-end com o back-end - arquivo `app.py`  | Emanuelle          | 07/10/2024     | 24/10/2024      |
+| ALTA          | Criação da página de comentários - CSS, HTML, JS                | Emanuelle          | 07/10/2024     | 24/10/2024      |
+| ALTA          | Criar o banco de dados para a página comentários                | Emanuelle          | 07/10/2024     | 24/10/2024      |
+| ALTA          | Raspagem de dados para informações de perfil dos vereadores     | Lucas              | 07/10/2024     | 24/10/2024      |
+| ALTA          | Filtro de busca para a página Menu por nome, partido ou área    | Francisco          | 07/10/2024     | 24/10/2024      |
+| ALTA          | Raspar as leis aprovadas de cada vereador                       | Francisco          | 07/10/2024     | 24/10/2024      |
+| ALTA          | Revisar todas as páginas e ajustes finais                       | Emanuelle          | 07/10/2024     | 24/10/2024      |
+| MÉDIA         | Criação página proposições aprovadas                            | Lavínia            | 07/10/2024     | 24/10/2024      |
+| MÉDIA         | Estilização da página Proposições aprovadas                     | Emanuelle          | 07/10/2024     | 24/10/2024      |
+| MÉDIA         | Lista de todos os atuais vereadores na página Menu              | Lavínia            | 07/10/2024     | 24/10/2024      |
+| MÉDIA         | Organização do arquivo `leis_aprovadas_vereadores.json`         | Francisco          | 07/10/2024     | 24/10/2024      |
+| MÉDIA         | Criar filtros para a página perfil                              | Emanuelle          | 07/10/2024     | 24/10/2024      |
+| Documentação  | Gravar vídeo do site em funcionamento para README               | Emanuelle          | 07/10/2024     | 24/10/2024      |
+| Documentação  | Atualizar o README                                              | Lavínia            | 07/10/2024     | 25/10/2024      |
+
+</details>
+
+
+ <details>
+  <summary>Sprint 3</summary>
+
+## MVP
 
 ## Sprint 3
+
 
 | Prioridade    | Tarefas                                     | Responsável        | Data de início | Data de término |
 |---------------|---------------------------------------------|--------------------|----------------|-----------------|
@@ -52,10 +102,12 @@ Sprint 3:
 | MÉDIA         | Adicionar manual de uso                     | Lavínia            | 04/11/2024     | 24/11/2024      |
 | Documentação  | Organizar o GitHub                          | Lavínia            | 04/11/2024     | 24/11/2024      |
 
+</details>
 
 <span id="Product-Backlog-Equipe-Byte-Tech"></span>
 
-## Product Backlog - Equipe Byte Tech
+## Product [Backlog](https://github.com/user-attachments/files/17848271/Product.Backlog_.Equipe_Byte_Tech.pdf)
+
 
 | **Prioridade** | **User Story**                                                                                   | **Requisito Funcional** | **Relação com o Requisito do Cliente**                     | **Sprint**  |
 |-----------------|-------------------------------------------------------------------------------------------------|-------------------------|------------------------------------------------------------|-------------|
