@@ -10,7 +10,7 @@ Bem-vindo ao repositório da BYTE TECH. Este projeto foi desenvolvido como parte
     <a href="#tech">Tecnologias</a> |
     <a href="#mvp">MVP</a> |
     <a href="#sprints">Sprints</a> |
-    <a href="#backlog">BackLog</a> | 
+    <a href="#Product-Backlog-Equipe-Byte-Tech">Product BackLog</a> | 
     <a href="#team">Equipe</a>
 </p>
 
