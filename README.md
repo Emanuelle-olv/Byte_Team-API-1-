@@ -42,14 +42,16 @@ Este projeto se trata de um website para a leitura e armazenamento de dados refe
 
 Sprint 3:
 
-| Prioridade | Tarefas | Responsável | Data de início  | Data de término
-|------|-----------|--|--|--|
-| ALTA | Implementação da biblioteca Pandas | Emanuelle | 04/11/2024 | 11/11/2024
-| ALTA | Criação da Venv | Francisco | 04/11/2024 | 24/11/2024
-| ALTA | Subir o site para AWS | Francisco, Lucas | 04/11/2024 | 24/11/2024
-| ALTA | Subir o banco de dados| Emanuelle | 04/11/2024 | 24/11/2024
-| MÉDIA | Adicionar manual de uso | Lavínia | 04/11/2024 | 24/11/2024
-| Documentação | Organizar o Github | Lavínia  | 04/11/2024 | 24/11/2024
+## Sprint 3
+
+| Prioridade    | Tarefas                                     | Responsável        | Data de início | Data de término |
+|---------------|---------------------------------------------|--------------------|----------------|-----------------|
+| ALTA          | Implementar gráficos na página estatísticas | Emanuelle          | 04/11/2024     | 11/11/2024      |
+| ALTA          | Criação do ambiente virtual                 | Francisco          | 04/11/2024     | 24/11/2024      |
+| MÉDIA         | Limpar banco de dados da página comentários | Emanuelle          | 04/11/2024     | 24/11/2024      |
+| MÉDIA         | Adicionar manual de uso                     | Lavínia            | 04/11/2024     | 24/11/2024      |
+| Documentação  | Organizar o GitHub                          | Lavínia            | 04/11/2024     | 24/11/2024      |
+
 
 <span id="backlog">
     
