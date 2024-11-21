@@ -53,11 +53,27 @@ Sprint 3:
 | Documentação  | Organizar o GitHub                          | Lavínia            | 04/11/2024     | 24/11/2024      |
 
 
-<span id="backlog">
-    
-## Backlog
+<span id="Product-Backlog-Equipe-Byte-Tech"></span>
 
-[backlog2.pdf](https://github.com/Byte-Team-Fatec/Byte_Team-API-1-/blob/main/BACKLOG._SPRINT.pdf)
+## Product Backlog - Equipe Byte Tech
+
+| **Prioridade** | **User Story**                                                                                   | **Requisito Funcional** | **Relação com o Requisito do Cliente**                     | **Sprint**  |
+|-----------------|-------------------------------------------------------------------------------------------------|-------------------------|------------------------------------------------------------|-------------|
+| Alta            | Eu, como cliente, quero visualizar um protótipo funcional para entender como as informações serão apresentadas no site. | RN.P.6                 | Interface com navegação intuitiva e fácil acesso às informações. | Sprint 1    |
+| Alta            | Eu, como cliente, quero ver a estrutura inicial das páginas para visualizar a organização e o layout do site. | RN.P.6                 | Arquitetura da informação e prototipação inicial.          | Sprint 1    |
+| Alta            | Eu, como eleitor, quero visualizar as presenças, faltas justificadas e não justificadas dos vereadores para entender sua assiduidade. | RF1                    | Presença nas Sessões: Percentual de presença e faltas.     | Sprint 2    |
+| Alta            | Eu, como eleitor, quero acessar uma lista de proposições apresentadas pelos vereadores para me informar melhor sobre suas ações. | RF2                    | Proposições Apresentadas: Projetos de lei, requerimentos e moções. | Sprint 2    |
+| Alta            | Eu, como eleitor, quero acessar o perfil individual de vereadores com dados biográficos, histórico político e informações pessoais, como e-mail e sala. | RF6                    | Perfil Individual de Cada Vereador: Dados biográficos e histórico político. | Sprint 2    |
+| Alta            | Eu, como eleitor, quero acessar a barra de busca para encontrar vereadores por nome ou partido rapidamente. | RF7                    | Busca e Filtros: Ferramentas para buscar vereadores.       | Sprint 2    |
+| Alta            | Eu, como eleitor, quero acessar uma página de proposições aprovadas e conferir o detalhamento das propostas aprovadas por cada vereador. | RF3                    | Projetos de Lei Aprovados: Links para conteúdo completo.   | Sprint 2    |
+| Média           | Eu, como eleitor, quero visualizar o posicionamento de cada vereador em projetos para entender suas opiniões e alinhamentos. | RF4                    | Posicionamento em Votações: Como o vereador votou em questões-chave. | Sprint 2    |
+| Média           | Eu, como eleitor, quero comentar anonimamente no perfil dos vereadores para expressar minha opinião. | RF9                    | Comentários e Feedback do Eleitorado: Cidadãos deixam comentários. | Sprint 2    |
+| Média           | Eu, como eleitor, quero visualizar os comentários feitos por outros eleitores para ter mais informações sobre os vereadores. | RF9                    | Comentários e Feedback do Eleitorado: Eleitores classificam atuação. | Sprint 2    |
+| Média           | Eu, como eleitor, quero visualizar a participação dos vereadores em comissões especiais e permanentes para entender sua atuação fora das sessões. | RF5                    | Participação em Comissões: Vereadores envolvidos em comissões. | Sprint 2    |
+| Alta            | Eu, como eleitor, quero acessar uma área com estatísticas gráficas para analisar o desempenho geral dos vereadores na câmara. | RF8                    | Painel de Estatísticas: Visualizações gráficas da atuação geral da câmara. | Sprint 3    |
+| Alta            | Eu, como eleitor, quero comparar vereadores em métricas como proposições apresentadas, votações e frequência para identificar diferenças. | RF8                    | Painel de Estatísticas: Visualizações gráficas da atuação geral da câmara. | Sprint 3    |
+| Média           | Eu, como eleitor, quero que o site tenha instruções de uso do site na página inicial.            | RN.P.6                 | Interface com navegação intuitiva e fácil acesso às informações. | Sprint 3    |
+
 
 
 <span id="team">
