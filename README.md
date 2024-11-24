@@ -69,7 +69,6 @@ Este projeto se trata de um website para a leitura e armazenamento de dados refe
 | ALTA          | Criação do modelo lógico     | Lucas              | 09/09/2024     | 29/09/2024      |
 | MÉDIA         | Criação da tela sobre nós    | Francisco          | 09/09/2024     | 29/09/2024      |
 | MÉDIA         | Criação da tela estatísticas | Lavínia            | 09/09/2024     | 29/09/2024      |
-| BAIXA         | Criação do modelo conceitual | Emanuelle          | 09/09/2024     | 29/09/2024      |
 
 </details>
 
@@ -118,6 +117,7 @@ Este projeto se trata de um website para a leitura e armazenamento de dados refe
 | ALTA          | Criação do ambiente virtual                 | Francisco          | 04/11/2024     | 24/11/2024      |
 | MÉDIA         | Limpar banco de dados da página comentários | Emanuelle          | 04/11/2024     | 24/11/2024      |
 | MÉDIA         | Adicionar manual de uso                     | Lavínia            | 04/11/2024     | 24/11/2024      |
+| BAIXA         | Fazer slides da apresentação                | Lucas              | 04/11/2024     | 24/11/2024      |
 | Documentação  | Organizar o GitHub                          | Lavínia            | 04/11/2024     | 24/11/2024      |
 
 </details>
