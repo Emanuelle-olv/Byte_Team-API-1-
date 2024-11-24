@@ -47,7 +47,7 @@ Este projeto se trata de um website para a leitura e armazenamento de dados refe
     
 ## MVP
 
-*video da 3 sprint vai aqui*
+[vídeo](https://www.youtube.com/watch?v=6BiKl4bEMzE)
 
 ## Sprints
 
@@ -108,6 +108,8 @@ Este projeto se trata de um website para a leitura e armazenamento de dados refe
 
 ## MVP
 
+[vídeo](https://www.youtube.com/watch?v=6BiKl4bEMzE)
+
 ## Sprint 3
 
 
@@ -119,6 +121,10 @@ Este projeto se trata de um website para a leitura e armazenamento de dados refe
 | MÉDIA         | Adicionar manual de uso                     | Lavínia            | 04/11/2024     | 24/11/2024      |
 | BAIXA         | Fazer slides da apresentação                | Lucas              | 04/11/2024     | 24/11/2024      |
 | Documentação  | Organizar o GitHub                          | Lavínia            | 04/11/2024     | 24/11/2024      |
+
+## Burndown 
+![bd](https://github.com/user-attachments/assets/a2d3475c-b364-4952-b0fc-815f78cfe4aa)
+
 
 </details>
 
