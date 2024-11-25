@@ -122,8 +122,6 @@ Este projeto se trata de um website para a leitura e armazenamento de dados refe
 | BAIXA         | Fazer slides da apresentação                | Lucas              | 04/11/2024     | 24/11/2024      |
 | Documentação  | Organizar o GitHub                          | Lavínia            | 04/11/2024     | 24/11/2024      |
 
-## Burndown 
-![bd](https://github.com/user-attachments/assets/a2d3475c-b364-4952-b0fc-815f78cfe4aa)
 
 
 </details>
