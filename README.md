@@ -117,6 +117,7 @@ Este projeto se trata de um website para a leitura e armazenamento de dados refe
 |---------------|---------------------------------------------|--------------------|----------------|-----------------|
 | ALTA          | Implementar gráficos na página estatísticas | Emanuelle          | 04/11/2024     | 11/11/2024      |
 | ALTA          | Criação do ambiente virtual                 | Francisco          | 04/11/2024     | 24/11/2024      |
+| MÉDIA         | Fazer o deploy da aplicação na AWS          | Emanuelle          | 04/11/2024     | 11/11/2024      |
 | MÉDIA         | Limpar banco de dados da página comentários | Emanuelle          | 04/11/2024     | 24/11/2024      |
 | MÉDIA         | Adicionar manual de uso                     | Lavínia            | 04/11/2024     | 24/11/2024      |
 | BAIXA         | Fazer slides da apresentação                | Lucas              | 04/11/2024     | 24/11/2024      |
